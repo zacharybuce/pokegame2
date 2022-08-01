@@ -1,0 +1,64 @@
+.itemcard {
+}
+
+.itemcard.uncommon {
+  border-radius: 5px;
+  animation: glowuncommon 1s infinite alternate;
+}
+
+.itemcard.rare {
+  border-radius: 5px;
+  animation: glowrare 1s infinite alternate;
+}
+
+.itemcard.epic {
+  border-radius: 5px;
+  animation: glowepic 1s infinite alternate;
+}
+
+.itemcard.legendary {
+  border-radius: 5px;
+  animation: glowlegendary 1s infinite alternate;
+}
+
+@keyframes glowfirstmon {
+  from {
+    box-shadow: 0 0 5px 2px #ff0000;
+  }
+  to {
+    box-shadow: 0 0 5px 5px #ff0000;
+  }
+}
+
+@keyframes glowuncommon {
+  from {
+    box-shadow: 0 0 5px 2px #38761d;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #38761d;
+  }
+}
+@keyframes glowrare {
+  from {
+    box-shadow: 0 0 5px 2px #1155cc;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #1155cc;
+  }
+}
+@keyframes glowepic {
+  from {
+    box-shadow: 0 0 5px 2px #674ea7;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #674ea7;
+  }
+}
+@keyframes glowlegendary {
+  from {
+    box-shadow: 0 0 5px 2px #c5a02f;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #f1c232;
+  }
+}

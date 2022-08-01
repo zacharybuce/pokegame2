@@ -1,0 +1,94 @@
+{
+  "common": {
+    "items": [
+      "Blunder Policy",
+      "Damp Rock",
+      "Eject Button",
+      "Eject Pack",
+      "Full Incense",
+      "Heat Rock",
+      "Icy Rock",
+      "Scope Lens",
+      "Shed Shell",
+      "Sitrus Berry",
+      "Smooth Rock",
+      "White Herb"
+    ],
+    "cost": 500
+  },
+  "uncommon": {
+    "items": [
+      "Salac Berry",
+      "Wiki Berry",
+      "Aguav Berry",
+      "Mago Berry",
+      "Figy Berry",
+      "Iapapa Berry",
+      "Bright Powder",
+      "Light Clay",
+      "Protective Pads",
+      "Red Card",
+      "Safety Goggles",
+      "Starf Berry",
+      "Utility Umbrella",
+      "Zoom Lens"
+    ],
+    "cost": 800
+  },
+  "rare": {
+    "items": [
+      "Mental Herb",
+      "Power Herb",
+      "Air Balloon",
+      "Black Belt",
+      "Black Glasses",
+      "Black Sludge",
+      "Charcoal",
+      "Dragon Fang",
+      "Hard Stone",
+      "Magnet",
+      "Metal Coat",
+      "Miracle Seed",
+      "Mystic Water",
+      "Never-Melt Ice",
+      "Twisted Spoon",
+      "Pixie Plate",
+      "Poison Barb",
+      "Sharp Beak",
+      "Silk Scarf",
+      "Silver Powder",
+      "Soft Sand",
+      "Weakness Policy",
+      "Spell Tag"
+    ],
+    "cost": 1200
+  },
+  "epic": {
+    "items": [
+      "Heavy-Duty Boots",
+      "Focus Sash",
+      "Life Orb",
+      "Rocky Helmet",
+      "Metronome",
+      "Muscle Band",
+      "Normal Gem",
+      "Shell Bell",
+      "Wide Lens",
+      "Wise Glasses",
+      "Big Root"
+    ],
+    "cost": 1800
+  },
+  "legendary": {
+    "items": [
+      "Assault Vest",
+      "Choice Band",
+      "Choice Scarf",
+      "Choice Specs",
+      "Eviolite",
+      "Expert Belt",
+      "Leftovers"
+    ],
+    "cost": 2500
+  }
+}

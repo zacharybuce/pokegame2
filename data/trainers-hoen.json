@@ -1,0 +1,237 @@
+{
+  "BugCatcher": {
+    "Easy": ["Wurmple", "Surskit", "Sewaddle"],
+    "Medium": ["Beautifly", "Dustox", "Masquerain"],
+    "Hard": ["Pinsir", "Heracross", "Vespiqueen", "Ninjask"],
+    "Type": "Bug"
+  },
+  "Youngster": {
+    "Easy": ["Zigzagoon", "Aaron", "Electrike", "Machop", "Trapinch"],
+    "Medium": ["Lairon", "Linoone", "Manectric", "Lickitung"],
+    "Hard": ["Bisharp", "Gardevoir", "Lickilicky", "Aggron"],
+    "Type": "Normal"
+  },
+  "Lass": {
+    "Easy": ["Marill", "Cottonee", "Litleo", "Lotad"],
+    "Medium": ["Breloom", "Loudred", "Pyroar"],
+    "Hard": ["Exploud", "Dewgong", "Azumarill", "Whimsicott"],
+    "Type": "Normal"
+  },
+  "AromaLady": {
+    "Easy": ["Shroomish", "Oddish", "Roselia"],
+    "Medium": ["Breloom", "Gloom", "Sunflora"],
+    "Hard": ["Vileplume", "Bellossom", "Roserade"],
+    "Type": "Grass"
+  },
+  "Fisherman": {
+    "Easy": ["Magikarp", "Barboach", "Carvanha"],
+    "Medium": ["Sharpedo", "Wailmer", "Corsola", "Tentacruel"],
+    "Hard": ["Gyarados", "Whiscash", "Wailord", "Octillery"],
+    "Type": "Water"
+  },
+  "Swimmer": {
+    "Easy": ["Luvdisc", "Carvanha", "Staryu", "Tentacool", "Horsea"],
+    "Medium": ["Wailmer", "Sharpedo", "Tentacruel", "Sealeo", "Seadra"],
+    "Hard": ["Gyarados", "Pelipper", "Kingra"],
+    "Type": "Water"
+  },
+  "BlackBelt": {
+    "Easy": ["Machop", "Meditite", "Makuhita"],
+    "Medium": ["Machoke", "Medicham", "Hawlucha"],
+    "Hard": ["Machamp", "Hariyama", "Heracross", "Conkeldurr"],
+    "Type": "Fighting"
+  },
+  "RuinManiac": {
+    "Easy": ["Sandshrew", "Baltoy"],
+    "Medium": ["Nosepass", "Sandslash"],
+    "Hard": ["Claydol", "Probopass", "Aerodactyl", "Tyrantrum", "Aurorus"],
+    "Type": "Ground"
+  },
+  "Sailor": {
+    "Easy": ["Spheal", "Machop", "Wailmer"],
+    "Medium": ["Machoke", "Tentacruel", "Pelipper"],
+    "Hard": ["Machamp", "Walrein", "Wailord"],
+    "Type": "Water"
+  },
+  "Psychic": {
+    "Easy": ["Exeggcute", "Abra", "Gothita", "Spoink", "Ralts"],
+    "Medium": ["Solrock", "Lunatone", "Kadabra", "Gothorita", "Kirlia"],
+    "Hard": ["Alakazam", "Exeggutor", "Gothitelle", "Starmie", "Gardevoir"],
+    "Type": "Psychic"
+  },
+  "Collector": {
+    "Easy": ["Plusle", "Minun"],
+    "Medium": ["Zangoose", "Seviper"],
+    "Hard": ["Ludicolo", "Shiftree"],
+    "Type": "Normal"
+  },
+  "CoolTrainer": {
+    "Easy": ["Mawile", "Rhyhorn", "Kecleon"],
+    "Medium": [
+      "Gravler",
+      "Manectric",
+      "Armaldo",
+      "Dusclops",
+      "Cacturn",
+      "Swellow",
+      "Magneton"
+    ],
+    "Hard": [
+      "Alakazam",
+      "Ludicolo",
+      "Darmanitan",
+      "Shiftree",
+      "Wailord",
+      "Gallade"
+    ],
+    "Type": "Normal"
+  },
+  "Kindler": {
+    "Easy": ["Slugma", "Numel", "Wingull"],
+    "Medium": ["Pelipper", "Magcargo"],
+    "Hard": ["Camerupt", "Blaziken"],
+    "Type": "Fire"
+  },
+  "Picnicker": {
+    "Easy": ["Marill", "Sandshrew", "Baltoy", "Shroomish", "Cacnea"],
+    "Medium": ["Lombre", "Nuzleaf", "Gravler", "Cacturn"],
+    "Hard": ["Wigglytuff", "Azumarill"],
+    "Type": "Normal"
+  },
+  "Hiker": {
+    "Easy": ["Geodude", "Machop", "Numel"],
+    "Medium": ["Gravler", "Onix", "Camerupt"],
+    "Hard": ["Golem", "Machamp", "Steelix"],
+    "Type": "Rock"
+  },
+  "BirdKeeper": {
+    "Easy": ["Natu", "Tailow", "Swablu", "Hoothoot"],
+    "Medium": ["Swellow", "Xatu", "Pelipper", "Tropius", "Noctowl"],
+    "Hard": ["Skarmory", "Altaria", "Staraptor"],
+    "Type": "Flying"
+  },
+  "NinjaBoy": {
+    "Easy": ["Koffing", "Nincada", "Gulpin"],
+    "Medium": ["Swalot", "Muk", "Arbok"],
+    "Hard": ["Ninjask", "Shedinja", "Weezing"],
+    "Type": "Poison"
+  },
+  "PokeManiac": {
+    "Easy": ["Aaron", "Rhyhorn", "Slowpoke"],
+    "Medium": ["Lairon", "Rhydon", "Slowbro"],
+    "Hard": ["Aggron", "Rhyperior", "Ampharos"],
+    "Type": "Normal"
+  },
+  "PokemonBreeder": {
+    "Easy": ["Marill", "Gulpin", "Sandshrew", "Skitty", "Roselia"],
+    "Medium": ["Tropius", "Breloom", "Delcatty", "Pelipper"],
+    "Hard": ["Azumarill", "Aggron"],
+    "Type": "Normal"
+  },
+  "Guitarist": {
+    "Easy": ["Electrike", "Whismer", "Magnemite", "Chatot"],
+    "Medium": ["Loudred", "Manectric", "Magneton"],
+    "Hard": ["Exploud", "Magnezone", "Raichu"],
+    "Type": "Electric"
+  },
+  "PokemonRanger": {
+    "Easy": ["Lotad", "Seedot", "Pikachu", "Shroomish", "Slakoth"],
+    "Medium": [
+      "Lombre",
+      "Nuzleaf",
+      "Manectric",
+      "Breloom",
+      "Gloom",
+      "Vigoroth"
+    ],
+    "Hard": [
+      "Ludicolo",
+      "Shiftree",
+      "Roserade",
+      "Bellossom",
+      "Excadrill",
+      "Slaking"
+    ],
+    "Type": "Normal"
+  },
+  "HexManiac": {
+    "Easy": ["Duskull", "Shuppet", "Ghastly", "Ralts"],
+    "Medium": ["Dusclops", "Banette", "Haunter", "Sableye"],
+    "Hard": ["Absol", "Dusknoir", "Gengar"],
+    "Type": "Ghost"
+  },
+  "AceTrainer": {
+    "Easy": ["Sableye", "Roselia", "Torkoal", "Nosepass"],
+    "Medium": [
+      "Lairon",
+      "Tropius",
+      "Froslass",
+      "Lanturn",
+      "Sandslash",
+      "Ninetails"
+    ],
+    "Hard": ["Gardevoir", "Slaking", "Skarmory", "Claydol"],
+    "Type": "Normal"
+  },
+  "Roxanne": {
+    "Easy": ["Geodude", "Nosepass", "Onix"],
+    "Medium": ["Gravler", "Lairon", "Cradily"],
+    "Hard": ["Probopass", "Aggron", "Golem"],
+    "Type": "Rock"
+  },
+  "Brawly": {
+    "Easy": ["Machop", "Makuhita", "Meditite"],
+    "Medium": ["Machop", "Medicham", "Breloom"],
+    "Hard": ["Machamp", "Hariyama", "Heracross"],
+    "Type": "Fighting"
+  },
+  "Wattson": {
+    "Easy": ["Voltorb", "Magnemite", "Electrike"],
+    "Medium": ["Manectric", "Magneton", "Electabuzz"],
+    "Hard": ["Magnezone", "Ampharos", "Raichu"],
+    "Type": "Electric"
+  },
+  "Flannery": {
+    "Easy": ["Growlithe", "Numel", "Slugma"],
+    "Medium": ["Torkoal", "Camerupt", "Magcargo"],
+    "Hard": ["Arcanine", "Rapidash", "Blaziken"],
+    "Type": "Fire"
+  },
+  "Norman": {
+    "Easy": ["Zigzagoon", "Spinda", "Slakoth"],
+    "Medium": ["Linoone", "Vigoroth", "Chansey"],
+    "Hard": ["Kangaskhan", "Blissey", "Slaking"],
+    "Type": "Normal"
+  },
+  "Winona": {
+    "Easy": ["Wingull", "Swablu", "Hoothoot"],
+    "Medium": ["Noctowl", "Tropius", "Pelipper"],
+    "Hard": ["Skarmory", "Altaria", "Dragonite"],
+    "Type": "Flying"
+  },
+  "TateandLiza": {
+    "Easy": ["Baltoy", "Natu", "Slowpoke"],
+    "Medium": ["Lunatone", "Solrock", "Xatu"],
+    "Hard": ["Claydol", "Slowking", "Hypno"],
+    "Type": "Psychic"
+  },
+  "Wallace": {
+    "Easy": ["Luvdisc", "Barboach", "Wailmer"],
+    "Medium": ["Sealeo", "Seaking", "Whiscash"],
+    "Hard": ["Wailord", "Milotic", "Gyarados"],
+    "Type": "Ice"
+  },
+  "Steven": {
+    "Easy": [],
+    "Medium": [],
+    "Hard": [
+      "Skarmory",
+      "Claydol",
+      "Aggron",
+      "Cradily",
+      "Armaldo",
+      "Metagross"
+    ],
+    "Type": "Steel"
+  }
+}
