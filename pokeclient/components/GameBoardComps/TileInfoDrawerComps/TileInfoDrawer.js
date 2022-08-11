@@ -18,6 +18,11 @@ import TileEvents from "./TileEvents";
 const TileInfoDrawer = ({
   tileDrawer,
   setTileDrawer,
+  selected,
+  setTileToShow,
+  takeAction,
+  actionComplete,
+  phase,
   tileName,
   campaignId,
   canInteract,
@@ -53,6 +58,7 @@ const TileInfoDrawer = ({
         disabled={tileInfo ? tileInfo.encounters.length == 0 : false}
         variant="contained"
         sx={{ width: "50%" }}
+        onClick={() => takeAction("wildbattle")}
       >
         Fight Wild Pokemon <GrassIcon sx={{ ml: "1vw" }} />
       </Button>
@@ -60,6 +66,7 @@ const TileInfoDrawer = ({
         disabled={tileInfo ? tileInfo.trainers.length == 0 : false}
         variant="contained"
         sx={{ width: "50%" }}
+        onClick={() => takeAction("trainerbattle")}
       >
         Fight Trainer <PersonIcon sx={{ ml: "1vw" }} />
       </Button>
@@ -70,7 +77,10 @@ const TileInfoDrawer = ({
     <Drawer
       anchor={"right"}
       open={tileDrawer}
-      onClose={() => setTileDrawer(false)}
+      onClose={() => {
+        setTileDrawer(false);
+        setTileToShow(selected);
+      }}
       sx={{ overflowY: "auto" }}
     >
       {tileInfo ? (
@@ -89,7 +99,9 @@ const TileInfoDrawer = ({
                 trainers={tileInfo.trainers}
               />
             </CardContent>
-            {canInteract ? EncounterButtons : ""}
+            {canInteract && phase == "action" && !actionComplete
+              ? EncounterButtons
+              : ""}
           </Card>
           <TileEvents events={tileInfo.events} canInteract={canInteract} />
         </Box>

@@ -14,28 +14,42 @@ import styles from "../../../Styles/ItemCard.module.css";
 import { HtmlTooltip } from "../../Utils/HtmlTooltip";
 
 const ItemCard = ({ item, index, buyRandomItem }) => {
-  const getDelay = () => {
-    switch (index) {
-      case 0:
-        return 200;
-      case 1:
-        return 400;
-      case 2:
-        return 600;
+  const genTooltip = () => {
+    if (item.type === "tm") {
+      return (
+        <React.Fragment>
+          <Typography>
+            <b>Type:</b> {item.move.type}
+          </Typography>
+          <Typography>
+            <b>Accuracy:</b> {item.move.accuracy}
+          </Typography>
+          <Typography>
+            <b>Base Power:</b> {item.move.basePower}
+          </Typography>
+          <Typography>
+            <b>Category: </b>
+            {item.move.category}
+          </Typography>
+          <Typography>
+            <b>Desc:</b> {item.move.desc}
+          </Typography>
+        </React.Fragment>
+      );
     }
+
+    return (
+      <React.Fragment>
+        <Typography>{item.desc}</Typography>
+      </React.Fragment>
+    );
   };
 
   if (item !== "bought")
     return (
-      <Slide direction="left" in timeout={getDelay()}>
+      <Slide direction="left" in timeout={200 + index * 200}>
         <Box>
-          <HtmlTooltip
-            title={
-              <React.Fragment>
-                <Typography>{item.desc}</Typography>
-              </React.Fragment>
-            }
-          >
+          <HtmlTooltip title={genTooltip()}>
             <Button
               variant="outlined"
               fullWidth

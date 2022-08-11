@@ -1,48 +1,38 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
-import ItemSprite from "../../Utils/ItemSprite";
-import { HtmlTooltip } from "../../Utils/HtmlTooltip";
+import { useSnackbar } from "notistack";
+import TmItem from "./TmItem";
 
-const Tms = ({ bag, setBag }) => {
+const Tms = ({ bag, team, teachTm, setBag, setMoney }) => {
+  const { enqueueSnackbar } = useSnackbar();
+
+  const sellTm = (index, cost, tmName) => {
+    let newBag = bag;
+    newBag.tms.splice(index, 1);
+
+    setBag(newBag);
+    let refund = cost / 2;
+    setMoney((prev) => prev + refund);
+
+    enqueueSnackbar(`Sold the ${tmName} for ${refund}`, {
+      variant: "info",
+    });
+  };
+
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: "1vh" }}>
         TMs
       </Typography>
       <Box sx={{ overflowY: "auto", height: "23vh" }}>
-        {bag.tms.map((item) => (
-          <HtmlTooltip
-            title={
-              <React.Fragment>
-                <React.Fragment>
-                  <Typography>
-                    <b>Type:</b> {item.move.type}
-                  </Typography>
-                  <Typography>
-                    <b>Accuracy:</b> {item.move.accuracy}
-                  </Typography>
-                  <Typography>
-                    <b>Base Power:</b> {item.move.basePower}
-                  </Typography>
-                  <Typography>
-                    <b>Category: </b>
-                    {item.move.category}
-                  </Typography>
-                  <Typography>
-                    <b>Desc:</b> {item.move.desc}
-                  </Typography>
-                </React.Fragment>
-              </React.Fragment>
-            }
-          >
-            <Button
-              variant="outlined"
-              fullWidth
-              sx={{ mb: "3px", justifyContent: "left" }}
-            >
-              <ItemSprite item={item} /> {item.name}
-            </Button>
-          </HtmlTooltip>
+        {bag.tms.map((item, index) => (
+          <TmItem
+            item={item}
+            index={index}
+            team={team}
+            sellTm={sellTm}
+            teachTm={teachTm}
+          />
         ))}
       </Box>
     </Box>

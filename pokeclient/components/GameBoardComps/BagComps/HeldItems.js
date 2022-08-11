@@ -3,7 +3,7 @@ import React from "react";
 import Item from "./Item";
 import { useSnackbar } from "notistack";
 
-const HeldItems = ({ bag, setBag, setMoney }) => {
+const HeldItems = ({ bag, team, equipItem, setBag, setMoney }) => {
   const { enqueueSnackbar } = useSnackbar();
 
   const sellItem = (index, cost, itemName) => {
@@ -26,7 +26,13 @@ const HeldItems = ({ bag, setBag, setMoney }) => {
       </Typography>
       <Box sx={{ overflowY: "auto", height: "23vh" }}>
         {bag.heldItems.map((item, index) => (
-          <Item item={item} index={index} sellItem={sellItem} />
+          <Item
+            item={item}
+            index={index}
+            team={team}
+            sellItem={sellItem}
+            equipItem={equipItem}
+          />
         ))}
       </Box>
     </Box>

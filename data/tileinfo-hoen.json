@@ -8,7 +8,7 @@
     "img": "Littleroot",
     "found-items": [],
     "events": [],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "petalburg": {
@@ -20,7 +20,7 @@
     "img": "Petalburg",
     "found-items": [],
     "events": ["GymBattle-Norman"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "rustboro": {
@@ -32,7 +32,7 @@
     "img": "RustboroCity",
     "found-items": [],
     "events": ["GymBattle-Roxanne"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "dewford": {
@@ -44,7 +44,7 @@
     "img": "Dewford",
     "found-items": [],
     "events": ["GymBattle-Brawly"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "slateport": {
@@ -56,7 +56,7 @@
     "img": "Slateport",
     "found-items": [],
     "events": [],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "mauville": {
@@ -68,7 +68,7 @@
     "img": "Mauville",
     "found-items": [],
     "events": ["GymBattle-Wattson"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "fallarbor": {
@@ -80,7 +80,7 @@
     "img": "Fallarbor",
     "found-items": [],
     "events": [],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "lavaridge": {
@@ -92,7 +92,7 @@
     "img": "Lavaridge",
     "found-items": [],
     "events": ["GymBattle-Flannery"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "fortree": {
@@ -104,7 +104,7 @@
     "img": "Fortree",
     "found-items": [],
     "events": ["GymBattle-Winona"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "lilycove": {
@@ -116,7 +116,7 @@
     "img": "Lilycove",
     "found-items": [],
     "events": [],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "mossdeep": {
@@ -128,7 +128,7 @@
     "img": "Mossdeep",
     "found-items": [],
     "events": ["GymBattle-TateandLiza"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "sootopolis": {
@@ -140,7 +140,7 @@
     "img": "Sootopolis",
     "found-items": [],
     "events": ["GymBattle-Wallace"],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "pacifidlog": {
@@ -152,7 +152,7 @@
     "img": "Pacifidlog",
     "found-items": [],
     "events": [],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "evergrande": {
@@ -164,7 +164,7 @@
     "img": "EverGrande",
     "found-items": [],
     "events": [],
-    "town": "true",
+    "town": true,
     "quests": []
   },
   "101": {
@@ -176,7 +176,7 @@
     "img": "Route101",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "102": {
@@ -188,7 +188,7 @@
     "img": "Route102",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "103": {
@@ -200,7 +200,7 @@
     "img": "Route103",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "104": {
@@ -212,7 +212,7 @@
     "img": "Route104",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "105": {
@@ -224,7 +224,7 @@
     "img": "Route105",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "106": {
@@ -236,7 +236,7 @@
     "img": "Route106",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "107": {
@@ -248,7 +248,7 @@
     "img": "Route107",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "108": {
@@ -260,7 +260,7 @@
     "img": "Route108",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "109": {
@@ -272,7 +272,7 @@
     "img": "Route109",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "110": {
@@ -284,7 +284,7 @@
     "img": "Route110",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "111": {
@@ -296,7 +296,7 @@
     "img": "Route111",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "112": {
@@ -308,7 +308,7 @@
     "img": "Route112",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "113": {
@@ -320,7 +320,7 @@
     "img": "Route113",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "114": {
@@ -332,7 +332,7 @@
     "img": "Route114",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "115": {
@@ -344,7 +344,7 @@
     "img": "Route115",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "116": {
@@ -356,7 +356,7 @@
     "img": "Route116",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "117": {
@@ -368,7 +368,7 @@
     "img": "Route117",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "118": {
@@ -380,7 +380,7 @@
     "img": "Route118",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "119": {
@@ -392,7 +392,7 @@
     "img": "Route119",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "120": {
@@ -404,7 +404,7 @@
     "img": "Route120",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "121": {
@@ -416,7 +416,7 @@
     "img": "Route121",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "122": {
@@ -428,7 +428,7 @@
     "img": "Route122",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "123": {
@@ -440,7 +440,7 @@
     "img": "Route123",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "124": {
@@ -452,7 +452,7 @@
     "img": "Route124",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "125": {
@@ -464,7 +464,7 @@
     "img": "Route125",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "126": {
@@ -476,7 +476,7 @@
     "img": "Route126",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "127": {
@@ -488,7 +488,7 @@
     "img": "Route127",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "128": {
@@ -500,7 +500,7 @@
     "img": "Route128",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "129": {
@@ -512,7 +512,7 @@
     "img": "Route129",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "130": {
@@ -524,7 +524,7 @@
     "img": "Route130",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "131": {
@@ -536,7 +536,7 @@
     "img": "Route131",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": [""]
   },
   "132": {
@@ -548,7 +548,7 @@
     "img": "Route132",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "133": {
@@ -560,7 +560,7 @@
     "img": "Route133",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "134": {
@@ -572,7 +572,7 @@
     "img": "Route134",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "petalburgwoods": {
@@ -584,7 +584,7 @@
     "img": "PetalburgWoods",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "rusturftunnel": {
@@ -596,7 +596,7 @@
     "img": "RusturfTunnel",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "islandcave": {
@@ -608,7 +608,7 @@
     "img": "IslandCave",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "granitecave": {
@@ -620,7 +620,7 @@
     "img": "GraniteCave",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "abandonedship": {
@@ -632,7 +632,7 @@
     "img": "AbandonedShip",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "newmauville": {
@@ -644,7 +644,7 @@
     "img": "NewMauville",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "desert": {
@@ -656,7 +656,7 @@
     "img": "Desert",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "miragetower": {
@@ -668,7 +668,7 @@
     "img": "MirageTower",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "desertpass": {
@@ -680,7 +680,7 @@
     "img": "DesertUnderpass",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "mtchimney": {
@@ -692,7 +692,7 @@
     "img": "MtChimney",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "mountainpass": {
@@ -704,7 +704,7 @@
     "img": "MountainPass",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "meteorfalls": {
@@ -716,7 +716,7 @@
     "img": "MeteorFalls",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "mtpyre": {
@@ -728,7 +728,7 @@
     "img": "MtPyre",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "shoalcave": {
@@ -740,7 +740,7 @@
     "img": "ShoalCave",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "seafloorcavern": {
@@ -752,7 +752,7 @@
     "img": "SeafloorCavern",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "skypillar": {
@@ -764,7 +764,7 @@
     "img": "SkyPillar",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "trickhouse": {
@@ -776,7 +776,7 @@
     "img": "TrickHouse",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   },
   "safarizone": {
@@ -788,7 +788,7 @@
     "img": "SafariZone",
     "found-items": [],
     "events": [],
-    "town": "false",
+    "town": false,
     "quests": []
   }
 }

@@ -8,14 +8,33 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 // This component contains the action buttons on the dashboard, bag button, shop button, and leaderboard button
 
 const ActionArea = ({
+  game,
   canUseShop,
+  actionComplete,
+  movement,
+  tileToShow,
+  turnToMove,
+  endTurn,
+  isReady,
+  moveToTile,
   setShopDialog,
   setLeaderboardDrawer,
   setBagDrawer,
+  setTileDrawer,
 }) => {
   return (
     <Grid item container xs={12} sx={{ height: "20vh" }}>
-      <ActionButtons turn={"action"} />
+      <ActionButtons
+        phase={game.phase}
+        turnToMove={turnToMove}
+        movement={movement}
+        tileToShow={tileToShow}
+        isReady={isReady}
+        endTurn={endTurn}
+        moveToTile={moveToTile}
+        actionComplete={actionComplete}
+        setTileDrawer={setTileDrawer}
+      />
       {/* Open Bag Button */}
       <Grid
         item
@@ -46,7 +65,7 @@ const ActionArea = ({
         >
           <Button
             variant="contained"
-            disabled={!canUseShop}
+            disabled={!canUseShop || game.phase == "movement"}
             onClick={() => setShopDialog(true)}
             sx={{ height: "95%", backgroundColor: "#506680", width: "90%" }}
           >

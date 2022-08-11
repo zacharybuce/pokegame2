@@ -4,7 +4,7 @@ import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import LoopIcon from "@mui/icons-material/Loop";
 
-const PlayerCard = ({ player, isPlayer }) => {
+const PlayerCard = ({ player, isPlayer, game }) => {
   return (
     <Box
       sx={{
@@ -14,6 +14,7 @@ const PlayerCard = ({ player, isPlayer }) => {
         p: 1,
         backgroundColor: "#506680",
       }}
+      className={player.ready ? "evolvebutton" : ""}
     >
       <Grid container>
         <Grid item xs={8}>
@@ -65,7 +66,11 @@ const PlayerCard = ({ player, isPlayer }) => {
           >
             {!isPlayer ? (
               <Tooltip title="Trade" placement="left" arrow>
-                <Button variant="contained" sx={{ backgroundColor: "#353C51" }}>
+                <Button
+                  disabled={game.phase != "action"}
+                  variant="contained"
+                  sx={{ backgroundColor: "#353C51" }}
+                >
                   <LoopIcon />
                 </Button>
               </Tooltip>

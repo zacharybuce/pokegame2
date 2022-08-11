@@ -1,3 +1,7 @@
+.evolvebutton {
+  animation: glowuncommon 1s infinite alternate;
+}
+
 .resourcebar {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -62,7 +66,12 @@
 }
 
 .tile-unselectable g polygon {
-  opacity: 0.6;
+  opacity: 0.4;
+}
+
+.tile-selected g polygon {
+  stroke: rgb(17, 226, 226);
+  stroke-width: 2;
 }
 
 .firstmon {

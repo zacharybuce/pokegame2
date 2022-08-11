@@ -8,7 +8,7 @@ export const HtmlTooltip = styled(({ className, ...props }) => (
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: "#2F4562",
     color: "rgba(255, 255, 255, 0.87)",
-    maxWidth: 220,
+    maxWidth: 500,
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid ",
   },

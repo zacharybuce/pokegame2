@@ -67,7 +67,7 @@ const Pokeballs = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>
@@ -105,7 +105,7 @@ const Pokeballs = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>
@@ -143,7 +143,7 @@ const Pokeballs = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>

@@ -1,6 +1,7 @@
 {
   "Bulbasaur": {
     "species": "Bulbasaur",
+    "num": "1",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -24,6 +25,7 @@
   },
   "Ivysaur": {
     "species": "Ivysaur",
+    "num": "2",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "growth", "level": "1" },
@@ -47,6 +49,7 @@
   },
   "Venusaur": {
     "species": "Venusaur",
+    "num": "3",
     "learnset": [
       { "move": "petalblizzard", "level": "0" },
       { "move": "growl", "level": "1" },
@@ -72,6 +75,7 @@
   },
   "Charmander": {
     "species": "Charmander",
+    "num": "4",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -92,6 +96,7 @@
   },
   "Charmeleon": {
     "species": "Charmeleon",
+    "num": "5",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -112,6 +117,7 @@
   },
   "Charizard": {
     "species": "Charizard",
+    "num": "6",
     "learnset": [
       { "move": "airslash", "level": "0" },
       { "move": "dragonclaw", "level": "1" },
@@ -135,6 +141,7 @@
   },
   "Squirtle": {
     "species": "Squirtle",
+    "num": "7",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -157,6 +164,7 @@
   },
   "Wartortle": {
     "species": "Wartortle",
+    "num": "8",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -179,6 +187,7 @@
   },
   "Blastoise": {
     "species": "Blastoise",
+    "num": "9",
     "learnset": [
       { "move": "flashcannon", "level": "0" },
       { "move": "tackle", "level": "1" },
@@ -202,6 +211,7 @@
   },
   "Caterpie": {
     "species": "Caterpie",
+    "num": "10",
     "learnset": [
       { "move": "stringshot", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -213,6 +223,7 @@
   },
   "Metapod": {
     "species": "Metapod",
+    "num": "11",
     "learnset": [{ "move": "harden", "level": "0" }],
     "evolveCandies": 7,
     "levelUpCandies": 3,
@@ -220,6 +231,7 @@
   },
   "Butterfree": {
     "species": "Butterfree",
+    "num": "12",
     "learnset": [
       { "move": "gust", "level": "0" },
       { "move": "bugbite", "level": "1" },
@@ -246,6 +258,7 @@
   },
   "Weedle": {
     "species": "Weedle",
+    "num": "13",
     "learnset": [
       { "move": "poisonsting", "level": "1" },
       { "move": "stringshot", "level": "1" },
@@ -257,6 +270,7 @@
   },
   "Kakuna": {
     "species": "Kakuna",
+    "num": "14",
     "learnset": [{ "move": "harden", "level": "1" }],
     "evolveCandies": 7,
     "levelUpCandies": 3,
@@ -264,6 +278,7 @@
   },
   "Beedrill": {
     "species": "Beedrill",
+    "num": "15",
     "learnset": [
       { "move": "furyattack", "level": "1" },
       { "move": "twineedle", "level": "1" },
@@ -285,6 +300,7 @@
   },
   "Pidgey": {
     "species": "Pidgey",
+    "num": "16",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "sandattack", "level": "5" },
@@ -307,6 +323,7 @@
   },
   "Pidgeotto": {
     "species": "Pidgeotto",
+    "num": "17",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -329,6 +346,7 @@
   },
   "Pidgeot": {
     "species": "Pidgeot",
+    "num": "18",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "hurricane", "level": "1" },
@@ -351,6 +369,7 @@
   },
   "Rattata": {
     "species": "Rattata",
+    "num": "19",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -372,6 +391,7 @@
   },
   "Rattata-Alola": {
     "species": "Rattata-Alola",
+    "num": "10091",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -393,6 +413,7 @@
   },
   "Raticate": {
     "species": "Raticate",
+    "num": "20",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -416,6 +437,7 @@
   },
   "Raticate-Alola": {
     "species": "Raticate-Alola",
+    "num": "10092",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -439,6 +461,7 @@
   },
   "Spearow": {
     "species": "Spearow",
+    "num": "21",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -459,6 +482,7 @@
   },
   "Fearow": {
     "species": "Fearow",
+    "num": "22",
     "learnset": [
       { "move": "drillrun", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -481,6 +505,7 @@
   },
   "Ekans": {
     "species": "Ekans",
+    "num": "23",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -506,6 +531,7 @@
   },
   "Arbok": {
     "species": "Arbok",
+    "num": "24",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "crunch", "level": "1" },
@@ -535,6 +561,7 @@
   },
   "Pikachu": {
     "species": "Pikachu",
+    "num": "25",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -591,6 +618,7 @@
   },
   "Raichu": {
     "species": "Raichu",
+    "num": "26",
     "learnset": [
       { "move": "thunderpunch", "level": "0" },
       { "move": "agility", "level": "1" },
@@ -620,6 +648,7 @@
   },
   "Raichu-Alola": {
     "species": "Raichu-Alola",
+    "num": "10100",
     "learnset": [
       { "move": "psychic", "level": "0" },
       { "move": "agility", "level": "1" },
@@ -649,6 +678,7 @@
   },
   "Sandshrew": {
     "species": "Sandshrew",
+    "num": "27",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -674,6 +704,7 @@
   },
   "Sandshrew-Alola": {
     "species": "Sandshrew-Alola",
+    "num": "10101",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -699,6 +730,7 @@
   },
   "Sandslash": {
     "species": "Sandslash",
+    "num": "28",
     "learnset": [
       { "move": "crushclaw", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -725,6 +757,7 @@
   },
   "Sandslash-Alola": {
     "species": "Sandslash-Alola",
+    "num": "10102",
     "learnset": [
       { "move": "iciclespear", "level": "0" },
       { "move": "blizzard", "level": "1" },
@@ -774,6 +807,7 @@
   },
   "Nidorina": {
     "species": "Nidorina",
+    "num": "30",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -795,6 +829,7 @@
   },
   "Nidoqueen": {
     "species": "Nidoqueen",
+    "num": "31",
     "learnset": [
       { "move": "superpower", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -838,6 +873,7 @@
   },
   "Nidorino": {
     "species": "Nidorino",
+    "num": "33",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -859,6 +895,7 @@
   },
   "Nidoking": {
     "species": "Nidoking",
+    "num": "34",
     "learnset": [
       { "move": "megahorn", "level": "0" },
       { "move": "doublekick", "level": "1" },
@@ -881,6 +918,7 @@
   },
   "Clefairy": {
     "species": "Clefairy",
+    "num": "35",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "copycat", "level": "1" },
@@ -911,6 +949,7 @@
   },
   "Clefable": {
     "species": "Clefable",
+    "num": "36",
     "learnset": [
       { "move": "afteryou", "level": "1" },
       { "move": "charm", "level": "1" },
@@ -941,6 +980,7 @@
   },
   "Vulpix": {
     "species": "Vulpix",
+    "num": "37",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -965,6 +1005,7 @@
   },
   "Vulpix-Alola": {
     "species": "Vulpix-Alola",
+    "num": "10103",
     "learnset": [
       { "move": "powdersnow", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -989,6 +1030,7 @@
   },
   "Ninetales": {
     "species": "Ninetales",
+    "num": "38",
     "learnset": [
       { "move": "confuseray", "level": "1" },
       { "move": "disable", "level": "1" },
@@ -1014,6 +1056,7 @@
   },
   "Ninetales-Alola": {
     "species": "Ninetales-Alola",
+    "num": "10104",
     "learnset": [
       { "move": "dazzlinggleam", "level": "0" },
       { "move": "aurorabeam", "level": "1" },
@@ -1040,6 +1083,7 @@
   },
   "Jigglypuff": {
     "species": "Jigglypuff",
+    "num": "39",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "copycat", "level": "1" },
@@ -1069,6 +1113,7 @@
   },
   "Wigglytuff": {
     "species": "Wigglytuff",
+    "num": "40",
     "learnset": [
       { "move": "bodyslam", "level": "1" },
       { "move": "charm", "level": "1" },
@@ -1098,6 +1143,7 @@
   },
   "Zubat": {
     "species": "Zubat",
+    "num": "41",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "supersonic", "level": "1" },
@@ -1119,6 +1165,7 @@
   },
   "Golbat": {
     "species": "Golbat",
+    "num": "42",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -1141,6 +1188,7 @@
   },
   "Oddish": {
     "species": "Oddish",
+    "num": "43",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "growth", "level": "1" },
@@ -1163,6 +1211,7 @@
   },
   "Gloom": {
     "species": "Gloom",
+    "num": "44",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "acid", "level": "1" },
@@ -1185,6 +1234,7 @@
   },
   "Vileplume": {
     "species": "Vileplume",
+    "num": "45",
     "learnset": [
       { "move": "petalblizzard", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -1209,6 +1259,7 @@
   },
   "Paras": {
     "species": "Paras",
+    "num": "46",
     "learnset": [
       { "move": "scratch", "level": "1" },
       { "move": "poisonpowder", "level": "6" },
@@ -1229,6 +1280,7 @@
   },
   "Parasect": {
     "species": "Parasect",
+    "num": "47",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "crosspoison", "level": "1" },
@@ -1250,6 +1302,7 @@
   },
   "Venonat": {
     "species": "Venonat",
+    "num": "48",
     "learnset": [
       { "move": "disable", "level": "1" },
       { "move": "foresight", "level": "1" },
@@ -1272,6 +1325,7 @@
   },
   "Venomoth": {
     "species": "Venomoth",
+    "num": "49",
     "learnset": [
       { "move": "bugbuzz", "level": "1" },
       { "move": "disable", "level": "1" },
@@ -1298,6 +1352,7 @@
   },
   "Diglett": {
     "species": "Diglett",
+    "num": "50",
     "learnset": [
       { "move": "sandattack", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -1319,6 +1374,7 @@
   },
   "Diglett-Alola": {
     "species": "Diglett-Alola",
+    "num": "10105",
     "learnset": [
       { "move": "metalclaw", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -1340,6 +1396,7 @@
   },
   "Dugtrio": {
     "species": "Dugtrio",
+    "num": "51",
     "learnset": [
       { "move": "sandtomb", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -1364,6 +1421,7 @@
   },
   "Dugtrio-Alola": {
     "species": "Dugtrio-Alola",
+    "num": "10106",
     "learnset": [
       { "move": "sandtomb", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -1388,6 +1446,7 @@
   },
   "Meowth": {
     "species": "Meowth",
+    "num": "52",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -1409,6 +1468,7 @@
   },
   "Meowth-Alola": {
     "species": "Meowth-Alola",
+    "num": "10107",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -1430,6 +1490,7 @@
   },
   "Meowth-Galar": {
     "species": "Meowth-Galar",
+    "num": "10161",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -1451,6 +1512,7 @@
   },
   "Persian": {
     "species": "Persian",
+    "num": "53",
     "learnset": [
       { "move": "powergem", "level": "0" },
       { "move": "fakeout", "level": "1" },
@@ -1474,6 +1536,7 @@
   },
   "Persian-Alola": {
     "species": "Persian-Alola",
+    "num": "10108",
     "learnset": [
       { "move": "powergem", "level": "0" },
       { "move": "fakeout", "level": "1" },
@@ -1498,6 +1561,7 @@
   },
   "Psyduck": {
     "species": "Psyduck",
+    "num": "54",
     "learnset": [
       { "move": "scratch", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -1521,6 +1585,7 @@
   },
   "Golduck": {
     "species": "Golduck",
+    "num": "55",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -1545,6 +1610,7 @@
   },
   "Mankey": {
     "species": "Mankey",
+    "num": "56",
     "learnset": [
       { "move": "covet", "level": "1" },
       { "move": "focusenergy", "level": "1" },
@@ -1572,6 +1638,7 @@
   },
   "Primeape": {
     "species": "Primeape",
+    "num": "57",
     "learnset": [
       { "move": "finalgambit", "level": "1" },
       { "move": "fling", "level": "1" },
@@ -1600,6 +1667,7 @@
   },
   "Growlithe": {
     "species": "Growlithe",
+    "num": "58",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -1624,6 +1692,7 @@
   },
   "Arcanine": {
     "species": "Arcanine",
+    "num": "59",
     "learnset": [
       { "move": "extremespeed", "level": "0" },
       { "move": "agility", "level": "1" },
@@ -1650,6 +1719,7 @@
   },
   "Poliwag": {
     "species": "Poliwag",
+    "num": "60",
     "learnset": [
       { "move": "hypnosis", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -1669,6 +1739,7 @@
   },
   "Poliwhirl": {
     "species": "Poliwhirl",
+    "num": "61",
     "learnset": [
       { "move": "hypnosis", "level": "1" },
       { "move": "mudshot", "level": "1" },
@@ -1688,6 +1759,7 @@
   },
   "Poliwrath": {
     "species": "Poliwrath",
+    "num": "62",
     "learnset": [
       { "move": "submission", "level": "0" },
       { "move": "bellydrum", "level": "1" },
@@ -1711,6 +1783,7 @@
   },
   "Abra": {
     "species": "Abra",
+    "num": "63",
     "learnset": [{ "move": "teleport", "level": "1" }],
     "evolveCandies": 7,
     "levelUpCandies": 5,
@@ -1718,6 +1791,7 @@
   },
   "Kadabra": {
     "species": "Kadabra",
+    "num": "64",
     "learnset": [
       { "move": "confusion", "level": "0" },
       { "move": "disable", "level": "1" },
@@ -1740,6 +1814,7 @@
   },
   "Alakazam": {
     "species": "Alakazam",
+    "num": "65",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "disable", "level": "1" },
@@ -1762,6 +1837,7 @@
   },
   "Machop": {
     "species": "Machop",
+    "num": "66",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "lowkick", "level": "1" },
@@ -1785,6 +1861,7 @@
   },
   "Machoke": {
     "species": "Machoke",
+    "num": "67",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -1808,6 +1885,7 @@
   },
   "Machamp": {
     "species": "Machamp",
+    "num": "68",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -1832,6 +1910,7 @@
   },
   "Bellsprout": {
     "species": "Bellsprout",
+    "num": "69",
     "learnset": [
       { "move": "vinewhip", "level": "1" },
       { "move": "growth", "level": "7" },
@@ -1854,6 +1933,7 @@
   },
   "Weepinbell": {
     "species": "Weepinbell",
+    "num": "70",
     "learnset": [
       { "move": "growth", "level": "1" },
       { "move": "vinewhip", "level": "1" },
@@ -1876,6 +1956,7 @@
   },
   "Victreebel": {
     "species": "Victreebel",
+    "num": "71",
     "learnset": [
       { "move": "leaftornado", "level": "1" },
       { "move": "razorleaf", "level": "1" },
@@ -1894,6 +1975,7 @@
   },
   "Tentacool": {
     "species": "Tentacool",
+    "num": "72",
     "learnset": [
       { "move": "poisonsting", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -1916,6 +1998,7 @@
   },
   "Tentacruel": {
     "species": "Tentacruel",
+    "num": "73",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -1939,6 +2022,7 @@
   },
   "Geodude": {
     "species": "Geodude",
+    "num": "74",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -1963,6 +2047,7 @@
   },
   "Geodude-Alola": {
     "species": "Geodude-Alola",
+    "num": "10109",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -1987,6 +2072,7 @@
   },
   "Graveler": {
     "species": "Graveler",
+    "num": "75",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "mudsport", "level": "1" },
@@ -2011,6 +2097,7 @@
   },
   "Graveler-Alola": {
     "species": "Graveler-Alola",
+    "num": "10110",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -2035,6 +2122,7 @@
   },
   "Golem": {
     "species": "Golem",
+    "num": "76",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "heavyslam", "level": "1" },
@@ -2060,6 +2148,7 @@
   },
   "Golem-Alola": {
     "species": "Golem-Alola",
+    "num": "10111",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -2085,6 +2174,7 @@
   },
   "Ponyta": {
     "species": "Ponyta",
+    "num": "77",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -2106,6 +2196,7 @@
   },
   "Ponyta-Galar": {
     "species": "Ponyta-Galar",
+    "num": "10162",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -2127,6 +2218,7 @@
   },
   "Rapidash": {
     "species": "Rapidash",
+    "num": "78",
     "learnset": [
       { "move": "smartstrike", "level": "0" },
       { "move": "ember", "level": "1" },
@@ -2152,6 +2244,7 @@
   },
   "Rapidash-Galar": {
     "species": "Rapidash-Galar",
+    "num": "10163",
     "learnset": [
       { "move": "psychocut", "level": "0" },
       { "move": "confusion", "level": "1" },
@@ -2176,6 +2269,7 @@
   },
   "Slowpoke": {
     "species": "Slowpoke",
+    "num": "79",
     "learnset": [
       { "move": "curse", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -2201,6 +2295,7 @@
   },
   "Slowpoke-Galar": {
     "species": "Slowpoke-Galar",
+    "num": "10164",
     "learnset": [
       { "move": "curse", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -2226,6 +2321,7 @@
   },
   "Slowbro": {
     "species": "Slowbro",
+    "num": "80",
     "learnset": [
       { "move": "curse", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -2252,6 +2348,7 @@
   },
   "Slowbro-Galar": {
     "species": "Slowbro-Galar",
+    "num": "10165",
     "learnset": [
       { "move": "shellsidearm", "level": "0" },
       { "move": "acid", "level": "1" },
@@ -2280,6 +2377,7 @@
   },
   "Magnemite": {
     "species": "Magnemite",
+    "num": "81",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -2303,6 +2401,7 @@
   },
   "Magneton": {
     "species": "Magneton",
+    "num": "82",
     "learnset": [
       { "move": "triattack", "level": "0" },
       { "move": "electricterrain", "level": "1" },
@@ -2328,6 +2427,7 @@
   },
   "Farfetch’d": {
     "species": "Farfetch’d",
+    "num": "83",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -2351,6 +2451,7 @@
   },
   "Farfetch’d-Galar": {
     "species": "Farfetch’d-Galar",
+    "num": "10166",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -2374,6 +2475,7 @@
   },
   "Doduo": {
     "species": "Doduo",
+    "num": "84",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -2398,6 +2500,7 @@
   },
   "Dodrio": {
     "species": "Dodrio",
+    "num": "85",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -2423,6 +2526,7 @@
   },
   "Seel": {
     "species": "Seel",
+    "num": "86",
     "learnset": [
       { "move": "headbutt", "level": "1" },
       { "move": "growl", "level": "3" },
@@ -2448,6 +2552,7 @@
   },
   "Dewgong": {
     "species": "Dewgong",
+    "num": "87",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "headbutt", "level": "1" },
@@ -2474,6 +2579,7 @@
   },
   "Grimer": {
     "species": "Grimer",
+    "num": "88",
     "learnset": [
       { "move": "poisongas", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -2498,6 +2604,7 @@
   },
   "Grimer-Alola": {
     "species": "Grimer-Alola",
+    "num": "10112",
     "learnset": [
       { "move": "poisongas", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -2522,6 +2629,7 @@
   },
   "Muk": {
     "species": "Muk",
+    "num": "89",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -2547,6 +2655,7 @@
   },
   "Muk-Alola": {
     "species": "Muk-Alola",
+    "num": "10113",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -2572,6 +2681,7 @@
   },
   "Shellder": {
     "species": "Shellder",
+    "num": "90",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -2594,6 +2704,7 @@
   },
   "Cloyster": {
     "species": "Cloyster",
+    "num": "91",
     "learnset": [
       { "move": "iciclespear", "level": "0" },
       { "move": "aurorabeam", "level": "1" },
@@ -2620,6 +2731,7 @@
   },
   "Gastly": {
     "species": "Gastly",
+    "num": "92",
     "learnset": [
       { "move": "confuseray", "level": "1" },
       { "move": "lick", "level": "1" },
@@ -2642,6 +2754,7 @@
   },
   "Haunter": {
     "species": "Haunter",
+    "num": "93",
     "learnset": [
       { "move": "shadowpunch", "level": "0" },
       { "move": "confuseray", "level": "1" },
@@ -2665,6 +2778,7 @@
   },
   "Gengar": {
     "species": "Gengar",
+    "num": "94",
     "learnset": [
       { "move": "confuseray", "level": "1" },
       { "move": "hypnosis", "level": "1" },
@@ -2690,6 +2804,7 @@
   },
   "Onix": {
     "species": "Onix",
+    "num": "95",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -2716,6 +2831,7 @@
   },
   "Drowzee": {
     "species": "Drowzee",
+    "num": "96",
     "learnset": [
       { "move": "hypnosis", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -2741,6 +2857,7 @@
   },
   "Hypno": {
     "species": "Hypno",
+    "num": "97",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "disable", "level": "1" },
@@ -2768,6 +2885,7 @@
   },
   "Krabby": {
     "species": "Krabby",
+    "num": "98",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -2790,6 +2908,7 @@
   },
   "Kingler": {
     "species": "Kingler",
+    "num": "99",
     "learnset": [
       { "move": "hammerarm", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -2814,6 +2933,7 @@
   },
   "Voltorb": {
     "species": "Voltorb",
+    "num": "100",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -2839,6 +2959,7 @@
   },
   "Electrode": {
     "species": "Electrode",
+    "num": "101",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "eerieimpulse", "level": "1" },
@@ -2865,6 +2986,7 @@
   },
   "Exeggcute": {
     "species": "Exeggcute",
+    "num": "102",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "hypnosis", "level": "1" },
@@ -2886,6 +3008,7 @@
   },
   "Exeggutor": {
     "species": "Exeggutor",
+    "num": "103",
     "learnset": [
       { "move": "stomp", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -2912,6 +3035,7 @@
   },
   "Exeggutor-Alola": {
     "species": "Exeggutor-Alola",
+    "num": "10114",
     "learnset": [
       { "move": "dragonhammer", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -2938,6 +3062,7 @@
   },
   "Cubone": {
     "species": "Cubone",
+    "num": "104",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -2960,6 +3085,7 @@
   },
   "Marowak": {
     "species": "Marowak",
+    "num": "105",
     "learnset": [
       { "move": "falseswipe", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -2982,6 +3108,7 @@
   },
   "Marowak-Alola": {
     "species": "Marowak-Alola",
+    "num": "10115",
     "learnset": [
       { "move": "shadowbone", "level": "0" },
       { "move": "doubleedge", "level": "1" },
@@ -3010,6 +3137,7 @@
   },
   "Hitmonlee": {
     "species": "Hitmonlee",
+    "num": "106",
     "learnset": [
       { "move": "brickbreak", "level": "0" },
       { "move": "fakeout", "level": "1" },
@@ -3036,6 +3164,7 @@
   },
   "Hitmonchan": {
     "species": "Hitmonchan",
+    "num": "107",
     "learnset": [
       { "move": "drainpunch", "level": "0" },
       { "move": "bulletpunch", "level": "1" },
@@ -3065,6 +3194,7 @@
   },
   "Lickitung": {
     "species": "Lickitung",
+    "num": "108",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "lick", "level": "1" },
@@ -3085,6 +3215,7 @@
   },
   "Koffing": {
     "species": "Koffing",
+    "num": "109",
     "learnset": [
       { "move": "poisongas", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -3108,6 +3239,7 @@
   },
   "Weezing": {
     "species": "Weezing",
+    "num": "110",
     "learnset": [
       { "move": "doublehit", "level": "0" },
       { "move": "heatwave", "level": "1" },
@@ -3133,6 +3265,7 @@
   },
   "Weezing-Galar": {
     "species": "Weezing-Galar",
+    "num": "10167",
     "learnset": [
       { "move": "doublehit", "level": "0" },
       { "move": "aromaticmist", "level": "1" },
@@ -3164,6 +3297,7 @@
   },
   "Rhyhorn": {
     "species": "Rhyhorn",
+    "num": "111",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -3186,6 +3320,7 @@
   },
   "Rhydon": {
     "species": "Rhydon",
+    "num": "112",
     "learnset": [
       { "move": "hammerarm", "level": "0" },
       { "move": "bulldoze", "level": "1" },
@@ -3209,6 +3344,7 @@
   },
   "Chansey": {
     "species": "Chansey",
+    "num": "113",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "copycat", "level": "1" },
@@ -3238,6 +3374,7 @@
   },
   "Tangela": {
     "species": "Tangela",
+    "num": "114",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "bind", "level": "1" },
@@ -3262,6 +3399,7 @@
   },
   "Kangaskhan": {
     "species": "Kangaskhan",
+    "num": "115",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -3285,6 +3423,7 @@
   },
   "Horsea": {
     "species": "Horsea",
+    "num": "116",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -3306,6 +3445,7 @@
   },
   "Seadra": {
     "species": "Seadra",
+    "num": "117",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "smokescreen", "level": "1" },
@@ -3327,6 +3467,7 @@
   },
   "Goldeen": {
     "species": "Goldeen",
+    "num": "118",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -3347,6 +3488,7 @@
   },
   "Seaking": {
     "species": "Seaking",
+    "num": "119",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "supersonic", "level": "1" },
@@ -3367,6 +3509,7 @@
   },
   "Staryu": {
     "species": "Staryu",
+    "num": "120",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -3391,6 +3534,7 @@
   },
   "Starmie": {
     "species": "Starmie",
+    "num": "121",
     "learnset": [
       { "move": "brine", "level": "1" },
       { "move": "confuseray", "level": "1" },
@@ -3478,6 +3622,7 @@
   },
   "Scyther": {
     "species": "Scyther",
+    "num": "123",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -3500,6 +3645,7 @@
   },
   "Jynx": {
     "species": "Jynx",
+    "num": "124",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "lick", "level": "1" },
@@ -3523,6 +3669,7 @@
   },
   "Electabuzz": {
     "species": "Electabuzz",
+    "num": "125",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -3546,6 +3693,7 @@
   },
   "Magmar": {
     "species": "Magmar",
+    "num": "126",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -3569,6 +3717,7 @@
   },
   "Pinsir": {
     "species": "Pinsir",
+    "num": "127",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "visegrip", "level": "1" },
@@ -3592,6 +3741,7 @@
   },
   "Tauros": {
     "species": "Tauros",
+    "num": "128",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -3614,6 +3764,7 @@
   },
   "Magikarp": {
     "species": "Magikarp",
+    "num": "129",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "tackle", "level": "15" },
@@ -3625,6 +3776,7 @@
   },
   "Gyarados": {
     "species": "Gyarados",
+    "num": "130",
     "learnset": [
       { "move": "bite", "level": "0" },
       { "move": "flail", "level": "1" },
@@ -3652,6 +3804,7 @@
   },
   "Lapras": {
     "species": "Lapras",
+    "num": "131",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -3675,6 +3828,7 @@
   },
   "Ditto": {
     "species": "Ditto",
+    "num": "132",
     "learnset": [{ "move": "transform", "level": "1" }],
     "evolveCandies": "MAX",
     "levelUpCandies": 2,
@@ -3682,6 +3836,7 @@
   },
   "Eevee": {
     "species": "Eevee",
+    "num": "133",
     "learnset": [
       { "move": "covet", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -3706,6 +3861,7 @@
   },
   "Vaporeon": {
     "species": "Vaporeon",
+    "num": "134",
     "learnset": [
       { "move": "watergun", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -3738,6 +3894,7 @@
   },
   "Jolteon": {
     "species": "Jolteon",
+    "num": "135",
     "learnset": [
       { "move": "thundershock", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -3770,6 +3927,7 @@
   },
   "Flareon": {
     "species": "Flareon",
+    "num": "136",
     "learnset": [
       { "move": "ember", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -3801,6 +3959,7 @@
   },
   "Porygon": {
     "species": "Porygon",
+    "num": "137",
     "learnset": [
       { "move": "conversion", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -3823,6 +3982,7 @@
   },
   "Omanyte": {
     "species": "Omanyte",
+    "num": "138",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "withdraw", "level": "1" },
@@ -3845,6 +4005,7 @@
   },
   "Omastar": {
     "species": "Omastar",
+    "num": "139",
     "learnset": [
       { "move": "crunch", "level": "0" },
       { "move": "bind", "level": "1" },
@@ -3868,6 +4029,7 @@
   },
   "Kabuto": {
     "species": "Kabuto",
+    "num": "140",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -3890,6 +4052,7 @@
   },
   "Kabutops": {
     "species": "Kabutops",
+    "num": "141",
     "learnset": [
       { "move": "slash", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -3915,6 +4078,7 @@
   },
   "Aerodactyl": {
     "species": "Aerodactyl",
+    "num": "142",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "bite", "level": "1" },
@@ -3937,6 +4101,7 @@
   },
   "Snorlax": {
     "species": "Snorlax",
+    "num": "143",
     "learnset": [
       { "move": "block", "level": "1" },
       { "move": "covet", "level": "1" },
@@ -3972,6 +4137,7 @@
   },
   "Articuno": {
     "species": "Articuno",
+    "num": "144",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "mist", "level": "1" },
@@ -3996,6 +4162,7 @@
   },
   "Articuno-Galar": {
     "species": "Articuno-Galar",
+    "num": "10169",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "psychoshift", "level": "1" },
@@ -4020,6 +4187,7 @@
   },
   "Zapdos": {
     "species": "Zapdos",
+    "num": "145",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "thunderwave", "level": "1" },
@@ -4044,6 +4212,7 @@
   },
   "Zapdos-Galar": {
     "species": "Zapdos-Galar",
+    "num": "10170",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -4068,6 +4237,7 @@
   },
   "Moltres": {
     "species": "Moltres",
+    "num": "146",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -4092,6 +4262,7 @@
   },
   "Moltres-Galar": {
     "species": "Moltres-Galar",
+    "num": "10171",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -4116,6 +4287,7 @@
   },
   "Dratini": {
     "species": "Dratini",
+    "num": "147",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -4138,6 +4310,7 @@
   },
   "Dragonair": {
     "species": "Dragonair",
+    "num": "148",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "thunderwave", "level": "1" },
@@ -4160,6 +4333,7 @@
   },
   "Dragonite": {
     "species": "Dragonite",
+    "num": "149",
     "learnset": [
       { "move": "hurricane", "level": "0" },
       { "move": "extremespeed", "level": "1" },
@@ -4188,6 +4362,7 @@
   },
   "Mewtwo": {
     "species": "Mewtwo",
+    "num": "150",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "disable", "level": "1" },
@@ -4213,6 +4388,7 @@
   },
   "Mew": {
     "species": "Mew",
+    "num": "151",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "reflecttype", "level": "1" },
@@ -4233,6 +4409,7 @@
   },
   "Chikorita": {
     "species": "Chikorita",
+    "num": "152",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -4255,6 +4432,7 @@
   },
   "Bayleef": {
     "species": "Bayleef",
+    "num": "153",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "poisonpowder", "level": "1" },
@@ -4277,6 +4455,7 @@
   },
   "Meganium": {
     "species": "Meganium",
+    "num": "154",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "petalblizzard", "level": "1" },
@@ -4301,6 +4480,7 @@
   },
   "Cyndaquil": {
     "species": "Cyndaquil",
+    "num": "155",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -4325,6 +4505,7 @@
   },
   "Quilava": {
     "species": "Quilava",
+    "num": "156",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "smokescreen", "level": "1" },
@@ -4349,6 +4530,7 @@
   },
   "Typhlosion": {
     "species": "Typhlosion",
+    "num": "157",
     "learnset": [
       { "move": "doubleedge", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -4374,6 +4556,7 @@
   },
   "Totodile": {
     "species": "Totodile",
+    "num": "158",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -4398,6 +4581,7 @@
   },
   "Croconaw": {
     "species": "Croconaw",
+    "num": "159",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -4422,6 +4606,7 @@
   },
   "Feraligatr": {
     "species": "Feraligatr",
+    "num": "160",
     "learnset": [
       { "move": "agility", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -4447,6 +4632,7 @@
   },
   "Sentret": {
     "species": "Sentret",
+    "num": "161",
     "learnset": [
       { "move": "foresight", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -4469,6 +4655,7 @@
   },
   "Furret": {
     "species": "Furret",
+    "num": "162",
     "learnset": [
       { "move": "agility", "level": "1" },
       { "move": "coil", "level": "1" },
@@ -4493,6 +4680,7 @@
   },
   "Hoothoot": {
     "species": "Hoothoot",
+    "num": "163",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -4516,6 +4704,7 @@
   },
   "Noctowl": {
     "species": "Noctowl",
+    "num": "164",
     "learnset": [
       { "move": "echoedvoice", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -4540,6 +4729,7 @@
   },
   "Ledyba": {
     "species": "Ledyba",
+    "num": "165",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "supersonic", "level": "5" },
@@ -4562,6 +4752,7 @@
   },
   "Ledian": {
     "species": "Ledian",
+    "num": "166",
     "learnset": [
       { "move": "supersonic", "level": "1" },
       { "move": "swift", "level": "1" },
@@ -4584,6 +4775,7 @@
   },
   "Spinarak": {
     "species": "Spinarak",
+    "num": "167",
     "learnset": [
       { "move": "constrict", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -4610,6 +4802,7 @@
   },
   "Ariados": {
     "species": "Ariados",
+    "num": "168",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "bugbite", "level": "1" },
@@ -4641,6 +4834,7 @@
   },
   "Crobat": {
     "species": "Crobat",
+    "num": "169",
     "learnset": [
       { "move": "crosspoison", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -4666,6 +4860,7 @@
   },
   "Chinchou": {
     "species": "Chinchou",
+    "num": "170",
     "learnset": [
       { "move": "supersonic", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -4687,6 +4882,7 @@
   },
   "Lanturn": {
     "species": "Lanturn",
+    "num": "171",
     "learnset": [
       { "move": "spitup", "level": "0" },
       { "move": "stockpile", "level": "0" },
@@ -4712,6 +4908,7 @@
   },
   "Pichu": {
     "species": "Pichu",
+    "num": "172",
     "learnset": [
       { "move": "tailwhip", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -4727,6 +4924,7 @@
   },
   "Cleffa": {
     "species": "Cleffa",
+    "num": "173",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -4743,6 +4941,7 @@
   },
   "Igglybuff": {
     "species": "Igglybuff",
+    "num": "174",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -4759,6 +4958,7 @@
   },
   "Togepi": {
     "species": "Togepi",
+    "num": "175",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -4782,6 +4982,7 @@
   },
   "Togetic": {
     "species": "Togetic",
+    "num": "176",
     "learnset": [
       { "move": "fairywind", "level": "0" },
       { "move": "growl", "level": "1" },
@@ -4806,6 +5007,7 @@
   },
   "Natu": {
     "species": "Natu",
+    "num": "177",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -4826,6 +5028,7 @@
   },
   "Xatu": {
     "species": "Xatu",
+    "num": "178",
     "learnset": [
       { "move": "airslash", "level": "0" },
       { "move": "leer", "level": "1" },
@@ -4848,6 +5051,7 @@
   },
   "Mareep": {
     "species": "Mareep",
+    "num": "179",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -4871,6 +5075,7 @@
   },
   "Flaaffy": {
     "species": "Flaaffy",
+    "num": "180",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -4894,6 +5099,7 @@
   },
   "Ampharos": {
     "species": "Ampharos",
+    "num": "181",
     "learnset": [
       { "move": "dragonpulse", "level": "1" },
       { "move": "firepunch", "level": "1" },
@@ -4923,6 +5129,7 @@
   },
   "Bellossom": {
     "species": "Bellossom",
+    "num": "182",
     "learnset": [
       { "move": "petalblizzard", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -4947,6 +5154,7 @@
   },
   "Marill": {
     "species": "Marill",
+    "num": "183",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "helpinghand", "level": "1" },
@@ -4972,6 +5180,7 @@
   },
   "Azumarill": {
     "species": "Azumarill",
+    "num": "184",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "helpinghand", "level": "1" },
@@ -4997,6 +5206,7 @@
   },
   "Sudowoodo": {
     "species": "Sudowoodo",
+    "num": "185",
     "learnset": [
       { "move": "slam", "level": "0" },
       { "move": "copycat", "level": "1" },
@@ -5023,6 +5233,7 @@
   },
   "Politoed": {
     "species": "Politoed",
+    "num": "186",
     "learnset": [
       { "move": "bounce", "level": "0" },
       { "move": "bellydrum", "level": "1" },
@@ -5046,6 +5257,7 @@
   },
   "Hoppip": {
     "species": "Hoppip",
+    "num": "187",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "splash", "level": "1" },
@@ -5074,6 +5286,7 @@
   },
   "Skiploom": {
     "species": "Skiploom",
+    "num": "188",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "splash", "level": "1" },
@@ -5102,6 +5315,7 @@
   },
   "Jumpluff": {
     "species": "Jumpluff",
+    "num": "189",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "splash", "level": "1" },
@@ -5130,6 +5344,7 @@
   },
   "Aipom": {
     "species": "Aipom",
+    "num": "190",
     "learnset": [
       { "move": "scratch", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -5152,6 +5367,7 @@
   },
   "Sunkern": {
     "species": "Sunkern",
+    "num": "191",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "growth", "level": "1" },
@@ -5176,6 +5392,7 @@
   },
   "Sunflora": {
     "species": "Sunflora",
+    "num": "192",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "flowershield", "level": "1" },
@@ -5203,6 +5420,7 @@
   },
   "Yanma": {
     "species": "Yanma",
+    "num": "193",
     "learnset": [
       { "move": "foresight", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5227,6 +5445,7 @@
   },
   "Wooper": {
     "species": "Wooper",
+    "num": "194",
     "learnset": [
       { "move": "tailwhip", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -5248,6 +5467,7 @@
   },
   "Quagsire": {
     "species": "Quagsire",
+    "num": "195",
     "learnset": [
       { "move": "mudshot", "level": "1" },
       { "move": "raindance", "level": "1" },
@@ -5269,6 +5489,7 @@
   },
   "Espeon": {
     "species": "Espeon",
+    "num": "196",
     "learnset": [
       { "move": "confusion", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -5300,6 +5521,7 @@
   },
   "Umbreon": {
     "species": "Umbreon",
+    "num": "197",
     "learnset": [
       { "move": "snarl", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -5332,6 +5554,7 @@
   },
   "Murkrow": {
     "species": "Murkrow",
+    "num": "198",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -5355,6 +5578,7 @@
   },
   "Slowking": {
     "species": "Slowking",
+    "num": "199",
     "learnset": [
       { "move": "curse", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -5383,6 +5607,7 @@
   },
   "Slowking-Galar": {
     "species": "Slowking-Galar",
+    "num": "10172",
     "learnset": [
       { "move": "eeriespell", "level": "0" },
       { "move": "acid", "level": "1" },
@@ -5412,6 +5637,7 @@
   },
   "Misdreavus": {
     "species": "Misdreavus",
+    "num": "200",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "psywave", "level": "1" },
@@ -5441,6 +5667,7 @@
   },
   "Wobbuffet": {
     "species": "Wobbuffet",
+    "num": "202",
     "learnset": [
       { "move": "counter", "level": "0" },
       { "move": "destinybond", "level": "0" },
@@ -5457,6 +5684,7 @@
   },
   "Girafarig": {
     "species": "Girafarig",
+    "num": "203",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -5482,6 +5710,7 @@
   },
   "Pineco": {
     "species": "Pineco",
+    "num": "204",
     "learnset": [
       { "move": "protect", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5504,6 +5733,7 @@
   },
   "Forretress": {
     "species": "Forretress",
+    "num": "205",
     "learnset": [
       { "move": "autotomize", "level": "1" },
       { "move": "bugbite", "level": "1" },
@@ -5532,6 +5762,7 @@
   },
   "Dunsparce": {
     "species": "Dunsparce",
+    "num": "206",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "flail", "level": "1" },
@@ -5556,6 +5787,7 @@
   },
   "Gligar": {
     "species": "Gligar",
+    "num": "207",
     "learnset": [
       { "move": "poisonsting", "level": "1" },
       { "move": "sandattack", "level": "4" },
@@ -5579,6 +5811,7 @@
   },
   "Steelix": {
     "species": "Steelix",
+    "num": "208",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "crunch", "level": "1" },
@@ -5611,6 +5844,7 @@
   },
   "Snubbull": {
     "species": "Snubbull",
+    "num": "209",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "firefang", "level": "1" },
@@ -5634,6 +5868,7 @@
   },
   "Granbull": {
     "species": "Granbull",
+    "num": "210",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "firefang", "level": "1" },
@@ -5658,6 +5893,7 @@
   },
   "Qwilfish": {
     "species": "Qwilfish",
+    "num": "211",
     "learnset": [
       { "move": "poisonsting", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5685,6 +5921,7 @@
   },
   "Scizor": {
     "species": "Scizor",
+    "num": "212",
     "learnset": [
       { "move": "bulletpunch", "level": "0" },
       { "move": "agility", "level": "1" },
@@ -5711,6 +5948,7 @@
   },
   "Shuckle": {
     "species": "Shuckle",
+    "num": "213",
     "learnset": [
       { "move": "withdraw", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -5735,6 +5973,7 @@
   },
   "Heracross": {
     "species": "Heracross",
+    "num": "214",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5757,6 +5996,7 @@
   },
   "Sneasel": {
     "species": "Sneasel",
+    "num": "215",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -5777,6 +6017,7 @@
   },
   "Teddiursa": {
     "species": "Teddiursa",
+    "num": "216",
     "learnset": [
       { "move": "babydolleyes", "level": "1" },
       { "move": "covet", "level": "1" },
@@ -5800,6 +6041,7 @@
   },
   "Ursaring": {
     "species": "Ursaring",
+    "num": "217",
     "learnset": [
       { "move": "covet", "level": "1" },
       { "move": "faketears", "level": "1" },
@@ -5823,6 +6065,7 @@
   },
   "Slugma": {
     "species": "Slugma",
+    "num": "218",
     "learnset": [
       { "move": "smog", "level": "1" },
       { "move": "yawn", "level": "1" },
@@ -5847,6 +6090,7 @@
   },
   "Magcargo": {
     "species": "Magcargo",
+    "num": "219",
     "learnset": [
       { "move": "earthpower", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -5872,6 +6116,7 @@
   },
   "Swinub": {
     "species": "Swinub",
+    "num": "220",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5892,6 +6137,7 @@
   },
   "Piloswine": {
     "species": "Piloswine",
+    "num": "221",
     "learnset": [
       { "move": "icefang", "level": "0" },
       { "move": "ancientpower", "level": "1" },
@@ -5915,6 +6161,7 @@
   },
   "Corsola": {
     "species": "Corsola",
+    "num": "222",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5936,6 +6183,7 @@
   },
   "Corsola-Galar": {
     "species": "Corsola-Galar",
+    "num": "10173",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -5957,6 +6205,7 @@
   },
   "Remoraid": {
     "species": "Remoraid",
+    "num": "223",
     "learnset": [
       { "move": "helpinghand", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -5978,6 +6227,7 @@
   },
   "Octillery": {
     "species": "Octillery",
+    "num": "224",
     "learnset": [
       { "move": "octazooka", "level": "0" },
       { "move": "focusenergy", "level": "1" },
@@ -6003,6 +6253,7 @@
   },
   "Delibird": {
     "species": "Delibird",
+    "num": "225",
     "learnset": [
       { "move": "present", "level": "1" },
       { "move": "drillpeck", "level": "25" }
@@ -6013,6 +6264,7 @@
   },
   "Mantine": {
     "species": "Mantine",
+    "num": "226",
     "learnset": [
       { "move": "bulletseed", "level": "1" },
       { "move": "psybeam", "level": "1" },
@@ -6038,6 +6290,7 @@
   },
   "Skarmory": {
     "species": "Skarmory",
+    "num": "227",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -6061,6 +6314,7 @@
   },
   "Houndour": {
     "species": "Houndour",
+    "num": "228",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -6085,6 +6339,7 @@
   },
   "Houndoom": {
     "species": "Houndoom",
+    "num": "229",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "howl", "level": "1" },
@@ -6110,6 +6365,7 @@
   },
   "Kingdra": {
     "species": "Kingdra",
+    "num": "230",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "smokescreen", "level": "1" },
@@ -6133,6 +6389,7 @@
   },
   "Phanpy": {
     "species": "Phanpy",
+    "num": "231",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -6154,6 +6411,7 @@
   },
   "Donphan": {
     "species": "Donphan",
+    "num": "232",
     "learnset": [
       { "move": "bulldoze", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -6178,6 +6436,7 @@
   },
   "Porygon2": {
     "species": "Porygon2",
+    "num": "233",
     "learnset": [
       { "move": "conversion", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -6202,6 +6461,7 @@
   },
   "Stantler": {
     "species": "Stantler",
+    "num": "234",
     "learnset": [
       { "move": "mefirst", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -6225,6 +6485,7 @@
   },
   "Smeargle": {
     "species": "Smeargle",
+    "num": "235",
     "learnset": [{ "move": "sketch", "level": "1" }],
     "evolveCandies": "MAX",
     "levelUpCandies": 2,
@@ -6232,6 +6493,7 @@
   },
   "Tyrogue": {
     "species": "Tyrogue",
+    "num": "236",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "focusenergy", "level": "1" },
@@ -6244,6 +6506,7 @@
   },
   "Hitmontop": {
     "species": "Hitmontop",
+    "num": "237",
     "learnset": [
       { "move": "triplekick", "level": "0" },
       { "move": "fakeout", "level": "1" },
@@ -6271,6 +6534,7 @@
   },
   "Smoochum": {
     "species": "Smoochum",
+    "num": "238",
     "learnset": [
       { "move": "lick", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -6293,6 +6557,7 @@
   },
   "Elekid": {
     "species": "Elekid",
+    "num": "239",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -6315,6 +6580,7 @@
   },
   "Magby": {
     "species": "Magby",
+    "num": "240",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "smog", "level": "1" },
@@ -6337,6 +6603,7 @@
   },
   "Miltank": {
     "species": "Miltank",
+    "num": "241",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -6358,6 +6625,7 @@
   },
   "Blissey": {
     "species": "Blissey",
+    "num": "242",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "copycat", "level": "1" },
@@ -6387,6 +6655,7 @@
   },
   "Raikou": {
     "species": "Raikou",
+    "num": "243",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "extremespeed", "level": "1" },
@@ -6413,6 +6682,7 @@
   },
   "Entei": {
     "species": "Entei",
+    "num": "244",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "extremespeed", "level": "1" },
@@ -6440,6 +6710,7 @@
   },
   "Suicune": {
     "species": "Suicune",
+    "num": "245",
     "learnset": [
       { "move": "extremespeed", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -6467,6 +6738,7 @@
   },
   "Larvitar": {
     "species": "Larvitar",
+    "num": "246",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -6491,6 +6763,7 @@
   },
   "Pupitar": {
     "species": "Pupitar",
+    "num": "247",
     "learnset": [
       { "move": "irondefense", "level": "0" },
       { "move": "leer", "level": "1" },
@@ -6516,6 +6789,7 @@
   },
   "Tyranitar": {
     "species": "Tyranitar",
+    "num": "248",
     "learnset": [
       { "move": "firefang", "level": "1" },
       { "move": "icefang", "level": "1" },
@@ -6545,6 +6819,7 @@
   },
   "Lugia": {
     "species": "Lugia",
+    "num": "249",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "dragonrush", "level": "1" },
@@ -6591,6 +6866,7 @@
   },
   "Celebi": {
     "species": "Celebi",
+    "num": "251",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "healbell", "level": "1" },
@@ -6611,6 +6887,7 @@
   },
   "Treecko": {
     "species": "Treecko",
+    "num": "252",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -6634,6 +6911,7 @@
   },
   "Grovyle": {
     "species": "Grovyle",
+    "num": "253",
     "learnset": [
       { "move": "energyball", "level": "1" },
       { "move": "falseswipe", "level": "1" },
@@ -6661,6 +6939,7 @@
   },
   "Sceptile": {
     "species": "Sceptile",
+    "num": "254",
     "learnset": [
       { "move": "dualchop", "level": "0" },
       { "move": "energyball", "level": "1" },
@@ -6689,6 +6968,7 @@
   },
   "Torchic": {
     "species": "Torchic",
+    "num": "255",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -6712,6 +6992,7 @@
   },
   "Combusken": {
     "species": "Combusken",
+    "num": "256",
     "learnset": [
       { "move": "doublekick", "level": "0" },
       { "move": "ember", "level": "1" },
@@ -6738,6 +7019,7 @@
   },
   "Blaziken": {
     "species": "Blaziken",
+    "num": "257",
     "learnset": [
       { "move": "bravebird", "level": "1" },
       { "move": "doublekick", "level": "1" },
@@ -6766,6 +7048,7 @@
   },
   "Mudkip": {
     "species": "Mudkip",
+    "num": "258",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -6789,6 +7072,7 @@
   },
   "Marshtomp": {
     "species": "Marshtomp",
+    "num": "259",
     "learnset": [
       { "move": "mudshot", "level": "0" },
       { "move": "earthquake", "level": "1" },
@@ -6815,6 +7099,7 @@
   },
   "Swampert": {
     "species": "Swampert",
+    "num": "260",
     "learnset": [
       { "move": "earthquake", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -6842,6 +7127,7 @@
   },
   "Poochyena": {
     "species": "Poochyena",
+    "num": "261",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "howl", "level": "4" },
@@ -6866,6 +7152,7 @@
   },
   "Mightyena": {
     "species": "Mightyena",
+    "num": "262",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "crunch", "level": "1" },
@@ -6895,6 +7182,7 @@
   },
   "Zigzagoon": {
     "species": "Zigzagoon",
+    "num": "263",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -6917,6 +7205,7 @@
   },
   "Zigzagoon-Galar": {
     "species": "Zigzagoon-Galar",
+    "num": "10174",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -6939,6 +7228,7 @@
   },
   "Linoone": {
     "species": "Linoone",
+    "num": "264",
     "learnset": [
       { "move": "slash", "level": "0" },
       { "move": "babydolleyes", "level": "1" },
@@ -6965,6 +7255,7 @@
   },
   "Linoone-Galar": {
     "species": "Linoone-Galar",
+    "num": "10175",
     "learnset": [
       { "move": "nightslash", "level": "0" },
       { "move": "babydolleyes", "level": "1" },
@@ -6991,6 +7282,7 @@
   },
   "Wurmple": {
     "species": "Wurmple",
+    "num": "265",
     "learnset": [
       { "move": "stringshot", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -7003,6 +7295,7 @@
   },
   "Silcoon": {
     "species": "Silcoon",
+    "num": "266",
     "learnset": [{ "move": "harden", "level": "1" }],
     "evolveCandies": 7,
     "levelUpCandies": 3,
@@ -7010,6 +7303,7 @@
   },
   "Beautifly": {
     "species": "Beautifly",
+    "num": "267",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "absorb", "level": "12" },
@@ -7031,6 +7325,7 @@
   },
   "Cascoon": {
     "species": "Cascoon",
+    "num": "268",
     "learnset": [{ "move": "harden", "level": "1" }],
     "evolveCandies": 6,
     "levelUpCandies": 3,
@@ -7038,6 +7333,7 @@
   },
   "Dustox": {
     "species": "Dustox",
+    "num": "269",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "confusion", "level": "12" },
@@ -7059,6 +7355,7 @@
   },
   "Lotad": {
     "species": "Lotad",
+    "num": "270",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -7080,6 +7377,7 @@
   },
   "Lombre": {
     "species": "Lombre",
+    "num": "271",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -7106,6 +7404,7 @@
   },
   "Ludicolo": {
     "species": "Ludicolo",
+    "num": "272",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -7132,6 +7431,7 @@
   },
   "Seedot": {
     "species": "Seedot",
+    "num": "273",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -7153,6 +7453,7 @@
   },
   "Nuzleaf": {
     "species": "Nuzleaf",
+    "num": "274",
     "learnset": [
       { "move": "razorleaf", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -7181,6 +7482,7 @@
   },
   "Shiftry": {
     "species": "Shiftry",
+    "num": "275",
     "learnset": [
       { "move": "leaftornado", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -7212,6 +7514,7 @@
   },
   "Taillow": {
     "species": "Taillow",
+    "num": "276",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -7233,6 +7536,7 @@
   },
   "Swellow": {
     "species": "Swellow",
+    "num": "277",
     "learnset": [
       { "move": "airslash", "level": "1" },
       { "move": "bravebird", "level": "1" },
@@ -7255,6 +7559,7 @@
   },
   "Wingull": {
     "species": "Wingull",
+    "num": "278",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -7274,6 +7579,7 @@
   },
   "Pelipper": {
     "species": "Pelipper",
+    "num": "279",
     "learnset": [
       { "move": "agility", "level": "1" },
       { "move": "airslash", "level": "1" },
@@ -7301,6 +7607,7 @@
   },
   "Ralts": {
     "species": "Ralts",
+    "num": "280",
     "learnset": [
       { "move": "disarmingvoice", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -7324,6 +7631,7 @@
   },
   "Kirlia": {
     "species": "Kirlia",
+    "num": "281",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "disarmingvoice", "level": "1" },
@@ -7347,6 +7655,7 @@
   },
   "Gardevoir": {
     "species": "Gardevoir",
+    "num": "282",
     "learnset": [
       { "move": "dazzlinggleam", "level": "0" },
       { "move": "charm", "level": "1" },
@@ -7375,6 +7684,7 @@
   },
   "Surskit": {
     "species": "Surskit",
+    "num": "283",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "quickattack", "level": "6" },
@@ -7394,6 +7704,7 @@
   },
   "Masquerain": {
     "species": "Masquerain",
+    "num": "284",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "bugbuzz", "level": "1" },
@@ -7416,6 +7727,7 @@
   },
   "Shroomish": {
     "species": "Shroomish",
+    "num": "285",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -7437,6 +7749,7 @@
   },
   "Breloom": {
     "species": "Breloom",
+    "num": "286",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "leechseed", "level": "1" },
@@ -7459,6 +7772,7 @@
   },
   "Slakoth": {
     "species": "Slakoth",
+    "num": "287",
     "learnset": [
       { "move": "scratch", "level": "1" },
       { "move": "yawn", "level": "1" },
@@ -7478,6 +7792,7 @@
   },
   "Vigoroth": {
     "species": "Vigoroth",
+    "num": "288",
     "learnset": [
       { "move": "encore", "level": "1" },
       { "move": "focusenergy", "level": "1" },
@@ -7497,6 +7812,7 @@
   },
   "Slaking": {
     "species": "Slaking",
+    "num": "289",
     "learnset": [
       { "move": "encore", "level": "1" },
       { "move": "fling", "level": "1" },
@@ -7519,6 +7835,7 @@
   },
   "Nincada": {
     "species": "Nincada",
+    "num": "290",
     "learnset": [
       { "move": "sandattack", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -7537,6 +7854,7 @@
   },
   "Ninjask": {
     "species": "Ninjask",
+    "num": "291",
     "learnset": [
       { "move": "doubleteam", "level": "0" },
       { "move": "furycutter", "level": "0" },
@@ -7565,6 +7883,7 @@
   },
   "Shedinja": {
     "species": "Shedinja",
+    "num": "292",
     "learnset": [
       { "move": "dig", "level": "1" },
       { "move": "falseswipe", "level": "1" },
@@ -7590,6 +7909,7 @@
   },
   "Whismur": {
     "species": "Whismur",
+    "num": "293",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -7610,6 +7930,7 @@
   },
   "Loudred": {
     "species": "Loudred",
+    "num": "294",
     "learnset": [
       { "move": "bite", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -7631,6 +7952,7 @@
   },
   "Exploud": {
     "species": "Exploud",
+    "num": "295",
     "learnset": [
       { "move": "crunch", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -7658,6 +7980,7 @@
   },
   "Makuhita": {
     "species": "Makuhita",
+    "num": "296",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -7683,6 +8006,7 @@
   },
   "Hariyama": {
     "species": "Hariyama",
+    "num": "297",
     "learnset": [
       { "move": "armthrust", "level": "1" },
       { "move": "brine", "level": "1" },
@@ -7709,6 +8033,7 @@
   },
   "Azurill": {
     "species": "Azurill",
+    "num": "298",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -7725,6 +8050,7 @@
   },
   "Nosepass": {
     "species": "Nosepass",
+    "num": "299",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "harden", "level": "4" },
@@ -7749,6 +8075,7 @@
   },
   "Skitty": {
     "species": "Skitty",
+    "num": "300",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -7776,6 +8103,7 @@
   },
   "Delcatty": {
     "species": "Delcatty",
+    "num": "301",
     "learnset": [
       { "move": "attract", "level": "1" },
       { "move": "doubleslap", "level": "1" },
@@ -7788,6 +8116,7 @@
   },
   "Sableye": {
     "species": "Sableye",
+    "num": "302",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -7814,6 +8143,7 @@
   },
   "Mawile": {
     "species": "Mawile",
+    "num": "303",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -7838,6 +8168,7 @@
   },
   "Aron": {
     "species": "Aron",
+    "num": "304",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -7863,6 +8194,7 @@
   },
   "Lairon": {
     "species": "Lairon",
+    "num": "305",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "metalclaw", "level": "1" },
@@ -7888,6 +8220,7 @@
   },
   "Aggron": {
     "species": "Aggron",
+    "num": "306",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "metalclaw", "level": "1" },
@@ -7913,6 +8246,7 @@
   },
   "Meditite": {
     "species": "Meditite",
+    "num": "307",
     "learnset": [
       { "move": "bide", "level": "1" },
       { "move": "meditate", "level": "4" },
@@ -7938,6 +8272,7 @@
   },
   "Medicham": {
     "species": "Medicham",
+    "num": "308",
     "learnset": [
       { "move": "bide", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -7967,6 +8302,7 @@
   },
   "Electrike": {
     "species": "Electrike",
+    "num": "309",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "thunderwave", "level": "1" },
@@ -7988,6 +8324,7 @@
   },
   "Manectric": {
     "species": "Manectric",
+    "num": "310",
     "learnset": [
       { "move": "firefang", "level": "1" },
       { "move": "howl", "level": "1" },
@@ -8011,6 +8348,7 @@
   },
   "Plusle": {
     "species": "Plusle",
+    "num": "311",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "nuzzle", "level": "1" },
@@ -8040,6 +8378,7 @@
   },
   "Minun": {
     "species": "Minun",
+    "num": "312",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "nuzzle", "level": "1" },
@@ -8069,6 +8408,7 @@
   },
   "Volbeat": {
     "species": "Volbeat",
+    "num": "313",
     "learnset": [
       { "move": "flash", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -8093,6 +8433,7 @@
   },
   "Illumise": {
     "species": "Illumise",
+    "num": "314",
     "learnset": [
       { "move": "playnice", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -8117,6 +8458,7 @@
   },
   "Roselia": {
     "species": "Roselia",
+    "num": "315",
     "learnset": [
       { "move": "poisonsting", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -8142,6 +8484,7 @@
   },
   "Gulpin": {
     "species": "Gulpin",
+    "num": "316",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "yawn", "level": "5" },
@@ -8166,6 +8509,7 @@
   },
   "Swalot": {
     "species": "Swalot",
+    "num": "317",
     "learnset": [
       { "move": "bodyslam", "level": "1" },
       { "move": "gunkshot", "level": "1" },
@@ -8192,6 +8536,7 @@
   },
   "Carvanha": {
     "species": "Carvanha",
+    "num": "318",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -8213,6 +8558,7 @@
   },
   "Sharpedo": {
     "species": "Sharpedo",
+    "num": "319",
     "learnset": [
       { "move": "slash", "level": "0" },
       { "move": "aquajet", "level": "1" },
@@ -8236,6 +8582,7 @@
   },
   "Wailmer": {
     "species": "Wailmer",
+    "num": "320",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "growl", "level": "3" },
@@ -8260,6 +8607,7 @@
   },
   "Wailord": {
     "species": "Wailord",
+    "num": "321",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -8286,6 +8634,7 @@
   },
   "Numel": {
     "species": "Numel",
+    "num": "322",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -8309,6 +8658,7 @@
   },
   "Camerupt": {
     "species": "Camerupt",
+    "num": "323",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "eruption", "level": "1" },
@@ -8333,6 +8683,7 @@
   },
   "Torkoal": {
     "species": "Torkoal",
+    "num": "324",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "smog", "level": "1" },
@@ -8359,6 +8710,7 @@
   },
   "Spoink": {
     "species": "Spoink",
+    "num": "325",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "psywave", "level": "7" },
@@ -8382,6 +8734,7 @@
   },
   "Grumpig": {
     "species": "Grumpig",
+    "num": "326",
     "learnset": [
       { "move": "belch", "level": "1" },
       { "move": "odorsleuth", "level": "1" },
@@ -8407,6 +8760,7 @@
   },
   "Spinda": {
     "species": "Spinda",
+    "num": "327",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "copycat", "level": "5" },
@@ -8428,6 +8782,7 @@
   },
   "Trapinch": {
     "species": "Trapinch",
+    "num": "328",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -8450,6 +8805,7 @@
   },
   "Vibrava": {
     "species": "Vibrava",
+    "num": "329",
     "learnset": [
       { "move": "dragonbreath", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -8480,6 +8836,7 @@
   },
   "Flygon": {
     "species": "Flygon",
+    "num": "330",
     "learnset": [
       { "move": "dragonclaw", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -8513,6 +8870,7 @@
   },
   "Cacnea": {
     "species": "Cacnea",
+    "num": "331",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -8538,6 +8896,7 @@
   },
   "Cacturne": {
     "species": "Cacturne",
+    "num": "332",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "destinybond", "level": "1" },
@@ -8565,6 +8924,7 @@
   },
   "Swablu": {
     "species": "Swablu",
+    "num": "333",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -8586,6 +8946,7 @@
   },
   "Altaria": {
     "species": "Altaria",
+    "num": "334",
     "learnset": [
       { "move": "dragonpulse", "level": "0" },
       { "move": "disarmingvoice", "level": "1" },
@@ -8610,6 +8971,7 @@
   },
   "Zangoose": {
     "species": "Zangoose",
+    "num": "335",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -8634,6 +8996,7 @@
   },
   "Seviper": {
     "species": "Seviper",
+    "num": "336",
     "learnset": [
       { "move": "swagger", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -8662,6 +9025,7 @@
   },
   "Lunatone": {
     "species": "Lunatone",
+    "num": "337",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -8686,6 +9050,7 @@
   },
   "Solrock": {
     "species": "Solrock",
+    "num": "338",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "flareblitz", "level": "1" },
@@ -8710,6 +9075,7 @@
   },
   "Barboach": {
     "species": "Barboach",
+    "num": "339",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -8729,6 +9095,7 @@
   },
   "Whiscash": {
     "species": "Whiscash",
+    "num": "340",
     "learnset": [
       { "move": "thrash", "level": "0" },
       { "move": "belch", "level": "1" },
@@ -8752,6 +9119,7 @@
   },
   "Corphish": {
     "species": "Corphish",
+    "num": "341",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -8775,6 +9143,7 @@
   },
   "Crawdaunt": {
     "species": "Crawdaunt",
+    "num": "342",
     "learnset": [
       { "move": "swift", "level": "0" },
       { "move": "harden", "level": "1" },
@@ -8799,6 +9168,7 @@
   },
   "Baltoy": {
     "species": "Baltoy",
+    "num": "343",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -8824,6 +9194,7 @@
   },
   "Claydol": {
     "species": "Claydol",
+    "num": "344",
     "learnset": [
       { "move": "hyperbeam", "level": "0" },
       { "move": "confusion", "level": "1" },
@@ -8851,6 +9222,7 @@
   },
   "Lileep": {
     "species": "Lileep",
+    "num": "345",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -8874,6 +9246,7 @@
   },
   "Cradily": {
     "species": "Cradily",
+    "num": "346",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -8898,6 +9271,7 @@
   },
   "Anorith": {
     "species": "Anorith",
+    "num": "347",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -8919,6 +9293,7 @@
   },
   "Armaldo": {
     "species": "Armaldo",
+    "num": "348",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -8940,6 +9315,7 @@
   },
   "Feebas": {
     "species": "Feebas",
+    "num": "349",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "tackle", "level": "15" },
@@ -8951,6 +9327,7 @@
   },
   "Milotic": {
     "species": "Milotic",
+    "num": "350",
     "learnset": [
       { "move": "waterpulse", "level": "0" },
       { "move": "flail", "level": "1" },
@@ -8978,6 +9355,7 @@
   },
   "Castform": {
     "species": "Castform",
+    "num": "351",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "ember", "level": "10" },
@@ -8999,6 +9377,7 @@
   },
   "Kecleon": {
     "species": "Kecleon",
+    "num": "352",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "lick", "level": "1" },
@@ -9026,6 +9405,7 @@
   },
   "Shuppet": {
     "species": "Shuppet",
+    "num": "353",
     "learnset": [
       { "move": "knockoff", "level": "1" },
       { "move": "screech", "level": "4" },
@@ -9050,6 +9430,7 @@
   },
   "Banette": {
     "species": "Banette",
+    "num": "354",
     "learnset": [
       { "move": "knockoff", "level": "1" },
       { "move": "nightshade", "level": "1" },
@@ -9074,6 +9455,7 @@
   },
   "Duskull": {
     "species": "Duskull",
+    "num": "355",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -9095,6 +9477,7 @@
   },
   "Dusclops": {
     "species": "Dusclops",
+    "num": "356",
     "learnset": [
       { "move": "shadowpunch", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -9122,6 +9505,7 @@
   },
   "Tropius": {
     "species": "Tropius",
+    "num": "357",
     "learnset": [
       { "move": "growth", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -9146,6 +9530,7 @@
   },
   "Chimecho": {
     "species": "Chimecho",
+    "num": "358",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -9169,6 +9554,7 @@
   },
   "Absol": {
     "species": "Absol",
+    "num": "359",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -9190,6 +9576,7 @@
   },
   "Wynaut": {
     "species": "Wynaut",
+    "num": "360",
     "learnset": [
       { "move": "amnesia", "level": "1" },
       { "move": "charm", "level": "1" },
@@ -9206,6 +9593,7 @@
   },
   "Snorunt": {
     "species": "Snorunt",
+    "num": "361",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "powdersnow", "level": "1" },
@@ -9228,6 +9616,7 @@
   },
   "Glalie": {
     "species": "Glalie",
+    "num": "362",
     "learnset": [
       { "move": "freezedry", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -9252,6 +9641,7 @@
   },
   "Spheal": {
     "species": "Spheal",
+    "num": "363",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "rollout", "level": "1" },
@@ -9275,6 +9665,7 @@
   },
   "Sealeo": {
     "species": "Sealeo",
+    "num": "364",
     "learnset": [
       { "move": "swagger", "level": "0" },
       { "move": "defensecurl", "level": "1" },
@@ -9299,6 +9690,7 @@
   },
   "Walrein": {
     "species": "Walrein",
+    "num": "365",
     "learnset": [
       { "move": "crunch", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -9325,6 +9717,7 @@
   },
   "Clamperl": {
     "species": "Clamperl",
+    "num": "366",
     "learnset": [
       { "move": "clamp", "level": "1" },
       { "move": "irondefense", "level": "1" },
@@ -9338,6 +9731,7 @@
   },
   "Huntail": {
     "species": "Huntail",
+    "num": "367",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "whirlpool", "level": "1" },
@@ -9361,6 +9755,7 @@
   },
   "Gorebyss": {
     "species": "Gorebyss",
+    "num": "368",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "whirlpool", "level": "1" },
@@ -9384,6 +9779,7 @@
   },
   "Relicanth": {
     "species": "Relicanth",
+    "num": "369",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -9405,6 +9801,7 @@
   },
   "Luvdisc": {
     "species": "Luvdisc",
+    "num": "370",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -9430,6 +9827,7 @@
   },
   "Bagon": {
     "species": "Bagon",
+    "num": "371",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -9451,6 +9849,7 @@
   },
   "Shelgon": {
     "species": "Shelgon",
+    "num": "372",
     "learnset": [
       { "move": "protect", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -9473,6 +9872,7 @@
   },
   "Salamence": {
     "species": "Salamence",
+    "num": "373",
     "learnset": [
       { "move": "fly", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -9497,6 +9897,7 @@
   },
   "Beldum": {
     "species": "Beldum",
+    "num": "374",
     "learnset": [{ "move": "tackle", "level": "1" }],
     "evolveCandies": 7,
     "levelUpCandies": 6,
@@ -9504,6 +9905,7 @@
   },
   "Metang": {
     "species": "Metang",
+    "num": "375",
     "learnset": [
       { "move": "confusion", "level": "0" },
       { "move": "metalclaw", "level": "0" },
@@ -9526,6 +9928,7 @@
   },
   "Metagross": {
     "species": "Metagross",
+    "num": "376",
     "learnset": [
       { "move": "hammerarm", "level": "0" },
       { "move": "bulletpunch", "level": "1" },
@@ -9549,6 +9952,7 @@
   },
   "Regirock": {
     "species": "Regirock",
+    "num": "377",
     "learnset": [
       { "move": "chargebeam", "level": "1" },
       { "move": "rockthrow", "level": "1" },
@@ -9572,6 +9976,7 @@
   },
   "Regice": {
     "species": "Regice",
+    "num": "378",
     "learnset": [
       { "move": "chargebeam", "level": "1" },
       { "move": "icywind", "level": "1" },
@@ -9595,6 +10000,7 @@
   },
   "Registeel": {
     "species": "Registeel",
+    "num": "379",
     "learnset": [
       { "move": "chargebeam", "level": "1" },
       { "move": "metalclaw", "level": "1" },
@@ -9620,6 +10026,7 @@
   },
   "Latias": {
     "species": "Latias",
+    "num": "380",
     "learnset": [
       { "move": "charm", "level": "1" },
       { "move": "storedpower", "level": "1" },
@@ -9645,6 +10052,7 @@
   },
   "Latios": {
     "species": "Latios",
+    "num": "381",
     "learnset": [
       { "move": "dragondance", "level": "1" },
       { "move": "storedpower", "level": "1" },
@@ -9670,6 +10078,7 @@
   },
   "Kyogre": {
     "species": "Kyogre",
+    "num": "382",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "bodyslam", "level": "1" },
@@ -9692,6 +10101,7 @@
   },
   "Groudon": {
     "species": "Groudon",
+    "num": "383",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "lavaplume", "level": "1" },
@@ -9714,6 +10124,7 @@
   },
   "Rayquaza": {
     "species": "Rayquaza",
+    "num": "384",
     "learnset": [
       { "move": "airslash", "level": "1" },
       { "move": "ancientpower", "level": "1" },
@@ -9737,6 +10148,7 @@
   },
   "Jirachi": {
     "species": "Jirachi",
+    "num": "385",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "wish", "level": "1" },
@@ -9795,6 +10207,7 @@
   },
   "Turtwig": {
     "species": "Turtwig",
+    "num": "387",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "withdraw", "level": "5" },
@@ -9815,6 +10228,7 @@
   },
   "Grotle": {
     "species": "Grotle",
+    "num": "388",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -9835,6 +10249,7 @@
   },
   "Torterra": {
     "species": "Torterra",
+    "num": "389",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "earthquake", "level": "1" },
@@ -9857,6 +10272,7 @@
   },
   "Chimchar": {
     "species": "Chimchar",
+    "num": "390",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -9878,6 +10294,7 @@
   },
   "Monferno": {
     "species": "Monferno",
+    "num": "391",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -9900,6 +10317,7 @@
   },
   "Infernape": {
     "species": "Infernape",
+    "num": "392",
     "learnset": [
       { "move": "closecombat", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -9922,6 +10340,7 @@
   },
   "Piplup": {
     "species": "Piplup",
+    "num": "393",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "growl", "level": "4" },
@@ -9943,6 +10362,7 @@
   },
   "Prinplup": {
     "species": "Prinplup",
+    "num": "394",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -9965,6 +10385,7 @@
   },
   "Empoleon": {
     "species": "Empoleon",
+    "num": "395",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "bubble", "level": "1" },
@@ -9988,6 +10409,7 @@
   },
   "Starly": {
     "species": "Starly",
+    "num": "396",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -10008,6 +10430,7 @@
   },
   "Staravia": {
     "species": "Staravia",
+    "num": "397",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -10028,6 +10451,7 @@
   },
   "Staraptor": {
     "species": "Staraptor",
+    "num": "398",
     "learnset": [
       { "move": "closecombat", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10049,6 +10473,7 @@
   },
   "Bidoof": {
     "species": "Bidoof",
+    "num": "399",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -10071,6 +10496,7 @@
   },
   "Bibarel": {
     "species": "Bibarel",
+    "num": "400",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10096,6 +10522,7 @@
   },
   "Kricketot": {
     "species": "Kricketot",
+    "num": "401",
     "learnset": [
       { "move": "bide", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10108,6 +10535,7 @@
   },
   "Kricketune": {
     "species": "Kricketune",
+    "num": "402",
     "learnset": [
       { "move": "bide", "level": "1" },
       { "move": "furycutter", "level": "1" },
@@ -10131,6 +10559,7 @@
   },
   "Shinx": {
     "species": "Shinx",
+    "num": "403",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -10153,6 +10582,7 @@
   },
   "Luxio": {
     "species": "Luxio",
+    "num": "404",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -10175,6 +10605,7 @@
   },
   "Luxray": {
     "species": "Luxray",
+    "num": "405",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "electricterrain", "level": "1" },
@@ -10198,6 +10629,7 @@
   },
   "Budew": {
     "species": "Budew",
+    "num": "406",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "growth", "level": "1" },
@@ -10210,6 +10642,7 @@
   },
   "Roserade": {
     "species": "Roserade",
+    "num": "407",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "aromatherapy", "level": "1" },
@@ -10237,6 +10670,7 @@
   },
   "Cranidos": {
     "species": "Cranidos",
+    "num": "408",
     "learnset": [
       { "move": "headbutt", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -10257,6 +10691,7 @@
   },
   "Rampardos": {
     "species": "Rampardos",
+    "num": "409",
     "learnset": [
       { "move": "endeavor", "level": "1" },
       { "move": "focusenergy", "level": "1" },
@@ -10278,6 +10713,7 @@
   },
   "Shieldon": {
     "species": "Shieldon",
+    "num": "410",
     "learnset": [
       { "move": "protect", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -10298,6 +10734,7 @@
   },
   "Bastiodon": {
     "species": "Bastiodon",
+    "num": "411",
     "learnset": [
       { "move": "block", "level": "1" },
       { "move": "metalsound", "level": "1" },
@@ -10378,6 +10815,7 @@
   },
   "Combee": {
     "species": "Combee",
+    "num": "415",
     "learnset": [
       { "move": "bugbite", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -10390,6 +10828,7 @@
   },
   "Vespiquen": {
     "species": "Vespiquen",
+    "num": "416",
     "learnset": [
       { "move": "slash", "level": "0" },
       { "move": "bugbite", "level": "1" },
@@ -10417,6 +10856,7 @@
   },
   "Pachirisu": {
     "species": "Pachirisu",
+    "num": "417",
     "learnset": [
       { "move": "bide", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10440,6 +10880,7 @@
   },
   "Buizel": {
     "species": "Buizel",
+    "num": "418",
     "learnset": [
       { "move": "sonicboom", "level": "1" },
       { "move": "growl", "level": "4" },
@@ -10462,6 +10903,7 @@
   },
   "Floatzel": {
     "species": "Floatzel",
+    "num": "419",
     "learnset": [
       { "move": "crunch", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10486,6 +10928,7 @@
   },
   "Cherubi": {
     "species": "Cherubi",
+    "num": "420",
     "learnset": [
       { "move": "morningsun", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -10565,6 +11008,7 @@
   },
   "Ambipom": {
     "species": "Ambipom",
+    "num": "424",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "dualchop", "level": "1" },
@@ -10588,6 +11032,7 @@
   },
   "Drifloon": {
     "species": "Drifloon",
+    "num": "425",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "minimize", "level": "1" },
@@ -10611,6 +11056,7 @@
   },
   "Drifblim": {
     "species": "Drifblim",
+    "num": "426",
     "learnset": [
       { "move": "phantomforce", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -10636,6 +11082,7 @@
   },
   "Buneary": {
     "species": "Buneary",
+    "num": "427",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "splash", "level": "1" },
@@ -10659,6 +11106,7 @@
   },
   "Lopunny": {
     "species": "Lopunny",
+    "num": "428",
     "learnset": [
       { "move": "babydolleyes", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -10685,6 +11133,7 @@
   },
   "Mismagius": {
     "species": "Mismagius",
+    "num": "429",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10702,6 +11151,7 @@
   },
   "Honchkrow": {
     "species": "Honchkrow",
+    "num": "430",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "haze", "level": "1" },
@@ -10721,6 +11171,7 @@
   },
   "Glameow": {
     "species": "Glameow",
+    "num": "431",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "scratch", "level": "5" },
@@ -10743,6 +11194,7 @@
   },
   "Purugly": {
     "species": "Purugly",
+    "num": "432",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -10765,6 +11217,7 @@
   },
   "Chingling": {
     "species": "Chingling",
+    "num": "433",
     "learnset": [
       { "move": "wrap", "level": "1" },
       { "move": "growl", "level": "4" },
@@ -10781,6 +11234,7 @@
   },
   "Stunky": {
     "species": "Stunky",
+    "num": "434",
     "learnset": [
       { "move": "poisongas", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -10806,6 +11260,7 @@
   },
   "Skuntank": {
     "species": "Skuntank",
+    "num": "435",
     "learnset": [
       { "move": "flamethrower", "level": "0" },
       { "move": "feint", "level": "1" },
@@ -10832,6 +11287,7 @@
   },
   "Bronzor": {
     "species": "Bronzor",
+    "num": "436",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -10853,6 +11309,7 @@
   },
   "Bronzong": {
     "species": "Bronzong",
+    "num": "437",
     "learnset": [
       { "move": "block", "level": "0" },
       { "move": "confuseray", "level": "1" },
@@ -10878,6 +11335,7 @@
   },
   "Bonsly": {
     "species": "Bonsly",
+    "num": "438",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "faketears", "level": "1" },
@@ -10924,6 +11382,7 @@
   },
   "Happiny": {
     "species": "Happiny",
+    "num": "440",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "minimize", "level": "1" },
@@ -10940,6 +11399,7 @@
   },
   "Chatot": {
     "species": "Chatot",
+    "num": "441",
     "learnset": [
       { "move": "chatter", "level": "1" },
       { "move": "confide", "level": "1" },
@@ -10964,6 +11424,7 @@
   },
   "Spiritomb": {
     "species": "Spiritomb",
+    "num": "442",
     "learnset": [
       { "move": "confuseray", "level": "1" },
       { "move": "nightshade", "level": "1" },
@@ -10986,6 +11447,7 @@
   },
   "Gible": {
     "species": "Gible",
+    "num": "443",
     "learnset": [
       { "move": "sandtomb", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -11006,6 +11468,7 @@
   },
   "Gabite": {
     "species": "Gabite",
+    "num": "444",
     "learnset": [
       { "move": "dragonbreath", "level": "1" },
       { "move": "dualchop", "level": "1" },
@@ -11027,6 +11490,7 @@
   },
   "Garchomp": {
     "species": "Garchomp",
+    "num": "445",
     "learnset": [
       { "move": "crunch", "level": "0" },
       { "move": "dragonbreath", "level": "1" },
@@ -11049,6 +11513,7 @@
   },
   "Munchlax": {
     "species": "Munchlax",
+    "num": "446",
     "learnset": [
       { "move": "lick", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -11073,6 +11538,7 @@
   },
   "Riolu": {
     "species": "Riolu",
+    "num": "447",
     "learnset": [
       { "move": "endure", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -11097,6 +11563,7 @@
   },
   "Lucario": {
     "species": "Lucario",
+    "num": "448",
     "learnset": [
       { "move": "aurasphere", "level": "0" },
       { "move": "copycat", "level": "1" },
@@ -11133,6 +11600,7 @@
   },
   "Hippopotas": {
     "species": "Hippopotas",
+    "num": "449",
     "learnset": [
       { "move": "sandattack", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -11156,6 +11624,7 @@
   },
   "Hippowdon": {
     "species": "Hippowdon",
+    "num": "450",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "firefang", "level": "1" },
@@ -11182,6 +11651,7 @@
   },
   "Skorupi": {
     "species": "Skorupi",
+    "num": "451",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -11208,6 +11678,7 @@
   },
   "Drapion": {
     "species": "Drapion",
+    "num": "452",
     "learnset": [
       { "move": "fellstinger", "level": "1" },
       { "move": "firefang", "level": "1" },
@@ -11237,6 +11708,7 @@
   },
   "Croagunk": {
     "species": "Croagunk",
+    "num": "453",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -11259,6 +11731,7 @@
   },
   "Toxicroak": {
     "species": "Toxicroak",
+    "num": "454",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -11281,6 +11754,7 @@
   },
   "Carnivine": {
     "species": "Carnivine",
+    "num": "455",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "growth", "level": "1" },
@@ -11303,6 +11777,7 @@
   },
   "Finneon": {
     "species": "Finneon",
+    "num": "456",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "watergun", "level": "6" },
@@ -11325,6 +11800,7 @@
   },
   "Lumineon": {
     "species": "Lumineon",
+    "num": "457",
     "learnset": [
       { "move": "attract", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -11347,6 +11823,7 @@
   },
   "Mantyke": {
     "species": "Mantyke",
+    "num": "458",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -11369,6 +11846,7 @@
   },
   "Snover": {
     "species": "Snover",
+    "num": "459",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "powdersnow", "level": "1" },
@@ -11389,6 +11867,7 @@
   },
   "Abomasnow": {
     "species": "Abomasnow",
+    "num": "460",
     "learnset": [
       { "move": "icepunch", "level": "0" },
       { "move": "auroraveil", "level": "1" },
@@ -11411,6 +11890,7 @@
   },
   "Weavile": {
     "species": "Weavile",
+    "num": "461",
     "learnset": [
       { "move": "agility", "level": "1" },
       { "move": "assurance", "level": "1" },
@@ -11438,6 +11918,7 @@
   },
   "Magnezone": {
     "species": "Magnezone",
+    "num": "462",
     "learnset": [
       { "move": "electricterrain", "level": "1" },
       { "move": "magneticflux", "level": "1" },
@@ -11465,6 +11946,7 @@
   },
   "Lickilicky": {
     "species": "Lickilicky",
+    "num": "463",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "lick", "level": "1" },
@@ -11485,6 +11967,7 @@
   },
   "Rhyperior": {
     "species": "Rhyperior",
+    "num": "464",
     "learnset": [
       { "move": "bulldoze", "level": "1" },
       { "move": "hammerarm", "level": "1" },
@@ -11509,6 +11992,7 @@
   },
   "Tangrowth": {
     "species": "Tangrowth",
+    "num": "465",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "bind", "level": "1" },
@@ -11534,6 +12018,7 @@
   },
   "Electivire": {
     "species": "Electivire",
+    "num": "466",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -11557,6 +12042,7 @@
   },
   "Magmortar": {
     "species": "Magmortar",
+    "num": "467",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -11580,6 +12066,7 @@
   },
   "Togekiss": {
     "species": "Togekiss",
+    "num": "468",
     "learnset": [
       { "move": "airslash", "level": "0" },
       { "move": "afteryou", "level": "1" },
@@ -11609,6 +12096,7 @@
   },
   "Yanmega": {
     "species": "Yanmega",
+    "num": "469",
     "learnset": [
       { "move": "airslash", "level": "1" },
       { "move": "bugbite", "level": "1" },
@@ -11635,6 +12123,7 @@
   },
   "Leafeon": {
     "species": "Leafeon",
+    "num": "470",
     "learnset": [
       { "move": "razorleaf", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -11667,6 +12156,7 @@
   },
   "Glaceon": {
     "species": "Glaceon",
+    "num": "471",
     "learnset": [
       { "move": "icywind", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -11698,6 +12188,7 @@
   },
   "Gliscor": {
     "species": "Gliscor",
+    "num": "472",
     "learnset": [
       { "move": "firefang", "level": "1" },
       { "move": "guillotine", "level": "1" },
@@ -11724,6 +12215,7 @@
   },
   "Mamoswine": {
     "species": "Mamoswine",
+    "num": "473",
     "learnset": [
       { "move": "doublehit", "level": "0" },
       { "move": "ancientpower", "level": "1" },
@@ -11774,6 +12266,7 @@
   },
   "Gallade": {
     "species": "Gallade",
+    "num": "475",
     "learnset": [
       { "move": "slash", "level": "0" },
       { "move": "calmmind", "level": "1" },
@@ -11812,6 +12305,7 @@
   },
   "Probopass": {
     "species": "Probopass",
+    "num": "476",
     "learnset": [
       { "move": "block", "level": "1" },
       { "move": "gravity", "level": "1" },
@@ -11841,6 +12335,7 @@
   },
   "Dusknoir": {
     "species": "Dusknoir",
+    "num": "477",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "bind", "level": "1" },
@@ -11869,6 +12364,7 @@
   },
   "Froslass": {
     "species": "Froslass",
+    "num": "478",
     "learnset": [
       { "move": "hex", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -11898,6 +12394,7 @@
   },
   "Rotom": {
     "species": "Rotom",
+    "num": "479",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "doubleteam", "level": "1" },
@@ -11919,6 +12416,7 @@
   },
   "Uxie": {
     "species": "Uxie",
+    "num": "480",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "rest", "level": "1" },
@@ -11940,6 +12438,7 @@
   },
   "Mesprit": {
     "species": "Mesprit",
+    "num": "481",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "rest", "level": "1" },
@@ -11961,6 +12460,7 @@
   },
   "Azelf": {
     "species": "Azelf",
+    "num": "482",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "rest", "level": "1" },
@@ -11982,6 +12482,7 @@
   },
   "Dialga": {
     "species": "Dialga",
+    "num": "483",
     "learnset": [
       { "move": "metalclaw", "level": "1" },
       { "move": "scaryface", "level": "1" },
@@ -12003,6 +12504,7 @@
   },
   "Palkia": {
     "species": "Palkia",
+    "num": "484",
     "learnset": [
       { "move": "scaryface", "level": "1" },
       { "move": "waterpulse", "level": "1" },
@@ -12024,6 +12526,7 @@
   },
   "Heatran": {
     "species": "Heatran",
+    "num": "485",
     "learnset": [
       { "move": "firespin", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -12046,6 +12549,7 @@
   },
   "Regigigas": {
     "species": "Regigigas",
+    "num": "486",
     "learnset": [
       { "move": "confuseray", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -12091,6 +12595,7 @@
   },
   "Cresselia": {
     "species": "Cresselia",
+    "num": "488",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "doubleteam", "level": "1" },
@@ -12113,6 +12618,7 @@
   },
   "Phione": {
     "species": "Phione",
+    "num": "489",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "watersport", "level": "1" },
@@ -12132,6 +12638,7 @@
   },
   "Manaphy": {
     "species": "Manaphy",
+    "num": "490",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "tailglow", "level": "1" },
@@ -12153,6 +12660,7 @@
   },
   "Darkrai": {
     "species": "Darkrai",
+    "num": "491",
     "learnset": [
       { "move": "disable", "level": "1" },
       { "move": "ominouswind", "level": "1" },
@@ -12218,6 +12726,7 @@
   },
   "Victini": {
     "species": "Victini",
+    "num": "494",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "flamecharge", "level": "1" },
@@ -12244,6 +12753,7 @@
   },
   "Snivy": {
     "species": "Snivy",
+    "num": "495",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "leer", "level": "4" },
@@ -12267,6 +12777,7 @@
   },
   "Servine": {
     "species": "Servine",
+    "num": "496",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -12290,6 +12801,7 @@
   },
   "Serperior": {
     "species": "Serperior",
+    "num": "497",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -12313,6 +12825,7 @@
   },
   "Tepig": {
     "species": "Tepig",
+    "num": "498",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "3" },
@@ -12336,6 +12849,7 @@
   },
   "Pignite": {
     "species": "Pignite",
+    "num": "499",
     "learnset": [
       { "move": "armthrust", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -12360,6 +12874,7 @@
   },
   "Emboar": {
     "species": "Emboar",
+    "num": "500",
     "learnset": [
       { "move": "armthrust", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -12385,6 +12900,7 @@
   },
   "Oshawott": {
     "species": "Oshawott",
+    "num": "501",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "5" },
@@ -12408,6 +12924,7 @@
   },
   "Dewott": {
     "species": "Dewott",
+    "num": "502",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -12431,6 +12948,7 @@
   },
   "Samurott": {
     "species": "Samurott",
+    "num": "503",
     "learnset": [
       { "move": "megahorn", "level": "1" },
       { "move": "slash", "level": "1" },
@@ -12456,6 +12974,7 @@
   },
   "Patrat": {
     "species": "Patrat",
+    "num": "504",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "leer", "level": "3" },
@@ -12481,6 +13000,7 @@
   },
   "Watchog": {
     "species": "Watchog",
+    "num": "505",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "confuseray", "level": "1" },
@@ -12509,6 +13029,7 @@
   },
   "Lillipup": {
     "species": "Lillipup",
+    "num": "506",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -12531,6 +13052,7 @@
   },
   "Herdier": {
     "species": "Herdier",
+    "num": "507",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -12553,6 +13075,7 @@
   },
   "Stoutland": {
     "species": "Stoutland",
+    "num": "508",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "firefang", "level": "1" },
@@ -12578,6 +13101,7 @@
   },
   "Purrloin": {
     "species": "Purrloin",
+    "num": "509",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -12598,6 +13122,7 @@
   },
   "Liepard": {
     "species": "Liepard",
+    "num": "510",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -12618,6 +13143,7 @@
   },
   "Pansage": {
     "species": "Pansage",
+    "num": "511",
     "learnset": [
       { "move": "playnice", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -12642,6 +13168,7 @@
   },
   "Simisage": {
     "species": "Simisage",
+    "num": "512",
     "learnset": [
       { "move": "furyswipes", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -12654,6 +13181,7 @@
   },
   "Pansear": {
     "species": "Pansear",
+    "num": "513",
     "learnset": [
       { "move": "playnice", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -12678,6 +13206,7 @@
   },
   "Simisear": {
     "species": "Simisear",
+    "num": "514",
     "learnset": [
       { "move": "flameburst", "level": "1" },
       { "move": "furyswipes", "level": "1" },
@@ -12690,6 +13219,7 @@
   },
   "Panpour": {
     "species": "Panpour",
+    "num": "515",
     "learnset": [
       { "move": "playnice", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -12714,6 +13244,7 @@
   },
   "Simipour": {
     "species": "Simipour",
+    "num": "516",
     "learnset": [
       { "move": "furyswipes", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -12726,6 +13257,7 @@
   },
   "Munna": {
     "species": "Munna",
+    "num": "517",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "storedpower", "level": "1" },
@@ -12749,6 +13281,7 @@
   },
   "Musharna": {
     "species": "Musharna",
+    "num": "518",
     "learnset": [
       { "move": "calmmind", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -12773,6 +13306,7 @@
   },
   "Pidove": {
     "species": "Pidove",
+    "num": "519",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -12794,6 +13328,7 @@
   },
   "Tranquill": {
     "species": "Tranquill",
+    "num": "520",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -12815,6 +13350,7 @@
   },
   "Unfezant": {
     "species": "Unfezant",
+    "num": "521",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -12836,6 +13372,7 @@
   },
   "Blitzle": {
     "species": "Blitzle",
+    "num": "522",
     "learnset": [
       { "move": "quickattack", "level": "1" },
       { "move": "tailwhip", "level": "4" },
@@ -12857,6 +13394,7 @@
   },
   "Zebstrika": {
     "species": "Zebstrika",
+    "num": "523",
     "learnset": [
       { "move": "charge", "level": "1" },
       { "move": "iondeluge", "level": "1" },
@@ -12879,6 +13417,7 @@
   },
   "Roggenrola": {
     "species": "Roggenrola",
+    "num": "524",
     "learnset": [
       { "move": "sandattack", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -12900,6 +13439,7 @@
   },
   "Boldore": {
     "species": "Boldore",
+    "num": "525",
     "learnset": [
       { "move": "powergem", "level": "0" },
       { "move": "harden", "level": "1" },
@@ -12922,6 +13462,7 @@
   },
   "Gigalith": {
     "species": "Gigalith",
+    "num": "526",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "powergem", "level": "1" },
@@ -12944,6 +13485,7 @@
   },
   "Woobat": {
     "species": "Woobat",
+    "num": "527",
     "learnset": [
       { "move": "attract", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -12965,6 +13507,7 @@
   },
   "Swoobat": {
     "species": "Swoobat",
+    "num": "528",
     "learnset": [
       { "move": "attract", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -12986,6 +13529,7 @@
   },
   "Drilbur": {
     "species": "Drilbur",
+    "num": "529",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "rapidspin", "level": "1" },
@@ -13008,6 +13552,7 @@
   },
   "Excadrill": {
     "species": "Excadrill",
+    "num": "530",
     "learnset": [
       { "move": "horndrill", "level": "0" },
       { "move": "honeclaws", "level": "1" },
@@ -13031,6 +13576,7 @@
   },
   "Audino": {
     "species": "Audino",
+    "num": "531",
     "learnset": [
       { "move": "playnice", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -13056,6 +13602,7 @@
   },
   "Timburr": {
     "species": "Timburr",
+    "num": "532",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -13078,6 +13625,7 @@
   },
   "Gurdurr": {
     "species": "Gurdurr",
+    "num": "533",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "lowkick", "level": "1" },
@@ -13100,6 +13648,7 @@
   },
   "Conkeldurr": {
     "species": "Conkeldurr",
+    "num": "534",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "lowkick", "level": "1" },
@@ -13122,6 +13671,7 @@
   },
   "Tympole": {
     "species": "Tympole",
+    "num": "535",
     "learnset": [
       { "move": "echoedvoice", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -13144,6 +13694,7 @@
   },
   "Palpitoad": {
     "species": "Palpitoad",
+    "num": "536",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "echoedvoice", "level": "1" },
@@ -13166,6 +13717,7 @@
   },
   "Seismitoad": {
     "species": "Seismitoad",
+    "num": "537",
     "learnset": [
       { "move": "drainpunch", "level": "0" },
       { "move": "acid", "level": "1" },
@@ -13190,6 +13742,7 @@
   },
   "Throh": {
     "species": "Throh",
+    "num": "538",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -13211,6 +13764,7 @@
   },
   "Sawk": {
     "species": "Sawk",
+    "num": "539",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "rocksmash", "level": "1" },
@@ -13232,6 +13786,7 @@
   },
   "Sewaddle": {
     "species": "Sewaddle",
+    "num": "540",
     "learnset": [
       { "move": "stringshot", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -13249,6 +13804,7 @@
   },
   "Swadloon": {
     "species": "Swadloon",
+    "num": "541",
     "learnset": [
       { "move": "bugbite", "level": "1" },
       { "move": "grasswhistle", "level": "1" },
@@ -13263,6 +13819,7 @@
   },
   "Leavanny": {
     "species": "Leavanny",
+    "num": "542",
     "learnset": [
       { "move": "bugbite", "level": "1" },
       { "move": "falseswipe", "level": "1" },
@@ -13285,6 +13842,7 @@
   },
   "Venipede": {
     "species": "Venipede",
+    "num": "543",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -13306,6 +13864,7 @@
   },
   "Whirlipede": {
     "species": "Whirlipede",
+    "num": "544",
     "learnset": [
       { "move": "irondefense", "level": "0" },
       { "move": "defensecurl", "level": "1" },
@@ -13328,6 +13887,7 @@
   },
   "Scolipede": {
     "species": "Scolipede",
+    "num": "545",
     "learnset": [
       { "move": "batonpass", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -13352,6 +13912,7 @@
   },
   "Cottonee": {
     "species": "Cottonee",
+    "num": "546",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "helpinghand", "level": "1" },
@@ -13377,6 +13938,7 @@
   },
   "Whimsicott": {
     "species": "Whimsicott",
+    "num": "547",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "charm", "level": "1" },
@@ -13407,6 +13969,7 @@
   },
   "Petilil": {
     "species": "Petilil",
+    "num": "548",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "growth", "level": "1" },
@@ -13431,6 +13994,7 @@
   },
   "Lilligant": {
     "species": "Lilligant",
+    "num": "549",
     "learnset": [
       { "move": "petaldance", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -13483,6 +14047,7 @@
   },
   "Sandile": {
     "species": "Sandile",
+    "num": "551",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "powertrip", "level": "1" },
@@ -13506,6 +14071,7 @@
   },
   "Krokorok": {
     "species": "Krokorok",
+    "num": "552",
     "learnset": [
       { "move": "honeclaws", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -13529,6 +14095,7 @@
   },
   "Krookodile": {
     "species": "Krookodile",
+    "num": "553",
     "learnset": [
       { "move": "honeclaws", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -13553,6 +14120,7 @@
   },
   "Darumaka": {
     "species": "Darumaka",
+    "num": "554",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -13575,6 +14143,7 @@
   },
   "Darumaka-Galar": {
     "species": "Darumaka-Galar",
+    "num": "10176",
     "learnset": [
       { "move": "powdersnow", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -13643,6 +14212,7 @@
   },
   "Maractus": {
     "species": "Maractus",
+    "num": "556",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "afteryou", "level": "1" },
@@ -13671,6 +14241,7 @@
   },
   "Dwebble": {
     "species": "Dwebble",
+    "num": "557",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -13693,6 +14264,7 @@
   },
   "Crustle": {
     "species": "Crustle",
+    "num": "558",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -13715,6 +14287,7 @@
   },
   "Scraggy": {
     "species": "Scraggy",
+    "num": "559",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "lowkick", "level": "1" },
@@ -13738,6 +14311,7 @@
   },
   "Scrafty": {
     "species": "Scrafty",
+    "num": "560",
     "learnset": [
       { "move": "headbutt", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -13761,6 +14335,7 @@
   },
   "Sigilyph": {
     "species": "Sigilyph",
+    "num": "561",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -13784,6 +14359,7 @@
   },
   "Yamask": {
     "species": "Yamask",
+    "num": "562",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -13808,6 +14384,7 @@
   },
   "Yamask-Galar": {
     "species": "Yamask-Galar",
+    "num": "10179",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -13832,6 +14409,7 @@
   },
   "Cofagrigus": {
     "species": "Cofagrigus",
+    "num": "563",
     "learnset": [
       { "move": "shadowclaw", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -13858,6 +14436,7 @@
   },
   "Tirtouga": {
     "species": "Tirtouga",
+    "num": "564",
     "learnset": [
       { "move": "watergun", "level": "1" },
       { "move": "withdraw", "level": "1" },
@@ -13883,6 +14462,7 @@
   },
   "Carracosta": {
     "species": "Carracosta",
+    "num": "565",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -13908,6 +14488,7 @@
   },
   "Archen": {
     "species": "Archen",
+    "num": "566",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -13933,6 +14514,7 @@
   },
   "Archeops": {
     "species": "Archeops",
+    "num": "567",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -13958,6 +14540,7 @@
   },
   "Trubbish": {
     "species": "Trubbish",
+    "num": "568",
     "learnset": [
       { "move": "poisongas", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -13983,6 +14566,7 @@
   },
   "Garbodor": {
     "species": "Garbodor",
+    "num": "569",
     "learnset": [
       { "move": "acidspray", "level": "1" },
       { "move": "metalclaw", "level": "1" },
@@ -14010,6 +14594,7 @@
   },
   "Zorua": {
     "species": "Zorua",
+    "num": "570",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -14032,6 +14617,7 @@
   },
   "Zoroark": {
     "species": "Zoroark",
+    "num": "571",
     "learnset": [
       { "move": "nightslash", "level": "0" },
       { "move": "honeclaws", "level": "1" },
@@ -14056,6 +14642,7 @@
   },
   "Minccino": {
     "species": "Minccino",
+    "num": "572",
     "learnset": [
       { "move": "babydolleyes", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -14078,6 +14665,7 @@
   },
   "Cinccino": {
     "species": "Cinccino",
+    "num": "573",
     "learnset": [
       { "move": "afteryou", "level": "1" },
       { "move": "babydolleyes", "level": "1" },
@@ -14102,6 +14690,7 @@
   },
   "Gothita": {
     "species": "Gothita",
+    "num": "574",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -14124,6 +14713,7 @@
   },
   "Gothorita": {
     "species": "Gothorita",
+    "num": "575",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "playnice", "level": "1" },
@@ -14146,6 +14736,7 @@
   },
   "Gothitelle": {
     "species": "Gothitelle",
+    "num": "576",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "playnice", "level": "1" },
@@ -14168,6 +14759,7 @@
   },
   "Solosis": {
     "species": "Solosis",
+    "num": "577",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -14191,6 +14783,7 @@
   },
   "Duosion": {
     "species": "Duosion",
+    "num": "578",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "endeavor", "level": "1" },
@@ -14214,6 +14807,7 @@
   },
   "Reuniclus": {
     "species": "Reuniclus",
+    "num": "579",
     "learnset": [
       { "move": "hammerarm", "level": "0" },
       { "move": "confusion", "level": "1" },
@@ -14238,6 +14832,7 @@
   },
   "Ducklett": {
     "species": "Ducklett",
+    "num": "580",
     "learnset": [
       { "move": "watergun", "level": "1" },
       { "move": "watersport", "level": "3" },
@@ -14261,6 +14856,7 @@
   },
   "Swanna": {
     "species": "Swanna",
+    "num": "581",
     "learnset": [
       { "move": "defog", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -14284,6 +14880,7 @@
   },
   "Vanillite": {
     "species": "Vanillite",
+    "num": "582",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -14306,6 +14903,7 @@
   },
   "Vanillish": {
     "species": "Vanillish",
+    "num": "583",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -14328,6 +14926,7 @@
   },
   "Vanilluxe": {
     "species": "Vanilluxe",
+    "num": "584",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "freezedry", "level": "1" },
@@ -14401,6 +15000,7 @@
   },
   "Emolga": {
     "species": "Emolga",
+    "num": "587",
     "learnset": [
       { "move": "nuzzle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -14422,6 +15022,7 @@
   },
   "Karrablast": {
     "species": "Karrablast",
+    "num": "588",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -14444,6 +15045,7 @@
   },
   "Escavalier": {
     "species": "Escavalier",
+    "num": "589",
     "learnset": [
       { "move": "doubleedge", "level": "1" },
       { "move": "endure", "level": "1" },
@@ -14473,6 +15075,7 @@
   },
   "Foongus": {
     "species": "Foongus",
+    "num": "590",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -14495,6 +15098,7 @@
   },
   "Amoonguss": {
     "species": "Amoonguss",
+    "num": "591",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -14517,6 +15121,7 @@
   },
   "Frillish": {
     "species": "Frillish",
+    "num": "592",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -14539,6 +15144,7 @@
   },
   "Jellicent": {
     "species": "Jellicent",
+    "num": "593",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "acidarmor", "level": "1" },
@@ -14562,6 +15168,7 @@
   },
   "Alomomola": {
     "species": "Alomomola",
+    "num": "594",
     "learnset": [
       { "move": "healingwish", "level": "1" },
       { "move": "helpinghand", "level": "1" },
@@ -14589,6 +15196,7 @@
   },
   "Joltik": {
     "species": "Joltik",
+    "num": "595",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "furycutter", "level": "1" },
@@ -14611,6 +15219,7 @@
   },
   "Galvantula": {
     "species": "Galvantula",
+    "num": "596",
     "learnset": [
       { "move": "stickyweb", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -14634,6 +15243,7 @@
   },
   "Ferroseed": {
     "species": "Ferroseed",
+    "num": "597",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -14654,6 +15264,7 @@
   },
   "Ferrothorn": {
     "species": "Ferrothorn",
+    "num": "598",
     "learnset": [
       { "move": "powerwhip", "level": "0" },
       { "move": "harden", "level": "1" },
@@ -14675,6 +15286,7 @@
   },
   "Klink": {
     "species": "Klink",
+    "num": "599",
     "learnset": [
       { "move": "thundershock", "level": "1" },
       { "move": "visegrip", "level": "1" },
@@ -14697,6 +15309,7 @@
   },
   "Klang": {
     "species": "Klang",
+    "num": "600",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "charge", "level": "1" },
@@ -14719,6 +15332,7 @@
   },
   "Klinklang": {
     "species": "Klinklang",
+    "num": "601",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "charge", "level": "1" },
@@ -14744,6 +15358,7 @@
   },
   "Tynamo": {
     "species": "Tynamo",
+    "num": "602",
     "learnset": [
       { "move": "chargebeam", "level": "1" },
       { "move": "spark", "level": "1" },
@@ -14756,6 +15371,7 @@
   },
   "Eelektrik": {
     "species": "Eelektrik",
+    "num": "603",
     "learnset": [
       { "move": "chargebeam", "level": "1" },
       { "move": "crunch", "level": "1" },
@@ -14779,6 +15395,7 @@
   },
   "Eelektross": {
     "species": "Eelektross",
+    "num": "604",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "coil", "level": "1" },
@@ -14797,6 +15414,7 @@
   },
   "Elgyem": {
     "species": "Elgyem",
+    "num": "605",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -14818,6 +15436,7 @@
   },
   "Beheeyem": {
     "species": "Beheeyem",
+    "num": "606",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -14840,6 +15459,7 @@
   },
   "Litwick": {
     "species": "Litwick",
+    "num": "607",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "smog", "level": "1" },
@@ -14864,6 +15484,7 @@
   },
   "Lampent": {
     "species": "Lampent",
+    "num": "608",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -14888,6 +15509,7 @@
   },
   "Chandelure": {
     "species": "Chandelure",
+    "num": "609",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "confuseray", "level": "1" },
@@ -14912,6 +15534,7 @@
   },
   "Axew": {
     "species": "Axew",
+    "num": "610",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -14938,6 +15561,7 @@
   },
   "Fraxure": {
     "species": "Fraxure",
+    "num": "611",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "falseswipe", "level": "1" },
@@ -14964,6 +15588,7 @@
   },
   "Haxorus": {
     "species": "Haxorus",
+    "num": "612",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "falseswipe", "level": "1" },
@@ -14990,6 +15615,7 @@
   },
   "Cubchoo": {
     "species": "Cubchoo",
+    "num": "613",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "powdersnow", "level": "1" },
@@ -15014,6 +15640,7 @@
   },
   "Beartic": {
     "species": "Beartic",
+    "num": "614",
     "learnset": [
       { "move": "iciclecrash", "level": "0" },
       { "move": "aquajet", "level": "1" },
@@ -15042,6 +15669,7 @@
   },
   "Cryogonal": {
     "species": "Cryogonal",
+    "num": "615",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "iceshard", "level": "1" },
@@ -15070,6 +15698,7 @@
   },
   "Shelmet": {
     "species": "Shelmet",
+    "num": "616",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -15092,6 +15721,7 @@
   },
   "Accelgor": {
     "species": "Accelgor",
+    "num": "617",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "acid", "level": "1" },
@@ -15122,6 +15752,7 @@
   },
   "Stunfisk": {
     "species": "Stunfisk",
+    "num": "618",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -15145,6 +15776,7 @@
   },
   "Stunfisk-Galar": {
     "species": "Stunfisk-Galar",
+    "num": "10180",
     "learnset": [
       { "move": "metalclaw", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -15168,6 +15800,7 @@
   },
   "Mienfoo": {
     "species": "Mienfoo",
+    "num": "619",
     "learnset": [
       { "move": "detect", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -15190,6 +15823,7 @@
   },
   "Mienshao": {
     "species": "Mienshao",
+    "num": "620",
     "learnset": [
       { "move": "detect", "level": "1" },
       { "move": "fakeout", "level": "1" },
@@ -15213,6 +15847,7 @@
   },
   "Druddigon": {
     "species": "Druddigon",
+    "num": "621",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -15234,6 +15869,7 @@
   },
   "Golett": {
     "species": "Golett",
+    "num": "622",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -15258,6 +15894,7 @@
   },
   "Golurk": {
     "species": "Golurk",
+    "num": "623",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -15284,6 +15921,7 @@
   },
   "Pawniard": {
     "species": "Pawniard",
+    "num": "624",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -15307,6 +15945,7 @@
   },
   "Bisharp": {
     "species": "Bisharp",
+    "num": "625",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -15331,6 +15970,7 @@
   },
   "Bouffalant": {
     "species": "Bouffalant",
+    "num": "626",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -15352,6 +15992,7 @@
   },
   "Rufflet": {
     "species": "Rufflet",
+    "num": "627",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -15374,6 +16015,7 @@
   },
   "Braviary": {
     "species": "Braviary",
+    "num": "628",
     "learnset": [
       { "move": "superpower", "level": "0" },
       { "move": "honeclaws", "level": "1" },
@@ -15398,6 +16040,7 @@
   },
   "Vullaby": {
     "species": "Vullaby",
+    "num": "629",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -15420,6 +16063,7 @@
   },
   "Mandibuzz": {
     "species": "Mandibuzz",
+    "num": "630",
     "learnset": [
       { "move": "bonerush", "level": "0" },
       { "move": "flatter", "level": "1" },
@@ -15445,6 +16089,7 @@
   },
   "Heatmor": {
     "species": "Heatmor",
+    "num": "631",
     "learnset": [
       { "move": "lick", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -15469,6 +16114,7 @@
   },
   "Durant": {
     "species": "Durant",
+    "num": "632",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -15493,6 +16139,7 @@
   },
   "Deino": {
     "species": "Deino",
+    "num": "633",
     "learnset": [
       { "move": "focusenergy", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -15518,6 +16165,7 @@
   },
   "Zweilous": {
     "species": "Zweilous",
+    "num": "634",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "doublehit", "level": "1" },
@@ -15544,6 +16192,7 @@
   },
   "Hydreigon": {
     "species": "Hydreigon",
+    "num": "635",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "doublehit", "level": "1" },
@@ -15572,6 +16221,7 @@
   },
   "Larvesta": {
     "species": "Larvesta",
+    "num": "636",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "stringshot", "level": "1" },
@@ -15593,6 +16243,7 @@
   },
   "Volcarona": {
     "species": "Volcarona",
+    "num": "637",
     "learnset": [
       { "move": "quiverdance", "level": "0" },
       { "move": "doubleedge", "level": "1" },
@@ -15623,6 +16274,7 @@
   },
   "Cobalion": {
     "species": "Cobalion",
+    "num": "638",
     "learnset": [
       { "move": "helpinghand", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -15645,6 +16297,7 @@
   },
   "Terrakion": {
     "species": "Terrakion",
+    "num": "639",
     "learnset": [
       { "move": "helpinghand", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -15667,6 +16320,7 @@
   },
   "Virizion": {
     "species": "Virizion",
+    "num": "640",
     "learnset": [
       { "move": "helpinghand", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -15737,6 +16391,7 @@
   },
   "Reshiram": {
     "species": "Reshiram",
+    "num": "643",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "dragonbreath", "level": "1" },
@@ -15760,6 +16415,7 @@
   },
   "Zekrom": {
     "species": "Zekrom",
+    "num": "644",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "dragonbreath", "level": "1" },
@@ -15808,6 +16464,7 @@
   },
   "Kyurem": {
     "species": "Kyurem",
+    "num": "646",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "dragonbreath", "level": "1" },
@@ -15877,6 +16534,7 @@
   },
   "Genesect": {
     "species": "Genesect",
+    "num": "649",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "quickattack", "level": "1" },
@@ -15900,6 +16558,7 @@
   },
   "Chespin": {
     "species": "Chespin",
+    "num": "650",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "vinewhip", "level": "1" },
@@ -15921,6 +16580,7 @@
   },
   "Quilladin": {
     "species": "Quilladin",
+    "num": "651",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "needlearm", "level": "1" },
@@ -15943,6 +16603,7 @@
   },
   "Chesnaught": {
     "species": "Chesnaught",
+    "num": "652",
     "learnset": [
       { "move": "bellydrum", "level": "1" },
       { "move": "feint", "level": "1" },
@@ -15971,6 +16632,7 @@
   },
   "Fennekin": {
     "species": "Fennekin",
+    "num": "653",
     "learnset": [
       { "move": "scratch", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -15995,6 +16657,7 @@
   },
   "Braixen": {
     "species": "Braixen",
+    "num": "654",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -16019,6 +16682,7 @@
   },
   "Delphox": {
     "species": "Delphox",
+    "num": "655",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "futuresight", "level": "1" },
@@ -16048,6 +16712,7 @@
   },
   "Froakie": {
     "species": "Froakie",
+    "num": "656",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -16070,6 +16735,7 @@
   },
   "Frogadier": {
     "species": "Frogadier",
+    "num": "657",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -16092,6 +16758,7 @@
   },
   "Greninja": {
     "species": "Greninja",
+    "num": "658",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -16119,6 +16786,7 @@
   },
   "Bunnelby": {
     "species": "Bunnelby",
+    "num": "659",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -16142,6 +16810,7 @@
   },
   "Diggersby": {
     "species": "Diggersby",
+    "num": "660",
     "learnset": [
       { "move": "laserfocus", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -16166,6 +16835,7 @@
   },
   "Fletchling": {
     "species": "Fletchling",
+    "num": "661",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -16186,6 +16856,7 @@
   },
   "Fletchinder": {
     "species": "Fletchinder",
+    "num": "662",
     "learnset": [
       { "move": "flamecharge", "level": "0" },
       { "move": "ember", "level": "1" },
@@ -16208,6 +16879,7 @@
   },
   "Talonflame": {
     "species": "Talonflame",
+    "num": "663",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "feint", "level": "1" },
@@ -16277,6 +16949,7 @@
   },
   "Litleo": {
     "species": "Litleo",
+    "num": "667",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16300,6 +16973,7 @@
   },
   "Pyroar": {
     "species": "Pyroar",
+    "num": "668",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "hyperbeam", "level": "1" },
@@ -16388,6 +17062,7 @@
   },
   "Skiddo": {
     "species": "Skiddo",
+    "num": "672",
     "learnset": [
       { "move": "growth", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16412,6 +17087,7 @@
   },
   "Gogoat": {
     "species": "Gogoat",
+    "num": "673",
     "learnset": [
       { "move": "aerialace", "level": "1" },
       { "move": "earthquake", "level": "1" },
@@ -16438,6 +17114,7 @@
   },
   "Pancham": {
     "species": "Pancham",
+    "num": "674",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16459,6 +17136,7 @@
   },
   "Pangoro": {
     "species": "Pangoro",
+    "num": "675",
     "learnset": [
       { "move": "nightslash", "level": "0" },
       { "move": "armthrust", "level": "1" },
@@ -16504,6 +17182,7 @@
   },
   "Espurr": {
     "species": "Espurr",
+    "num": "677",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -16549,6 +17228,7 @@
   },
   "Honedge": {
     "species": "Honedge",
+    "num": "679",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16571,6 +17251,7 @@
   },
   "Doublade": {
     "species": "Doublade",
+    "num": "680",
     "learnset": [
       { "move": "autotomize", "level": "1" },
       { "move": "furycutter", "level": "1" },
@@ -16617,6 +17298,7 @@
   },
   "Spritzee": {
     "species": "Spritzee",
+    "num": "682",
     "learnset": [
       { "move": "fairywind", "level": "1" },
       { "move": "sweetscent", "level": "1" },
@@ -16639,6 +17321,7 @@
   },
   "Aromatisse": {
     "species": "Aromatisse",
+    "num": "683",
     "learnset": [
       { "move": "aromaticmist", "level": "1" },
       { "move": "echoedvoice", "level": "1" },
@@ -16665,6 +17348,7 @@
   },
   "Swirlix": {
     "species": "Swirlix",
+    "num": "684",
     "learnset": [
       { "move": "sweetscent", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16688,6 +17372,7 @@
   },
   "Slurpuff": {
     "species": "Slurpuff",
+    "num": "685",
     "learnset": [
       { "move": "fairywind", "level": "1" },
       { "move": "playnice", "level": "1" },
@@ -16712,6 +17397,7 @@
   },
   "Inkay": {
     "species": "Inkay",
+    "num": "686",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16735,6 +17421,7 @@
   },
   "Malamar": {
     "species": "Malamar",
+    "num": "687",
     "learnset": [
       { "move": "hypnosis", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -16759,6 +17446,7 @@
   },
   "Binacle": {
     "species": "Binacle",
+    "num": "688",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -16780,6 +17468,7 @@
   },
   "Barbaracle": {
     "species": "Barbaracle",
+    "num": "689",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -16803,6 +17492,7 @@
   },
   "Skrelp": {
     "species": "Skrelp",
+    "num": "690",
     "learnset": [
       { "move": "smokescreen", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16824,6 +17514,7 @@
   },
   "Dragalge": {
     "species": "Dragalge",
+    "num": "691",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "smokescreen", "level": "1" },
@@ -16846,6 +17537,7 @@
   },
   "Clauncher": {
     "species": "Clauncher",
+    "num": "692",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -16867,6 +17559,7 @@
   },
   "Clawitzer": {
     "species": "Clawitzer",
+    "num": "693",
     "learnset": [
       { "move": "darkpulse", "level": "1" },
       { "move": "dragonpulse", "level": "1" },
@@ -16891,6 +17584,7 @@
   },
   "Helioptile": {
     "species": "Helioptile",
+    "num": "694",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -16912,6 +17606,7 @@
   },
   "Heliolisk": {
     "species": "Heliolisk",
+    "num": "695",
     "learnset": [
       { "move": "bulldoze", "level": "1" },
       { "move": "charge", "level": "1" },
@@ -16935,6 +17630,7 @@
   },
   "Tyrunt": {
     "species": "Tyrunt",
+    "num": "696",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -16957,6 +17653,7 @@
   },
   "Tyrantrum": {
     "species": "Tyrantrum",
+    "num": "697",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "roar", "level": "1" },
@@ -16981,6 +17678,7 @@
   },
   "Amaura": {
     "species": "Amaura",
+    "num": "698",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "powdersnow", "level": "1" },
@@ -17005,6 +17703,7 @@
   },
   "Aurorus": {
     "species": "Aurorus",
+    "num": "699",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "encore", "level": "1" },
@@ -17029,6 +17728,7 @@
   },
   "Sylveon": {
     "species": "Sylveon",
+    "num": "700",
     "learnset": [
       { "move": "disarmingvoice", "level": "0" },
       { "move": "batonpass", "level": "1" },
@@ -17060,6 +17760,7 @@
   },
   "Hawlucha": {
     "species": "Hawlucha",
+    "num": "701",
     "learnset": [
       { "move": "honeclaws", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17084,6 +17785,7 @@
   },
   "Dedenne": {
     "species": "Dedenne",
+    "num": "702",
     "learnset": [
       { "move": "nuzzle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -17107,6 +17809,7 @@
   },
   "Carbink": {
     "species": "Carbink",
+    "num": "703",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17129,6 +17832,7 @@
   },
   "Goomy": {
     "species": "Goomy",
+    "num": "704",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17149,6 +17853,7 @@
   },
   "Sliggoo": {
     "species": "Sliggoo",
+    "num": "705",
     "learnset": [
       { "move": "acidspray", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -17170,6 +17875,7 @@
   },
   "Goodra": {
     "species": "Goodra",
+    "num": "706",
     "learnset": [
       { "move": "aquatail", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -17196,6 +17902,7 @@
   },
   "Klefki": {
     "species": "Klefki",
+    "num": "707",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "fairylock", "level": "1" },
@@ -17219,6 +17926,7 @@
   },
   "Phantump": {
     "species": "Phantump",
+    "num": "708",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17242,6 +17950,7 @@
   },
   "Trevenant": {
     "species": "Trevenant",
+    "num": "709",
     "learnset": [
       { "move": "shadowclaw", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -17311,6 +18020,7 @@
   },
   "Bergmite": {
     "species": "Bergmite",
+    "num": "712",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "rapidspin", "level": "1" },
@@ -17335,6 +18045,7 @@
   },
   "Avalugg": {
     "species": "Avalugg",
+    "num": "713",
     "learnset": [
       { "move": "bodyslam", "level": "0" },
       { "move": "harden", "level": "1" },
@@ -17362,6 +18073,7 @@
   },
   "Noibat": {
     "species": "Noibat",
+    "num": "714",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17385,6 +18097,7 @@
   },
   "Noivern": {
     "species": "Noivern",
+    "num": "715",
     "learnset": [
       { "move": "dragonpulse", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -17438,6 +18151,7 @@
   },
   "Yveltal": {
     "species": "Yveltal",
+    "num": "717",
     "learnset": [
       { "move": "doubleteam", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -17491,6 +18205,7 @@
   },
   "Diancie": {
     "species": "Diancie",
+    "num": "719",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17514,6 +18229,7 @@
   },
   "Hoopa": {
     "species": "Hoopa",
+    "num": "720",
     "learnset": [
       { "move": "allyswitch", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -17544,6 +18260,7 @@
   },
   "Volcanion": {
     "species": "Volcanion",
+    "num": "721",
     "learnset": [
       { "move": "firespin", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -17570,6 +18287,7 @@
   },
   "Rowlet": {
     "species": "Rowlet",
+    "num": "722",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17592,6 +18310,7 @@
   },
   "Dartrix": {
     "species": "Dartrix",
+    "num": "723",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -17614,6 +18333,7 @@
   },
   "Decidueye": {
     "species": "Decidueye",
+    "num": "724",
     "learnset": [
       { "move": "spiritshackle", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -17641,6 +18361,7 @@
   },
   "Litten": {
     "species": "Litten",
+    "num": "725",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -17663,6 +18384,7 @@
   },
   "Torracat": {
     "species": "Torracat",
+    "num": "726",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -17685,6 +18407,7 @@
   },
   "Incineroar": {
     "species": "Incineroar",
+    "num": "727",
     "learnset": [
       { "move": "darkestlariat", "level": "0" },
       { "move": "bulkup", "level": "1" },
@@ -17711,6 +18434,7 @@
   },
   "Popplio": {
     "species": "Popplio",
+    "num": "728",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -17733,6 +18457,7 @@
   },
   "Brionne": {
     "species": "Brionne",
+    "num": "729",
     "learnset": [
       { "move": "disarmingvoice", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -17755,6 +18480,7 @@
   },
   "Primarina": {
     "species": "Primarina",
+    "num": "730",
     "learnset": [
       { "move": "sparklingaria", "level": "0" },
       { "move": "disarmingvoice", "level": "1" },
@@ -17778,6 +18504,7 @@
   },
   "Pikipek": {
     "species": "Pikipek",
+    "num": "731",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "growl", "level": "3" },
@@ -17799,6 +18526,7 @@
   },
   "Trumbeak": {
     "species": "Trumbeak",
+    "num": "732",
     "learnset": [
       { "move": "echoedvoice", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -17821,6 +18549,7 @@
   },
   "Toucannon": {
     "species": "Toucannon",
+    "num": "733",
     "learnset": [
       { "move": "beakblast", "level": "1" },
       { "move": "echoedvoice", "level": "1" },
@@ -17844,6 +18573,7 @@
   },
   "Yungoos": {
     "species": "Yungoos",
+    "num": "734",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "leer", "level": "3" },
@@ -17868,6 +18598,7 @@
   },
   "Gumshoos": {
     "species": "Gumshoos",
+    "num": "735",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "pursuit", "level": "1" },
@@ -17892,6 +18623,7 @@
   },
   "Grubbin": {
     "species": "Grubbin",
+    "num": "736",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "visegrip", "level": "1" },
@@ -17910,6 +18642,7 @@
   },
   "Charjabug": {
     "species": "Charjabug",
+    "num": "737",
     "learnset": [
       { "move": "charge", "level": "0" },
       { "move": "bugbite", "level": "1" },
@@ -17931,6 +18664,7 @@
   },
   "Vikavolt": {
     "species": "Vikavolt",
+    "num": "738",
     "learnset": [
       { "move": "thunderbolt", "level": "0" },
       { "move": "bugbite", "level": "1" },
@@ -17958,6 +18692,7 @@
   },
   "Crabrawler": {
     "species": "Crabrawler",
+    "num": "739",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "rocksmash", "level": "5" },
@@ -17979,6 +18714,7 @@
   },
   "Crabominable": {
     "species": "Crabominable",
+    "num": "740",
     "learnset": [
       { "move": "bubble", "level": "1" },
       { "move": "icepunch", "level": "1" },
@@ -18025,6 +18761,7 @@
   },
   "Cutiefly": {
     "species": "Cutiefly",
+    "num": "742",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "fairywind", "level": "1" },
@@ -18044,6 +18781,7 @@
   },
   "Ribombee": {
     "species": "Ribombee",
+    "num": "743",
     "learnset": [
       { "move": "pollenpuff", "level": "0" },
       { "move": "absorb", "level": "1" },
@@ -18065,6 +18803,7 @@
   },
   "Rockruff": {
     "species": "Rockruff",
+    "num": "744",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -18135,6 +18874,7 @@
   },
   "Mareanie": {
     "species": "Mareanie",
+    "num": "747",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -18155,6 +18895,7 @@
   },
   "Toxapex": {
     "species": "Toxapex",
+    "num": "748",
     "learnset": [
       { "move": "banefulbunker", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -18176,6 +18917,7 @@
   },
   "Mudbray": {
     "species": "Mudbray",
+    "num": "749",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "rocksmash", "level": "1" },
@@ -18197,6 +18939,7 @@
   },
   "Mudsdale": {
     "species": "Mudsdale",
+    "num": "750",
     "learnset": [
       { "move": "doublekick", "level": "1" },
       { "move": "irondefense", "level": "1" },
@@ -18218,6 +18961,7 @@
   },
   "Dewpider": {
     "species": "Dewpider",
+    "num": "751",
     "learnset": [
       { "move": "infestation", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -18240,6 +18984,7 @@
   },
   "Araquanid": {
     "species": "Araquanid",
+    "num": "752",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "bugbite", "level": "1" },
@@ -18263,6 +19008,7 @@
   },
   "Fomantis": {
     "species": "Fomantis",
+    "num": "753",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "leafage", "level": "1" },
@@ -18283,6 +19029,7 @@
   },
   "Lurantis": {
     "species": "Lurantis",
+    "num": "754",
     "learnset": [
       { "move": "petalblizzard", "level": "0" },
       { "move": "dualchop", "level": "1" },
@@ -18307,6 +19054,7 @@
   },
   "Morelull": {
     "species": "Morelull",
+    "num": "755",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -18328,6 +19076,7 @@
   },
   "Shiinotic": {
     "species": "Shiinotic",
+    "num": "756",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -18349,6 +19098,7 @@
   },
   "Salandit": {
     "species": "Salandit",
+    "num": "757",
     "learnset": [
       { "move": "poisongas", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -18371,6 +19121,7 @@
   },
   "Salazzle": {
     "species": "Salazzle",
+    "num": "758",
     "learnset": [
       { "move": "firelash", "level": "0" },
       { "move": "disable", "level": "1" },
@@ -18400,6 +19151,7 @@
   },
   "Stufful": {
     "species": "Stufful",
+    "num": "759",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -18422,6 +19174,7 @@
   },
   "Bewear": {
     "species": "Bewear",
+    "num": "760",
     "learnset": [
       { "move": "bind", "level": "0" },
       { "move": "babydolleyes", "level": "1" },
@@ -18445,6 +19198,7 @@
   },
   "Bounsweet": {
     "species": "Bounsweet",
+    "num": "761",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "playnice", "level": "4" },
@@ -18463,6 +19217,7 @@
   },
   "Steenee": {
     "species": "Steenee",
+    "num": "762",
     "learnset": [
       { "move": "flail", "level": "1" },
       { "move": "playnice", "level": "1" },
@@ -18483,6 +19238,7 @@
   },
   "Tsareena": {
     "species": "Tsareena",
+    "num": "763",
     "learnset": [
       { "move": "tropkick", "level": "0" },
       { "move": "flail", "level": "1" },
@@ -18507,6 +19263,7 @@
   },
   "Comfey": {
     "species": "Comfey",
+    "num": "764",
     "learnset": [
       { "move": "growth", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -18533,6 +19290,7 @@
   },
   "Oranguru": {
     "species": "Oranguru",
+    "num": "765",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "taunt", "level": "1" },
@@ -18555,6 +19313,7 @@
   },
   "Passimian": {
     "species": "Passimian",
+    "num": "766",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -18577,6 +19336,7 @@
   },
   "Wimpod": {
     "species": "Wimpod",
+    "num": "767",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "sandattack", "level": "1" },
@@ -18588,6 +19348,7 @@
   },
   "Golisopod": {
     "species": "Golisopod",
+    "num": "768",
     "learnset": [
       { "move": "firstimpression", "level": "0" },
       { "move": "defensecurl", "level": "1" },
@@ -18612,6 +19373,7 @@
   },
   "Sandygast": {
     "species": "Sandygast",
+    "num": "769",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -18634,6 +19396,7 @@
   },
   "Palossand": {
     "species": "Palossand",
+    "num": "770",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "astonish", "level": "1" },
@@ -18656,6 +19419,7 @@
   },
   "Pyukumuku": {
     "species": "Pyukumuku",
+    "num": "771",
     "learnset": [
       { "move": "batonpass", "level": "1" },
       { "move": "harden", "level": "1" },
@@ -18752,6 +19516,7 @@
   },
   "Komala": {
     "species": "Komala",
+    "num": "775",
     "learnset": [
       { "move": "defensecurl", "level": "1" },
       { "move": "rollout", "level": "1" },
@@ -18773,6 +19538,7 @@
   },
   "Turtonator": {
     "species": "Turtonator",
+    "num": "776",
     "learnset": [
       { "move": "smog", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -18796,6 +19562,7 @@
   },
   "Togedemaru": {
     "species": "Togedemaru",
+    "num": "777",
     "learnset": [
       { "move": "nuzzle", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -18841,6 +19608,7 @@
   },
   "Bruxish": {
     "species": "Bruxish",
+    "num": "779",
     "learnset": [
       { "move": "watergun", "level": "1" },
       { "move": "astonish", "level": "4" },
@@ -18861,6 +19629,7 @@
   },
   "Drampa": {
     "species": "Drampa",
+    "num": "780",
     "learnset": [
       { "move": "echoedvoice", "level": "1" },
       { "move": "playnice", "level": "1" },
@@ -18882,6 +19651,7 @@
   },
   "Dhelmise": {
     "species": "Dhelmise",
+    "num": "781",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "rapidspin", "level": "1" },
@@ -19080,6 +19850,7 @@
   },
   "Cosmog": {
     "species": "Cosmog",
+    "num": "789",
     "learnset": [
       { "move": "splash", "level": "1" },
       { "move": "teleport", "level": "1" }
@@ -19090,6 +19861,7 @@
   },
   "Cosmoem": {
     "species": "Cosmoem",
+    "num": "790",
     "learnset": [
       { "move": "cosmicpower", "level": "0" },
       { "move": "teleport", "level": "1" }
@@ -19100,6 +19872,7 @@
   },
   "Solgaleo": {
     "species": "Solgaleo",
+    "num": "791",
     "learnset": [
       { "move": "sunsteelstrike", "level": "0" },
       { "move": "cosmicpower", "level": "1" },
@@ -19125,6 +19898,7 @@
   },
   "Lunala": {
     "species": "Lunala",
+    "num": "792",
     "learnset": [
       { "move": "moongeistbeam", "level": "0" },
       { "move": "confusion", "level": "1" },
@@ -19150,6 +19924,7 @@
   },
   "Nihilego": {
     "species": "Nihilego",
+    "num": "793",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -19175,6 +19950,7 @@
   },
   "Buzzwole": {
     "species": "Buzzwole",
+    "num": "794",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "poweruppunch", "level": "1" },
@@ -19199,6 +19975,7 @@
   },
   "Pheromosa": {
     "species": "Pheromosa",
+    "num": "795",
     "learnset": [
       { "move": "feint", "level": "1" },
       { "move": "rapidspin", "level": "1" },
@@ -19223,6 +20000,7 @@
   },
   "Xurkitree": {
     "species": "Xurkitree",
+    "num": "796",
     "learnset": [
       { "move": "thundershock", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -19247,6 +20025,7 @@
   },
   "Celesteela": {
     "species": "Celesteela",
+    "num": "797",
     "learnset": [
       { "move": "absorb", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -19271,6 +20050,7 @@
   },
   "Kartana": {
     "species": "Kartana",
+    "num": "798",
     "learnset": [
       { "move": "furycutter", "level": "1" },
       { "move": "vacuumwave", "level": "1" },
@@ -19295,6 +20075,7 @@
   },
   "Guzzlord": {
     "species": "Guzzlord",
+    "num": "799",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "dragontail", "level": "1" },
@@ -19320,6 +20101,7 @@
   },
   "Necrozma": {
     "species": "Necrozma",
+    "num": "800",
     "learnset": [
       { "move": "chargebeam", "level": "1" },
       { "move": "confusion", "level": "1" },
@@ -19345,6 +20127,7 @@
   },
   "Magearna": {
     "species": "Magearna",
+    "num": "801",
     "learnset": [
       { "move": "gyroball", "level": "1" },
       { "move": "helpinghand", "level": "1" },
@@ -19370,6 +20153,7 @@
   },
   "Marshadow": {
     "species": "Marshadow",
+    "num": "802",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "counter", "level": "1" },
@@ -19396,6 +20180,7 @@
   },
   "Poipole": {
     "species": "Poipole",
+    "num": "803",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "dragonpulse", "level": "1" },
@@ -19418,6 +20203,7 @@
   },
   "Naganadel": {
     "species": "Naganadel",
+    "num": "804",
     "learnset": [
       { "move": "aircutter", "level": "0" },
       { "move": "acid", "level": "1" },
@@ -19443,6 +20229,7 @@
   },
   "Stakataka": {
     "species": "Stakataka",
+    "num": "805",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -19467,6 +20254,7 @@
   },
   "Blacephalon": {
     "species": "Blacephalon",
+    "num": "806",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "firespin", "level": "1" },
@@ -19491,6 +20279,7 @@
   },
   "Zeraora": {
     "species": "Zeraora",
+    "num": "807",
     "learnset": [
       { "move": "fakeout", "level": "1" },
       { "move": "poweruppunch", "level": "1" },
@@ -19517,6 +20306,7 @@
   },
   "Meltan": {
     "species": "Meltan",
+    "num": "808",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -19532,6 +20322,7 @@
   },
   "Melmetal": {
     "species": "Melmetal",
+    "num": "809",
     "learnset": [
       { "move": "thunderpunch", "level": "0" },
       { "move": "harden", "level": "1" },
@@ -19555,6 +20346,7 @@
   },
   "Grookey": {
     "species": "Grookey",
+    "num": "810",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -19574,6 +20366,7 @@
   },
   "Thwackey": {
     "species": "Thwackey",
+    "num": "811",
     "learnset": [
       { "move": "doublehit", "level": "0" },
       { "move": "branchpoke", "level": "1" },
@@ -19594,6 +20387,7 @@
   },
   "Rillaboom": {
     "species": "Rillaboom",
+    "num": "812",
     "learnset": [
       { "move": "drumbeating", "level": "0" },
       { "move": "branchpoke", "level": "1" },
@@ -19618,6 +20412,7 @@
   },
   "Scorbunny": {
     "species": "Scorbunny",
+    "num": "813",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -19637,6 +20432,7 @@
   },
   "Raboot": {
     "species": "Raboot",
+    "num": "814",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -19656,6 +20452,7 @@
   },
   "Cinderace": {
     "species": "Cinderace",
+    "num": "815",
     "learnset": [
       { "move": "pyroball", "level": "0" },
       { "move": "ember", "level": "1" },
@@ -19678,6 +20475,7 @@
   },
   "Sobble": {
     "species": "Sobble",
+    "num": "816",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -19697,6 +20495,7 @@
   },
   "Drizzile": {
     "species": "Drizzile",
+    "num": "817",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -19716,6 +20515,7 @@
   },
   "Inteleon": {
     "species": "Inteleon",
+    "num": "818",
     "learnset": [
       { "move": "snipeshot", "level": "0" },
       { "move": "acrobatics", "level": "1" },
@@ -19738,6 +20538,7 @@
   },
   "Skwovet": {
     "species": "Skwovet",
+    "num": "819",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -19759,6 +20560,7 @@
   },
   "Greedent": {
     "species": "Greedent",
+    "num": "820",
     "learnset": [
       { "move": "covet", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -19781,6 +20583,7 @@
   },
   "Rookidee": {
     "species": "Rookidee",
+    "num": "821",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -19800,6 +20603,7 @@
   },
   "Corvisquire": {
     "species": "Corvisquire",
+    "num": "822",
     "learnset": [
       { "move": "honeclaws", "level": "1" },
       { "move": "leer", "level": "1" },
@@ -19819,6 +20623,7 @@
   },
   "Corviknight": {
     "species": "Corviknight",
+    "num": "823",
     "learnset": [
       { "move": "steelwing", "level": "0" },
       { "move": "honeclaws", "level": "1" },
@@ -19841,6 +20646,7 @@
   },
   "Blipbug": {
     "species": "Blipbug",
+    "num": "824",
     "learnset": [{ "move": "strugglebug", "level": "1" }],
     "evolveCandies": 6,
     "levelUpCandies": 5,
@@ -19848,6 +20654,7 @@
   },
   "Dottler": {
     "species": "Dottler",
+    "num": "825",
     "learnset": [
       { "move": "confusion", "level": "0" },
       { "move": "lightscreen", "level": "0" },
@@ -19860,6 +20667,7 @@
   },
   "Orbeetle": {
     "species": "Orbeetle",
+    "num": "826",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "lightscreen", "level": "1" },
@@ -19884,6 +20692,7 @@
   },
   "Nickit": {
     "species": "Nickit",
+    "num": "827",
     "learnset": [
       { "move": "quickattack", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -19903,6 +20712,7 @@
   },
   "Thievul": {
     "species": "Thievul",
+    "num": "828",
     "learnset": [
       { "move": "thief", "level": "0" },
       { "move": "beatup", "level": "1" },
@@ -19924,6 +20734,7 @@
   },
   "Gossifleur": {
     "species": "Gossifleur",
+    "num": "829",
     "learnset": [
       { "move": "leafage", "level": "1" },
       { "move": "sing", "level": "1" },
@@ -19943,6 +20754,7 @@
   },
   "Eldegoss": {
     "species": "Eldegoss",
+    "num": "830",
     "learnset": [
       { "move": "cottonspore", "level": "0" },
       { "move": "leafage", "level": "1" },
@@ -19964,6 +20776,7 @@
   },
   "Wooloo": {
     "species": "Wooloo",
+    "num": "831",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -19984,6 +20797,7 @@
   },
   "Dubwool": {
     "species": "Dubwool",
+    "num": "832",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -20005,6 +20819,7 @@
   },
   "Chewtle": {
     "species": "Chewtle",
+    "num": "833",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -20022,6 +20837,7 @@
   },
   "Drednaw": {
     "species": "Drednaw",
+    "num": "834",
     "learnset": [
       { "move": "rocktomb", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -20044,6 +20860,7 @@
   },
   "Yamper": {
     "species": "Yamper",
+    "num": "835",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -20063,6 +20880,7 @@
   },
   "Boltund": {
     "species": "Boltund",
+    "num": "836",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "electrify", "level": "1" },
@@ -20084,6 +20902,7 @@
   },
   "Rolycoly": {
     "species": "Rolycoly",
+    "num": "837",
     "learnset": [
       { "move": "smokescreen", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -20102,6 +20921,7 @@
   },
   "Carkol": {
     "species": "Carkol",
+    "num": "838",
     "learnset": [
       { "move": "flamecharge", "level": "0" },
       { "move": "rapidspin", "level": "1" },
@@ -20122,6 +20942,7 @@
   },
   "Coalossal": {
     "species": "Coalossal",
+    "num": "839",
     "learnset": [
       { "move": "tarshot", "level": "0" },
       { "move": "flamecharge", "level": "1" },
@@ -20143,6 +20964,7 @@
   },
   "Applin": {
     "species": "Applin",
+    "num": "840",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "withdraw", "level": "1" }
@@ -20153,6 +20975,7 @@
   },
   "Flapple": {
     "species": "Flapple",
+    "num": "841",
     "learnset": [
       { "move": "wingattack", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -20178,6 +21001,7 @@
   },
   "Appletun": {
     "species": "Appletun",
+    "num": "842",
     "learnset": [
       { "move": "headbutt", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -20203,6 +21027,7 @@
   },
   "Silicobra": {
     "species": "Silicobra",
+    "num": "843",
     "learnset": [
       { "move": "sandattack", "level": "1" },
       { "move": "wrap", "level": "1" },
@@ -20223,6 +21048,7 @@
   },
   "Sandaconda": {
     "species": "Sandaconda",
+    "num": "844",
     "learnset": [
       { "move": "brutalswing", "level": "1" },
       { "move": "minimize", "level": "1" },
@@ -20244,6 +21070,7 @@
   },
   "Cramorant": {
     "species": "Cramorant",
+    "num": "845",
     "learnset": [
       { "move": "belch", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -20265,6 +21092,7 @@
   },
   "Arrokuda": {
     "species": "Arrokuda",
+    "num": "846",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "peck", "level": "1" },
@@ -20283,6 +21111,7 @@
   },
   "Barraskewda": {
     "species": "Barraskewda",
+    "num": "847",
     "learnset": [
       { "move": "aquajet", "level": "1" },
       { "move": "bite", "level": "1" },
@@ -20302,6 +21131,7 @@
   },
   "Toxel": {
     "species": "Toxel",
+    "num": "848",
     "learnset": [
       { "move": "acid", "level": "1" },
       { "move": "belch", "level": "1" },
@@ -20349,6 +21179,7 @@
   },
   "Sizzlipede": {
     "species": "Sizzlipede",
+    "num": "850",
     "learnset": [
       { "move": "ember", "level": "1" },
       { "move": "smokescreen", "level": "1" },
@@ -20370,6 +21201,7 @@
   },
   "Centiskorch": {
     "species": "Centiskorch",
+    "num": "851",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "ember", "level": "1" },
@@ -20392,6 +21224,7 @@
   },
   "Clobbopus": {
     "species": "Clobbopus",
+    "num": "852",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "rocksmash", "level": "1" },
@@ -20411,6 +21244,7 @@
   },
   "Grapploct": {
     "species": "Grapploct",
+    "num": "853",
     "learnset": [
       { "move": "octolock", "level": "0" },
       { "move": "bind", "level": "1" },
@@ -20476,6 +21310,7 @@
   },
   "Hatenna": {
     "species": "Hatenna",
+    "num": "856",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "playnice", "level": "1" },
@@ -20495,6 +21330,7 @@
   },
   "Hattrem": {
     "species": "Hattrem",
+    "num": "857",
     "learnset": [
       { "move": "brutalswing", "level": "0" },
       { "move": "confusion", "level": "1" },
@@ -20515,6 +21351,7 @@
   },
   "Hatterene": {
     "species": "Hatterene",
+    "num": "858",
     "learnset": [
       { "move": "psychocut", "level": "0" },
       { "move": "brutalswing", "level": "1" },
@@ -20537,6 +21374,7 @@
   },
   "Impidimp": {
     "species": "Impidimp",
+    "num": "859",
     "learnset": [
       { "move": "confide", "level": "1" },
       { "move": "fakeout", "level": "1" },
@@ -20558,6 +21396,7 @@
   },
   "Morgrem": {
     "species": "Morgrem",
+    "num": "860",
     "learnset": [
       { "move": "falsesurrender", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -20580,6 +21419,7 @@
   },
   "Grimmsnarl": {
     "species": "Grimmsnarl",
+    "num": "861",
     "learnset": [
       { "move": "spiritbreak", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -20606,6 +21446,7 @@
   },
   "Obstagoon": {
     "species": "Obstagoon",
+    "num": "862",
     "learnset": [
       { "move": "obstruct", "level": "0" },
       { "move": "babydolleyes", "level": "1" },
@@ -20635,6 +21476,7 @@
   },
   "Perrserker": {
     "species": "Perrserker",
+    "num": "863",
     "learnset": [
       { "move": "ironhead", "level": "0" },
       { "move": "fakeout", "level": "1" },
@@ -20659,6 +21501,7 @@
   },
   "Cursola": {
     "species": "Cursola",
+    "num": "864",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "disable", "level": "1" },
@@ -20681,6 +21524,7 @@
   },
   "Sirfetch’d": {
     "species": "Sirfetch’d",
+    "num": "865",
     "learnset": [
       { "move": "irondefense", "level": "0" },
       { "move": "firstimpression", "level": "1" },
@@ -20745,6 +21589,7 @@
   },
   "Runerigus": {
     "species": "Runerigus",
+    "num": "867",
     "learnset": [
       { "move": "shadowclaw", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -20771,6 +21616,7 @@
   },
   "Milcery": {
     "species": "Milcery",
+    "num": "868",
     "learnset": [
       { "move": "aromaticmist", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -20812,6 +21658,7 @@
   },
   "Falinks": {
     "species": "Falinks",
+    "num": "870",
     "learnset": [
       { "move": "protect", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -20834,6 +21681,7 @@
   },
   "Pincurchin": {
     "species": "Pincurchin",
+    "num": "871",
     "learnset": [
       { "move": "peck", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -20856,6 +21704,7 @@
   },
   "Snom": {
     "species": "Snom",
+    "num": "872",
     "learnset": [
       { "move": "powdersnow", "level": "1" },
       { "move": "strugglebug", "level": "1" }
@@ -20866,6 +21715,7 @@
   },
   "Frosmoth": {
     "species": "Frosmoth",
+    "num": "873",
     "learnset": [
       { "move": "icywind", "level": "0" },
       { "move": "attract", "level": "1" },
@@ -20892,6 +21742,7 @@
   },
   "Stonjourner": {
     "species": "Stonjourner",
+    "num": "874",
     "learnset": [
       { "move": "block", "level": "1" },
       { "move": "rockthrow", "level": "1" },
@@ -20976,6 +21827,7 @@
   },
   "Cufant": {
     "species": "Cufant",
+    "num": "878",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -20997,6 +21849,7 @@
   },
   "Copperajah": {
     "species": "Copperajah",
+    "num": "879",
     "learnset": [
       { "move": "heavyslam", "level": "0" },
       { "move": "growl", "level": "1" },
@@ -21019,6 +21872,7 @@
   },
   "Dracozolt": {
     "species": "Dracozolt",
+    "num": "880",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -21040,6 +21894,7 @@
   },
   "Arctozolt": {
     "species": "Arctozolt",
+    "num": "881",
     "learnset": [
       { "move": "powdersnow", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -21061,6 +21916,7 @@
   },
   "Dracovish": {
     "species": "Dracovish",
+    "num": "882",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -21082,6 +21938,7 @@
   },
   "Arctovish": {
     "species": "Arctovish",
+    "num": "883",
     "learnset": [
       { "move": "powdersnow", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -21103,6 +21960,7 @@
   },
   "Duraludon": {
     "species": "Duraludon",
+    "num": "884",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "metalclaw", "level": "1" },
@@ -21124,6 +21982,7 @@
   },
   "Dreepy": {
     "species": "Dreepy",
+    "num": "885",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "bite", "level": "1" },
@@ -21136,6 +21995,7 @@
   },
   "Drakloak": {
     "species": "Drakloak",
+    "num": "886",
     "learnset": [
       { "move": "dragonpulse", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -21161,6 +22021,7 @@
   },
   "Dragapult": {
     "species": "Dragapult",
+    "num": "887",
     "learnset": [
       { "move": "dragondarts", "level": "0" },
       { "move": "astonish", "level": "1" },
@@ -21188,6 +22049,7 @@
   },
   "Zacian": {
     "species": "Zacian",
+    "num": "888",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "howl", "level": "1" },
@@ -21210,6 +22072,7 @@
   },
   "Zamazenta": {
     "species": "Zamazenta",
+    "num": "889",
     "learnset": [
       { "move": "bite", "level": "1" },
       { "move": "howl", "level": "1" },
@@ -21232,6 +22095,7 @@
   },
   "Eternatus": {
     "species": "Eternatus",
+    "num": "890",
     "learnset": [
       { "move": "agility", "level": "1" },
       { "move": "confuseray", "level": "1" },
@@ -21255,6 +22119,7 @@
   },
   "Kubfu": {
     "species": "Kubfu",
+    "num": "891",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "rocksmash", "level": "1" },
@@ -21303,6 +22168,7 @@
   },
   "Zarude": {
     "species": "Zarude",
+    "num": "893",
     "learnset": [
       { "move": "bind", "level": "1" },
       { "move": "scratch", "level": "1" },
@@ -21328,6 +22194,7 @@
   },
   "Regieleki": {
     "species": "Regieleki",
+    "num": "894",
     "learnset": [
       { "move": "rapidspin", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -21351,6 +22218,7 @@
   },
   "Regidrago": {
     "species": "Regidrago",
+    "num": "895",
     "learnset": [
       { "move": "twister", "level": "1" },
       { "move": "visegrip", "level": "1" },
@@ -21374,6 +22242,7 @@
   },
   "Glastrier": {
     "species": "Glastrier",
+    "num": "896",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -21396,6 +22265,7 @@
   },
   "Spectrier": {
     "species": "Spectrier",
+    "num": "897",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "tailwhip", "level": "1" },
@@ -21418,6 +22288,7 @@
   },
   "Calyrex": {
     "species": "Calyrex",
+    "num": "898",
     "learnset": [
       { "move": "confusion", "level": "1" },
       { "move": "growth", "level": "1" },

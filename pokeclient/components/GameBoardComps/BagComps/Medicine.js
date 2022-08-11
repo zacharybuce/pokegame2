@@ -6,10 +6,11 @@ import {
   IconButton,
   Tooltip,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import MedicineSprite from "../../Utils/MedicineSprite";
 import SellIcon from "@mui/icons-material/Sell";
 import { useSnackbar } from "notistack";
+import MedicineDialog from "./MedicineDialog";
 
 const costs = {
   potions: 200,
@@ -31,10 +32,16 @@ const getName = (medicine) => {
   }
 };
 
-const Medicine = ({ bag, setBag, setMoney }) => {
+const Medicine = ({ bag, team, useMedicine, setBag, setMoney }) => {
   const { enqueueSnackbar } = useSnackbar();
+  const [medicineDialog, setMedicineDialog] = useState(false);
+  const [medToShow, setMedToShow] = useState();
 
-  const interact = (item) => {};
+  const interact = (item) => {
+    setMedicineDialog(true);
+    setMedToShow(item);
+  };
+
   const sellMedicine = (medicine) => {
     if (bag.medicine[medicine] > 0) {
       let newBag = bag;
@@ -66,7 +73,7 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>
@@ -79,7 +86,8 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           <Button
             variant="outlined"
             sx={{ width: "95%", justifyContent: "left" }}
-            onClick={() => interact("potion")}
+            disabled={bag.medicine.potions == 0}
+            onClick={() => interact("potions")}
           >
             <MedicineSprite item={"potion"} showTooltip /> Potion
           </Button>
@@ -102,7 +110,7 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>
@@ -115,7 +123,8 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           <Button
             variant="outlined"
             sx={{ width: "95%", justifyContent: "left" }}
-            onClick={() => interact("super-potion")}
+            disabled={bag.medicine.superPotions == 0}
+            onClick={() => interact("superPotions")}
           >
             <MedicineSprite item={"super-potion"} showTooltip /> Super Potion
           </Button>
@@ -138,7 +147,7 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>
@@ -151,7 +160,8 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           <Button
             variant="outlined"
             sx={{ width: "95%", justifyContent: "left" }}
-            onClick={() => interact("hyper-potion")}
+            disabled={bag.medicine.hyperPotions == 0}
+            onClick={() => interact("hyperPotions")}
           >
             <MedicineSprite item={"hyper-potion"} showTooltip /> Hyper Potion
           </Button>
@@ -174,7 +184,7 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           container
           xs={1}
           direction="row"
-          alignItems="flex-end"
+          alignItems="center"
           justifyContent="center"
         >
           <Tooltip title={"Sell"}>
@@ -187,7 +197,8 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           <Button
             variant="outlined"
             sx={{ width: "95%", justifyContent: "left" }}
-            onClick={() => interact("revive")}
+            disabled={bag.medicine.revives == 0}
+            onClick={() => interact("revives")}
           >
             <MedicineSprite item={"revive"} showTooltip /> Revives
           </Button>
@@ -203,6 +214,13 @@ const Medicine = ({ bag, setBag, setMoney }) => {
           <Typography variant="h6">x{bag.medicine.revives}</Typography>
         </Grid>
       </Grid>
+      <MedicineDialog
+        medToShow={medToShow}
+        team={team}
+        medicineDialog={medicineDialog}
+        useMedicine={useMedicine}
+        setMedicineDialog={setMedicineDialog}
+      />
     </Box>
   );
 };

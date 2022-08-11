@@ -1,6 +1,9 @@
 import Poke from "pokemon-showdown";
 import Sim from "pokemon-showdown";
 import { readFile, writeFile } from "fs/promises";
+import fs from "fs";
+import path from "path";
+import csv from "fast-csv";
 
 const pokeEx = {
   exists: true,
@@ -61,6 +64,7 @@ const pokeEx = {
   changesFrom: undefined,
 };
 const Dex = Poke.Dex;
+var ids = [];
 
 //sorting function to sort moves by level learned - increasing
 const moveSortFunction = (a, b) => {
@@ -131,6 +135,7 @@ const getLevelUpIncrease = (pokemon) => {
 const genPokemonData = (pokemon) => {
   const data = {
     species: pokemon.name,
+    num: ids[pokemon.spriteid],
     learnset: getMoves(pokemon, 8),
     evolveCandies: getEvolveCandies(pokemon),
     levelUpCandies: getLevelUpCandies(pokemon),
@@ -143,23 +148,31 @@ const genPokemonData = (pokemon) => {
 //------------------------------------------------
 const showdownMon = Dex.species.all();
 
-const pokemonData = {};
-showdownMon.forEach((pokemon, index) => {
-  console.log(index);
-  if (
-    (pokemon.forme === "" ||
-      pokemon.forme === "Alola" ||
-      pokemon.forme === "Galar") &&
-    pokemon.num > 0
-  )
-    pokemonData[pokemon.name] = genPokemonData(pokemon);
-});
+fs.createReadStream("C:/Users/zacha/VSCode/pokegame2/data/pokemon_forms.csv")
+  .pipe(csv.parse({ headers: true }))
+  .on("error", (error) => console.error(error))
+  .on("data", (row) => {
+    ids[row.identifier] = row.pokemon_id;
+  })
+  .on("end", (rowCount) => {
+    console.log(`Parsed ${rowCount} rows`);
 
-// console.log(showdownMon);
+    const pokemonData = {};
+    showdownMon.forEach((pokemon, index) => {
+      console.log(index);
+      if (
+        (pokemon.forme === "" ||
+          pokemon.forme === "Alola" ||
+          pokemon.forme === "Galar") &&
+        pokemon.num > 0
+      )
+        pokemonData[pokemon.name] = genPokemonData(pokemon);
+    });
 
-writeFile("pokemon.json", JSON.stringify(pokemonData), "utf8");
-//console.log(genPokemonData(Dex.species.get("ledian")));
-// console.log(Dex.species.get("dratini"));
+    writeFile("pokemon.json", JSON.stringify(pokemonData), "utf8");
+  });
+
+// console.log(Dex.species.get("raichu-alola"));
 
 const learnEx = {
   aerialace: ["7M", "6M", "5M", "4M", "3M"],

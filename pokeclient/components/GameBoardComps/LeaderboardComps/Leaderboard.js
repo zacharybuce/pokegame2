@@ -5,6 +5,7 @@ import PlayerCard from "./PlayerCard";
 const Leaderboard = ({
   leaderboardDrawer,
   setLeaderboardDrawer,
+  game,
   players,
   id,
 }) => {
@@ -16,7 +17,7 @@ const Leaderboard = ({
       sx={{ overflowY: "auto" }}
     >
       {players.map((player) => (
-        <PlayerCard player={player} isPlayer={player.name == id} />
+        <PlayerCard player={player} game={game} isPlayer={player.name == id} />
       ))}
     </Drawer>
   );

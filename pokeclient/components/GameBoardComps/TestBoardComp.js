@@ -18,6 +18,8 @@ import TileInfoDrawer from "./TileInfoDrawerComps/TileInfoDrawer";
 const TestBoardComp = ({
   tileDrawer,
   setTileDrawer,
+  actionComplete,
+  takeAction,
   phase,
   playerLocation,
   players,
@@ -31,6 +33,7 @@ const TestBoardComp = ({
   const hexToken = { x: 15, y: 15 };
   const [x, setX] = useState(-100); //for viewbox
   const [y, setY] = useState(-100); //for viewbox
+  const [selected, setSelected] = useState(); //for styles
   // const [tileDrawer, setTileDrawer] = useState(false);
   // const [phase, setphase] = useState("action");
   // const [playerLocation, setPlayerLocation] = useState(new Hex(0, 0, 0));
@@ -64,6 +67,7 @@ const TestBoardComp = ({
 
   const camMovement = 10;
 
+  //moves board based on key presses
   const keyDownHandler = (event) => {
     console.log("User pressed: ", event.key);
 
@@ -85,7 +89,7 @@ const TestBoardComp = ({
   const isSelectable = (q, r, s) => {
     const hex = new Hex(q, r, s);
 
-    if (phase === "action") return true;
+    if (phase !== "movement") return true;
     else {
       if (HexUtils.equals(hex, playerLocation)) return true;
       const neighbours = HexUtils.neighbours(playerLocation);
@@ -101,27 +105,53 @@ const TestBoardComp = ({
   //Handles clicking on a tile, depending on action or move phase
   const handleHexSelect = (tile, source) => {
     switch (phase) {
-      case "movement":
-        hexSelectMovement(tile, source);
-        break;
-
-      case "action":
+      case "starter":
         hexSelectAction(tile, source);
         break;
+      case "movement":
+        let { q, r, s } = source.state.hex;
+        if (isSelectable(q, r, s)) hexSelectMovement(tile, source);
+        else hexSelectAction(tile, source);
+        break;
+      case "action":
+        hexSelectAction(tile, source);
     }
   };
 
   //when action phase, drawer will open on click showing correct info for tile
   const hexSelectAction = (tile, source) => {
-    if (HexUtils.equals(source.state.hex, playerLocation)) setCanInteract(true);
+    if (HexUtils.equals(source.state.hex, playerLocation) && phase != "starter")
+      setCanInteract(true);
     else setCanInteract(false);
 
-    setTileToShow(tile);
+    let info = { tile: tile, location: source.state.hex };
+    setTileToShow(info);
     setTileDrawer(true);
   };
 
   //when movement phase
-  const hexSelectMovement = (tile, source) => {};
+  const hexSelectMovement = (tile, source) => {
+    setTileToShow({ tile: tile, coord: source.state.hex });
+    let sel = { tile: tile, coord: source.state.hex };
+    setSelected(sel);
+  };
+
+  //shows styles depending on tile
+  const getClassName = (q, r, s) => {
+    if (
+      phase === "movement" &&
+      selected &&
+      HexUtils.equals(new Hex(q, r, s), selected.coord)
+    ) {
+      return "tile-selected";
+    }
+
+    if (isSelectable(q, r, s)) {
+      return "tile-selectable";
+    }
+
+    return "tile-unselectable";
+  };
 
   //sets up key listener
   useEffect(() => {
@@ -151,196 +181,252 @@ const TestBoardComp = ({
             r={-1}
             s={1}
             fill={"grass1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-2}
             r={0}
             s={2}
             fill={"redrock"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={0}
             r={-2}
             s={2}
             fill={"grass1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={4}
             r={-2}
             s={-2}
             fill={"grass1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={1}
             r={1}
             s={-2}
             fill={"water1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={1}
             r={2}
             s={-3}
             fill={"grass1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={2}
             r={1}
             s={-3}
             fill={"grass1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={3}
             r={0}
             s={-3}
             fill={"water1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={1}
             r={-3}
             s={2}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={2}
             r={-3}
             s={1}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={3}
             r={-3}
             s={0}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-4}
             r={0}
             s={4}
             fill={"mountain"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-4}
             r={1}
             s={3}
             fill={"mountain"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-4}
             r={2}
             s={2}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-3}
             r={2}
             s={1}
             fill={"redrock"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-2}
             r={3}
             s={-1}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-4}
             r={4}
             s={0}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-3}
             r={5}
             s={-2}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-1}
             r={4}
             s={-3}
             fill={"grass2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-1}
             r={5}
             s={-4}
             fill={"water2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-2}
             r={6}
             s={-4}
             fill={"water2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-3}
             r={6}
             s={-3}
             fill={"water2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={-4}
             r={6}
             s={-2}
             fill={"water2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={2}
             r={2}
             s={-4}
             fill={"water1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={3}
             r={1}
             s={-4}
             fill={"water1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={2}
             r={3}
             s={-5}
             fill={"water1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={3}
             r={2}
             s={-5}
             fill={"water1"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
           <Hexagon
             q={4}
             r={2}
             s={-6}
             fill={"water2"}
-            className={phase == "action" ? "tile-filler" : "tile-unselectable"}
+            className={
+              phase != "movement" ? "tile-filler" : "tile-unselectable"
+            }
           ></Hexagon>
         </Layout>
         {/* Main grid*/}
@@ -354,9 +440,7 @@ const TestBoardComp = ({
             q={0}
             r={0}
             s={0}
-            className={
-              isSelectable(0, 0, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(0, 0, 0)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("118", source);
@@ -368,9 +452,7 @@ const TestBoardComp = ({
             q={1}
             r={-1}
             s={0}
-            className={
-              isSelectable(1, -1, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(1, -1, 0)}
             fill={"grass3"}
             onClick={(event, source) => {
               handleHexSelect("119", source);
@@ -381,9 +463,9 @@ const TestBoardComp = ({
           <Hexagon
             q={1}
             r={-2}
-            s={-1}
+            s={1}
             className={
-              isSelectable(1, -2, -1)
+              isSelectable(1, -2, 1)
                 ? "tile-selectable-under"
                 : "tile-unselectable"
             }
@@ -395,9 +477,7 @@ const TestBoardComp = ({
             q={1}
             r={0}
             s={-1}
-            className={
-              isSelectable(1, 0, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(1, 0, -1)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("123", source);
@@ -409,9 +489,7 @@ const TestBoardComp = ({
             q={2}
             r={-2}
             s={0}
-            className={
-              isSelectable(2, -2, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(2, -2, 0)}
             fill={"grass3"}
             onClick={(event, source) => {
               handleHexSelect("120", source);
@@ -436,9 +514,7 @@ const TestBoardComp = ({
             q={3}
             r={-2}
             s={-1}
-            className={
-              isSelectable(3, -2, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(3, -2, -1)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("121", source);
@@ -450,9 +526,7 @@ const TestBoardComp = ({
             q={2}
             r={0}
             s={-2}
-            className={
-              isSelectable(2, 0, -2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(2, 0, -2)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("122", source);
@@ -476,9 +550,9 @@ const TestBoardComp = ({
           <Hexagon
             q={4}
             r={-1}
-            s={-4}
+            s={-3}
             className={
-              isSelectable(4, -1, -4)
+              isSelectable(4, -1, -3)
                 ? "tile-selectable-under"
                 : "tile-unselectable"
             }
@@ -490,9 +564,7 @@ const TestBoardComp = ({
             q={4}
             r={0}
             s={-4}
-            className={
-              isSelectable(4, 0, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(4, 0, -4)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("124", source);
@@ -503,10 +575,8 @@ const TestBoardComp = ({
           <Hexagon
             q={4}
             r={1}
-            s={-4}
-            className={
-              isSelectable(4, 1, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            s={-5}
+            className={getClassName(4, 1, -5)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("126", source);
@@ -530,9 +600,9 @@ const TestBoardComp = ({
           <Hexagon
             q={5}
             r={-1}
-            s={-5}
+            s={-4}
             className={
-              isSelectable(5, -1, -5)
+              isSelectable(5, -1, -4)
                 ? "tile-selectable-under"
                 : "tile-unselectable"
             }
@@ -544,9 +614,7 @@ const TestBoardComp = ({
             q={5}
             r={-2}
             s={-3}
-            className={
-              isSelectable(5, -2, -3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(5, -2, -3)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("125", source);
@@ -571,9 +639,7 @@ const TestBoardComp = ({
             q={6}
             r={-1}
             s={-5}
-            className={
-              isSelectable(6, -1, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(6, -1, -5)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("127", source);
@@ -585,9 +651,7 @@ const TestBoardComp = ({
             q={6}
             r={0}
             s={-6}
-            className={
-              isSelectable(6, 0, -6) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(6, 0, -6)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("128", source);
@@ -612,9 +676,7 @@ const TestBoardComp = ({
             q={6}
             r={1}
             s={-7}
-            className={
-              isSelectable(6, 1, -7) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(6, 1, -7)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("129", source);
@@ -639,9 +701,7 @@ const TestBoardComp = ({
             q={5}
             r={2}
             s={-7}
-            className={
-              isSelectable(5, 2, -7) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(5, 2, -7)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("130", source);
@@ -653,9 +713,7 @@ const TestBoardComp = ({
             q={4}
             r={3}
             s={-7}
-            className={
-              isSelectable(4, 3, -7) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(4, 3, -7)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("131", source);
@@ -693,9 +751,7 @@ const TestBoardComp = ({
             q={2}
             r={4}
             s={-6}
-            className={
-              isSelectable(2, 4, -6) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(2, 4, -6)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("132", source);
@@ -707,9 +763,7 @@ const TestBoardComp = ({
             q={1}
             r={4}
             s={-5}
-            className={
-              isSelectable(1, 4, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(1, 4, -5)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("133", source);
@@ -721,9 +775,7 @@ const TestBoardComp = ({
             q={1}
             r={3}
             s={-4}
-            className={
-              isSelectable(1, 3, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(1, 3, -4)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("134", source);
@@ -748,9 +800,7 @@ const TestBoardComp = ({
             q={0}
             r={2}
             s={-2}
-            className={
-              isSelectable(0, 2, -2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(0, 2, -2)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("110", source);
@@ -801,9 +851,7 @@ const TestBoardComp = ({
             q={-1}
             r={0}
             s={1}
-            className={
-              isSelectable(-1, 0, 1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, 0, 1)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("111", source);
@@ -815,9 +863,7 @@ const TestBoardComp = ({
             q={-1}
             r={-1}
             s={2}
-            className={
-              isSelectable(-1, -1, 2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, -1, 2)}
             fill={"sand2"}
             onClick={(event, source) => {
               handleHexSelect("desert", source);
@@ -842,9 +888,7 @@ const TestBoardComp = ({
             q={-2}
             r={-1}
             s={3}
-            className={
-              isSelectable(-2, -1, 3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, -1, 3)}
             fill={"sand2"}
             onClick={(event, source) => {
               handleHexSelect("113", source);
@@ -856,9 +900,7 @@ const TestBoardComp = ({
             q={-2}
             r={1}
             s={1}
-            className={
-              isSelectable(-2, 1, 1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, 1, 1)}
             fill={"redrock"}
             onClick={(event, source) => {
               handleHexSelect("112", source);
@@ -909,9 +951,7 @@ const TestBoardComp = ({
             q={-2}
             r={-2}
             s={4}
-            className={
-              isSelectable(-2, -2, 4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, -2, 4)}
             fill={"sand3"}
             onClick={(event, source) => {
               handleHexSelect("desertpass", source);
@@ -923,9 +963,7 @@ const TestBoardComp = ({
             q={-4}
             r={-1}
             s={5}
-            className={
-              isSelectable(-4, -1, 5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-4, -1, 5)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("114", source);
@@ -937,9 +975,7 @@ const TestBoardComp = ({
             q={-5}
             r={0}
             s={5}
-            className={
-              isSelectable(-5, 0, 5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 0, 5)}
             fill={"mountain"}
             onClick={(event, source) => {
               handleHexSelect("mountainpass", source);
@@ -964,9 +1000,7 @@ const TestBoardComp = ({
             q={-5}
             r={2}
             s={3}
-            className={
-              isSelectable(-5, 2, 3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 2, 3)}
             fill={"mountain"}
             onClick={(event, source) => {
               handleHexSelect("115", source);
@@ -991,9 +1025,7 @@ const TestBoardComp = ({
             q={-4}
             r={3}
             s={1}
-            className={
-              isSelectable(-4, 3, 1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-4, 3, 1)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("116", source);
@@ -1018,9 +1050,7 @@ const TestBoardComp = ({
             q={-2}
             r={2}
             s={0}
-            className={
-              isSelectable(-2, 2, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, 2, 0)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("117", source);
@@ -1032,9 +1062,7 @@ const TestBoardComp = ({
             q={-5}
             r={4}
             s={1}
-            className={
-              isSelectable(-5, 4, 1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 4, 1)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("104", source);
@@ -1072,9 +1100,7 @@ const TestBoardComp = ({
             q={-3}
             r={4}
             s={-1}
-            className={
-              isSelectable(-3, 4, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-3, 4, -1)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("102", source);
@@ -1086,9 +1112,7 @@ const TestBoardComp = ({
             q={-2}
             r={4}
             s={-2}
-            className={
-              isSelectable(-2, 4, -2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, 4, -2)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("101", source);
@@ -1100,9 +1124,7 @@ const TestBoardComp = ({
             q={-1}
             r={3}
             s={-2}
-            className={
-              isSelectable(-1, 3, -2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, 3, -2)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("103", source);
@@ -1127,9 +1149,7 @@ const TestBoardComp = ({
             q={0}
             r={4}
             s={-4}
-            className={
-              isSelectable(0, 4, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(0, 4, -4)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("109", source);
@@ -1154,9 +1174,7 @@ const TestBoardComp = ({
             q={-1}
             r={6}
             s={-5}
-            className={
-              isSelectable(-1, 6, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, 6, -5)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("108", source);
@@ -1168,9 +1186,7 @@ const TestBoardComp = ({
             q={-2}
             r={7}
             s={-5}
-            className={
-              isSelectable(-2, 7, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, 7, -5)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("107", source);
@@ -1208,9 +1224,7 @@ const TestBoardComp = ({
             q={-4}
             r={7}
             s={-3}
-            className={
-              isSelectable(-4, 7, -3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-4, 7, -3)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("106", source);
@@ -1235,9 +1249,7 @@ const TestBoardComp = ({
             q={-5}
             r={6}
             s={-1}
-            className={
-              isSelectable(-5, 6, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 6, -1)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("105", source);
@@ -1257,9 +1269,7 @@ const TestBoardComp = ({
             q={5}
             r={0}
             s={-5}
-            className={
-              isSelectable(5, 0, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(5, 0, -5)}
             fill={"water2"}
             onClick={(event, source) => {
               handleHexSelect("sootopolis", source);
@@ -1278,9 +1288,7 @@ const TestBoardComp = ({
             q={6}
             r={-2}
             s={-4}
-            className={
-              isSelectable(6, -2, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(6, -2, -4)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("mossdeep", source);
@@ -1299,9 +1307,7 @@ const TestBoardComp = ({
             q={7}
             r={-1}
             s={-6}
-            className={
-              isSelectable(7, -1, -6) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(7, -1, -6)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("evergrande", source);
@@ -1320,9 +1326,7 @@ const TestBoardComp = ({
             q={3}
             r={4}
             s={-7}
-            className={
-              isSelectable(3, 4, -7) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(3, 4, -7)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("pacifidlog", source);
@@ -1341,9 +1345,7 @@ const TestBoardComp = ({
             q={0}
             r={3}
             s={-3}
-            className={
-              isSelectable(0, 3, -3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(0, 3, -3)}
             fill={"sand1"}
             onClick={(event, source) => {
               handleHexSelect("slateport", source);
@@ -1362,9 +1364,7 @@ const TestBoardComp = ({
             q={-1}
             r={2}
             s={-1}
-            className={
-              isSelectable(-1, 2, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, 2, -1)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("trickhouse", source);
@@ -1383,9 +1383,7 @@ const TestBoardComp = ({
             q={-1}
             r={1}
             s={0}
-            className={
-              isSelectable(-1, 1, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, 1, 0)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("mauville", source);
@@ -1404,9 +1402,7 @@ const TestBoardComp = ({
             q={0}
             r={1}
             s={-1}
-            className={
-              isSelectable(0, 1, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(0, 1, -1)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("newmauville", source);
@@ -1425,9 +1421,7 @@ const TestBoardComp = ({
             q={-3}
             r={1}
             s={2}
-            className={
-              isSelectable(-3, 1, 2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-3, 1, 2)}
             fill={"redrock"}
             onClick={(event, source) => {
               handleHexSelect("lavaridge", source);
@@ -1446,9 +1440,7 @@ const TestBoardComp = ({
             q={-3}
             r={-1}
             s={4}
-            className={
-              isSelectable(-3, -1, 4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-3, -1, 4)}
             fill={"sand3"}
             onClick={(event, source) => {
               handleHexSelect("fallarbor", source);
@@ -1467,9 +1459,7 @@ const TestBoardComp = ({
             q={-5}
             r={3}
             s={2}
-            className={
-              isSelectable(-5, 3, 2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 3, 2)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("rustboro", source);
@@ -1488,9 +1478,7 @@ const TestBoardComp = ({
             q={-4}
             r={5}
             s={-1}
-            className={
-              isSelectable(-4, 5, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-4, 5, -1)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("petalburg", source);
@@ -1509,9 +1497,7 @@ const TestBoardComp = ({
             q={-2}
             r={5}
             s={-3}
-            className={
-              isSelectable(-2, 5, -3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-2, 5, -3)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("littleroot", source);
@@ -1530,9 +1516,7 @@ const TestBoardComp = ({
             q={-3}
             r={7}
             s={-4}
-            className={
-              isSelectable(-3, 7, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-3, 7, -4)}
             fill={"sand1"}
             onClick={(event, source) => {
               handleHexSelect("dewford", source);
@@ -1550,10 +1534,8 @@ const TestBoardComp = ({
           <Hexagon
             q={4}
             r={-1}
-            s={-4}
-            className={
-              isSelectable(4, -1, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            s={-3}
+            className={getClassName(4, -1, -3)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("lilycove", source);
@@ -1571,10 +1553,8 @@ const TestBoardComp = ({
           <Hexagon
             q={1}
             r={-2}
-            s={-1}
-            className={
-              isSelectable(1, -2, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            s={1}
+            className={getClassName(1, -2, 1)}
             fill={"grass3"}
             onClick={(event, source) => {
               handleHexSelect("fortree", source);
@@ -1592,9 +1572,7 @@ const TestBoardComp = ({
             q={-1}
             r={-2}
             s={3}
-            className={
-              isSelectable(-1, -2, 3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-1, -2, 3)}
             fill={"sand2"}
             onClick={(event, source) => {
               handleHexSelect("miragetower", source);
@@ -1612,9 +1590,7 @@ const TestBoardComp = ({
             q={2}
             r={-1}
             s={-1}
-            className={
-              isSelectable(2, -1, -1) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(2, -1, -1)}
             fill={"grass2"}
             onClick={(event, source) => {
               handleHexSelect("mtpyre", source);
@@ -1632,9 +1608,7 @@ const TestBoardComp = ({
             q={3}
             r={-1}
             s={-2}
-            className={
-              isSelectable(3, -1, -2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(3, -1, -2)}
             fill={"grass1"}
             onClick={(event, source) => {
               handleHexSelect("safarizone", source);
@@ -1651,10 +1625,8 @@ const TestBoardComp = ({
           <Hexagon
             q={5}
             r={-1}
-            s={-5}
-            className={
-              isSelectable(5, -1, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            s={-4}
+            className={getClassName(5, -1, -4)}
             fill={"sand1"}
             onClick={(event, source) => {
               handleHexSelect("shoalcave", source);
@@ -1673,9 +1645,7 @@ const TestBoardComp = ({
             q={5}
             r={1}
             s={-6}
-            className={
-              isSelectable(5, 1, -6) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(5, 1, -6)}
             fill={"water3"}
             onClick={(event, source) => {
               handleHexSelect("seafloorcavern", source);
@@ -1694,9 +1664,7 @@ const TestBoardComp = ({
             q={3}
             r={3}
             s={-6}
-            className={
-              isSelectable(3, 3, -6) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(3, 3, -6)}
             fill={"sand1"}
             onClick={(event, source) => {
               handleHexSelect("skypillar", source);
@@ -1715,9 +1683,7 @@ const TestBoardComp = ({
             q={-3}
             r={0}
             s={3}
-            className={
-              isSelectable(-3, 0, 3) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-3, 0, 3)}
             fill={"redrock"}
             onClick={(event, source) => {
               handleHexSelect("mtchimney", source);
@@ -1735,10 +1701,8 @@ const TestBoardComp = ({
           <Hexagon
             q={-5}
             r={1}
-            s={6}
-            className={
-              isSelectable(-5, 1, 6) ? "tile-selectable" : "tile-unselectable"
-            }
+            s={4}
+            className={getClassName(-5, 1, 4)}
             fill={"mountain"}
             onClick={(event, source) => {
               handleHexSelect("meteorfalls", source);
@@ -1757,9 +1721,7 @@ const TestBoardComp = ({
             q={-3}
             r={3}
             s={0}
-            className={
-              isSelectable(-3, 3, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-3, 3, 0)}
             fill={"mountain"}
             onClick={(event, source) => {
               handleHexSelect("rusturftunnel", source);
@@ -1778,9 +1740,7 @@ const TestBoardComp = ({
             q={-5}
             r={5}
             s={0}
-            className={
-              isSelectable(-5, 5, 0) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 5, 0)}
             fill={"grass3"}
             onClick={(event, source) => {
               handleHexSelect("petalburgwoods", source);
@@ -1799,9 +1759,7 @@ const TestBoardComp = ({
             q={0}
             r={5}
             s={-5}
-            className={
-              isSelectable(0, 5, -5) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(0, 5, -5)}
             fill={"water1"}
             onClick={(event, source) => {
               handleHexSelect("abandonedship", source);
@@ -1820,9 +1778,7 @@ const TestBoardComp = ({
             q={-4}
             r={8}
             s={-4}
-            className={
-              isSelectable(-4, 8, -4) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-4, 8, -4)}
             fill={"sand2"}
             onClick={(event, source) => {
               handleHexSelect("granitecave", source);
@@ -1841,9 +1797,7 @@ const TestBoardComp = ({
             q={-5}
             r={7}
             s={-2}
-            className={
-              isSelectable(-5, 7, -2) ? "tile-selectable" : "tile-unselectable"
-            }
+            className={getClassName(-5, 7, -2)}
             fill={"sand1"}
             onClick={(event, source) => {
               handleHexSelect("islandcave", source);
@@ -1941,11 +1895,16 @@ const TestBoardComp = ({
         />
       </HexGrid>
       <TileInfoDrawer
-        tileName={tileToShow}
+        tileName={tileToShow?.tile}
         tileDrawer={tileDrawer}
-        setTileDrawer={setTileDrawer}
+        takeAction={takeAction}
+        actionComplete={actionComplete}
+        selected={selected}
         campaignId={"Hoen"}
         canInteract={canInteract}
+        phase={phase}
+        setTileDrawer={setTileDrawer}
+        setTileToShow={setTileToShow}
       />
     </Box>
   );

@@ -1,0 +1,156 @@
+{
+  "littleroot": {
+    "location": { "q": -2, "r": 5, "s": -3 },
+    "starters": [
+      { "species": "Torchic", "id": "torchic" },
+      { "species": "Mudkip", "id": "mudkip" },
+      { "species": "Treecko", "id": "treecko" }
+    ],
+    "name": "Littleroot Town",
+    "img": "town",
+    "color": "grass1"
+  },
+  "petalburg": {
+    "location": { "q": -4, "r": 5, "s": -1 },
+    "starters": [
+      { "species": "Eevee", "id": "eevee" },
+      { "species": "Munchlax", "id": "munchlax" },
+      { "species": "slakoth", "id": "slakoth" }
+    ],
+    "name": "Petalburg City",
+    "img": "town",
+    "color": "grass1"
+  },
+  "rustboro": {
+    "location": { "q": -5, "r": 3, "s": 2 },
+    "starters": [
+      { "species": "Nosepass", "id": "nosepass" },
+      { "species": "Archen", "id": "archen" },
+      { "species": "Rockruff", "id": "rockruff" }
+    ],
+    "name": "Rustboro City",
+    "img": "rustboro",
+    "color": "grass1"
+  },
+  "dewford": {
+    "location": { "q": -3, "r": 7, "s": -4 },
+    "starters": [
+      { "species": "Farfetch’d-Galar", "id": "farfetchd-galar" },
+      { "species": "Riolu", "id": "riolu" },
+      { "species": "Tepig", "id": "tepig" }
+    ],
+    "name": "Dewford Town",
+    "img": "dewford",
+    "color": "sand1"
+  },
+  "slateport": {
+    "location": { "q": 0, "r": 3, "s": -3 },
+    "starters": [
+      { "species": "Vulpix-Alola", "id": "vulpix-alola" },
+      { "species": "Rowlet", "id": "rowlet" },
+      { "species": "Togepi", "id": "togepi" }
+    ],
+    "name": "Slateport City",
+    "img": "slateport",
+    "color": "sand1"
+  },
+  "mauville": {
+    "location": { "q": -1, "r": 1, "s": 0 },
+    "starters": [
+      { "species": "Porygon", "id": "porygon" },
+      { "species": "Pikachu", "id": "pikachu" },
+      { "species": "Bulbasaur", "id": "bulbasaur" }
+    ],
+    "name": "Mauville City",
+    "img": "mauville",
+    "color": "grass1"
+  },
+  "fallarbor": {
+    "location": { "q": -3, "r": -1, "s": 4 },
+    "starters": [
+      { "species": "Rolycoly", "id": "rolycoly" },
+      { "species": "Impidimp", "id": "impidimp" },
+      { "species": "Turtwig", "id": "turtwig" }
+    ],
+    "name": "Fallarbor Town",
+    "img": "town",
+    "color": "sand3"
+  },
+  "lavaridge": {
+    "location": { "q": -3, "r": 1, "s": 2 },
+    "starters": [
+      { "species": "Piplup", "id": "piplup" },
+      { "species": "Squirtle", "id": "squirtle" },
+      { "species": "Popplio", "id": "popplio" }
+    ],
+    "name": "Lavaridge Town",
+    "img": "town",
+    "color": "redrock"
+  },
+  "fortree": {
+    "location": { "q": 1, "r": -2, "s": -1 },
+    "starters": [
+      { "species": "Noibat", "id": "noibat" },
+      { "species": "Rookidee", "id": "rookidee" },
+      { "species": "Fletchling", "id": "fletchling" }
+    ],
+    "name": "Fortree City",
+    "img": "treehouse",
+    "color": "grass3"
+  },
+  "lilycove": {
+    "location": { "q": 4, "r": -1, "s": -4 },
+    "starters": [
+      { "species": "Golett", "id": "golett" },
+      { "species": "Froakie", "id": "froakie" },
+      { "species": "Honedge", "id": "honedge" }
+    ],
+    "name": "Lilycove City",
+    "img": "lilycove",
+    "color": "grass2"
+  },
+  "mossdeep": {
+    "location": { "q": 6, "r": -2, "s": -4 },
+    "starters": [
+      { "species": "Solosis", "id": "solosis" },
+      { "species": "Hatenna", "id": "hatenna" },
+      { "species": "Fennekin", "id": "fennekin" }
+    ],
+    "name": "Mossdeep City",
+    "img": "mossdeep",
+    "color": "sand1"
+  },
+  "sootopolis": {
+    "location": { "q": 5, "r": 0, "s": -5 },
+    "starters": [
+      { "species": "Chikorita", "id": "chikorita" },
+      { "species": "Ferroseed", "id": "ferroseed" },
+      { "species": "Hawlucha", "id": "hawlucha" }
+    ],
+    "name": "Sootopolis City",
+    "img": "sootopolis",
+    "color": "water1"
+  },
+  "pacifidlog": {
+    "location": { "q": 3, "r": 4, "s": -7 },
+    "starters": [
+      { "species": "Skiddo", "id": "skiddo" },
+      { "species": "Jangmo-o", "id": "jangmo-o" },
+      { "species": "Larvesta", "id": "larvesta" }
+    ],
+    "name": "Pacifidlog Town",
+    "img": "pacifilog",
+    "color": "water2"
+  },
+  "evergrande": {
+    "location": { "q": 7, "r": -1, "s": -6 },
+    "starters": [
+      { "species": "Grookey", "id": "grookey" },
+      { "species": "Scorbunny", "id": "scorbunny" },
+      { "species": "Sobble", "id": "sobble" }
+    ],
+    "name": "Evergrande City",
+    "img": "evergrande",
+    "color": "grass2"
+  }
+}

@@ -10,8 +10,9 @@ import {
 import ItemSprite from "../../Utils/ItemSprite";
 import { HtmlTooltip } from "../../Utils/HtmlTooltip";
 import SellIcon from "@mui/icons-material/Sell";
+import EquipButton from "./EquipButton";
 
-const Item = ({ item, index, sellItem }) => {
+const Item = ({ item, team, index, sellItem, equipItem }) => {
   return (
     <Grid container>
       <Grid
@@ -19,7 +20,7 @@ const Item = ({ item, index, sellItem }) => {
         container
         xs={1}
         direction="row"
-        alignItems="flex-end"
+        alignItems="center"
         justifyContent="center"
       >
         <Tooltip title={"Sell"}>
@@ -28,7 +29,7 @@ const Item = ({ item, index, sellItem }) => {
           </IconButton>
         </Tooltip>
       </Grid>
-      <Grid item xs={11}>
+      <Grid item xs={9}>
         <HtmlTooltip
           title={
             <React.Fragment>
@@ -40,10 +41,19 @@ const Item = ({ item, index, sellItem }) => {
             variant="outlined"
             fullWidth
             sx={{ mb: "3px", justifyContent: "left" }}
+            disableRipple
           >
             <ItemSprite item={item} /> {item.name}
           </Button>
         </HtmlTooltip>
+      </Grid>
+      <Grid item container alignItems="center" justifyContent="end" xs={2}>
+        <EquipButton
+          index={index}
+          team={team}
+          item={item}
+          equipItem={equipItem}
+        />
       </Grid>
     </Grid>
   );
