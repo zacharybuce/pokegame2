@@ -113,19 +113,20 @@ io.on("connection", (socket) => {
 
   //player sends their updated badges to the server
   socket.on("game-badges-update", (badges) => {
-    players[pIndex(id)].badges = badges;
+    players[pIndex(id)].badges = badges.length;
     io.emit("game-update-players", players);
   });
 
   //a player has moved to a new tile
-  socket.on("game-move", (location) => {
+  socket.on("game-move", (location, whiteout) => {
     players[pIndex(id)].location = {
       q: location.coord.q,
       r: location.coord.r,
       s: location.coord.s,
     };
-
-    let message = id + " moved to " + location.tile;
+    let message;
+    if (whiteout) message = id + " whited out and was sent to " + location.tile;
+    else message = id + " moved to " + location.tile;
 
     io.emit("game-update-players", players, message);
   });
@@ -147,6 +148,15 @@ io.on("connection", (socket) => {
   //A player wants to start a wild battle
   socket.on("game-start-wildbattle", (wildPokemon) => {
     wildBattle(socket, id, wildPokemon);
+  });
+
+  //a player starts a gym challenge
+  socket.on("game-start-gymchallenge", (gymTeam) => {
+    gymBattle(socket, id, gymTeam);
+  });
+
+  socket.on("game-start-trainerbattle", (pokemon) => {
+    trainerBattle(socket, id, pokemon);
   });
 });
 
@@ -239,7 +249,17 @@ const setMoveOrder = () => {
 const wildBattle = (socket, id, wildPokemon) => {
   let stream = new Sim.BattleStream();
   let aiState = [];
-  let playerTeam = modifyTeam(players[pIndex(id)].team);
+
+  //use the first non fainted pokemon
+  let indexToUse = 0;
+  for (let i = 0; i < players[pIndex(id)].team.length; i++) {
+    if (!players[pIndex(id)].team[i].fainted) {
+      indexToUse = i;
+      break;
+    }
+  }
+
+  let playerTeam = modifyTeam([players[pIndex(id)].team[indexToUse]]);
   let oppTeam = modifyTeam([wildPokemon]);
   const p1spec = {
     //player
@@ -265,7 +285,9 @@ const wildBattle = (socket, id, wildPokemon) => {
       console.log("Move from " + id + ": " + message);
       stream.write(`>p1 move ${message}`);
       console.log("wrote to sream p1");
-      stream.write(`>p2 move ${aiChoice(playerTeam, aiState, oppTeam)}`);
+      stream.write(
+        `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "wildbattle")}`
+      );
     }
   });
 
@@ -277,8 +299,199 @@ const wildBattle = (socket, id, wildPokemon) => {
     }
   });
 
-  socket.on("end-wild-battle", () => {
+  socket.on("end-battle", () => {
     stream = undefined;
+    console.log("ending battle...");
+  });
+
+  //Battle Stream
+  (async () => {
+    for await (const output of stream) {
+      var tokens = output.split("|");
+      console.log(tokens);
+      if (tokens[0].includes("sideupdate")) {
+        if (tokens[0].includes("p1")) {
+          console.log("sending team to p1");
+          io.to(id).emit("battle-side-update", tokens[2], true);
+        }
+        if (tokens[0].includes("p2")) {
+          console.log("sending team to p2");
+          aiState = tokens[2];
+        }
+      } else if (tokens[0].includes("update")) {
+        console.log("in update");
+        io.to(id).emit("battle-field-update", output);
+      }
+
+      if (tokens.includes("win")) {
+      }
+    }
+  })();
+};
+
+//logic for gymBattle
+const gymBattle = (socket, id, gymTeam) => {
+  let stream = new Sim.BattleStream();
+  let aiState = [];
+  let aiAliveMon = { 1: true, 2: true, 3: true };
+  let aiMonCurrent = 1;
+  let delay = 0;
+
+  //use the first 3 non fainted pokemon
+  let monToUse = [];
+  players[pIndex(id)].team.forEach((pokemon) => {
+    if (!pokemon.fained && monToUse.length < 3) monToUse.push(pokemon);
+  });
+
+  let playerTeam = modifyTeam(monToUse);
+  let oppTeam = modifyTeam(gymTeam);
+  const p1spec = {
+    //player
+    name: id,
+    team: Teams.pack(playerTeam),
+  };
+  const p2spec = {
+    //gym leader
+    name: "Gym Leader",
+    team: Teams.pack(oppTeam),
+  };
+
+  //starting battle
+  stream.write(`>start {"formatid":"gen8ou"}`);
+  stream.write(`>player p1 ${JSON.stringify(p1spec)}`);
+  stream.write(`>player p2 ${JSON.stringify(p2spec)}`);
+  stream.write(`>p1 team 1`);
+  stream.write(`>p2 team 1`);
+
+  //---Getting choices from player and writing them to stream---
+  socket.on("send-move", (message) => {
+    if (stream) {
+      console.log("Move from " + id + ": " + message);
+      stream.write(`>p1 move ${message}`);
+      console.log("wrote to sream p1");
+      if (aiState.forceSwitch) {
+        let rand;
+        do {
+          rand = getRand(1, 3);
+        } while (rand == aiMonCurrent);
+        aiMonCurrent = rand;
+        setTimeout(() => stream.write(`>p2 switch ${aiMonCurrent}`), 10000);
+      } else {
+        stream.write(
+          `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "gymchallenge")}`
+        );
+      }
+    }
+  });
+
+  socket.on("send-switch", (message) => {
+    if (stream) {
+      console.log("Switch from " + id + ": " + message);
+      stream.write(`>p1 switch ${message}`);
+      console.log("wrote to sream p1");
+
+      if (!JSON.parse(aiState).wait)
+        stream.write(
+          `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "gymchallenge")}`
+        );
+    }
+  });
+
+  socket.on("end-battle", () => {
+    stream = undefined;
+    console.log("ending battle...");
+  });
+
+  //Battle Stream
+  (async () => {
+    for await (const output of stream) {
+      var tokens = output.split("|");
+      console.log(tokens);
+      delay = calcDelay(output);
+
+      if (tokens[0].includes("sideupdate")) {
+        if (tokens[0].includes("p1")) {
+          console.log("sending team to p1");
+          io.to(id).emit("battle-side-update", tokens[2], true);
+        }
+        if (tokens[0].includes("p2")) {
+          console.log("sending team to p2");
+          aiState = tokens[2];
+        }
+      } else if (tokens[0].includes("update")) {
+        console.log("in update");
+        io.to(id).emit("battle-field-update", output);
+      }
+
+      if (!output.includes("|win") && output.includes("|faint|p2a:")) {
+        aiAliveMon[aiMonCurrent] = false;
+        aiMonCurrent++;
+        setTimeout(() => stream.write(`>p2 switch ${aiMonCurrent}`), delay);
+      }
+
+      if (tokens.includes("win")) {
+      }
+    }
+  })();
+};
+
+//logic for trainer battles
+const trainerBattle = (socket, id, pokemon) => {
+  let stream = new Sim.BattleStream();
+  let aiState = [];
+
+  //use the first non fainted pokemon
+  let indexToUse = 0;
+  for (let i = 0; i < players[pIndex(id)].team.length; i++) {
+    if (!players[pIndex(id)].team[i].fainted) {
+      indexToUse = i;
+      break;
+    }
+  }
+
+  let playerTeam = modifyTeam([players[pIndex(id)].team[indexToUse]]);
+  let oppTeam = modifyTeam([pokemon]);
+  const p1spec = {
+    //player
+    name: id,
+    team: Teams.pack(playerTeam),
+  };
+  const p2spec = {
+    //wild pokemon
+    name: "Trainer",
+    team: Teams.pack(oppTeam),
+  };
+
+  //starting battle
+  stream.write(`>start {"formatid":"gen8ou"}`);
+  stream.write(`>player p1 ${JSON.stringify(p1spec)}`);
+  stream.write(`>player p2 ${JSON.stringify(p2spec)}`);
+  stream.write(`>p1 team 1`);
+  stream.write(`>p2 team 1`);
+
+  //---Getting choices from player and writing them to stream---
+  socket.on("send-move", (message) => {
+    if (stream) {
+      console.log("Move from " + id + ": " + message);
+      stream.write(`>p1 move ${message}`);
+      console.log("wrote to sream p1");
+      stream.write(
+        `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "trainerbattle")}`
+      );
+    }
+  });
+
+  socket.on("send-switch", (message) => {
+    if (stream) {
+      console.log("Switch from " + id + ": " + message);
+      stream.write(`>p1 switch ${message}`);
+      console.log("wrote to sream p1");
+    }
+  });
+
+  socket.on("end-battle", () => {
+    stream = undefined;
+    console.log("ending battle...");
   });
 
   //Battle Stream
@@ -307,9 +520,10 @@ const wildBattle = (socket, id, wildPokemon) => {
 };
 
 //will choose the best move for the ai to use
-const aiChoice = (playerTeam, aiState, oppTeam) => {
+const aiChoice = (playerTeam, aiState, oppTeam, battletype) => {
   let playerPokeType = Dex.species.get(playerTeam[0].species).types;
   let aiMoves = JSON.parse(aiState);
+
   aiMoves = aiMoves.active[0].moves;
   let movePowers = {};
 
@@ -337,9 +551,22 @@ const aiChoice = (playerTeam, aiState, oppTeam) => {
     if (movePowers[i] > movePowers[bestMove]) bestMove = i;
   }
 
-  if (movePowers[bestMove] <= 1) {
-    let rand = getRand(0, 100);
-    if (rand < 25) {
+  //chance of picking a random move
+  let rand = getRand(0, 100);
+  if (battletype == "wildbattle") {
+    if (rand < 75) {
+      bestMove = getRand(0, aiMoves.length - 1) + 1;
+    }
+  }
+
+  if (battletype == "trainerbattle") {
+    if (rand < 30) {
+      bestMove = getRand(0, aiMoves.length - 1) + 1;
+    }
+  }
+
+  if (battletype == "gymchallenge") {
+    if (rand < 15) {
       bestMove = getRand(0, aiMoves.length - 1) + 1;
     }
   }
@@ -352,12 +579,111 @@ const modifyTeam = (team) => {
   let newTeam = [];
   team.forEach((pokemon) => {
     let modMon = pokemon;
-    modMon.shiny = pokemon.shiny;
-    modMon.item = pokemon.item.name;
+    modMon.shiny = pokemon.isShiny;
+    modMon.item = pokemon.item?.name;
     newTeam.push(modMon);
   });
 
   return newTeam;
+};
+
+//approx calc of how long the player has to wait for anims
+const calcDelay = (output) => {
+  let stream = output.split(/\r?\n/);
+  let change = 1;
+  let outDelay = 500;
+  const addDelay = 1500;
+
+  for (const token of stream) {
+    let splitToken = token.split("|");
+    let type = splitToken[1];
+
+    switch (type) {
+      case "switch":
+        if (change % 2 == 0) outDelay += addDelay;
+        change++;
+        break;
+      case "move":
+        outDelay += addDelay;
+        break;
+      case "-supereffective":
+        outDelay += addDelay;
+        break;
+      case "-crit":
+        outDelay += addDelay;
+        break;
+      case "-resisted":
+        outDelay += addDelay;
+        break;
+      case "-immune":
+        outDelay += addDelay;
+
+        break;
+      case "-heal":
+        if (change % 2 == 0) outDelay += addDelay * 2;
+        change++;
+        break;
+      case "-damage":
+        if (change % 2 == 0) outDelay += addDelay * 2;
+        change++;
+
+        break;
+      case "faint":
+        outDelay += addDelay;
+        break;
+      case "cant":
+        outDelay += addDelay;
+        break;
+      case "-fail":
+        outDelay += addDelay;
+        break;
+      case "-status":
+        outDelay += addDelay * 2;
+        break;
+      case "-curestatus":
+        outDelay += addDelay * 2;
+        break;
+      case "-miss":
+        outDelay += addDelay;
+        break;
+      case "-weather":
+        outDelay += addDelay;
+        break;
+      case "-enditem":
+        outDelay += addDelay;
+        break;
+      case "-activate":
+        outDelay += addDelay;
+        break;
+      case "-end":
+        outDelay += addDelay;
+        break;
+      case "-anim":
+        outDelay += addDelay;
+        break;
+      case "-prepare":
+        outDelay += addDelay;
+        break;
+      case "-ability":
+        outDelay += addDelay;
+        break;
+      case "-start":
+        outDelay += addDelay;
+
+        break;
+      case "-boost":
+        outDelay += addDelay * 2;
+        break;
+      case "-unboost":
+        outDelay += addDelay * 2;
+        break;
+      case "-setboost":
+        outDelay += addDelay * 2;
+        break;
+    }
+  }
+
+  return outDelay;
 };
 
 httpServer.listen(3001);

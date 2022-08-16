@@ -79,6 +79,8 @@ const BagDrawer = ({
         break;
     }
 
+    if (newMon.exhaustion < 0) newMon.exhaustion = 0;
+
     let filteredTeam = team.slice();
     filteredTeam.forEach((mem, index) => {
       if (JSON.stringify(mem) == JSON.stringify(pokemon)) {

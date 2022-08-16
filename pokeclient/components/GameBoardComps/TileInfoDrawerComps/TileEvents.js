@@ -2,15 +2,17 @@ import { Box } from "@mui/material";
 import React from "react";
 import GymLeaderEvent from "../EventComponents/GymLeaderEvent";
 
-const TileEvents = ({ events, canInteract }) => {
+const TileEvents = ({ badges, events, canInteract, takeAction }) => {
   const eventMapper = (event) => {
     const eventType = event.split("-")[0];
     switch (eventType) {
       case "GymBattle":
         return (
           <GymLeaderEvent
+            badges={badges}
             event={event}
             campaignId={"Hoen"}
+            takeAction={takeAction}
             canInteract={canInteract}
           />
         );

@@ -17,29 +17,30 @@ import TileInfoDrawer from "./TileInfoDrawerComps/TileInfoDrawer";
 
 const TestBoardComp = ({
   tileDrawer,
+  x,
+  y,
   setTileDrawer,
   actionComplete,
   takeAction,
   phase,
+  badges,
   playerLocation,
   players,
   tileToShow,
   setTileToShow,
   canInteract,
   setCanInteract,
+  setX,
+  setY,
 }) => {
   const { width, height } = useWindowDimensions();
   const hexagonSize = { x: 20, y: 20 };
   const hexToken = { x: 15, y: 15 };
-  const [x, setX] = useState(-100); //for viewbox
-  const [y, setY] = useState(-100); //for viewbox
   const [selected, setSelected] = useState(); //for styles
-  // const [tileDrawer, setTileDrawer] = useState(false);
-  // const [phase, setphase] = useState("action");
-  // const [playerLocation, setPlayerLocation] = useState(new Hex(0, 0, 0));
-  // const [players, setPlayers] = useState([]);
-  // const [tileToShow, setTileToShow] = useState();
-  // const [canInteract, setCanInteract] = useState(false); //player can take an action of the tile they are inspectings
+
+  useEffect(() => {
+    //setSelected(undefined);
+  }, [phase]);
 
   const layoutDimension = {
     size: hexagonSize,
@@ -69,7 +70,7 @@ const TestBoardComp = ({
 
   //moves board based on key presses
   const keyDownHandler = (event) => {
-    console.log("User pressed: ", event.key);
+    console.log("User pressed: ", event.dkey);
 
     if (event.key === "w") {
       setY((prev) => prev - camMovement);
@@ -156,11 +157,14 @@ const TestBoardComp = ({
   //sets up key listener
   useEffect(() => {
     document.addEventListener("keydown", keyDownHandler);
-
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
   }, []);
+
+  useEffect(() => {
+    console.log("x: " + x + " y: " + y);
+  }, [x, y]);
 
   return (
     <Box className={styles.test} onKeyDown={() => console.log(e.keycode)}>
@@ -986,9 +990,9 @@ const TestBoardComp = ({
           <Hexagon
             q={-5}
             r={1}
-            s={6}
+            s={4}
             className={
-              isSelectable(-5, 1, 6)
+              isSelectable(-5, 1, 4)
                 ? "tile-selectable-under"
                 : "tile-unselectable"
             }
@@ -1898,6 +1902,7 @@ const TestBoardComp = ({
         tileName={tileToShow?.tile}
         tileDrawer={tileDrawer}
         takeAction={takeAction}
+        badges={badges}
         actionComplete={actionComplete}
         selected={selected}
         campaignId={"Hoen"}

@@ -3,6 +3,12 @@ import { Box, List, ListItem } from "@mui/material";
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 
+const AlwaysScrollToBottom = () => {
+  const elementRef = useRef();
+  useEffect(() => elementRef.current.scrollIntoView());
+  return <div ref={elementRef} />;
+};
+
 const BattleLog = ({ log }) => {
   const scrollRef = useRef(null);
   useEffect(() => {
@@ -11,21 +17,21 @@ const BattleLog = ({ log }) => {
 
   if (log)
     return (
-      <List
+      <Box
         sx={{
           overflowY: "scroll",
+          display: "flex",
+          flexDirection: "column",
           height: "553px",
           p: 1,
           borderLeft: "1px solid grey",
         }}
       >
         {log.map((message, index) => (
-          <li ref={scrollRef}>
-            <Message message={message} />
-          </li>
+          <Message message={message} />
         ))}
-        <li ref={scrollRef}></li>
-      </List>
+        <AlwaysScrollToBottom />
+      </Box>
     );
 
   return <div></div>;

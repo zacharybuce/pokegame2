@@ -21,6 +21,8 @@ const ActionArea = ({
   setLeaderboardDrawer,
   setBagDrawer,
   setTileDrawer,
+  actionButtonClick,
+  playerLocation,
 }) => {
   return (
     <Grid item container xs={12} sx={{ height: "20vh" }}>
@@ -32,7 +34,9 @@ const ActionArea = ({
         isReady={isReady}
         endTurn={endTurn}
         moveToTile={moveToTile}
+        playerLocation={playerLocation}
         actionComplete={actionComplete}
+        actionButtonClick={actionButtonClick}
         setTileDrawer={setTileDrawer}
       />
       {/* Open Bag Button */}

@@ -16,8 +16,9 @@ const ActionButtons = ({
   isReady,
   tileToShow,
   setTileDrawer,
+  playerLocation,
+  actionButtonClick,
 }) => {
-  console.log(turnToMove);
   if (isReady || (!turnToMove && phase == "movement"))
     return (
       <Grid
@@ -87,7 +88,11 @@ const ActionButtons = ({
             color="success"
             variant="contained"
             sx={{ width: "85%" }}
-            disabled={!tileToShow || movement <= 0}
+            disabled={
+              !tileToShow ||
+              movement <= 0 ||
+              playerLocation?.tile == tileToShow?.tile
+            }
           >
             Move to {tileToShow?.tile}
           </Button>
@@ -130,6 +135,7 @@ const ActionButtons = ({
           color="success"
           variant="contained"
           sx={{ width: "90%" }}
+          onClick={() => actionButtonClick()}
         >
           Take Action
         </Button>

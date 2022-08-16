@@ -1,8 +1,6 @@
 const { Dex } = require("pokemon-showdown");
 const pokemonData = require("../../../../data/pokemon.json");
-const fs = require("fs");
-const path = require("path");
-const csv = require("fast-csv");
+const trainerData = require("../../../../data/trainers-hoen.json");
 
 //better than math rand
 function genRand(min, max) {
@@ -156,12 +154,31 @@ const generateShiny = () => {
   else return false;
 };
 
+const getRandPokemon = (trainer, badges) => {
+  let difficulty;
+
+  if (badges < 3) difficulty = "Easy";
+  else if (badges < 6) difficulty = "Medium";
+  else if (badges < 9) difficulty = "Hard";
+
+  let possibleMon = trainerData[trainer][difficulty];
+
+  let rand = genRand(0, possibleMon.length - 1);
+  return possibleMon[rand];
+};
+
 export default function handler(req, res) {
   const { method } = req;
 
   switch (method) {
     case "POST":
-      res.status(200).json({ data: generatePokemon(req.body) });
+      console.log(req.body);
+
+      let pokemon = getRandPokemon(req.body.trainer, req.body.badges);
+      let data = req.body;
+      data.name = pokemon;
+      console.log(data);
+      res.status(200).json({ data: generatePokemon(data) });
       break;
   }
 }

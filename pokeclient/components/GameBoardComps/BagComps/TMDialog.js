@@ -51,7 +51,7 @@ const TMDialog = ({ tm, index, team, tmDialog, teachTm, setTmDialog }) => {
                 }}
                 onClick={() => teachTm(tm, pokemon, index)}
               >
-                <PokeSprite name={pokemon.id} isShiny={pokemon.isShiny} />
+                <PokeSprite name={pokemon.id} shiny={pokemon.isShiny} />
                 {pokemon.species}
               </Button>
             ))}

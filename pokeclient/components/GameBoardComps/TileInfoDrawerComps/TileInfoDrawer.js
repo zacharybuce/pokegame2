@@ -22,6 +22,7 @@ const TileInfoDrawer = ({
   setTileToShow,
   takeAction,
   actionComplete,
+  badges,
   phase,
   tileName,
   campaignId,
@@ -38,6 +39,15 @@ const TileInfoDrawer = ({
     }
   }, [tileDrawer]);
 
+  //better than math rand
+  function getRand(min, max) {
+    return (
+      (Math.floor(Math.pow(10, 14) * Math.random() * Math.random()) %
+        (max - min + 1)) +
+      min
+    );
+  }
+
   //calls api to get tile info from json
   const getTileInfo = async (tileName) => {
     const res = await fetch(
@@ -50,6 +60,12 @@ const TileInfoDrawer = ({
     const json = await res.json();
 
     setTileInfo(json.data);
+  };
+
+  const chooseRandTrainer = () => {
+    let rand = getRand(0, tileInfo.trainers.length - 1);
+    let trainer = tileInfo.trainers[rand];
+    takeAction("trainerbattle", trainer);
   };
 
   const EncounterButtons = (
@@ -66,7 +82,7 @@ const TileInfoDrawer = ({
         disabled={tileInfo ? tileInfo.trainers.length == 0 : false}
         variant="contained"
         sx={{ width: "50%" }}
-        onClick={() => takeAction("trainerbattle")}
+        onClick={() => chooseRandTrainer()}
       >
         Fight Trainer <PersonIcon sx={{ ml: "1vw" }} />
       </Button>
@@ -103,7 +119,12 @@ const TileInfoDrawer = ({
               ? EncounterButtons
               : ""}
           </Card>
-          <TileEvents events={tileInfo.events} canInteract={canInteract} />
+          <TileEvents
+            badges={badges}
+            events={tileInfo.events}
+            canInteract={canInteract}
+            takeAction={takeAction}
+          />
         </Box>
       ) : (
         <Box sx={{ textAlign: "center", width: "300px" }}>

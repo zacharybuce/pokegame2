@@ -49,36 +49,39 @@ const Team = ({ team, candies, setCandies, setTeam, setBag }) => {
                 {...provided.droppableProps}
                 sx={{ height: "100%" }}
               >
-                {team.map((pokemon, index) => (
-                  <Draggable
-                    key={pokemon.dragId}
-                    draggableId={pokemon.dragId}
-                    index={index}
-                  >
-                    {(provided) => (
-                      <Box
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        sx={{
-                          height: "100%",
-                          width: "17%",
-                          display: "inline-block",
-                          mr: index - 1 !== team.length ? "2px" : "0px",
-                        }}
+                {team.map((pokemon, index) => {
+                  if (pokemon)
+                    return (
+                      <Draggable
+                        key={pokemon.dragId}
+                        draggableId={pokemon.dragId}
+                        index={index}
                       >
-                        <PokemonCard
-                          pokemon={pokemon}
-                          candies={candies}
-                          team={team}
-                          setTeam={setTeam}
-                          setBag={setBag}
-                          setCandies={setCandies}
-                        />
-                      </Box>
-                    )}
-                  </Draggable>
-                ))}
+                        {(provided) => (
+                          <Box
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            sx={{
+                              height: "100%",
+                              width: "16%",
+                              display: "inline-block",
+                              mr: index - 1 !== team.length ? "2px" : "0px",
+                            }}
+                          >
+                            <PokemonCard
+                              pokemon={pokemon}
+                              candies={candies}
+                              team={team}
+                              setTeam={setTeam}
+                              setBag={setBag}
+                              setCandies={setCandies}
+                            />
+                          </Box>
+                        )}
+                      </Draggable>
+                    );
+                })}
                 {provided.placeholder}
               </Box>
             )}

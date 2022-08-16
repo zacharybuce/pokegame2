@@ -6,7 +6,7 @@
     "Type": "Bug"
   },
   "Youngster": {
-    "Easy": ["Zigzagoon", "Aaron", "Electrike", "Machop", "Trapinch"],
+    "Easy": ["Zigzagoon", "Aron", "Electrike", "Machop", "Trapinch"],
     "Medium": ["Lairon", "Linoone", "Manectric", "Lickitung"],
     "Hard": ["Bisharp", "Gardevoir", "Lickilicky", "Aggron"],
     "Type": "Normal"

@@ -161,7 +161,17 @@ export default function handler(req, res) {
 
   switch (method) {
     case "POST":
-      res.status(200).json({ data: generatePokemon(req.body) });
+      let sentTeam = [];
+      console.log(req.body);
+      for (let i = 0; i < req.body.team.length; i++) {
+        let data = {
+          name: req.body.team[i],
+          level: req.body.level,
+          candiesSpent: req.body.candiesSpent,
+        };
+        sentTeam.push(generatePokemon(data));
+      }
+      res.status(200).json({ data: sentTeam });
       break;
   }
 }

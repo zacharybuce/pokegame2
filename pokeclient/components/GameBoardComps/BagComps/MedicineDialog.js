@@ -101,7 +101,7 @@ const MedicineDialog = ({
                   setClickable(false);
                 }}
               >
-                <PokeSprite name={pokemon.id} isShiny={pokemon.isShiny} />
+                <PokeSprite name={pokemon.id} shiny={pokemon.isShiny} />
                 {pokemon.species}
               </Button>
             </Grid>

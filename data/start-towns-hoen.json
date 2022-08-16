@@ -15,7 +15,7 @@
     "starters": [
       { "species": "Eevee", "id": "eevee" },
       { "species": "Munchlax", "id": "munchlax" },
-      { "species": "slakoth", "id": "slakoth" }
+      { "species": "Slakoth", "id": "slakoth" }
     ],
     "name": "Petalburg City",
     "img": "town",
@@ -88,7 +88,7 @@
     "color": "redrock"
   },
   "fortree": {
-    "location": { "q": 1, "r": -2, "s": -1 },
+    "location": { "q": 1, "r": -2, "s": 1 },
     "starters": [
       { "species": "Noibat", "id": "noibat" },
       { "species": "Rookidee", "id": "rookidee" },
@@ -99,7 +99,7 @@
     "color": "grass3"
   },
   "lilycove": {
-    "location": { "q": 4, "r": -1, "s": -4 },
+    "location": { "q": 4, "r": -1, "s": -3 },
     "starters": [
       { "species": "Golett", "id": "golett" },
       { "species": "Froakie", "id": "froakie" },

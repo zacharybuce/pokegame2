@@ -1,8 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-
 import Ability from "../../../Utils/Ability";
-import ItemSprite from "../../../Utils/ItemSprite";
 
 const ActivePokemonInfo = ({ team }) => {
   return (

@@ -69,7 +69,7 @@ const EVAndIVs = ({ evs, ivs, baseStats }) => {
                 <Typography>{getName(stat)}</Typography>
               </Grid>
               <Grid item xs={6} sx={{ textAlign: "center" }}>
-                <Typography sx={{ color: ivs[stat] == 32 ? "#3cbf42" : "" }}>
+                <Typography sx={{ color: ivs[stat] == 31 ? "#3cbf42" : "" }}>
                   {ivs[stat]}
                 </Typography>
               </Grid>

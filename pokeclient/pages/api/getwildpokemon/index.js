@@ -25,6 +25,7 @@ export default function handler(req, res) {
       total += tileData.encounterRates[encounterIndex];
     }
 
+    console.log(tileData.encounters[encounterIndex]);
     return tileData.encounters[encounterIndex];
   };
 

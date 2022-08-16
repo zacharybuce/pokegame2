@@ -17274,6 +17274,7 @@
   },
   "Aegislash": {
     "species": "Aegislash",
+    "num": "681",
     "learnset": [
       { "move": "kingsshield", "level": "0" },
       { "move": "aerialace", "level": "1" },

@@ -7,6 +7,9 @@ import FieldDisplay from "./FieldDisplay";
 import WeatherDisplay from "./WeatherDisplay";
 import ActivePokemonMoves from "./ActivePokemonMoves";
 import BattleLog from "./BattleLog";
+import CatchPanel from "./CatchPanel";
+import SwitchPanel from "./SwitchPanel";
+import EntranceAnim from "./EntranceAnim";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,7 +44,15 @@ function a11yProps(index) {
   };
 }
 
-const Battle = () => {
+const Battle = ({
+  battletype,
+  trainer,
+  bag,
+  setBag,
+  startBattle,
+  endBattle,
+  id,
+}) => {
   //---Server Controlled Variables---
   const socket = useSocket();
   const [team, setTeam] = useState();
@@ -55,18 +66,35 @@ const Battle = () => {
   const [p1PokeHealth, setP1PokeHealth] = useState(100);
   const [p2ActivePoke, setP2ActivePoke] = useState();
   const [p2PokeHealth, setP2PokeHealth] = useState(100);
+  const [p1PokeStatus, setP1PokeStatus] = useState([]);
+  const [p2PokeStatus, setP2PokeStatus] = useState([]);
   const [weather, setWeather] = useState("none");
   const [fieldEffectsP1, setFieldEffectsP1] = useState([]);
   const [fieldEffectsP2, setFieldEffectsP2] = useState([]);
-  const [animsDone, setAnimsDone] = useState(true);
-  const [tabValue, setTabValue] = useState(0);
+  const [animsDone, setAnimsDone] = useState(false);
+  const [tabValue, setTabValue] = useState(1);
   const [log, setLog] = useState([]);
+  const [canThrowBall, setCanThrowBall] = useState(true);
+  const [trapped, setTrapped] = useState(false);
+  const [entranceAnim, setEntranceAnim] = useState(true);
   //---Use Effects-------------------
+  useEffect(() => {
+    startBattle();
+    if (battletype != "wildbattle") {
+      setTimeout(() => {
+        setEntranceAnim(false);
+      }, 2000);
+    } else {
+      setEntranceAnim(false);
+    }
+  }, []);
+
   useEffect(() => {
     if (socket === undefined) return;
 
     socket.on("battle-side-update", (team, player1) => {
       setTeam(JSON.parse(team));
+      checkTrapped(JSON.parse(team));
       setIsPlayer1(player1);
       console.log(team);
     });
@@ -84,6 +112,7 @@ const Battle = () => {
     console.log(field);
     if (field) parseField(field);
     setHasSelected(false);
+    setCanThrowBall(true);
     return () => socket.off("battle-field-update");
   }, [socket, field]);
 
@@ -92,11 +121,13 @@ const Battle = () => {
     console.log("sending choice...");
     socket.emit("send-move", moveIndex);
     setHasSelected(true);
+    setCanThrowBall(false);
   };
 
   const sendSwitchChoice = (pokeid) => {
     socket.emit("send-switch", pokeid, id);
     setHasSelected(true);
+    setCanThrowBall(false);
   };
 
   const setPokemon = (token) => {
@@ -108,21 +139,25 @@ const Battle = () => {
     let level = splitToken[3].split(",")[1];
     if (splitToken[3].split(",")[3]) isShiny = true;
     let status = [];
+    if (splitToken[4].split(" ").length > 1) {
+      status = "status|" + splitToken[4].split(" ")[1];
+    }
 
     let data = {
       name: name,
       isShiny: isShiny,
-      status: status,
       level: level,
     };
 
     if (player == "p1a") {
       setP1ActivePoke(data);
       setP1PokeHealth(health);
+      setP1PokeStatus(status);
     }
     if (player == "p2a") {
       setP2ActivePoke(data);
       setP2PokeHealth(health);
+      setP2PokeStatus(status);
     }
   };
 
@@ -149,31 +184,34 @@ const Battle = () => {
     let amount = splitToken[4];
 
     if (player == "p1a") {
-      let newMon = p1ActivePoke;
-      newMon.status.push(type + "|" + stat + "|" + amount);
-      setP1ActivePoke(newMon);
+      setP1PokeStatus((prevState) => [
+        ...prevState,
+        type + "|" + stat + "|" + amount,
+      ]);
     }
     if (player == "p2a") {
-      let newMon = p2ActivePoke;
-      newMon.status.push(type + "|" + stat + "|" + amount);
-      setP2ActivePoke(newMon);
+      setP2PokeStatus((prevState) => [
+        ...prevState,
+        type + "|" + stat + "|" + amount,
+      ]);
     }
   };
 
   const cureStatus = (token) => {
     let splitToken = token.split("|");
     let player = splitToken[2].split(":")[0];
-    let newMon = player == "p1a" ? p1ActivePoke : p2ActivePoke;
-    let newStatuses = newMon.status.filter(
-      (status) => !status.includes(splitToken[3])
-    );
-    newMon.status = newStatuses;
 
     if (player == "p1a") {
-      setP1ActivePoke(newMon);
+      let newStatuses = p1PokeStatus.filter(
+        (status) => !status.includes(splitToken[3])
+      );
+      setP1PokeStatus(newStatuses);
     }
     if (player == "p2a") {
-      setP2ActivePoke(newMon);
+      let newStatuses = p2PokeStatus.filter(
+        (status) => !status.includes(splitToken[3])
+      );
+      setP2PokeStatus(newStatuses);
     }
   };
 
@@ -202,12 +240,14 @@ const Battle = () => {
   const startStatusEffect = (token) => {
     var splitToken = token.split("|");
     let player = splitToken[2].split(":")[0];
-    let effect = splitToken[3];
-    let newMon = player == "p1a" ? p1ActivePoke : p2ActivePoke;
-    newMon.status = newMon.status.push("effect|" + effect);
+    let effect = "effect|" + splitToken[3];
 
-    if (player == "p1a") setP1ActivePoke(newMon);
-    if (player == "p2a") setP2ActivePoke(newMon);
+    if (player == "p1a") {
+      setP1PokeStatus((prevState) => [...prevState, effect]);
+    }
+    if (player == "p2a") {
+      setP2PokeStatus((prevState) => [...prevState, effect]);
+    }
   };
 
   const faint = (token) => {
@@ -219,22 +259,35 @@ const Battle = () => {
     }
   };
 
-  var initialSwitch = true;
+  const handleWin = (token) => {
+    let splitToken = token.split("|");
+    let winner = splitToken[2];
+    if (id == winner.replace(/['"]+/g, "")) endBattle(true, team);
+    else endBattle(false, team);
+  };
+
+  const checkTrapped = (team) => {
+    if (team.active) {
+      if (team.active[0].trapped) {
+        setTrapped(team.active[0].trapped);
+      } else if (team.active[0].maybeTrapped) {
+        setTrapped(team.active[0].maybeTrapped);
+      }
+    } else setTrapped(false);
+  };
+
   var delay = 300;
-  var p1Heal = false;
-  var p2Heal = false;
   var p1Fnt = false;
   var p2Fnt = false;
-  var p1Status = false;
-  var p2Status = false;
   const addDelay = 1500;
 
   const parseField = (field) => {
     setAnimsDone(false);
 
     var stream = field.split(/\r?\n/);
-    let change = 1;
+    var change = 1;
     for (const token of stream) {
+      addMessage(token, change);
       //set player names
       if (token.startsWith("|player|p1")) {
         var splitToken = token.split("|");
@@ -247,6 +300,8 @@ const Battle = () => {
       //Set the images and health on switches
       if (token.startsWith("|switch") || token.startsWith("|drag")) {
         setPokemon(token);
+        change++;
+        //delay += addDelay;
       }
       //set the health display on damage and heal
       if (
@@ -301,442 +356,498 @@ const Battle = () => {
         setTimeout(() => startStatusEffect(token), delay);
         delay += addDelay;
       }
-
-      let newLog = log;
-      newLog.push({ message: token, severity: "info" });
-      setTimeout(() => setLog(newLog), delay);
+      if (token.startsWith("|win")) {
+        setTimeout(() => handleWin(token), delay);
+      }
     }
 
     setTimeout(() => setAnimsDone(true), delay);
+
     delay = 300;
     change = 1;
   };
 
-  const fieldParser = () => {
-    var p1Set = false;
-    var p2Set = false;
-    setAnimsDone(false);
-
-    var stream = field.split(/\r?\n/);
-
-    for (const token of stream) {
-      snackDisplay(token);
-
-      //set player names
-      if (token.startsWith("|player|p1")) {
-        var splitToken = token.split("|");
-        setP1Name(splitToken[3].replace(/['"]+/g, ""));
-      }
-      if (token.startsWith("|player|p2")) {
-        var splitToken = token.split("|");
-        setP2Name(splitToken[3].replace(/['"]+/g, ""));
-      }
-
-      //Set the images and health on switches
-      if (token.startsWith("|switch|p1a:") || token.startsWith("|drag|p1a:")) {
-        var splitToken = token.split("|");
-        setP1Poke(splitToken[3].split(",")[0]);
-        setP1PokeHealth(splitToken[4].split("/")[0]);
-        setSprite("p1", splitToken[3].split(",")[0]);
-        setP1PokeStatus([]);
-
-        //setShiny
-        if (splitToken[3].split(",")[3]) setP1PokeShiny(true);
-        else setP1PokeShiny(false);
-        console.log(splitToken[4].split(" ")[1]);
-        //set status on switch in
-        if (splitToken[4].split(" ").length > 1) {
-          setP1PokeStatus((prevState) => [
-            ...prevState,
-            "status|" + splitToken[4].split(" ")[1],
-          ]);
-        }
-
-        // }, delay);
-        // delay += addDelay;
-      }
-      if (token.startsWith("|switch|p2a:") || token.startsWith("|drag|p2a:")) {
-        // if (initialSwitch) delay = 0;
-
-        // setTimeout(() => {
-
-        var splitToken = token.split("|");
-        setP2Poke(splitToken[3].split(",")[0]);
-        setP2PokeHealth(splitToken[4].split("/")[0]);
-        setSprite("p2", splitToken[3].split(",")[0]);
-        setP2PokeStatus([]);
-
-        //setShiny
-        if (splitToken[3].split(",")[3]) setP2PokeShiny(true);
-        else setP2PokeShiny(false);
-
-        //set status on switch in
-        if (splitToken[4].split(" ").length > 1) {
-          console.log(splitToken[4].split(" ")[1]);
-          setP2PokeStatus(["status|" + splitToken[4].split(" ")[1]]);
-        }
-
-        // }, delay);
-        // delay += addDelay;
-        initialSwitch = false;
-      }
-
-      //set the health display on damage and heal
-      if (
-        (token.startsWith("|-damage|") || token.startsWith("|-heal|")) &&
-        token.split("|")[3] != "0 fnt"
-      ) {
+  const addMessage = (token, change) => {
+    let message = "";
+    let severity;
+    let splitToken = token.split("|");
+    let type = splitToken[1];
+    let user;
+    let opp;
+    let move;
+    let poke;
+    let cause;
+    let status;
+    let ability;
+    let effect;
+    let amount;
+    let stat;
+    let item;
+    switch (type) {
+      case "switch":
         if (
-          (token.startsWith("|-damage|p1a:") &&
-            token.split("|")[3].split("/")[1] == "100") ||
-          (token.startsWith("|-heal|p1a:") &&
-            token.split("|")[3].split("/")[1] == "100") ||
-          (token.startsWith("|-damage|p1a:") &&
-            token.split("|")[3].split("/")[1].split(" ")[0] == "100") ||
-          (token.startsWith("|-heal|p1a:") &&
-            token.split("|")[3].split("/")[1].split(" ")[0] == "100")
+          battletype == "wildbattle" &&
+          change % 2 == 0 &&
+          splitToken[2].split(":")[0] == "p2a"
         ) {
-          var splitToken = token.split("|");
-          setTimeout(() => setP1PokeHealth(splitToken[3].split("/")[0]), delay);
-          delay += addDelay;
+          user = splitToken[2].split(" ")[1];
+          message = `A wild ${user} appeared!`;
+          severity = "info";
+        } else if (change % 2 == 0) {
+          user = splitToken[2].split(" ")[1];
+          message = `${user} was sent out!`;
+          severity = "info";
         }
+
+        break;
+      case "move":
+        opp = splitToken[4].split(" ")[1];
+        user = splitToken[2].split(" ")[1];
+        move = splitToken[3];
+
+        if (opp != undefined) {
+          message = `${user} used ${move} on ${opp}`;
+        } else {
+          message = `${user} used ${move}`;
+        }
+        severity = "info";
+        break;
+      case "-supereffective":
+        message = `It was Super Effective!`;
+        severity = "success";
+        break;
+      case "-crit":
+        message = `It was a Critical Hit!`;
+        severity = "success";
+        break;
+      case "-resisted":
+        message = `It was not vey effective...`;
+        severity = "warning";
+        break;
+      case "-immune":
+        poke = splitToken[2].split(" ")[1];
+        if (token.length == 5) {
+          let effect = splitToken[3];
+          let reason = splitToken[4].replace(/[\[\]']+/g, "");
+
+          message = `${poke} is immune to ${effect} ${reason}!`;
+          severity = "warning";
+        } else {
+          message = `${poke} is immune!`;
+          severity = "error";
+        }
+
+        break;
+      case "-heal":
+        if (change % 2 == 0) {
+          user = splitToken[2].split(" ")[1];
+          if (splitToken.length > 4) cause = splitToken[4].split(" ").at(-1);
+          else cause = "move";
+          message = `${user} healed with ${cause}`;
+          severity = "info";
+        }
+        break;
+      case "-damage":
+        user = splitToken[2].split(" ")[1];
+
+        // if (splitToken[3].split(" ").at(-1) == "fnt") {
+        //   if (
+        //     (splitToken[2].split(" ")[0] == "p1a:" && !p1Fnt) ||
+        //     (splitToken[2].split(" ")[0] == "p2a:" && !p2Fnt)
+        //   ) {
+        //     message = `${user} fainted!`;
+        //     severity = "error";
+        //     if (splitToken[2].split(" ")[0] == "p1a:") p1Fnt = true;
+        //     else p2Fnt = true;
+        //   }
+        // }
+
+        if (splitToken.length == 5 && change % 2 == 0) {
+          message = `${user} was hurt from ${splitToken[4].split(" ").at(-1)}!`;
+          severity = "error";
+        }
+
+        if (splitToken.length == 6 && change % 2 == 0) {
+          message = `${user} was hurt from ${splitToken[4].replace(
+            /[\[\]]+/g,
+            ""
+          )}!`;
+          severity = "error";
+        }
+
+        break;
+      case "faint":
+        user = splitToken[2].split(" ")[1];
         if (
-          (token.startsWith("|-damage|p2a:") &&
-            token.split("|")[3].split("/")[1] == "100") ||
-          (token.startsWith("|-heal|p2a:") &&
-            token.split("|")[3].split("/")[1] == "100") ||
-          (token.startsWith("|-damage|p2a:") &&
-            token.split("|")[3].split("/")[1].split(" ")[0] == "100") ||
-          (token.startsWith("|-heal|p2a:") &&
-            token.split("|")[3].split("/")[1].split(" ")[0] == "100")
+          (splitToken[2].split(" ")[0] == "p1a:" && !p1Fnt) ||
+          (splitToken[2].split(" ")[0] == "p2a:" && !p2Fnt)
         ) {
-          var splitToken = token.split("|");
-          setTimeout(() => setP2PokeHealth(splitToken[3].split("/")[0]), delay);
-          delay += addDelay;
+          message = `${user} fainted!`;
+          severity = "error";
+          if (splitToken[2].split(" ")[0] == "p1a:") p1Fnt = true;
+          else p2Fnt = true;
         }
-      }
+        break;
+      case "cant":
+        user = splitToken[2].split(" ")[1];
+        if (splitToken.length == 4) {
+          let preventMove = splitToken[3];
 
-      //set health to 0 on faint
-      if (token.startsWith("|faint|p1a:")) {
-        if (!player1) setMonKOed((prevState) => prevState + 1);
-        setTimeout(() => setP1PokeHealth(0), delay);
-        delay += addDelay;
-      }
-      if (token.startsWith("|faint|p2a:")) {
-        if (player1) {
-          console.log("p2 faint +1 to p1");
-          setMonKOed((prevState) => prevState + 1);
+          if (preventMove == "flinch") {
+            message = `${user} flinched!`;
+          } else message = `${user} is ${preventMove} !`;
+          severity = "error";
         }
-        setTimeout(() => setP2PokeHealth(0), delay);
-        delay += addDelay;
-      }
 
-      //set status
-      if (token.startsWith("|-status|p1a:")) {
-        var splitToken = token.split("|");
-        console.log("in stat");
-        setTimeout(
-          () =>
-            setP1PokeStatus((prevState) => [
-              ...prevState,
-              "status|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-status|p2a:")) {
-        var splitToken = token.split("|");
-        setTimeout(
-          () =>
-            setP2PokeStatus((prevState) => [
-              ...prevState,
-              "status|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
+        if (splitToken.length == 5) {
+          let move = splitToken[4];
+          let preventMove = splitToken[3].split(" ")[1];
+          message = `${user} cant use ${move} because of ${preventMove}`;
+          severity = "error";
+        }
+        break;
+      case "-fail":
+        message = `The move Failed!`;
+        severity = "error";
+        break;
+      case "-status":
+        poke = splitToken[2].split(" ")[1];
+        status = splitToken[3];
 
-      //cure status
-      if (token.startsWith("|-curestatus|p1a:")) {
-        var splitToken = token.split("|");
-        const newStatuses = p1PokeStatus.filter(
-          (status) => !status.includes(splitToken[3])
-        );
-        setTimeout(() => setP1PokeStatus(newStatuses), delay);
-        delay += addDelay;
-      }
-      if (token.startsWith("|-curestatus|p2a:")) {
-        var splitToken = token.split("|");
-        const newStatuses = p1PokeStatus.filter(
-          (status) => !status.includes(splitToken[3])
-        );
-        setTimeout(() => setP2PokeStatus(newStatuses), delay);
-        delay += addDelay;
-      }
+        if (splitToken.length == 6) {
+          let cause = JSON.stringify(splitToken[4]).replace(/['"]+/g, "");
+          cause = cause.replace(/[\[\]]+/g, "");
+          message = `${poke} is now ${status} ${cause}!`;
+          severity = "warning";
+        }
 
-      if (token.startsWith("|-end|p1a:")) {
-        var splitToken = token.split("|");
-        const newStatuses = p1PokeStatus.filter(
-          (status) => !status.includes(splitToken[3])
-        );
-        setTimeout(() => setP1PokeStatus(newStatuses), delay);
-        delay += addDelay;
-      }
-      if (token.startsWith("|-end|p2a:")) {
-        var splitToken = token.split("|");
-        const newStatuses = p2PokeStatus.filter(
-          (status) => !status.includes(splitToken[3])
-        );
-        setTimeout(() => setP2PokeStatus(newStatuses), delay);
-        delay += addDelay;
-      }
+        if (splitToken.length == 5) {
+          let cause = JSON.stringify(splitToken[4]).replace(/['"]+/g, "");
+          cause = cause.replace(/[\[\]]+/g, "");
 
-      //side effects
-      if (token.startsWith("|-sidestart|p1:")) {
-        var splitToken = token.split("|");
-        const effect = splitToken[3];
-        setTimeout(
-          () => setFieldEffectsP1((prevState) => [...prevState, effect]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-sidestart|p2:")) {
-        var splitToken = token.split("|");
-        const effect = splitToken[3];
-        setTimeout(
-          () => setFieldEffectsP2((prevState) => [...prevState, effect]),
-          delay
-        );
-        delay += addDelay;
-      }
+          message = `${poke} is now ${status} ${cause}!`;
+          severity = "warning";
+        }
 
-      //end side effect
-      if (token.startsWith("|-sideend|p1:")) {
-        var splitToken = token.split("|");
-        const effectTok = splitToken[3];
+        if (splitToken.length == 4) {
+          message = `${poke} is now ${status}!`;
+          severity = "warning";
+        }
+        break;
+      case "-curestatus":
+        poke = splitToken[2].split(" ")[1];
+        status = splitToken[3];
+        message = `${poke} is no longer ${status}!`;
+        severity = "success";
+        break;
+      case "-miss":
+        message = `It missed...`;
+        severity = "error";
+        break;
+      case "-weather":
+        if (splitToken.length == 5) {
+          let weather = splitToken[2].split(" ")[1];
 
-        const newArr = fieldEffectsP1.filter(
-          (effect) => !effect.includes(effectTok)
-        );
+          if (weather == undefined) weather = splitToken[2];
+          let poke = splitToken[4].split(" ").at(-1);
+          let ability = splitToken[3]
+            .replace(/['"]+/g, "")
+            .replace(/[\[\]]+/g, "");
 
-        setTimeout(() => setFieldEffectsP1(newArr), delay);
-        delay += addDelay;
-      }
-      if (token.startsWith("|-sideend|p2:")) {
-        var splitToken = token.split("|");
-        const effectTok = splitToken[3];
+          message = `${poke} caused ${weather} ${ability} !`;
+          severity = "warning";
+        }
 
-        const newArr = fieldEffectsP2.filter(
-          (effect) => !effect.includes(effectTok)
-        );
+        if (splitToken.length == 4) {
+          let weather = splitToken[2];
+          message = `The ${weather} continues...`;
+          severity = "warning";
+        }
 
-        setTimeout(() => setFieldEffectsP2(newArr), delay);
-        delay += addDelay;
-      }
+        if (splitToken.length == 3 && splitToken[2] == "none") {
+          message = `The weather stopped...`;
+          severity = "warning";
+        }
+        break;
+      case "-enditem":
+        poke = splitToken[2].split(" ")[1];
+        item = splitToken[3];
+        message = `${poke}'s ${item} was destroyed!`;
+        severity = "warning";
+        break;
+      case "-activate":
+        if (splitToken.length == 4) {
+          let poke = splitToken[2].split(" ")[1];
+          let ability = splitToken[3].replace(/[:]+/g, "");
+          message = `${poke}'s ${ability} was activated!`;
+          severity = "warning";
+        }
 
-      //weather
-      if (token.startsWith("|-weather")) {
-        var splitToken = token.split("|");
-        const weather = splitToken[2];
-        setTimeout(() => setWeather(weather), delay);
-        delay += addDelay;
-      }
+        if (splitToken.length == 5) {
+          let ability = splitToken[3].split(" ")[1];
+          message = `${ability} was activated!`;
+          severity = "warning";
+        }
 
-      //set boost and unboost
-      if (token.startsWith("|-unboost|p1a:")) {
-        var splitToken = token.split("|");
+        break;
+      case "-end":
+        if (splitToken.length == 4) {
+          let item = splitToken[3];
+          message = `${item} ended!`;
+          severity = "warning";
+        }
+        break;
+      case "-anim":
+        user = splitToken[2].split(" ")[1];
+        move = splitToken[3];
+        opp = splitToken[4].split(" ")[1];
+        message = `${user} used ${move} on ${opp}`;
+        severity = "info";
+        break;
+      case "-prepare":
+        user = splitToken[2].split(" ")[1];
+        move = splitToken[3];
+        message = `${user} is preparing ${move}`;
+        severity = "info";
+        break;
+      case "-ability":
+        user = splitToken[2].split(" ")[1];
+        ability = splitToken[3];
+        message = `${user}'s ${ability} was activated!`;
+        severity = "warning";
+        break;
+      case "-start":
+        if (token.includes("typechange")) {
+          user = splitToken[2].split(" ")[1];
+          let type = splitToken[4];
 
-        setTimeout(
-          () =>
-            setP1PokeStatus((prevState) => [
-              ...prevState,
-              "unboost|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-unboost|p2a:")) {
-        var splitToken = token.split("|");
+          message = `${user} changed type to ${type}!`;
+          severity = "warning";
+        } else if (token.includes("ability:")) {
+          user = splitToken[2].split(" ")[1];
+          ability = splitToken[3].split(":")[1];
 
-        setTimeout(
-          () =>
-            setP2PokeStatus((prevState) => [
-              ...prevState,
-              "unboost|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-boost|p1a:")) {
-        var splitToken = token.split("|");
+          message = `${user}'s ${ability} was activated!`;
+          severity = "warning";
+        } else if (token.split("|").length == 4) {
+          user = splitToken[2].split(" ")[1];
+          effect = splitToken[3];
 
-        setTimeout(
-          () =>
-            setP1PokeStatus((prevState) => [
-              ...prevState,
-              "boost|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-boost|p2a:")) {
-        var splitToken = token.split("|");
+          switch (effect) {
+            case "confusion":
+              effect = "confused";
+              break;
+          }
+          message = `${user} is ${effect}`;
+          severity = "warning";
+        }
 
-        setTimeout(
-          () =>
-            setP2PokeStatus((prevState) => [
-              ...prevState,
-              "boost|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-setboost|p1a:")) {
-        var splitToken = token.split("|");
+        break;
+      case "-boost":
+        poke = splitToken[2].split(" ")[1];
+        stat = splitToken[3];
+        amount = splitToken[4];
 
-        setTimeout(
-          () =>
-            setP1PokeStatus((prevState) => [
-              ...prevState,
-              "setboost|" + splitToken[3] + "|" + splitToken[4],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-setboost|p2a:")) {
-        var splitToken = token.split("|");
+        message = `${poke}'s ${stat} was increased by ${amount} stage!`;
+        severity = "success";
+        break;
+      case "-unboost":
+        poke = splitToken[2].split(" ")[1];
+        stat = splitToken[3];
+        amount = splitToken[4];
 
-        setTimeout(
-          () =>
-            setP2PokeStatus((prevState) => [
-              ...prevState,
-              "setboost|" + splitToken[3] + "|" + splitToken[4],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
+        message = `${poke}'s ${stat} was decreased by ${amount} stage!`;
+        severity = "error";
+        break;
+      case "-setboost":
+        poke = splitToken[2].split(" ")[1];
+        stat = splitToken[3];
+        amount = splitToken[4];
 
-      if (token.startsWith("|-start|p1a:")) {
-        var splitToken = token.split("|");
+        message = `${poke}'s ${stat} was increased by ${amount} stages!`;
+        severity = "success";
+        break;
+    }
 
-        setTimeout(
-          () =>
-            setP1PokeStatus((prevState) => [
-              ...prevState,
-              "effect|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-      if (token.startsWith("|-start|p2a:")) {
-        var splitToken = token.split("|");
-
-        setTimeout(
-          () =>
-            setP2PokeStatus((prevState) => [
-              ...prevState,
-              "effect|" + splitToken[3],
-            ]),
-          delay
-        );
-        delay += addDelay;
-      }
-
-      if (token.startsWith("|win")) {
-        var splitToken = token.split("|");
-        var winner = splitToken[2];
-        setTimeout(() => {
-          if (id == winner.replace(/['"]+/g, "")) setRewards(1000, 1, true);
-          else setRewards(0, 1, false);
-          setBattleEnd(true);
-        }, delay);
-      }
-    } //end tok
-
-    setTimeout(() => setAnimsDone(true), delay);
-    delay = 300;
+    if (message) {
+      setTimeout(() => {
+        setLog((prev) => [...prev, { message: message, severity: severity }]);
+      }, delay);
+      delay += addDelay;
+    }
   };
 
+  const throwBall = async (ball) => {
+    setCanThrowBall(false);
+
+    let newBag = bag;
+    newBag.balls[ball] -= 1;
+    setBag(newBag);
+
+    let dataStatus = "none";
+    p2PokeStatus.forEach((effect) => {
+      console.log(effect);
+      let s = effect.split("|")[1];
+      if (
+        s == "par" ||
+        s == "psn" ||
+        s == "tox" ||
+        s == "brn" ||
+        s == "slp" ||
+        s == "frz"
+      ) {
+        dataStatus = s;
+      }
+    });
+
+    let data = {
+      name: p2ActivePoke.name,
+      status: dataStatus,
+      ball: ball,
+      hp: p2PokeHealth,
+    };
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_ROOT_URL + "/api/catchpokemon",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    const json = await res.json();
+
+    if (json.data.caught) {
+      setLog((prev) => [
+        ...prev,
+        { message: "The pokemon was caught!", severity: "success" },
+      ]);
+      setTimeout(() => endBattle(true, team, true), 1000);
+    } else {
+      //shakePokeball(json.data.shakes);
+      setLog((prev) => [
+        ...prev,
+        { message: "The pokemon broke out!", severity: "error" },
+      ]);
+    }
+  };
   return (
     <Box sx={{ p: 2 }}>
       <Grid container>
-        <Grid item container xs={8}>
-          <Grid item xs={2}>
-            <WeatherDisplay weather={weather} />
+        {!entranceAnim ? (
+          <Grid item container xs={8}>
+            <Grid item xs={2}>
+              <WeatherDisplay weather={weather} />
+            </Grid>
+            <Grid
+              item
+              container
+              alignItems="center"
+              justifyContent="end"
+              xs={10}
+            >
+              <Typography variant="h5">
+                {isPlayer1 ? p2Name : p1Name}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              {p1ActivePoke && p2ActivePoke ? (
+                <FieldDisplay
+                  p1ActivePoke={p1ActivePoke}
+                  p2ActivePoke={p2ActivePoke}
+                  p1PokeHealth={p1PokeHealth}
+                  p2PokeHealth={p2PokeHealth}
+                  p1PokeStatus={p1PokeStatus}
+                  p2PokeStatus={p2PokeStatus}
+                  fieldEffectsP1={fieldEffectsP1}
+                  fieldEffectsP2={fieldEffectsP2}
+                  isPlayer1={isPlayer1}
+                />
+              ) : (
+                ""
+              )}
+            </Grid>
+            <Grid
+              item
+              container
+              xs={12}
+              sx={{ mt: "25px", borderRadius: 3, backgroundColor: "#2F4562" }}
+            >
+              <Grid item xs={9}>
+                <TabPanel value={tabValue} index={0}>
+                  {team ? <ActivePokemonInfo team={team} /> : ""}
+                </TabPanel>
+                <TabPanel value={tabValue} index={1}>
+                  {team ? (
+                    <ActivePokemonMoves
+                      team={team}
+                      animsDone={animsDone}
+                      sendMoveChoice={sendMoveChoice}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </TabPanel>
+                <TabPanel value={tabValue} index={2}>
+                  {battletype != "wildbattle" && team ? (
+                    <SwitchPanel
+                      team={team}
+                      trapped={trapped}
+                      animsDone={animsDone}
+                      sendSwitchChoice={sendSwitchChoice}
+                    />
+                  ) : (
+                    <CatchPanel
+                      bag={bag}
+                      throwBall={throwBall}
+                      animsDone={animsDone}
+                      canThrowBall={canThrowBall}
+                    />
+                  )}
+                </TabPanel>
+              </Grid>
+              <Grid item xs={3}>
+                <Tabs
+                  orientation="vertical"
+                  value={tabValue}
+                  onChange={(e, newValue) => setTabValue(newValue)}
+                  aria-label="Vertical tabs example"
+                  sx={{
+                    borderLeft: 1,
+                    borderColor: "divider",
+                    "& .Mui-selected": {
+                      borderLeft: "1px solid",
+                    },
+                  }}
+                  TabIndicatorProps={{
+                    style: {
+                      display: "none",
+                    },
+                  }}
+                >
+                  <Tab label="Stats" {...a11yProps(0)} />
+                  <Tab label="Moves" {...a11yProps(1)} />
+                  <Tab
+                    label={battletype != "wildbattle" ? "Switch" : "Catch"}
+                    {...a11yProps(2)}
+                  />
+                </Tabs>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item container alignItems="center" justifyContent="end" xs={10}>
-            <Typography variant="h5">{isPlayer1 ? p2Name : p1Name}</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            {p1ActivePoke && p2ActivePoke ? (
-              <FieldDisplay
-                p1ActivePoke={p1ActivePoke}
-                p2ActivePoke={p2ActivePoke}
-                p1PokeHealth={p1PokeHealth}
-                p2PokeHealth={p2PokeHealth}
-                fieldEffectsP1={fieldEffectsP1}
-                fieldEffectsP2={fieldEffectsP2}
-                isPlayer1={isPlayer1}
-              />
-            ) : (
-              ""
-            )}
-          </Grid>
+        ) : (
           <Grid
             item
             container
-            xs={12}
-            sx={{ mt: "25px", borderRadius: 3, backgroundColor: "#2F4562" }}
+            justifyContent="center"
+            alignItems="center"
+            xs={8}
           >
-            <Grid item xs={9}>
-              <TabPanel value={tabValue} index={0}>
-                {team ? <ActivePokemonInfo team={team} /> : ""}
-              </TabPanel>
-              <TabPanel value={tabValue} index={1}>
-                <ActivePokemonMoves
-                  team={team}
-                  animsDone={animsDone}
-                  sendMoveChoice={sendMoveChoice}
-                />
-              </TabPanel>
-              <TabPanel value={tabValue} index={2}></TabPanel>
-            </Grid>
-            <Grid item xs={3}>
-              <Tabs
-                orientation="vertical"
-                value={tabValue}
-                onChange={(e, newValue) => setTabValue(newValue)}
-                aria-label="Vertical tabs example"
-                sx={{
-                  borderLeft: 1,
-                  borderColor: "divider",
-                  "& .Mui-selected": {
-                    borderLeft: "1px solid",
-                  },
-                }}
-                TabIndicatorProps={{
-                  style: {
-                    display: "none",
-                  },
-                }}
-              >
-                <Tab label="Stats" {...a11yProps(0)} />
-                <Tab label="Moves" {...a11yProps(1)} />
-                <Tab label="Switch" {...a11yProps(2)} />
-              </Tabs>
-            </Grid>
+            <EntranceAnim trainer={trainer} />
           </Grid>
-        </Grid>
+        )}
         <Grid item xs={4}>
           <BattleLog log={log} />
         </Grid>

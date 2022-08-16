@@ -9,7 +9,7 @@ const BattleCircle = () => {
         backgroundColor: "#506680",
         boxShadow: 3,
         width: "90%",
-        position: "relative",
+        position: "absolute",
         top: "70%",
         borderRadius: "50%",
         zIndex: 0,

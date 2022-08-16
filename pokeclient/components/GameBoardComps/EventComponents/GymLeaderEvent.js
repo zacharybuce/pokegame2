@@ -1,8 +1,15 @@
 import { Box, Button, Card, Divider, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { pSBC } from "../../Utils/colorUtil";
 import { typeColor } from "../../Utils/typeColor";
 
-const GymLeaderEvent = ({ event, campaignId, canInteract }) => {
+const GymLeaderEvent = ({
+  badges,
+  event,
+  campaignId,
+  canInteract,
+  takeAction,
+}) => {
   const [leader, setLeader] = useState();
 
   useEffect(() => {
@@ -24,6 +31,12 @@ const GymLeaderEvent = ({ event, campaignId, canInteract }) => {
   const getGymLeaderImg = () => {
     const leader = event.split("-")[1];
     return `url(/TrainerVSImages-${campaignId}/${leader}.png)`;
+  };
+
+  const getGymLeaderTeam = () => {
+    if (badges.length < 3) return leader.Easy;
+    else if (badges.length < 6) return leader.Medium;
+    if (badges.length < 8) return leader.Hard;
   };
 
   const gymLeaderImage = (
@@ -73,7 +86,23 @@ const GymLeaderEvent = ({ event, campaignId, canInteract }) => {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Button disabled={!canInteract} fullWidth variant="contained">
+            <Button
+              disabled={!canInteract}
+              fullWidth
+              variant="contained"
+              onClick={() =>
+                takeAction("gymchallenge", {
+                  gym: leaderName,
+                  team: getGymLeaderTeam(),
+                })
+              }
+              sx={{
+                backgroundColor: "#2F4562",
+                "&:hover": {
+                  backgroundColor: pSBC(-0.4, "#2F4562"),
+                },
+              }}
+            >
               Challenge
             </Button>
           </Grid>

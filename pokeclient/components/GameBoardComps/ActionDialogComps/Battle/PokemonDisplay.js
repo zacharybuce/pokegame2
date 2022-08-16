@@ -5,7 +5,7 @@ import PokemonGif from "./PokemonGif";
 import HealthBar from "./HealthBar";
 import BattleCircle from "./BattleCircle";
 
-const PokemonDisplay = ({ pokemon, health, fieldEffects, isOpp }) => {
+const PokemonDisplay = ({ pokemon, health, status, fieldEffects, isOpp }) => {
   if (isOpp)
     return (
       <Grid item container xs={12}>
@@ -14,7 +14,7 @@ const PokemonDisplay = ({ pokemon, health, fieldEffects, isOpp }) => {
             health={health}
             name={pokemon.name}
             level={pokemon.level}
-            status={pokemon.status}
+            status={status}
           />
         </Grid>
         <Grid
@@ -24,9 +24,22 @@ const PokemonDisplay = ({ pokemon, health, fieldEffects, isOpp }) => {
           alignItems="flex-end"
           direction="row"
           xs={5}
-          sx={{ height: "140px" }}
+          sx={{
+            height: "140px",
+            "&::after": {
+              height: "50px",
+              backgroundColor: "#506680",
+              boxShadow: 3,
+              width: "25%",
+              position: "absolute",
+              top: "33%",
+              content: "''",
+              borderRadius: "50%",
+              zIndex: 0,
+            },
+          }}
         >
-          <BattleCircle />
+          {/* <BattleCircle /> */}
           <Box sx={{ zIndex: 1 }}>
             <PokemonGif name={pokemon.name} isShiny={pokemon.isShiny} isOpp />
           </Box>
@@ -49,9 +62,22 @@ const PokemonDisplay = ({ pokemon, health, fieldEffects, isOpp }) => {
         alignItems="flex-end"
         direction="row"
         xs={5}
-        sx={{ height: "140px" }}
+        sx={{
+          height: "140px",
+          "&::after": {
+            height: "50px",
+            backgroundColor: "#506680",
+            boxShadow: 3,
+            width: "25%",
+            position: "absolute",
+            top: "60%",
+            content: "''",
+            borderRadius: "50%",
+            zIndex: 0,
+          },
+        }}
       >
-        <BattleCircle />
+        {/* <BattleCircle /> */}
         <Box sx={{ zIndex: 1 }}>
           <PokemonGif name={pokemon.name} isShiny={pokemon.isShiny} />
         </Box>
@@ -61,7 +87,7 @@ const PokemonDisplay = ({ pokemon, health, fieldEffects, isOpp }) => {
           health={health}
           name={pokemon.name}
           level={pokemon.level}
-          status={pokemon.status}
+          status={status}
         />
       </Grid>
     </Grid>

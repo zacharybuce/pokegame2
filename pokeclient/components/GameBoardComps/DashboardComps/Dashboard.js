@@ -24,6 +24,8 @@ const Dashboard = ({
   setShopDialog,
   setTileDrawer,
   canUseShop,
+  playerLocation,
+  actionButtonClick,
 }) => {
   return (
     <Box sx={{ ml: "2vw", mr: "2vw" }}>
@@ -46,7 +48,9 @@ const Dashboard = ({
             isReady={isReady}
             tileToShow={tileToShow}
             endTurn={endTurn}
+            playerLocation={playerLocation}
             actionComplete={actionComplete}
+            actionButtonClick={actionButtonClick}
             canUseShop={canUseShop}
             setLeaderboardDrawer={setLeaderboardDrawer}
             setBagDrawer={setBagDrawer}
