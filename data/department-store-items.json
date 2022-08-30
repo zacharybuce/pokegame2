@@ -1,0 +1,45 @@
+{
+  "store1": {
+    "heldItems": ["Sitrus Berry", "Light Clay"],
+    "tms": ["Thief", "Substitute"],
+    "heldItemsCost": 750,
+    "tmsCost": 750
+  },
+  "store2": {
+    "heldItems": ["Miracle Seed", "Mystic Water", "Charcoal", "Silk Scarf"],
+    "tms": ["Light Screen", "Reflect", "Will-O-Wisp", "Thunder Wave"],
+    "heldItemsCost": 1200,
+    "tmsCost": 750
+  },
+  "store3": {
+    "heldItems": [
+      "Black Belt",
+      "Black Glasses",
+      "Black Sludge",
+      "Hard Stone",
+      "Magnet",
+      "Metal Coat"
+    ],
+    "tms": ["Fire Punch", "Ice Punch", "Thunder Punch"],
+    "heldItemsCost": 1200,
+    "tmsCost": 1500
+  },
+  "store4": {
+    "heldItems": [
+      "Heavy-Duty Boots",
+      "Focus Sash",
+      "Life Orb",
+      "Rocky Helmet",
+      "Metronome"
+    ],
+    "tms": ["Thunderbolt", "Flamethrower", "Ice Beam", "Surf"],
+    "heldItemsCost": 1800,
+    "tmsCost": 3500
+  },
+  "store5": {
+    "heldItems": ["Expert Belt", "Leftovers"],
+    "tms": ["Earthquake", "Fire Blast", "Thunder", "Blizzard"],
+    "heldItemsCost": 2500,
+    "tmsCost": 5000
+  }
+}

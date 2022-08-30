@@ -1,8 +1,10 @@
-import { Box, Typography, Fade, Divider, Button } from "@mui/material";
+import { Box, Typography, Fade, Divider, Button, Grid } from "@mui/material";
 import React from "react";
 import Cookie from "@mui/icons-material/Cookie";
 import CurrencyYen from "@mui/icons-material/CurrencyYen";
 import { pSBC } from "../../../Utils/colorUtil";
+import ItemSprite from "../../../Utils/ItemSprite";
+import BattleReward from "./BattleReward";
 
 const BattleEndScreen = ({ rewards, closeDialog }) => {
   return (
@@ -29,20 +31,21 @@ const BattleEndScreen = ({ rewards, closeDialog }) => {
       >
         <Typography variant="h4">Battle Rewards</Typography>
         <Divider sx={{ mb: "1vh", backgroundColor: "#ededed" }} />
-        <Box sx={{ textAlign: "center" }}>
-          <Fade in direction="left" timeout={1000}>
-            <Typography variant="h5">
-              {rewards.candies} Candies
-              <Cookie />
-            </Typography>
-          </Fade>
-          <Fade in direction="left" timeout={2000}>
-            <Typography variant="h5">
-              {rewards.money ? rewards.money : 0} Money
-              <CurrencyYen />
-            </Typography>
-          </Fade>
-        </Box>
+        <Grid
+          container
+          justifyContent="center"
+          sx={{
+            width: "50%",
+            ml: "25%",
+          }}
+        >
+          {Object.keys(rewards).map((key, index) => {
+            if (index != 0)
+              return (
+                <BattleReward reward={rewards[key]} index={index} type={key} />
+              );
+          })}
+        </Grid>
       </Box>
       <Button
         variant="contained"

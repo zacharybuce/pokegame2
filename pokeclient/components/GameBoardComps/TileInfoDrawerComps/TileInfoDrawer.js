@@ -24,6 +24,7 @@ const TileInfoDrawer = ({
   actionComplete,
   badges,
   phase,
+  money,
   tileName,
   campaignId,
   canInteract,
@@ -65,7 +66,7 @@ const TileInfoDrawer = ({
   const chooseRandTrainer = () => {
     let rand = getRand(0, tileInfo.trainers.length - 1);
     let trainer = tileInfo.trainers[rand];
-    takeAction("trainerbattle", trainer);
+    takeAction("trainerbattle", { trainer: trainer });
   };
 
   const EncounterButtons = (
@@ -121,9 +122,11 @@ const TileInfoDrawer = ({
           </Card>
           <TileEvents
             badges={badges}
+            money={money}
             events={tileInfo.events}
             canInteract={canInteract}
             takeAction={takeAction}
+            phase={phase}
           />
         </Box>
       ) : (

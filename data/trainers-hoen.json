@@ -2,7 +2,7 @@
   "BugCatcher": {
     "Easy": ["Wurmple", "Surskit", "Sewaddle"],
     "Medium": ["Beautifly", "Dustox", "Masquerain"],
-    "Hard": ["Pinsir", "Heracross", "Vespiqueen", "Ninjask"],
+    "Hard": ["Pinsir", "Heracross", "Vespiquen", "Ninjask"],
     "Type": "Bug"
   },
   "Youngster": {
@@ -32,7 +32,7 @@
   "Swimmer": {
     "Easy": ["Luvdisc", "Carvanha", "Staryu", "Tentacool", "Horsea"],
     "Medium": ["Wailmer", "Sharpedo", "Tentacruel", "Sealeo", "Seadra"],
-    "Hard": ["Gyarados", "Pelipper", "Kingra"],
+    "Hard": ["Gyarados", "Pelipper", "Kingdra"],
     "Type": "Water"
   },
   "BlackBelt": {
@@ -62,17 +62,17 @@
   "Collector": {
     "Easy": ["Plusle", "Minun"],
     "Medium": ["Zangoose", "Seviper"],
-    "Hard": ["Ludicolo", "Shiftree"],
+    "Hard": ["Ludicolo", "Shiftry"],
     "Type": "Normal"
   },
   "CoolTrainer": {
     "Easy": ["Mawile", "Rhyhorn", "Kecleon"],
     "Medium": [
-      "Gravler",
+      "Graveler",
       "Manectric",
       "Armaldo",
       "Dusclops",
-      "Cacturn",
+      "Cacturne",
       "Swellow",
       "Magneton"
     ],
@@ -80,7 +80,7 @@
       "Alakazam",
       "Ludicolo",
       "Darmanitan",
-      "Shiftree",
+      "Shiftry",
       "Wailord",
       "Gallade"
     ],
@@ -94,18 +94,18 @@
   },
   "Picnicker": {
     "Easy": ["Marill", "Sandshrew", "Baltoy", "Shroomish", "Cacnea"],
-    "Medium": ["Lombre", "Nuzleaf", "Gravler", "Cacturn"],
+    "Medium": ["Lombre", "Nuzleaf", "Graveler", "Cacturne"],
     "Hard": ["Wigglytuff", "Azumarill"],
     "Type": "Normal"
   },
   "Hiker": {
     "Easy": ["Geodude", "Machop", "Numel"],
-    "Medium": ["Gravler", "Onix", "Camerupt"],
+    "Medium": ["Graveler", "Onix", "Camerupt"],
     "Hard": ["Golem", "Machamp", "Steelix"],
     "Type": "Rock"
   },
   "BirdKeeper": {
-    "Easy": ["Natu", "Tailow", "Swablu", "Hoothoot"],
+    "Easy": ["Natu", "Taillow", "Swablu", "Hoothoot"],
     "Medium": ["Swellow", "Xatu", "Pelipper", "Tropius", "Noctowl"],
     "Hard": ["Skarmory", "Altaria", "Staraptor"],
     "Type": "Flying"
@@ -117,7 +117,7 @@
     "Type": "Poison"
   },
   "PokeManiac": {
-    "Easy": ["Aaron", "Rhyhorn", "Slowpoke"],
+    "Easy": ["Aron", "Rhyhorn", "Slowpoke"],
     "Medium": ["Lairon", "Rhydon", "Slowbro"],
     "Hard": ["Aggron", "Rhyperior", "Ampharos"],
     "Type": "Normal"
@@ -129,7 +129,7 @@
     "Type": "Normal"
   },
   "Guitarist": {
-    "Easy": ["Electrike", "Whismer", "Magnemite", "Chatot"],
+    "Easy": ["Electrike", "Whismur", "Magnemite", "Chatot"],
     "Medium": ["Loudred", "Manectric", "Magneton"],
     "Hard": ["Exploud", "Magnezone", "Raichu"],
     "Type": "Electric"
@@ -146,7 +146,7 @@
     ],
     "Hard": [
       "Ludicolo",
-      "Shiftree",
+      "Shiftry",
       "Roserade",
       "Bellossom",
       "Excadrill",
@@ -155,7 +155,7 @@
     "Type": "Normal"
   },
   "HexManiac": {
-    "Easy": ["Duskull", "Shuppet", "Ghastly", "Ralts"],
+    "Easy": ["Duskull", "Shuppet", "Gastly", "Ralts"],
     "Medium": ["Dusclops", "Banette", "Haunter", "Sableye"],
     "Hard": ["Absol", "Dusknoir", "Gengar"],
     "Type": "Ghost"
@@ -168,14 +168,14 @@
       "Froslass",
       "Lanturn",
       "Sandslash",
-      "Ninetails"
+      "Ninetales"
     ],
     "Hard": ["Gardevoir", "Slaking", "Skarmory", "Claydol"],
     "Type": "Normal"
   },
   "Roxanne": {
     "Easy": ["Geodude", "Nosepass", "Onix"],
-    "Medium": ["Gravler", "Lairon", "Cradily"],
+    "Medium": ["Graveler", "Lairon", "Cradily"],
     "Hard": ["Probopass", "Aggron", "Golem"],
     "Type": "Rock"
   },
@@ -219,11 +219,25 @@
     "Easy": ["Luvdisc", "Barboach", "Wailmer"],
     "Medium": ["Sealeo", "Seaking", "Whiscash"],
     "Hard": ["Wailord", "Milotic", "Gyarados"],
-    "Type": "Ice"
+    "Type": "Water"
   },
   "Steven": {
-    "Easy": [],
-    "Medium": [],
+    "Easy": [
+      "Skarmory",
+      "Claydol",
+      "Aggron",
+      "Cradily",
+      "Armaldo",
+      "Metagross"
+    ],
+    "Medium": [
+      "Skarmory",
+      "Claydol",
+      "Aggron",
+      "Cradily",
+      "Armaldo",
+      "Metagross"
+    ],
     "Hard": [
       "Skarmory",
       "Claydol",

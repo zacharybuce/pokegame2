@@ -6,6 +6,7 @@ import TrainerDialog from "../components/HomeScreenComps/TrainerDialog";
 import LobbyScreen from "../components/LobbyComps/LobbyScreen";
 import SettingsDialog from "../components/HomeScreenComps/SettingsDialog";
 import GameBoard from "../components/GameBoardComps/GameBoard";
+import ContinueLobby from "../components/LobbyComps/ContinueLobby";
 
 export default function Index() {
   const [id, setId] = useLocalStorage("id");
@@ -14,6 +15,7 @@ export default function Index() {
   const [trainerDialogOpen, setTrainerDialogOpen] = useState(false);
   const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
   const [musicVolume, setMusicVolume] = useState(20);
+  const [isContinue, setIsContinue] = useState(false);
 
   const screenDisplay = (screen) => {
     switch (screen) {
@@ -29,8 +31,16 @@ export default function Index() {
         );
       case "Lobby":
         return <LobbyScreen setScreen={setScreen} id={id} />;
+      case "ContinueLobby":
+        return (
+          <ContinueLobby
+            setScreen={setScreen}
+            id={id}
+            setIsContinue={setIsContinue}
+          />
+        );
       case "GameBoard":
-        return <GameBoard id={id} />;
+        return <GameBoard id={id} isContinue={isContinue} />;
     }
   };
 

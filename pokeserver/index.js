@@ -2,6 +2,9 @@ import { Server } from "socket.io";
 import { createServer } from "http";
 import Sim from "pokemon-showdown";
 import Poke from "pokemon-showdown";
+import pokemonData from "../data/pokemon.json" assert { type: "json" };
+import saveData from "../data/savedata.json" assert { type: "json" };
+import { readFile, writeFile } from "fs/promises";
 
 const Teams = Poke.Teams;
 const Dex = Poke.Dex;
@@ -31,6 +34,13 @@ var game = {
   newPhase: false,
 };
 var startTown = { pickOrder: [], townsChoosen: [] };
+var battles = [];
+var trades = [];
+var inBattle = [];
+var sockets = [];
+var safariEncounters = [];
+var isContinue = false;
+var playerData = {};
 
 //--------------------------//
 io.on("connection", (socket) => {
@@ -51,7 +61,9 @@ io.on("connection", (socket) => {
         ready: false,
         sprite: sprite,
         isHost: false,
+        inAction: false,
       });
+      sockets.push(socket);
       if (players.length == 1) {
         players[0].isHost = true;
       }
@@ -63,6 +75,41 @@ io.on("connection", (socket) => {
     io.emit("lobby-player-update", players);
   });
 
+  //join lobby for games that are continued
+  socket.on("join-lobby-continue", (sprite) => {
+    if (!players.length) {
+      players = saveData.players;
+      game = saveData.game;
+      rules = saveData.rules;
+      safariEncounters = saveData.safariEncounters;
+      isContinue = true;
+    }
+
+    sockets[pIndex(id)] = socket;
+    io.emit("lobby-player-update", players);
+  });
+
+  //player sends data to save
+  socket.on(
+    "save-data",
+    (bag, money, candies, badges, startTown, playerLocation) => {
+      if (!playerData[id]) playerData[id] = {};
+      playerData[id].bag = bag;
+      playerData[id].money = money;
+      playerData[id].badges = badges;
+      playerData[id].candies = candies;
+      playerData[id].startTown = startTown;
+      playerData[id].playerLocation = playerLocation;
+      playerData[id].team = players[pIndex(id)].team;
+    }
+  );
+
+  //req data from save file for player to load
+  socket.on("request-player-data", () => {
+    console.log(saveData.playerData[id]);
+    io.to(id).emit("player-data", saveData.playerData[id]);
+  });
+
   //Player is ready to start the game
   socket.on("lobby-player-ready", () => {
     console.log(id + " is ready");
@@ -70,7 +117,12 @@ io.on("connection", (socket) => {
     io.emit("lobby-player-update", players);
     playersReady++;
 
-    if (playersReady == players.length) startGame();
+    if (playersReady == players.length) {
+      if (isContinue) {
+        io.emit("start-game");
+        resetPlayerReady();
+      } else startGame();
+    }
   });
 
   //Player sends a rules change, triggers an emit for new rules
@@ -155,8 +207,88 @@ io.on("connection", (socket) => {
     gymBattle(socket, id, gymTeam);
   });
 
+  //player starts a trainer battle
   socket.on("game-start-trainerbattle", (pokemon) => {
     trainerBattle(socket, id, pokemon);
+  });
+
+  socket.on("game-start-championbattle", (team) => {
+    championBattle(socket, id, team);
+  });
+
+  //player responds to prompt of if they want to initiate a pvp battle
+  socket.on("game-respond-pvp", (confirm, battleIndex) => {
+    if (confirm) {
+      battles[battleIndex].confirm = true;
+      console.log(id + " confirmed battle");
+      let player1 = players[battles[battleIndex].p1].name;
+      let player2 = players[battles[battleIndex].p2].name;
+      io.to(player1).emit(
+        "pvpbattle-confirmed",
+        battleIndex,
+        battles[battleIndex].p1,
+        battles[battleIndex].p2,
+        players
+      );
+      io.to(player2).emit(
+        "pvpbattle-confirmed",
+        battleIndex,
+        battles[battleIndex].p1,
+        battles[battleIndex].p2,
+        players
+      );
+    } else {
+      let p2 = players[battles[battleIndex].p2].name;
+      if (id != p2) io.to(p2).emit("pvp-request", battles.length - 1);
+    }
+  });
+
+  //player has readied up for a pvp battle (clicked take action bttn)
+  socket.on("pvpbattle-ready", (battleIndex) => {
+    if (battles[battleIndex].p1 == pIndex(id))
+      battles[battleIndex].p1Ready = true;
+    else battles[battleIndex].p2Ready = true;
+
+    if (battles[battleIndex].p1Ready && battles[battleIndex].p2Ready)
+      startPvPBattle(battles[battleIndex], battleIndex);
+  });
+
+  //player wants current safari encounters
+  socket.on("game-get-safari", () => {
+    io.to(id).emit("safari-encounters", safariEncounters);
+  });
+
+  //player wants to initiate a trade with another player
+  socket.on("trade-initiate", (player) => {
+    trades.push({ p1: id, p2: player });
+    io.to(player).emit("trade-offer-initiate", id, trades.length - 1);
+  });
+
+  //a player has accepted the offer to start a trade
+  socket.on("trade-initiate-accept", (accept, tradeIndex) => {
+    if (accept) {
+      let player1 = players[pIndex(trades[tradeIndex].p1)];
+      let player2 = players[pIndex(trades[tradeIndex].p2)];
+      let socket1 = sockets[pIndex(trades[tradeIndex].p1)];
+      let socket2 = sockets[pIndex(trades[tradeIndex].p2)];
+      trade(player1, player2, socket1, socket2, tradeIndex);
+    } else {
+      console.log("trade denied");
+      io.to(trades[tradeIndex].p1).emit("trade-initiate-deny");
+      trades[tradeIndex] = undefined;
+    }
+  });
+
+  //player is in an action. Preventing trade reqs
+  socket.on("in-action", () => {
+    players[pIndex(id)].inAction = true;
+    io.emit("game-update-players", players);
+  });
+
+  //player has left action
+  socket.on("out-of-action", () => {
+    players[pIndex(id)].inAction = false;
+    io.emit("game-update-players", players);
   });
 });
 
@@ -220,15 +352,27 @@ const nextPhase = () => {
       game.phase = "movement";
       game.turn += 1;
       setMoveOrder();
+      safariEncounters = genSafariEncounters();
+      players.forEach((player, index) => {
+        players[index].inAction = false;
+      });
       break;
     case "movement":
       game.phase = "action";
+      let order = game.moveOrder.slice();
+      order.reverse();
+      order.forEach((player) => {
+        checkForPvP(pIndex(player));
+      });
       break;
     case "action":
       game.phase = "movement";
       setMoveOrder();
       game.turn += 1;
       game.moving = 0;
+      inBattle = [];
+      battles = [];
+      safariEncounters = genSafariEncounters();
       break;
   }
 
@@ -236,13 +380,50 @@ const nextPhase = () => {
   resetPlayerReady();
   io.emit("game-update-state", game);
   game.newPhase = false;
+  saveGame();
+};
+
+//sees if a player is on a tile with another player
+const checkForPvP = (i) => {
+  let location = players[i].location;
+  players.forEach((player, index) => {
+    if (
+      JSON.stringify(location) == JSON.stringify(player.location) &&
+      i != index &&
+      !inBattle.includes(index)
+    ) {
+      battles.push({
+        p1: i,
+        p2: index,
+        confirmed: false,
+        p1Ready: false,
+        p2Ready: false,
+      });
+      inBattle.push(i);
+      inBattle.push(index);
+      io.to(players[i].name).emit("pvp-request", battles.length - 1);
+    }
+  });
+};
+
+//starts all queued battles
+const startPvPBattle = (battle, index) => {
+  if (battle.confirm) {
+    let player1 = players[battle.p1];
+    let player2 = players[battle.p2];
+    let socket1 = sockets[battle.p1];
+    let socket2 = sockets[battle.p2];
+    pvpBattle(player1, player2, socket1, socket2, index);
+  }
 };
 
 //sets order in which players will move.
 const setMoveOrder = () => {
   let hold = game.moveOrder[0];
-  game.moveOrder[0] = game.moveOrder[game.moveOrder.length - 1];
-  game.moveOrder[game.moveOrder.length - 1] = hold;
+  let newMoveOrder = game.moveOrder.slice(1);
+  newMoveOrder.push(hold);
+  game.moveOrder = newMoveOrder;
+  console.log(game.moveOrder);
 };
 
 //logic for wild battles
@@ -375,7 +556,107 @@ const gymBattle = (socket, id, gymTeam) => {
           rand = getRand(1, 3);
         } while (rand == aiMonCurrent);
         aiMonCurrent = rand;
-        setTimeout(() => stream.write(`>p2 switch ${aiMonCurrent}`), 10000);
+        setTimeout(() => stream.write(`>p2 switch ${aiMonCurrent}`), delay);
+      } else {
+        stream.write(
+          `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "gymchallenge")}`
+        );
+      }
+    }
+  });
+
+  socket.on("send-switch", (message) => {
+    if (stream) {
+      console.log("Switch from " + id + ": " + message);
+      stream.write(`>p1 switch ${message}`);
+      console.log("wrote to sream p1");
+
+      if (!JSON.parse(aiState).wait)
+        stream.write(
+          `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "gymchallenge")}`
+        );
+    }
+  });
+
+  socket.on("end-battle", () => {
+    stream = undefined;
+    console.log("ending battle...");
+  });
+
+  //Battle Stream
+  (async () => {
+    for await (const output of stream) {
+      var tokens = output.split("|");
+      console.log(tokens);
+      delay = calcDelay(output);
+
+      if (tokens[0].includes("sideupdate")) {
+        if (tokens[0].includes("p1")) {
+          console.log("sending team to p1");
+          io.to(id).emit("battle-side-update", tokens[2], true);
+        }
+        if (tokens[0].includes("p2")) {
+          console.log("sending team to p2");
+          aiState = tokens[2];
+        }
+      } else if (tokens[0].includes("update")) {
+        console.log("in update");
+        io.to(id).emit("battle-field-update", output);
+      }
+
+      if (!output.includes("|win") && output.includes("|faint|p2a:")) {
+        aiAliveMon[aiMonCurrent] = false;
+        aiMonCurrent++;
+        setTimeout(() => stream.write(`>p2 switch ${aiMonCurrent}`), delay);
+      }
+
+      if (tokens.includes("win")) {
+      }
+    }
+  })();
+};
+
+//logic for championBattle
+const championBattle = (socket, id, gymTeam) => {
+  let stream = new Sim.BattleStream();
+  let aiState = [];
+  let aiAliveMon = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true };
+  let aiMonCurrent = 1;
+  let delay = 0;
+
+  let playerTeam = modifyTeam(players[pIndex(id)].team);
+  let oppTeam = modifyTeam(gymTeam);
+  const p1spec = {
+    //player
+    name: id,
+    team: Teams.pack(playerTeam),
+  };
+  const p2spec = {
+    //gym leader
+    name: "Champion",
+    team: Teams.pack(oppTeam),
+  };
+
+  //starting battle
+  stream.write(`>start {"formatid":"gen8ou"}`);
+  stream.write(`>player p1 ${JSON.stringify(p1spec)}`);
+  stream.write(`>player p2 ${JSON.stringify(p2spec)}`);
+  stream.write(`>p1 team 1`);
+  stream.write(`>p2 team 1`);
+
+  //---Getting choices from player and writing them to stream---
+  socket.on("send-move", (message) => {
+    if (stream) {
+      console.log("Move from " + id + ": " + message);
+      stream.write(`>p1 move ${message}`);
+      console.log("wrote to sream p1");
+      if (aiState.forceSwitch) {
+        let rand;
+        do {
+          rand = getRand(1, 3);
+        } while (rand == aiMonCurrent);
+        aiMonCurrent = rand;
+        setTimeout(() => stream.write(`>p2 switch ${aiMonCurrent}`), delay);
       } else {
         stream.write(
           `>p2 move ${aiChoice(playerTeam, aiState, oppTeam, "gymchallenge")}`
@@ -519,6 +800,126 @@ const trainerBattle = (socket, id, pokemon) => {
   })();
 };
 
+//logic for pvp battles
+const pvpBattle = (player1, player2, socket1, socket2, battleIndex) => {
+  let stream = new Sim.BattleStream();
+  socket1.join("battle" + battleIndex);
+  socket2.join("battle" + battleIndex);
+  let partySize = game.turn > 30 ? 6 : 3;
+
+  //use the first 3 non fainted pokemon for player 1
+  let monToUse = [];
+  player1.team.forEach((pokemon) => {
+    if (!pokemon.fained && monToUse.length < partySize) monToUse.push(pokemon);
+  });
+
+  let p1Team = modifyTeam(monToUse);
+
+  //use the first 3 non fainted pokemon for player 2
+  monToUse = [];
+  player2.team.forEach((pokemon) => {
+    if (!pokemon.fained && monToUse.length < partySize) monToUse.push(pokemon);
+  });
+
+  let p2Team = modifyTeam(monToUse);
+
+  const p1spec = {
+    //player
+    name: player1.name,
+    team: Teams.pack(p1Team),
+  };
+  const p2spec = {
+    //gym leader
+    name: player2.name,
+    team: Teams.pack(p2Team),
+  };
+
+  //starting battle
+  stream.write(`>start {"formatid":"gen8ou"}`);
+  stream.write(`>player p1 ${JSON.stringify(p1spec)}`);
+  stream.write(`>player p2 ${JSON.stringify(p2spec)}`);
+  stream.write(`>p1 team 1`);
+  stream.write(`>p2 team 1`);
+
+  //---Getting choices from players and writing them to stream---
+  socket1.on("send-move", (message) => {
+    if (stream) {
+      console.log("Move from " + player1 + ": " + message);
+      stream.write(`>p1 move ${message}`);
+      console.log("wrote to sream p1");
+    }
+  });
+
+  socket1.on("send-switch", (message) => {
+    if (stream) {
+      console.log("Switch from " + player1 + ": " + message);
+      stream.write(`>p1 switch ${message}`);
+      console.log("wrote to sream p1");
+    }
+  });
+
+  socket2.on("send-move", (message) => {
+    if (stream) {
+      console.log("Move from " + player2 + ": " + message);
+      stream.write(`>p2 move ${message}`);
+      console.log("wrote to sream p2");
+    }
+  });
+
+  socket2.on("send-switch", (message) => {
+    if (stream) {
+      console.log("Switch from " + player2 + ": " + message);
+      stream.write(`>p2 switch ${message}`);
+      console.log("wrote to sream p2");
+    }
+  });
+
+  //Battle Stream
+  (async () => {
+    for await (const output of stream) {
+      var tokens = output.split("|");
+      console.log(tokens);
+      if (tokens[0].includes("sideupdate")) {
+        if (tokens[0].includes("p1")) {
+          console.log("sending team to p1");
+          io.to(player1.name).emit("battle-side-update", tokens[2], true);
+        }
+        if (tokens[0].includes("p2")) {
+          console.log("sending team to p2");
+          io.to(player2.name).emit("battle-side-update", tokens[2], false);
+        }
+      } else if (tokens[0].includes("update")) {
+        console.log("in update");
+        io.to("battle" + battleIndex).emit("battle-field-update", output);
+      }
+
+      if (tokens.includes("win")) {
+        stream = undefined;
+        socket1.leave("battle" + battleIndex);
+        socket2.leave("battle" + battleIndex);
+        battles[battleIndex] = undefined;
+      }
+    }
+  })();
+};
+
+const genSafariEncounters = () => {
+  let encounters = [];
+  let cost = 1000;
+  for (let i = 0; i < 4; i++) {
+    let rand = getRand(0, Object.keys(pokemonData).length - 1);
+    let mon = Object.keys(pokemonData)[rand];
+    if (encounters.includes(mon)) i--;
+    else {
+      encounters.push(mon);
+      cost += Math.round(Dex.species.get(mon).bst) * 2;
+    }
+  }
+
+  console.log(encounters);
+  return [encounters, cost];
+};
+
 //will choose the best move for the ai to use
 const aiChoice = (playerTeam, aiState, oppTeam, battletype) => {
   let playerPokeType = Dex.species.get(playerTeam[0].species).types;
@@ -526,24 +927,30 @@ const aiChoice = (playerTeam, aiState, oppTeam, battletype) => {
 
   aiMoves = aiMoves.active[0].moves;
   let movePowers = {};
-
+  let disabledMoves = [];
   for (let i = 0; i < aiMoves.length; i++) {
+    console.log(aiMoves[i]);
     let move = Dex.moves.get(aiMoves[i].move);
-    let power = move.basePower;
-    switch (Dex.getEffectiveness(move.type, playerPokeType)) {
-      case 1:
-        power *= 2;
-        break;
-      case 0:
-        break;
-      case -1:
-        power /= 2;
-        break;
-    }
-    if (oppTeam[0].types.includes(move.type)) power *= 1.5;
-    if (!Dex.getImmunity(move.type, playerPokeType)) power = 0;
+    if (!aiMoves[i].disabled) {
+      let power = move.basePower;
+      switch (Dex.getEffectiveness(move.type, playerPokeType)) {
+        case 1:
+          power *= 2;
+          break;
+        case 0:
+          break;
+        case -1:
+          power /= 2;
+          break;
+      }
+      if (oppTeam[0].types.includes(move.type)) power *= 1.5;
+      if (!Dex.getImmunity(move.type, playerPokeType)) power = 0;
 
-    movePowers[i + 1] = power;
+      movePowers[i + 1] = power;
+    } else {
+      movePowers[i + 1] = 0;
+      disabledMoves.push(i + 1);
+    }
   }
 
   var bestMove = 1;
@@ -552,24 +959,29 @@ const aiChoice = (playerTeam, aiState, oppTeam, battletype) => {
   }
 
   //chance of picking a random move
-  let rand = getRand(0, 100);
-  if (battletype == "wildbattle") {
-    if (rand < 75) {
-      bestMove = getRand(0, aiMoves.length - 1) + 1;
+  do {
+    let rand = getRand(0, 100);
+    if (battletype == "wildbattle") {
+      if (rand < 75) {
+        bestMove = getRand(0, aiMoves.length - 1) + 1;
+      }
     }
-  }
 
-  if (battletype == "trainerbattle") {
-    if (rand < 30) {
-      bestMove = getRand(0, aiMoves.length - 1) + 1;
+    if (battletype == "trainerbattle") {
+      if (rand < 30) {
+        bestMove = getRand(0, aiMoves.length - 1) + 1;
+      }
     }
-  }
 
-  if (battletype == "gymchallenge") {
-    if (rand < 15) {
-      bestMove = getRand(0, aiMoves.length - 1) + 1;
+    if (battletype == "gymchallenge") {
+      if (rand < 15) {
+        bestMove = getRand(0, aiMoves.length - 1) + 1;
+      }
     }
-  }
+
+    console.log(disabledMoves);
+    console.log(bestMove);
+  } while (disabledMoves.includes(bestMove));
 
   return bestMove;
 };
@@ -592,7 +1004,7 @@ const calcDelay = (output) => {
   let stream = output.split(/\r?\n/);
   let change = 1;
   let outDelay = 500;
-  const addDelay = 1500;
+  const addDelay = 1200;
 
   for (const token of stream) {
     let splitToken = token.split("|");
@@ -684,6 +1096,128 @@ const calcDelay = (output) => {
   }
 
   return outDelay;
+};
+
+//logic for trade
+const trade = (player1, player2, socket1, socket2, index) => {
+  let player1Accept = false;
+  let player2Accept = false;
+  let player1Offer = "";
+  let player2Offer = "";
+  let tradeId = "trade" + index;
+  let tradingEnd = false;
+  let tradingSuccess = false;
+
+  const updateTrade = () => {
+    io.to(tradeId).emit(
+      "trade-update",
+      player1Offer,
+      player2Offer,
+      player1Accept,
+      player2Accept,
+      tradingEnd,
+      tradingSuccess
+    );
+
+    if (tradingSuccess) {
+      tradingEnd = true;
+      socket1.leave(tradeId);
+      socket2.leave(tradeId);
+      trades[index] = undefined;
+    }
+  };
+
+  socket1.join(tradeId);
+  socket2.join(tradeId);
+
+  io.to(player1.name).emit("trade-start", true, player1.name, player2.name);
+  io.to(player2.name).emit("trade-start", false, player1.name, player2.name);
+
+  socket1.on("new-trade-offer", (pokemon) => {
+    if (!tradingEnd) {
+      console.log("p1 Offer - ");
+      console.log(pokemon);
+      player1Offer = pokemon;
+
+      player1Accept = false;
+      player2Accept = false;
+
+      updateTrade();
+    }
+  });
+
+  socket2.on("new-trade-offer", (pokemon) => {
+    if (!tradingEnd) {
+      console.log("p2 Offer - ");
+      console.log(pokemon);
+      player2Offer = pokemon;
+
+      player1Accept = false;
+      player2Accept = false;
+
+      updateTrade();
+    }
+  });
+
+  socket1.on("trade-offer-accept", (accept) => {
+    if (!tradingEnd) {
+      console.log("p1 accepts trade offer");
+      player1Accept = accept;
+
+      if (player1Accept && player2Accept) {
+        tradingSuccess = true;
+      }
+
+      updateTrade();
+    }
+  });
+
+  socket2.on("trade-offer-accept", (accept) => {
+    if (!tradingEnd) {
+      console.log("p2 accepts trade offer");
+      player2Accept = accept;
+
+      if (player1Accept && player2Accept) {
+        tradingSuccess = true;
+      }
+
+      updateTrade();
+    }
+  });
+
+  socket1.on("end-trade", () => {
+    if (!tradingEnd) {
+      tradingEnd = true;
+      updateTrade();
+      socket1.leave(tradeId);
+      socket2.leave(tradeId);
+      trades[index] = undefined;
+      console.log("ending trade");
+    }
+  });
+
+  socket2.on("end-trade", () => {
+    if (!tradingEnd) {
+      tradingEnd = true;
+      updateTrade();
+      socket1.leave(tradeId);
+      socket2.leave(tradeId);
+      trades[index] = undefined;
+      console.log("ending trade");
+    }
+  });
+};
+
+//called when wanting to save the game state
+const saveGame = () => {
+  let saveData = {};
+  saveData.players = players;
+  saveData.rules = rules;
+  saveData.game = game;
+  saveData.safariEncounters = safariEncounters;
+  saveData.playerData = playerData;
+
+  writeFile("../data/savedata.json", JSON.stringify(saveData), "utf8");
 };
 
 httpServer.listen(3001);

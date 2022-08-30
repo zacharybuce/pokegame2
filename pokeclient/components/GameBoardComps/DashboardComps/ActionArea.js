@@ -69,7 +69,9 @@ const ActionArea = ({
         >
           <Button
             variant="contained"
-            disabled={!canUseShop || game.phase == "movement"}
+            disabled={
+              !canUseShop || game.phase == "movement" || game.phase == "starter"
+            }
             onClick={() => setShopDialog(true)}
             sx={{ height: "95%", backgroundColor: "#506680", width: "90%" }}
           >

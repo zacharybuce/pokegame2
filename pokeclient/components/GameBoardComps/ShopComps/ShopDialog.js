@@ -97,6 +97,7 @@ const ShopDialog = ({
         variant: "info",
       });
       setBag(newBag);
+      setShop(newShop);
     }
   };
 

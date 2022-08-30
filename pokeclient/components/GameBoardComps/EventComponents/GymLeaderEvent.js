@@ -9,6 +9,7 @@ const GymLeaderEvent = ({
   campaignId,
   canInteract,
   takeAction,
+  phase,
 }) => {
   const [leader, setLeader] = useState();
 
@@ -34,9 +35,18 @@ const GymLeaderEvent = ({
   };
 
   const getGymLeaderTeam = () => {
-    if (badges.length < 3) return leader.Easy;
-    else if (badges.length < 6) return leader.Medium;
+    if (badges.length < 2) return leader.Easy;
+    else if (badges.length < 5) return leader.Medium;
     if (badges.length < 8) return leader.Hard;
+  };
+
+  const hasBeatenGym = () => {
+    let hasBeaten = false;
+    badges.forEach((badge) => {
+      if (badge.gym == event.split("-")[1]) hasBeaten = true;
+    });
+
+    return hasBeaten;
   };
 
   const gymLeaderImage = (
@@ -62,6 +72,7 @@ const GymLeaderEvent = ({
           height: "280px",
           p: 1,
           backgroundColor: typeColor(leader.Type) + "d4",
+          mb: "2vh",
         }}
       >
         <Grid container spacing={1}>
@@ -87,7 +98,7 @@ const GymLeaderEvent = ({
           </Grid>
           <Grid item xs={12}>
             <Button
-              disabled={!canInteract}
+              disabled={!canInteract || phase == "movement" || hasBeatenGym()}
               fullWidth
               variant="contained"
               onClick={() =>

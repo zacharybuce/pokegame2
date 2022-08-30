@@ -77,6 +77,7 @@ const Battle = ({
   const [canThrowBall, setCanThrowBall] = useState(true);
   const [trapped, setTrapped] = useState(false);
   const [entranceAnim, setEntranceAnim] = useState(true);
+  const [willMegaEvo, setWillMegaEvo] = useState(false);
   //---Use Effects-------------------
   useEffect(() => {
     startBattle();
@@ -112,6 +113,7 @@ const Battle = ({
     console.log(field);
     if (field) parseField(field);
     setHasSelected(false);
+    setWillMegaEvo(false);
     setCanThrowBall(true);
     return () => socket.off("battle-field-update");
   }, [socket, field]);
@@ -119,7 +121,8 @@ const Battle = ({
   //---Utility Functions-------------
   const sendMoveChoice = (moveIndex) => {
     console.log("sending choice...");
-    socket.emit("send-move", moveIndex);
+    let mega = willMegaEvo ? " mega" : "";
+    socket.emit("send-move", moveIndex + mega);
     setHasSelected(true);
     setCanThrowBall(false);
   };
@@ -140,7 +143,7 @@ const Battle = ({
     if (splitToken[3].split(",")[3]) isShiny = true;
     let status = [];
     if (splitToken[4].split(" ").length > 1) {
-      status = "status|" + splitToken[4].split(" ")[1];
+      status.push("status|" + splitToken[4].split(" ")[1]);
     }
 
     let data = {
@@ -181,7 +184,8 @@ const Battle = ({
     let player = splitToken[2].split(":")[0];
     let type = splitToken[1].substring(1);
     let stat = splitToken[3];
-    let amount = splitToken[4];
+    let amount = "";
+    if (splitToken[4]) amount = splitToken[4];
 
     if (player == "p1a") {
       setP1PokeStatus((prevState) => [
@@ -216,13 +220,14 @@ const Battle = ({
   };
 
   const startSideEffect = (token) => {
+    console.log(token);
     var splitToken = token.split("|");
     let player = splitToken[2].split(":")[0];
     let effect = splitToken[3];
 
-    if (player == "p1a")
+    if (player == "p1")
       setFieldEffectsP1((prevState) => [...prevState, effect]);
-    if (player == "p2a")
+    if (player == "p2")
       setFieldEffectsP2((prevState) => [...prevState, effect]);
   };
 
@@ -233,8 +238,8 @@ const Battle = ({
 
     const newArr = fieldEffectsP1.filter((e) => !e.includes(effect));
 
-    if (player == "p1a") setFieldEffectsP1(newArr);
-    if (player == "p2a") setFieldEffectsP2(newArr);
+    if (player == "p1") setFieldEffectsP1(newArr);
+    if (player == "p2") setFieldEffectsP2(newArr);
   };
 
   const startStatusEffect = (token) => {
@@ -276,10 +281,29 @@ const Battle = ({
     } else setTrapped(false);
   };
 
+  const handleFormChange = (token) => {
+    let splitToken = token.split("|");
+    let player = splitToken[2].split(":")[0];
+    let form = splitToken[3].split(",")[0];
+    if (player == "p1a")
+      setP1ActivePoke((prev) => {
+        let newPrev = prev;
+        newPrev.name = form;
+        return newPrev;
+      });
+    else {
+      setP2ActivePoke((prev) => {
+        let newPrev = prev;
+        newPrev.name = form;
+        return newPrev;
+      });
+    }
+  };
+
   var delay = 300;
   var p1Fnt = false;
   var p2Fnt = false;
-  const addDelay = 1500;
+  const addDelay = 1200;
 
   const parseField = (field) => {
     setAnimsDone(false);
@@ -354,6 +378,14 @@ const Battle = ({
       //start a status effect
       if (token.startsWith("|-start")) {
         setTimeout(() => startStatusEffect(token), delay);
+        delay += addDelay;
+      }
+      if (token.startsWith("|-formechange")) {
+        setTimeout(() => handleFormChange(token), delay);
+        delay += addDelay;
+      }
+      if (token.startsWith("|detailschange")) {
+        setTimeout(() => handleFormChange(token), delay);
         delay += addDelay;
       }
       if (token.startsWith("|win")) {
@@ -667,6 +699,20 @@ const Battle = ({
         message = `${poke}'s ${stat} was increased by ${amount} stages!`;
         severity = "success";
         break;
+      case "-formechange":
+        poke = splitToken[2].split(" ")[1];
+        effect = splitToken[3];
+
+        message = `${poke} changed form to ${effect}!`;
+        severity = "info";
+        break;
+      case "-mega":
+        poke = splitToken[2].split(" ")[1];
+
+        message = `${poke} mega evolved!`;
+        severity = "info";
+        break;
+        break;
     }
 
     if (message) {
@@ -736,7 +782,7 @@ const Battle = ({
   return (
     <Box sx={{ p: 2 }}>
       <Grid container>
-        {!entranceAnim ? (
+        {!entranceAnim || battletype == "wildbattle" ? (
           <Grid item container xs={8}>
             <Grid item xs={2}>
               <WeatherDisplay weather={weather} />
@@ -785,6 +831,8 @@ const Battle = ({
                       team={team}
                       animsDone={animsDone}
                       sendMoveChoice={sendMoveChoice}
+                      setWillMegaEvo={setWillMegaEvo}
+                      hasSelected={hasSelected}
                     />
                   ) : (
                     ""

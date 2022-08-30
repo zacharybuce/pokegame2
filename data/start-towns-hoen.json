@@ -79,9 +79,9 @@
   "lavaridge": {
     "location": { "q": -3, "r": 1, "s": 2 },
     "starters": [
-      { "species": "Piplup", "id": "piplup" },
-      { "species": "Squirtle", "id": "squirtle" },
-      { "species": "Popplio", "id": "popplio" }
+      { "species": "Charmander", "id": "charmander" },
+      { "species": "Cyndaquil", "id": "cyndaquil" },
+      { "species": "Chimchar", "id": "chimchar" }
     ],
     "name": "Lavaridge Town",
     "img": "town",

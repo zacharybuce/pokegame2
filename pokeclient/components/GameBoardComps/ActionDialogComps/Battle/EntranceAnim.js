@@ -16,7 +16,10 @@ const EntranceAnim = ({ trainer }) => {
             sx={{
               width: "400px",
               height: "240px",
-              backgroundImage: "url(/TrainerVsImages-Hoen/" + trainer + ".png)",
+              backgroundImage:
+                "url(/TrainerVsImages-Hoen/" +
+                (trainer.sprite ? trainer.sprite : trainer.trainer) +
+                ".png)",
               backgroundSize: "cover",
             }}
           />
@@ -24,7 +27,7 @@ const EntranceAnim = ({ trainer }) => {
       </Box>
       <Slide in={textSlide} direction="right" timeout={100}>
         <Typography sx={{ mt: "30px" }} variant="h3">
-          {trainer} wants to fight!
+          {trainer.name ? trainer.name : trainer.trainer} wants to fight!
         </Typography>
       </Slide>
     </Box>

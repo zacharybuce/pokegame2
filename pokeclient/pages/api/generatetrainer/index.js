@@ -44,14 +44,7 @@ const generatePokemon = (req) => {
 const generateAbility = (showdownMon) => {
   let rand = genRand(0, Object.keys(showdownMon.abilities).length - 1);
 
-  if (showdownMon.abilities["H"]) {
-    if (rand == Object.keys(showdownMon.abilities).length - 1) rand = "H";
-    if (rand != "H") rand = JSON.stringify(rand);
-  } else if (Object.keys(showdownMon.abilities).length == 1) {
-    rand = 0;
-  }
-
-  return showdownMon.abilities[rand];
+  return showdownMon.abilities[Object.keys(showdownMon.abilities)[rand]];
 };
 
 const generateNature = () => {

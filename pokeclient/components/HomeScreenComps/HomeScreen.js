@@ -46,6 +46,11 @@ const HomeScreen = ({
     }
   };
 
+  const continueButtonClick = () => {
+    setScreen("ContinueLobby");
+    socket.emit("join-lobby-continue", sprite);
+  };
+
   return (
     <HomeScreenContainer>
       <Grid container spacing={1} textAlign="center" sx={{ mt: "10vh" }}>
@@ -59,6 +64,15 @@ const HomeScreen = ({
             onClick={() => playButtonClick()}
           >
             Play
+          </Button>
+        </Grid>
+        <Grid item xs={12} sx={{ ml: "4vw", mr: "4vw" }}>
+          <Button
+            fullWidth
+            variant="contained"
+            onClick={() => continueButtonClick()}
+          >
+            Continue
           </Button>
         </Grid>
         <Grid item xs={6}>

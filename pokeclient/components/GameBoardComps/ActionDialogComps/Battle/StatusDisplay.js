@@ -219,7 +219,7 @@ const StatusDisplay = ({ statuses }) => {
       }
     }
   };
-  //console.log(statuses);
+  console.log(statuses);
   return (
     <div>
       {statuses.length ? (

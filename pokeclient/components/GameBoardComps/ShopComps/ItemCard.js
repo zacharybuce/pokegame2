@@ -1,17 +1,11 @@
-import {
-  Box,
-  Grid,
-  Typography,
-  Card,
-  CardActionArea,
-  Button,
-} from "@mui/material";
+import { Box, Grid, Typography, Button } from "@mui/material";
 import Slide from "@mui/material/Slide";
 import React from "react";
 import ItemSprite from "../../Utils/ItemSprite";
 import CurrencyYenIcon from "@mui/icons-material/CurrencyYen";
 import styles from "../../../Styles/ItemCard.module.css";
 import { HtmlTooltip } from "../../Utils/HtmlTooltip";
+import { pSBC } from "../../Utils/colorUtil";
 
 const ItemCard = ({ item, index, buyRandomItem }) => {
   const genTooltip = () => {
@@ -58,6 +52,9 @@ const ItemCard = ({ item, index, buyRandomItem }) => {
                 justifyContent: "left",
                 backgroundColor: "#152642",
                 color: "#ededed",
+                "&:hover": {
+                  backgroundColor: pSBC(-0.6, "#152642"),
+                },
               }}
               className={`${styles.itemcard} ${styles[item.rarity]}`}
               onClick={() => buyRandomItem(item, index)}

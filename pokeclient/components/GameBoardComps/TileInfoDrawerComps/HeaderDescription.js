@@ -12,7 +12,7 @@ const HeaderDescription = ({ name, desc, isTown }) => {
       <Typography variant="body2" color="text.secondary">
         {desc}
       </Typography>
-      <Box sx={{ mt: "1vh", display: isTown == "true" ? "block" : "none" }}>
+      <Box sx={{ mt: "1vh", display: isTown ? "block" : "none" }}>
         <Tooltip title="Ending your movement on this tile will heal your pokemon">
           <HealingIcon sx={{ mr: "1vw" }} />
         </Tooltip>

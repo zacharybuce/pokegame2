@@ -13,6 +13,10 @@ const generateItem = (item) => {
     } else if (showdownItem.isPokeball) {
       itemData.type = "ball";
       itemData.id = showdownItem.name.split(" ")[0].toLowerCase();
+    } else if (showdownItem.megaStone) {
+      itemData.type = "mega-stone";
+      itemData.id = showdownItem.name.split(" ")[0].toLowerCase();
+      itemData.cost = 5000;
     } else {
       itemData.type = "hold-item";
       itemData.id = showdownItem.name.replace(" ", "-").toLowerCase();

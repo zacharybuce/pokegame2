@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Box } from "@mui/material";
 
 const PokemonGif = ({ name, isShiny, isOpp }) => {
   const [spriteId, setSpriteId] = useState();

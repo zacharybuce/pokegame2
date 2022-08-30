@@ -146,33 +146,36 @@ const genPokemonData = (pokemon) => {
 };
 
 //------------------------------------------------
-const showdownMon = Dex.species.all();
+// const showdownMon = Dex.species.all();
 
-fs.createReadStream("C:/Users/zacha/VSCode/pokegame2/data/pokemon_forms.csv")
-  .pipe(csv.parse({ headers: true }))
-  .on("error", (error) => console.error(error))
-  .on("data", (row) => {
-    ids[row.identifier] = row.pokemon_id;
-  })
-  .on("end", (rowCount) => {
-    console.log(`Parsed ${rowCount} rows`);
+// fs.createReadStream("C:/Users/zacha/VSCode/pokegame2/data/pokemon_forms.csv")
+//   .pipe(csv.parse({ headers: true }))
+//   .on("error", (error) => console.error(error))
+//   .on("data", (row) => {
+//     ids[row.identifier] = row.pokemon_id;
+//   })
+//   .on("end", (rowCount) => {
+//     console.log(`Parsed ${rowCount} rows`);
 
-    const pokemonData = {};
-    showdownMon.forEach((pokemon, index) => {
-      console.log(index);
-      if (
-        (pokemon.forme === "" ||
-          pokemon.forme === "Alola" ||
-          pokemon.forme === "Galar") &&
-        pokemon.num > 0
-      )
-        pokemonData[pokemon.name] = genPokemonData(pokemon);
-    });
+//     const pokemonData = {};
+//     showdownMon.forEach((pokemon, index) => {
+//       console.log(index);
+//       if (
+//         (pokemon.forme === "" ||
+//           pokemon.forme === "Alola" ||
+//           pokemon.forme === "Galar") &&
+//         pokemon.num > 0
+//       )
+//         pokemonData[pokemon.name] = genPokemonData(pokemon);
+//     });
 
-    writeFile("pokemon.json", JSON.stringify(pokemonData), "utf8");
-  });
+//     // writeFile("pokemon.json", JSON.stringify(pokemonData), "utf8");
+//     //console.log(pokemonData);
+//   });
 
 // console.log(Dex.species.get("raichu-alola"));
+
+console.log(JSON.stringify(genPokemonData(Dex.species.get("Lycanroc-Dusk"))));
 
 const learnEx = {
   aerialace: ["7M", "6M", "5M", "4M", "3M"],

@@ -19,7 +19,7 @@ const ActionButtons = ({
   playerLocation,
   actionButtonClick,
 }) => {
-  if (isReady || (!turnToMove && phase == "movement"))
+  if (isReady || (!turnToMove && phase == "movement") || phase == "starter")
     return (
       <Grid
         item

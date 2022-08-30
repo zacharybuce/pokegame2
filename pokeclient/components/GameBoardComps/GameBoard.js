@@ -12,6 +12,8 @@ import ShopDialog from "./ShopComps/ShopDialog";
 import ActionDialog from "./ActionDialogComps/ActionDialog";
 import { useSnackbar } from "notistack";
 import IndicatorDialog from "./IndicatiorDialogComps/IndicatorDialog";
+import PvpDialog from "./PvpDialog";
+import TradeDialog from "./TradeDialogComps/TradeDialog";
 
 const testMon = {
   species: "Pikachu",
@@ -273,11 +275,221 @@ const testMon2 = {
 };
 
 const testMon3 = {
-  species: "Pikachu",
-  num: 25,
+  species: "Ledian",
+  num: "166",
   learnset: [
     {
-      move: "charm",
+      move: "supersonic",
+      level: "1",
+    },
+    {
+      move: "swift",
+      level: "1",
+    },
+    {
+      move: "tackle",
+      level: "1",
+    },
+    {
+      move: "lightscreen",
+      level: "12",
+    },
+    {
+      move: "reflect",
+      level: "12",
+    },
+    {
+      move: "safeguard",
+      level: "12",
+    },
+    {
+      move: "machpunch",
+      level: "15",
+    },
+    {
+      move: "silverwind",
+      level: "20",
+    },
+    {
+      move: "cometpunch",
+      level: "24",
+    },
+    {
+      move: "batonpass",
+      level: "29",
+    },
+    {
+      move: "agility",
+      level: "33",
+    },
+    {
+      move: "bugbuzz",
+      level: "38",
+    },
+    {
+      move: "airslash",
+      level: "42",
+    },
+    {
+      move: "doubleedge",
+      level: "47",
+    },
+  ],
+  evolveCandies: "MAX",
+  levelUpCandies: 3,
+  levelUpIncrease: 3,
+  level: 20,
+  ability: "Iron Fist",
+  nature: "Lonely",
+  gender: "M",
+  types: ["Bug", "Flying"],
+  item: "",
+  moves: ["lightscreen", "reflect", "cometpunch", "spikes"],
+  evs: {
+    hp: 0,
+    atk: 0,
+    def: 0,
+    spa: 0,
+    spd: 0,
+    spe: 0,
+  },
+  ivs: {
+    hp: 6,
+    atk: 19,
+    def: 23,
+    spa: 7,
+    spd: 23,
+    spe: 11,
+  },
+  baseStats: {
+    hp: 55,
+    atk: 35,
+    def: 50,
+    spa: 55,
+    spd: 110,
+    spe: 85,
+  },
+  isShiny: false,
+  candiesSpent: 20,
+  exhaustion: 0,
+  fainted: false,
+  id: "ledian",
+  dragId: "1661774552160",
+};
+
+const testMon4 = {
+  species: "Wishiwashi",
+  num: "746",
+  learnset: [
+    {
+      move: "growl",
+      level: "1",
+    },
+    {
+      move: "watergun",
+      level: "1",
+    },
+    {
+      move: "helpinghand",
+      level: "4",
+    },
+    {
+      move: "beatup",
+      level: "8",
+    },
+    {
+      move: "brine",
+      level: "12",
+    },
+    {
+      move: "tearfullook",
+      level: "16",
+    },
+    {
+      move: "dive",
+      level: "20",
+    },
+    {
+      move: "soak",
+      level: "24",
+    },
+    {
+      move: "uproar",
+      level: "28",
+    },
+    {
+      move: "aquatail",
+      level: "32",
+    },
+    {
+      move: "aquaring",
+      level: "36",
+    },
+    {
+      move: "endeavor",
+      level: "40",
+    },
+    {
+      move: "hydropump",
+      level: "44",
+    },
+    {
+      move: "doubleedge",
+      level: "48",
+    },
+  ],
+  evolveCandies: "MAX",
+  levelUpCandies: 1,
+  levelUpIncrease: 8,
+  level: 20,
+  ability: "Schooling",
+  nature: "Lax",
+  gender: "M",
+  types: ["Water"],
+  item: "",
+  moves: ["growl", "watergun", "helpinghand", "beatup"],
+  evs: {
+    hp: 0,
+    atk: 0,
+    def: 0,
+    spa: 0,
+    spd: 0,
+    spe: 0,
+  },
+  ivs: {
+    hp: 17,
+    atk: 29,
+    def: 20,
+    spa: 15,
+    spd: 26,
+    spe: 29,
+  },
+  baseStats: {
+    hp: 45,
+    atk: 20,
+    def: 20,
+    spa: 25,
+    spd: 25,
+    spe: 40,
+  },
+  isShiny: false,
+  candiesSpent: 0,
+  exhaustion: 0,
+  fainted: false,
+  id: "wishiwashi",
+  dragId: "1661859610874",
+};
+
+const testMon5 = {
+  species: "Ampharos",
+  num: "181",
+  learnset: [
+    {
+      move: "dragonpulse",
+      level: "1",
+    },
+    {
+      move: "firepunch",
       level: "1",
     },
     {
@@ -285,27 +497,19 @@ const testMon3 = {
       level: "1",
     },
     {
-      move: "nastyplot",
+      move: "iondeluge",
       level: "1",
     },
     {
-      move: "nuzzle",
+      move: "magneticflux",
       level: "1",
     },
     {
-      move: "playnice",
+      move: "tackle",
       level: "1",
     },
     {
-      move: "quickattack",
-      level: "1",
-    },
-    {
-      move: "sweetkiss",
-      level: "1",
-    },
-    {
-      move: "tailwhip",
+      move: "thunderpunch",
       level: "1",
     },
     {
@@ -314,64 +518,67 @@ const testMon3 = {
     },
     {
       move: "thunderwave",
-      level: "4",
+      level: "1",
     },
     {
-      move: "doubleteam",
-      level: "8",
+      move: "zapcannon",
+      level: "1",
     },
     {
-      move: "electroball",
-      level: "12",
+      move: "cottonspore",
+      level: "11",
     },
     {
-      move: "feint",
+      move: "charge",
       level: "16",
     },
     {
-      move: "spark",
+      move: "takedown",
       level: "20",
     },
     {
-      move: "agility",
-      level: "24",
+      move: "electroball",
+      level: "25",
     },
     {
-      move: "slam",
-      level: "28",
+      move: "confuseray",
+      level: "29",
+    },
+    {
+      move: "powergem",
+      level: "35",
     },
     {
       move: "discharge",
-      level: "32",
-    },
-    {
-      move: "thunderbolt",
-      level: "36",
-    },
-    {
-      move: "lightscreen",
       level: "40",
     },
     {
+      move: "cottonguard",
+      level: "46",
+    },
+    {
+      move: "signalbeam",
+      level: "51",
+    },
+    {
+      move: "lightscreen",
+      level: "57",
+    },
+    {
       move: "thunder",
-      level: "44",
+      level: "62",
     },
   ],
-  evolveCandies: 8,
-  levelUpCandies: 4,
+  evolveCandies: "MAX",
+  levelUpCandies: 5,
   levelUpIncrease: 3,
   level: 20,
   ability: "Static",
-  nature: "Lonely",
-  gender: "F",
+  nature: "Naive",
+  gender: "M",
   types: ["Electric"],
-  item: {
-    name: "Leftovers",
-    id: "leftovers",
-    type: "hold-item",
-    desc: "Test Desc",
-  },
-  moves: ["quickattack", "sweetkiss", "growl", "playnice"],
+  item: "",
+  moves: ["discharge", "thunderwave", "magneticflux", "growl"],
   evs: {
     hp: 0,
     atk: 0,
@@ -382,287 +589,34 @@ const testMon3 = {
   },
   ivs: {
     hp: 13,
-    atk: 32,
-    def: 4,
-    spa: 26,
-    spd: 9,
-    spe: 26,
+    atk: 24,
+    def: 15,
+    spa: 20,
+    spd: 1,
+    spe: 13,
   },
   baseStats: {
-    hp: 35,
-    atk: 55,
-    def: 40,
-    spa: 50,
-    spd: 50,
-    spe: 90,
+    hp: 90,
+    atk: 75,
+    def: 85,
+    spa: 115,
+    spd: 90,
+    spe: 55,
   },
   isShiny: false,
-  candiesSpent: 0,
+  candiesSpent: 20,
   exhaustion: 0,
   fainted: false,
-  id: "pikachu",
-  dragId: "1659353138620",
+  id: "ampharos",
+  dragId: "1661856266351",
 };
 
-const testMon4 = {
-  species: "Dragonite",
-  num: "149",
-  learnset: [
-    {
-      move: "hurricane",
-      level: "0",
-    },
-    {
-      move: "extremespeed",
-      level: "1",
-    },
-    {
-      move: "firepunch",
-      level: "1",
-    },
-    {
-      move: "leer",
-      level: "1",
-    },
-    {
-      move: "roost",
-      level: "1",
-    },
-    {
-      move: "thunderpunch",
-      level: "1",
-    },
-    {
-      move: "thunderwave",
-      level: "1",
-    },
-    {
-      move: "twister",
-      level: "1",
-    },
-    {
-      move: "wingattack",
-      level: "1",
-    },
-    {
-      move: "wrap",
-      level: "1",
-    },
-    {
-      move: "dragontail",
-      level: "15",
-    },
-    {
-      move: "agility",
-      level: "20",
-    },
-    {
-      move: "slam",
-      level: "25",
-    },
-    {
-      move: "aquatail",
-      level: "33",
-    },
-    {
-      move: "dragonrush",
-      level: "39",
-    },
-    {
-      move: "outrage",
-      level: "41",
-    },
-    {
-      move: "safeguard",
-      level: "46",
-    },
-    {
-      move: "raindance",
-      level: "53",
-    },
-    {
-      move: "dragondance",
-      level: "62",
-    },
-    {
-      move: "hyperbeam",
-      level: "80",
-    },
-  ],
-  evolveCandies: "MAX",
-  levelUpCandies: 6,
-  levelUpIncrease: 2,
-  level: 20,
-  ability: "Inner Focus",
-  nature: "Modest",
-  gender: "M",
-  types: ["Dragon", "Flying"],
-  item: "",
-  moves: ["roost", "dragonrush", "firepunch", "thunderpunch"],
-  evs: {
-    hp: 0,
-    atk: 0,
-    def: 0,
-    spa: 0,
-    spd: 0,
-    spe: 0,
-  },
-  ivs: {
-    hp: 14,
-    atk: 10,
-    def: 10,
-    spa: 14,
-    spd: 3,
-    spe: 30,
-  },
-  baseStats: {
-    hp: 91,
-    atk: 134,
-    def: 95,
-    spa: 100,
-    spd: 100,
-    spe: 80,
-  },
-  isShiny: true,
-  candiesSpent: 0,
-  exhaustion: 0,
-  fainted: false,
-  id: "dragonite",
-  dragId: "1659608236050",
-};
-
-const testMon5 = {
-  species: "Dragonite",
-  num: "149",
-  learnset: [
-    {
-      move: "hurricane",
-      level: "0",
-    },
-    {
-      move: "extremespeed",
-      level: "1",
-    },
-    {
-      move: "firepunch",
-      level: "1",
-    },
-    {
-      move: "leer",
-      level: "1",
-    },
-    {
-      move: "roost",
-      level: "1",
-    },
-    {
-      move: "thunderpunch",
-      level: "1",
-    },
-    {
-      move: "thunderwave",
-      level: "1",
-    },
-    {
-      move: "twister",
-      level: "1",
-    },
-    {
-      move: "wingattack",
-      level: "1",
-    },
-    {
-      move: "wrap",
-      level: "1",
-    },
-    {
-      move: "dragontail",
-      level: "15",
-    },
-    {
-      move: "agility",
-      level: "20",
-    },
-    {
-      move: "slam",
-      level: "25",
-    },
-    {
-      move: "aquatail",
-      level: "33",
-    },
-    {
-      move: "dragonrush",
-      level: "39",
-    },
-    {
-      move: "outrage",
-      level: "41",
-    },
-    {
-      move: "safeguard",
-      level: "46",
-    },
-    {
-      move: "raindance",
-      level: "53",
-    },
-    {
-      move: "dragondance",
-      level: "62",
-    },
-    {
-      move: "hyperbeam",
-      level: "80",
-    },
-  ],
-  evolveCandies: "MAX",
-  levelUpCandies: 6,
-  levelUpIncrease: 2,
-  level: 20,
-  ability: "Inner Focus",
-  nature: "Modest",
-  gender: "M",
-  types: ["Dragon", "Flying"],
-  item: "",
-  moves: ["roost", "dragonrush", "firepunch", "thunderpunch"],
-  evs: {
-    hp: 0,
-    atk: 0,
-    def: 0,
-    spa: 0,
-    spd: 0,
-    spe: 0,
-  },
-  ivs: {
-    hp: 14,
-    atk: 10,
-    def: 10,
-    spa: 14,
-    spd: 3,
-    spe: 30,
-  },
-  baseStats: {
-    hp: 91,
-    atk: 134,
-    def: 95,
-    spa: 100,
-    spd: 100,
-    spe: 80,
-  },
-  isShiny: false,
-  candiesSpent: 0,
-  exhaustion: 0,
-  fainted: false,
-  id: "dragonite",
-  dragId: "16596082363",
-};
-
-const GameBoard = ({ id }) => {
+const GameBoard = ({ id, isContinue }) => {
   //---server driven variables
   const socket = useSocket();
   const [players, setPlayers] = useState();
   const [game, setGame] = useState();
+  const [battleId, setBattleId] = useState();
 
   //---player stuff variables
   const [team, setTeam] = useState([]);
@@ -676,7 +630,8 @@ const GameBoard = ({ id }) => {
   });
   const [badges, setBadges] = useState([]);
   const [shop, setShop] = useState([]);
-  const [movement, setMovement] = useState(3);
+  const [maxMovement, setMaxMovement] = useState(1);
+  const [movement, setMovement] = useState(1);
   const [startTown, setStartTown] = useState();
 
   //---utility variables
@@ -696,6 +651,9 @@ const GameBoard = ({ id }) => {
   const [x, setX] = useState(-100); //for viewbox
   const [y, setY] = useState(-100); //for viewbox
   const [event, setEvent] = useState();
+  const [willPvpBattle, setWillPvpBattle] = useState();
+  const [tradeOffer, setTradeOffer] = useState();
+  const [selected, setSelected] = useState();
 
   //---Open/Close variables for drawers and dialogs
   const [leaderboardDrawer, setLeaderboardDrawer] = useState(false);
@@ -704,6 +662,8 @@ const GameBoard = ({ id }) => {
   const [shopDialog, setShopDialog] = useState(false);
   const [actionDialog, setActionDialog] = useState(false);
   const [indicatorDialog, setIndicatorDialog] = useState(false);
+  const [pvpDialog, setPvpDialog] = useState(false);
+  const [tradeDialog, setTradeDialog] = useState(false);
 
   //---Use Effects----------------------------------------------------
   //checks for updates to players
@@ -711,7 +671,7 @@ const GameBoard = ({ id }) => {
     if (socket === undefined) return;
 
     socket.on("game-update-players", (players, message) => {
-      setPlayers(players);
+      if (players) setPlayers(players);
 
       if (message) {
         enqueueSnackbar(message, {
@@ -720,7 +680,6 @@ const GameBoard = ({ id }) => {
       }
     });
     console.log(players);
-
     return () => socket.off("game-update-players");
   }, [socket, players]);
 
@@ -736,6 +695,8 @@ const GameBoard = ({ id }) => {
         setIsReady(false);
         setIndicatorDialog(true);
         setAction("none");
+        setWillPvpBattle(false);
+        saveData();
         if (game?.phase == "movement" || game?.phase == "starter") {
           setCanUseShop(false);
           setTileToShow(false);
@@ -756,12 +717,65 @@ const GameBoard = ({ id }) => {
     return () => socket.off("game-update-state");
   }, [socket, game]);
 
+  //checks for player data
+  useEffect(() => {
+    if (socket === undefined) return;
+
+    socket.on("player-data", (playerData) => {
+      if (playerData) loadPlayer(playerData);
+    });
+
+    return () => socket.off("player-data");
+  }, [socket]);
+
+  //checks for a pvp request
+  useEffect(() => {
+    if (socket === undefined) return;
+
+    socket.on("pvp-request", (id) => {
+      setBattleId(id);
+      setPvpDialog(true);
+    });
+
+    return () => socket.off("pvp-request");
+  }, [socket, battleId]);
+
+  //checks for a pvp confirm
+  useEffect(() => {
+    if (socket === undefined) return;
+    socket.on("pvpbattle-confirmed", (battleId, p1, p2, players) => {
+      genPvpBattle(battleId, p1, p2, players);
+    });
+
+    return () => socket.off("pvpbattle-confirmed");
+  }, [socket, willPvpBattle]);
+
+  //checks for trade offers
+  useEffect(() => {
+    if (socket === undefined) return;
+    socket.on("trade-offer-initiate", (playerOffering, tradeIndex) => {
+      console.log(tradeIndex);
+      setTradeOffer({
+        playerOffering: playerOffering,
+        tradeIndex: tradeIndex,
+        start: false,
+      });
+      setTradeDialog(true);
+    });
+    return () => socket.off("trade-offer-initiate");
+  }, [socket, tradeOffer]);
+
   //request state for first time setup
   useEffect(() => {
     setTimeout(() => socket.emit("game-request-state"), 1000);
     setwinReady(true); //--render mon correctly for drag
     getShop();
-    setActionDialog(true);
+
+    if (isContinue) {
+      socket.emit("request-player-data");
+    } else {
+      newGameStart();
+    }
   }, []);
 
   //If team has changed, will send new team to server for updates
@@ -771,6 +785,9 @@ const GameBoard = ({ id }) => {
 
   //If badges has changed, will send new team to server for updates
   useEffect(() => {
+    console.log(badges.length);
+    if (badges.length == 1) setMaxMovement(2);
+    if (badges.length >= 3) setMaxMovement(3);
     socket.emit("game-badges-update", badges);
   }, [badges]);
 
@@ -793,6 +810,42 @@ const GameBoard = ({ id }) => {
   }, [actionComplete]);
 
   //---Utility Funcs--------------------------------------------------
+
+  const saveData = () => {
+    var sendBag = bag;
+    var sendMoney = money;
+    var sendCandies = candies;
+    var sendBadges = badges;
+    var sendPlayerLocation = playerLocation;
+
+    console.log(bag);
+    socket.emit(
+      "save-data",
+      sendBag,
+      sendMoney,
+      sendCandies,
+      sendBadges,
+      startTown,
+      sendPlayerLocation
+    );
+  };
+
+  const newGameStart = () => {
+    setActionDialog(true);
+  };
+
+  const loadPlayer = (playerData) => {
+    setTeam(playerData.team);
+    setCandies(playerData.candies);
+    setBadges(playerData.badges);
+    setMoney(playerData.money);
+    setPlayerLocation(playerData.playerLocation);
+    setStartTown(playerData.startTown);
+
+    if (playerData.badges.length < 1) setMaxMovement(1);
+    else if (playerData.badges.length < 2) setMaxMovement(2);
+    if (playerData.badges.length < 4) setMaxMovement(3);
+  };
 
   //gets shop items from api and assigns it to shop state
   const getShop = async () => {
@@ -850,11 +903,13 @@ const GameBoard = ({ id }) => {
   const endTurn = () => {
     if (game.phase == "movement") {
       setIsReady(true);
-      setMovement(3);
+      setMovement(maxMovement);
       socket.emit("game-end-turn");
       checkForHeal();
       checkIfShop();
     } else {
+      setSelected({ tile: "none", coord: { q: -100, r: 0, s: 100 } });
+      setMovement(maxMovement);
       setIsReady(true);
       socket.emit("game-end-turn");
     }
@@ -864,6 +919,40 @@ const GameBoard = ({ id }) => {
   const takeAction = (action, event) => {
     if (action != "wildbattle") {
       setEvent(event);
+    }
+    if (action == "safarizone") setMoney((prev) => prev - event.cost);
+    if (action == "trickhouse") setMoney((prev) => prev - 500);
+    if (action == "flyingtaxi") {
+      setMoney((prev) => prev - 1000);
+      setPlayerLocation(event.location);
+      socket.emit("game-move", event.location);
+      setTileDrawer(false);
+      return;
+    }
+    if (action == "buyitem") {
+      let item = event;
+      setMoney(money - item.cost);
+      let newBag = bag;
+
+      if (item.move) {
+        newBag.tms.push(item);
+      } else {
+        newBag.heldItems.push(item);
+      }
+
+      enqueueSnackbar(`${item.name} was purchased`, {
+        variant: "info",
+      });
+      setBag(newBag);
+      return;
+    }
+    if (action == "resetshop") {
+      setMoney((prev) => prev - 500);
+      getShop();
+      enqueueSnackbar(`Items in the shop have changed!`, {
+        variant: "info",
+      });
+      return;
     }
 
     setAction(action);
@@ -918,12 +1007,18 @@ const GameBoard = ({ id }) => {
 
   //triggers when the take action button is clicked
   const actionButtonClick = () => {
-    switch (game.phase) {
-      case "action":
-        setCanInteract(true);
-        setTileToShow(playerLocation);
-        setTileDrawer(true);
-        break;
+    if (!willPvpBattle) {
+      switch (game.phase) {
+        case "action":
+          setCanInteract(true);
+          setTileToShow(playerLocation);
+          setTileDrawer(true);
+          break;
+      }
+    } else {
+      setWillPvpBattle(true);
+      setAction("pvpbattle");
+      setActionDialog(true);
     }
   };
 
@@ -966,6 +1061,34 @@ const GameBoard = ({ id }) => {
     });
   };
 
+  //sets up the pvp battle
+  const genPvpBattle = (battleId, p1, p2, players) => {
+    console.log(players);
+    console.log(p1);
+    console.log(p2);
+    setBattleId(battleId);
+    if (players[p1].name == id)
+      setEvent({ sprite: players[p2].sprite, name: players[p2].name });
+    else setEvent({ sprite: players[p1].sprite, name: players[p1].name });
+    setWillPvpBattle(true);
+  };
+
+  const initiateTrade = (player) => {
+    socket.emit("trade-initiate", player);
+    setTradeOffer({
+      playerOffering: id,
+      start: false,
+    });
+    setLeaderboardDrawer(false);
+    setTradeDialog(true);
+  };
+
+  const pvpBattleLost = () => {
+    sendPlayerHome();
+    healTeam();
+    setCanUseShop(true);
+  };
+
   if (!players || !game)
     return (
       <Box sx={{ textAlign: "center", mt: "30vh" }}>
@@ -996,12 +1119,15 @@ const GameBoard = ({ id }) => {
         badges={badges}
         x={x}
         y={y}
+        selected={selected}
+        money={money}
         takeAction={takeAction}
         setCanInteract={setCanInteract}
         setTileToShow={setTileToShow}
         setTileDrawer={setTileDrawer}
         setX={setX}
         setY={setY}
+        setSelected={setSelected}
       />
       {winReady ? (
         <Dashboard
@@ -1035,6 +1161,7 @@ const GameBoard = ({ id }) => {
         players={players}
         game={game}
         id={id}
+        initiateTrade={initiateTrade}
       />
       <BagDrawer
         bag={bag}
@@ -1068,6 +1195,8 @@ const GameBoard = ({ id }) => {
         selectStartingTown={selectStartingTown}
         mapId={game.mapId}
         badges={badges}
+        battleId={battleId}
+        pvpBattleLost={pvpBattleLost}
         setActionDialog={setActionDialog}
         setAction={setAction}
         setMoney={setMoney}
@@ -1083,6 +1212,23 @@ const GameBoard = ({ id }) => {
         indicatorDialog={indicatorDialog}
         setIndicatorDialog={setIndicatorDialog}
       />
+      <PvpDialog
+        pvpDialog={pvpDialog}
+        setPvpDialog={setPvpDialog}
+        battleIndex={battleId}
+      />
+      {tradeOffer ? (
+        <TradeDialog
+          tradeDialog={tradeDialog}
+          team={team}
+          tradeOffer={tradeOffer}
+          setTradeOffer={setTradeOffer}
+          setTeam={setTeam}
+          setTradeDialog={setTradeDialog}
+        />
+      ) : (
+        ""
+      )}
     </Box>
   );
 };

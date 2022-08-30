@@ -588,34 +588,6 @@
     "levelUpCandies": 4,
     "levelUpIncrease": 3
   },
-  "Pikachu-Alola": {
-    "species": "Pikachu-Alola",
-    "learnset": [
-      { "move": "charm", "level": "1" },
-      { "move": "growl", "level": "1" },
-      { "move": "nastyplot", "level": "1" },
-      { "move": "nuzzle", "level": "1" },
-      { "move": "playnice", "level": "1" },
-      { "move": "quickattack", "level": "1" },
-      { "move": "sweetkiss", "level": "1" },
-      { "move": "tailwhip", "level": "1" },
-      { "move": "thundershock", "level": "1" },
-      { "move": "thunderwave", "level": "4" },
-      { "move": "doubleteam", "level": "8" },
-      { "move": "electroball", "level": "12" },
-      { "move": "feint", "level": "16" },
-      { "move": "spark", "level": "20" },
-      { "move": "agility", "level": "24" },
-      { "move": "slam", "level": "28" },
-      { "move": "discharge", "level": "32" },
-      { "move": "thunderbolt", "level": "36" },
-      { "move": "lightscreen", "level": "40" },
-      { "move": "thunder", "level": "44" }
-    ],
-    "evolveCandies": "MAX",
-    "levelUpCandies": 3,
-    "levelUpIncrease": 4
-  },
   "Raichu": {
     "species": "Raichu",
     "num": "26",
@@ -786,6 +758,7 @@
   },
   "Nidoran-F": {
     "species": "Nidoran-F",
+    "num": "29",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -852,6 +825,7 @@
   },
   "Nidoran-M": {
     "species": "Nidoran-M",
+    "num": "32",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "poisonsting", "level": "1" },
@@ -3559,6 +3533,7 @@
   },
   "Mr. Mime": {
     "species": "Mr. Mime",
+    "num": "122",
     "learnset": [
       { "move": "batonpass", "level": "1" },
       { "move": "copycat", "level": "1" },
@@ -3588,6 +3563,7 @@
   },
   "Mr. Mime-Galar": {
     "species": "Mr. Mime-Galar",
+    "num": "10168",
     "learnset": [
       { "move": "batonpass", "level": "1" },
       { "move": "copycat", "level": "1" },
@@ -5660,6 +5636,7 @@
   },
   "Unown": {
     "species": "Unown",
+    "num": "201",
     "learnset": [{ "move": "hiddenpower", "level": "1" }],
     "evolveCandies": "MAX",
     "levelUpCandies": 3,
@@ -6843,6 +6820,7 @@
   },
   "Ho-Oh": {
     "species": "Ho-Oh",
+    "num": "250",
     "learnset": [
       { "move": "ancientpower", "level": "1" },
       { "move": "gust", "level": "1" },
@@ -10756,6 +10734,7 @@
   },
   "Burmy": {
     "species": "Burmy",
+    "num": "412",
     "learnset": [
       { "move": "protect", "level": "1" },
       { "move": "tackle", "level": "10" },
@@ -10768,6 +10747,7 @@
   },
   "Wormadam": {
     "species": "Wormadam",
+    "num": "413",
     "learnset": [
       { "move": "bugbite", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -10792,6 +10772,7 @@
   },
   "Mothim": {
     "species": "Mothim",
+    "num": "414",
     "learnset": [
       { "move": "bugbite", "level": "1" },
       { "move": "protect", "level": "1" },
@@ -10948,6 +10929,7 @@
   },
   "Cherrim": {
     "species": "Cherrim",
+    "num": "421",
     "learnset": [
       { "move": "sunnyday", "level": "0" },
       { "move": "flowershield", "level": "1" },
@@ -10970,6 +10952,7 @@
   },
   "Shellos": {
     "species": "Shellos",
+    "num": "422",
     "learnset": [
       { "move": "mudslap", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -10989,6 +10972,7 @@
   },
   "Gastrodon": {
     "species": "Gastrodon",
+    "num": "423",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "mudslap", "level": "1" },
@@ -11357,6 +11341,7 @@
   },
   "Mime Jr.": {
     "species": "Mime Jr.",
+    "num": "439",
     "learnset": [
       { "move": "copycat", "level": "1" },
       { "move": "pound", "level": "1" },
@@ -12240,6 +12225,7 @@
   },
   "Porygon-Z": {
     "species": "Porygon-Z",
+    "num": "474",
     "learnset": [
       { "move": "conversion", "level": "1" },
       { "move": "defensecurl", "level": "1" },
@@ -14023,6 +14009,7 @@
   },
   "Basculin": {
     "species": "Basculin",
+    "num": "550",
     "learnset": [
       { "move": "tailwhip", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -14166,6 +14153,7 @@
   },
   "Darmanitan": {
     "species": "Darmanitan",
+    "num": "555",
     "learnset": [
       { "move": "hammerarm", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -14189,6 +14177,7 @@
   },
   "Darmanitan-Galar": {
     "species": "Darmanitan-Galar",
+    "num": "10177",
     "learnset": [
       { "move": "iciclecrash", "level": "0" },
       { "move": "bite", "level": "1" },
@@ -14952,6 +14941,7 @@
   },
   "Deerling": {
     "species": "Deerling",
+    "num": "585",
     "learnset": [
       { "move": "camouflage", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -14975,6 +14965,7 @@
   },
   "Sawsbuck": {
     "species": "Sawsbuck",
+    "num": "586",
     "learnset": [
       { "move": "camouflage", "level": "1" },
       { "move": "growl", "level": "1" },
@@ -16904,6 +16895,7 @@
   },
   "Scatterbug": {
     "species": "Scatterbug",
+    "num": "664",
     "learnset": [
       { "move": "stringshot", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -16916,6 +16908,7 @@
   },
   "Spewpa": {
     "species": "Spewpa",
+    "num": "665",
     "learnset": [
       { "move": "harden", "level": "1" },
       { "move": "protect", "level": "1" }
@@ -16926,6 +16919,7 @@
   },
   "Vivillon": {
     "species": "Vivillon",
+    "num": "666",
     "learnset": [
       { "move": "gust", "level": "1" },
       { "move": "poisonpowder", "level": "1" },
@@ -16998,6 +16992,7 @@
   },
   "Flabébé": {
     "species": "Flabébé",
+    "num": "669",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "vinewhip", "level": "1" },
@@ -17020,6 +17015,7 @@
   },
   "Floette": {
     "species": "Floette",
+    "num": "670",
     "learnset": [
       { "move": "fairywind", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -17042,6 +17038,7 @@
   },
   "Florges": {
     "species": "Florges",
+    "num": "671",
     "learnset": [
       { "move": "aromatherapy", "level": "1" },
       { "move": "disarmingvoice", "level": "1" },
@@ -17201,6 +17198,7 @@
   },
   "Meowstic": {
     "species": "Meowstic",
+    "num": "678",
     "learnset": [
       { "move": "disarmingvoice", "level": "1" },
       { "move": "fakeout", "level": "1" },
@@ -17976,6 +17974,7 @@
   },
   "Pumpkaboo": {
     "species": "Pumpkaboo",
+    "num": "710",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "trickortreat", "level": "1" },
@@ -17997,6 +17996,7 @@
   },
   "Gourgeist": {
     "species": "Gourgeist",
+    "num": "711",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "confuseray", "level": "1" },
@@ -18738,6 +18738,7 @@
   },
   "Oricorio": {
     "species": "Oricorio",
+    "num": "741",
     "learnset": [
       { "move": "pound", "level": "1" },
       { "move": "growl", "level": "4" },
@@ -18827,6 +18828,7 @@
   },
   "Lycanroc": {
     "species": "Lycanroc",
+    "num": "745",
     "learnset": [
       { "move": "suckerpunch", "level": "0" },
       { "move": "accelerock", "level": "1" },
@@ -18851,8 +18853,68 @@
     "levelUpCandies": 4,
     "levelUpIncrease": 3
   },
+  "Lycanroc-Midnight": {
+    "species": "Lycanroc-Midnight",
+    "num": "10126",
+    "learnset": [
+      { "move": "counter", "level": "0" },
+      { "move": "doubleteam", "level": "1" },
+      { "move": "endure", "level": "1" },
+      { "move": "leer", "level": "1" },
+      { "move": "reversal", "level": "1" },
+      { "move": "sandattack", "level": "1" },
+      { "move": "tackle", "level": "1" },
+      { "move": "taunt", "level": "1" },
+      { "move": "rockthrow", "level": "12" },
+      { "move": "howl", "level": "16" },
+      { "move": "bite", "level": "20" },
+      { "move": "rocktomb", "level": "24" },
+      { "move": "roar", "level": "30" },
+      { "move": "rockslide", "level": "36" },
+      { "move": "crunch", "level": "42" },
+      { "move": "scaryface", "level": "48" },
+      { "move": "stealthrock", "level": "54" },
+      { "move": "stoneedge", "level": "60" }
+    ],
+    "evolveCandies": "MAX",
+    "levelUpCandies": 4,
+    "levelUpIncrease": 3
+  },
+  "Lycanroc-Dusk": {
+    "species": "Lycanroc-Dusk",
+    "num": "10152",
+    "learnset": [
+      { "move": "crushclaw", "level": "0" },
+      { "move": "accelerock", "level": "1" },
+      { "move": "counter", "level": "1" },
+      { "move": "doubleteam", "level": "1" },
+      { "move": "endure", "level": "1" },
+      { "move": "leer", "level": "1" },
+      { "move": "quickattack", "level": "1" },
+      { "move": "quickguard", "level": "1" },
+      { "move": "reversal", "level": "1" },
+      { "move": "sandattack", "level": "1" },
+      { "move": "suckerpunch", "level": "1" },
+      { "move": "tackle", "level": "1" },
+      { "move": "taunt", "level": "1" },
+      { "move": "rockthrow", "level": "12" },
+      { "move": "howl", "level": "16" },
+      { "move": "bite", "level": "20" },
+      { "move": "rocktomb", "level": "24" },
+      { "move": "roar", "level": "30" },
+      { "move": "rockslide", "level": "36" },
+      { "move": "crunch", "level": "42" },
+      { "move": "scaryface", "level": "48" },
+      { "move": "stealthrock", "level": "54" },
+      { "move": "stoneedge", "level": "60" }
+    ],
+    "evolveCandies": "MAX",
+    "levelUpCandies": 4,
+    "levelUpIncrease": 3
+  },
   "Wishiwashi": {
     "species": "Wishiwashi",
+    "num": "746",
     "learnset": [
       { "move": "growl", "level": "1" },
       { "move": "watergun", "level": "1" },
@@ -19443,6 +19505,7 @@
   },
   "Type: Null": {
     "species": "Type: Null",
+    "num": "772",
     "learnset": [
       { "move": "imprison", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -19464,6 +19527,7 @@
   },
   "Silvally": {
     "species": "Silvally",
+    "num": "773",
     "learnset": [
       { "move": "multiattack", "level": "0" },
       { "move": "aerialace", "level": "1" },
@@ -19494,6 +19558,7 @@
   },
   "Minior": {
     "species": "Minior",
+    "num": "774",
     "learnset": [
       { "move": "tackle", "level": "1" },
       { "move": "defensecurl", "level": "3" },
@@ -19679,6 +19744,7 @@
   },
   "Jangmo-o": {
     "species": "Jangmo-o",
+    "num": "782",
     "learnset": [
       { "move": "leer", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -19700,6 +19766,7 @@
   },
   "Hakamo-o": {
     "species": "Hakamo-o",
+    "num": "783",
     "learnset": [
       { "move": "autotomize", "level": "1" },
       { "move": "dragontail", "level": "1" },
@@ -19723,6 +19790,7 @@
   },
   "Kommo-o": {
     "species": "Kommo-o",
+    "num": "784",
     "learnset": [
       { "move": "clangingscales", "level": "0" },
       { "move": "autotomize", "level": "1" },
@@ -21268,6 +21336,7 @@
   },
   "Sinistea": {
     "species": "Sinistea",
+    "num": "854",
     "learnset": [
       { "move": "astonish", "level": "1" },
       { "move": "withdraw", "level": "1" },
@@ -21288,6 +21357,7 @@
   },
   "Polteageist": {
     "species": "Polteageist",
+    "num": "855",
     "learnset": [
       { "move": "teatime", "level": "0" },
       { "move": "aromaticmist", "level": "1" },
@@ -21552,6 +21622,7 @@
   },
   "Mr. Rime": {
     "species": "Mr. Rime",
+    "num": "866",
     "learnset": [
       { "move": "afteryou", "level": "1" },
       { "move": "batonpass", "level": "1" },
@@ -21638,6 +21709,7 @@
   },
   "Alcremie": {
     "species": "Alcremie",
+    "num": "869",
     "learnset": [
       { "move": "decorate", "level": "0" },
       { "move": "aromaticmist", "level": "1" },
@@ -21765,6 +21837,7 @@
   },
   "Eiscue": {
     "species": "Eiscue",
+    "num": "875",
     "learnset": [
       { "move": "powdersnow", "level": "1" },
       { "move": "tackle", "level": "1" },
@@ -21785,6 +21858,7 @@
   },
   "Indeedee": {
     "species": "Indeedee",
+    "num": "876",
     "learnset": [
       { "move": "playnice", "level": "1" },
       { "move": "storedpower", "level": "1" },
@@ -21806,6 +21880,7 @@
   },
   "Morpeko": {
     "species": "Morpeko",
+    "num": "877",
     "learnset": [
       { "move": "tailwhip", "level": "1" },
       { "move": "thundershock", "level": "1" },
@@ -22144,6 +22219,7 @@
   },
   "Urshifu": {
     "species": "Urshifu",
+    "num": "892",
     "learnset": [
       { "move": "wickedblow", "level": "0" },
       { "move": "endure", "level": "1" },

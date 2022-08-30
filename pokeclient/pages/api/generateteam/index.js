@@ -46,14 +46,7 @@ const generatePokemon = (req) => {
 const generateAbility = (showdownMon) => {
   let rand = genRand(0, Object.keys(showdownMon.abilities).length - 1);
 
-  if (showdownMon.abilities["H"]) {
-    if (rand == Object.keys(showdownMon.abilities).length - 1) rand = "H";
-    if (rand != "H") rand = JSON.stringify(rand);
-  } else if (Object.keys(showdownMon.abilities).length == 1) {
-    rand = 0;
-  }
-
-  return showdownMon.abilities[rand];
+  return showdownMon.abilities[Object.keys(showdownMon.abilities)[rand]];
 };
 
 const generateNature = () => {
@@ -127,12 +120,13 @@ const selectMoves = (possibleMoves) => {
 
   if (possibleMoves.length < 4) maxMoves = possibleMoves.length;
 
-  for (let i = 0; i < maxMoves; i++) {
-    let move = possibleMoves[genRand(0, possibleMoves.length - 1)];
+  // for (let i = 0; i < maxMoves; i++) {
+  //   let move = possibleMoves[genRand(0, possibleMoves.length - 1)];
 
-    if (moves.includes(move)) i--;
-    else moves.push(move);
-  }
+  //   if (moves.includes(move)) i--;
+  //   else moves.push(move);
+  // }
+  moves = getBestMoves(possibleMoves, maxMoves);
 
   return moves;
 };
@@ -154,6 +148,19 @@ const generateShiny = () => {
 
   if (rand == 100) return true;
   else return false;
+};
+
+const getBestMoves = (moves, maxMoves) => {
+  moves.sort((a, b) => {
+    let A = Dex.moves.get(a);
+    let B = Dex.moves.get(b);
+
+    if (A.basePower < B.basePower) return 1;
+    if (A.basePower > B.basePower) return -1;
+    return 0;
+  });
+  console.log(moves);
+  return moves.slice(0, maxMoves);
 };
 
 export default function handler(req, res) {

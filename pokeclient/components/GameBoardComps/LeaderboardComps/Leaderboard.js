@@ -8,6 +8,7 @@ const Leaderboard = ({
   game,
   players,
   id,
+  initiateTrade,
 }) => {
   return (
     <Drawer
@@ -17,7 +18,12 @@ const Leaderboard = ({
       sx={{ overflowY: "auto" }}
     >
       {players.map((player) => (
-        <PlayerCard player={player} game={game} isPlayer={player.name == id} />
+        <PlayerCard
+          player={player}
+          game={game}
+          isPlayer={player.name == id}
+          initiateTrade={initiateTrade}
+        />
       ))}
     </Drawer>
   );

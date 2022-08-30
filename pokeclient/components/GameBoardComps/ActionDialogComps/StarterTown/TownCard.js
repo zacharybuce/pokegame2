@@ -6,6 +6,7 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   Button,
+  Tooltip,
 } from "@mui/material";
 import PokeSprite from "../../../Utils/PokeSprite";
 
@@ -54,9 +55,19 @@ const TownCard = ({
             onChange={(event, newMon) => setSelectedMon(newMon)}
           >
             {starters.map((pokemon) => (
-              <ToggleButton value={pokemon.species}>
-                <PokeSprite name={pokemon.id} />
-              </ToggleButton>
+              <Tooltip title={pokemon.species}>
+                <ToggleButton
+                  value={pokemon.species}
+                  sx={{
+                    transition: "all .2s",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                    },
+                  }}
+                >
+                  <PokeSprite name={pokemon.id} />
+                </ToggleButton>
+              </Tooltip>
             ))}
           </ToggleButtonGroup>
         </Grid>

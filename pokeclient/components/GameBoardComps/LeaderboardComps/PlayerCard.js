@@ -4,7 +4,7 @@ import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import LoopIcon from "@mui/icons-material/Loop";
 
-const PlayerCard = ({ player, isPlayer, game }) => {
+const PlayerCard = ({ player, isPlayer, game, initiateTrade }) => {
   return (
     <Box
       sx={{
@@ -67,8 +67,9 @@ const PlayerCard = ({ player, isPlayer, game }) => {
             {!isPlayer ? (
               <Tooltip title="Trade" placement="left" arrow>
                 <Button
-                  disabled={game.phase != "action"}
+                  disabled={game.phase != "action" || player.inAction}
                   variant="contained"
+                  onClick={() => initiateTrade(player.name)}
                   sx={{ backgroundColor: "#353C51" }}
                 >
                   <LoopIcon />

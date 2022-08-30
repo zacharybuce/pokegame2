@@ -17,7 +17,8 @@ const catchPokemon = (data) => {
   let hp = data.hp;
   let status = data.status == "none" ? 1 : 1.5;
 
-  console.log(data);
+  if (!rate) rate = 70;
+  console.log(rate);
 
   switch (data.ball) {
     case "poke":

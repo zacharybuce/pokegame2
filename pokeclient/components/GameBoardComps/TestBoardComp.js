@@ -23,24 +23,22 @@ const TestBoardComp = ({
   actionComplete,
   takeAction,
   phase,
+  selected,
   badges,
   playerLocation,
   players,
   tileToShow,
+  money,
   setTileToShow,
   canInteract,
   setCanInteract,
   setX,
   setY,
+  setSelected,
 }) => {
   const { width, height } = useWindowDimensions();
   const hexagonSize = { x: 20, y: 20 };
   const hexToken = { x: 15, y: 15 };
-  const [selected, setSelected] = useState(); //for styles
-
-  useEffect(() => {
-    //setSelected(undefined);
-  }, [phase]);
 
   const layoutDimension = {
     size: hexagonSize,
@@ -680,13 +678,14 @@ const TestBoardComp = ({
             q={6}
             r={1}
             s={-7}
-            className={getClassName(6, 1, -7)}
-            fill={"water2"}
-            onClick={(event, source) => {
-              handleHexSelect("129", source);
-            }}
+            className={
+              isSelectable(6, 1, -7)
+                ? "tile-selectable-under"
+                : "tile-unselectable"
+            }
+            fill={"sand1"}
           >
-            <Text>129</Text>
+            {/* <Text>Mirage Island</Text> */}
           </Hexagon>
           <Hexagon
             q={7}
@@ -767,13 +766,14 @@ const TestBoardComp = ({
             q={1}
             r={4}
             s={-5}
-            className={getClassName(1, 4, -5)}
-            fill={"water1"}
-            onClick={(event, source) => {
-              handleHexSelect("133", source);
-            }}
+            className={
+              isSelectable(1, 4, -5)
+                ? "tile-selectable-under"
+                : "tile-unselectable"
+            }
+            fill={"sand1"}
           >
-            <Text>133</Text>
+            {/* <Text>FarawayIsland</Text> */}
           </Hexagon>
           <Hexagon
             q={1}
@@ -1816,6 +1816,44 @@ const TestBoardComp = ({
               y="-6.4"
             ></image>
           </Hexagon>
+          <Hexagon
+            q={6}
+            r={1}
+            s={-7}
+            className={getClassName(6, 1, -7)}
+            onClick={(event, source) => {
+              handleHexSelect("mirageisland", source);
+            }}
+            fill={"grass1"}
+          >
+            {/* <Text>Mirage Island</Text> */}
+            <image
+              href="/Tiles-Hoen/island.png"
+              width="13"
+              height="13"
+              x="-6.4"
+              y="-6.4"
+            ></image>
+          </Hexagon>
+          <Hexagon
+            q={1}
+            r={4}
+            s={-5}
+            className={getClassName(1, 4, -5)}
+            onClick={(event, source) => {
+              handleHexSelect("farawayisland", source);
+            }}
+            fill={"grass1"}
+          >
+            {/* <Text>FarawayIsland</Text> */}
+            <image
+              href="/Tiles-Hoen/island.png"
+              width="13"
+              height="13"
+              x="-6.4"
+              y="-6.4"
+            ></image>
+          </Hexagon>
         </Layout>
         {/*player tokens*/}
         <Layout
@@ -1908,6 +1946,7 @@ const TestBoardComp = ({
         campaignId={"Hoen"}
         canInteract={canInteract}
         phase={phase}
+        money={money}
         setTileDrawer={setTileDrawer}
         setTileToShow={setTileToShow}
       />
