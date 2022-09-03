@@ -181,7 +181,7 @@
   },
   "Brawly": {
     "Easy": ["Machop", "Makuhita", "Meditite"],
-    "Medium": ["Machop", "Medicham", "Breloom"],
+    "Medium": ["Machoke", "Medicham", "Breloom"],
     "Hard": ["Machamp", "Hariyama", "Heracross"],
     "Type": "Fighting"
   },
@@ -212,7 +212,7 @@
   "TateandLiza": {
     "Easy": ["Baltoy", "Natu", "Slowpoke"],
     "Medium": ["Lunatone", "Solrock", "Xatu"],
-    "Hard": ["Claydol", "Slowking", "Hypno"],
+    "Hard": ["Claydol", "Slowking", "Alakazam"],
     "Type": "Psychic"
   },
   "Wallace": {

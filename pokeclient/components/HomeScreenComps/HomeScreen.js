@@ -30,6 +30,7 @@ const HomeScreen = ({
   setScreen,
   setSettingsDialogOpen,
   sprite,
+  setMusicEvent,
 }) => {
   const { enqueueSnackbar } = useSnackbar();
   const socket = useSocket();
@@ -40,6 +41,7 @@ const HomeScreen = ({
         variant: "error",
       });
     else {
+      setMusicEvent("lobby");
       setScreen("Lobby");
       console.log("sending join-lobby...");
       socket.emit("join-lobby", sprite);
@@ -48,6 +50,7 @@ const HomeScreen = ({
 
   const continueButtonClick = () => {
     setScreen("ContinueLobby");
+    setMusicEvent("lobby");
     socket.emit("join-lobby-continue", sprite);
   };
 

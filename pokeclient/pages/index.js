@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SocketProvider } from "../contexts/SocketProvider";
 import useLocalStorage from "../hooks/useLocalStorage";
 import HomeScreen from "../components/HomeScreenComps/HomeScreen";
@@ -7,6 +7,7 @@ import LobbyScreen from "../components/LobbyComps/LobbyScreen";
 import SettingsDialog from "../components/HomeScreenComps/SettingsDialog";
 import GameBoard from "../components/GameBoardComps/GameBoard";
 import ContinueLobby from "../components/LobbyComps/ContinueLobby";
+import Music from "../components/SoundComps/Music";
 
 export default function Index() {
   const [id, setId] = useLocalStorage("id");
@@ -16,6 +17,7 @@ export default function Index() {
   const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
   const [musicVolume, setMusicVolume] = useState(20);
   const [isContinue, setIsContinue] = useState(false);
+  const [musicEvent, setMusicEvent] = useState();
 
   const screenDisplay = (screen) => {
     switch (screen) {
@@ -27,6 +29,7 @@ export default function Index() {
             setScreen={setScreen}
             setSettingsDialogOpen={setSettingsDialogOpen}
             sprite={sprite}
+            setMusicEvent={setMusicEvent}
           />
         );
       case "Lobby":
@@ -40,7 +43,14 @@ export default function Index() {
           />
         );
       case "GameBoard":
-        return <GameBoard id={id} isContinue={isContinue} />;
+        return (
+          <GameBoard
+            id={id}
+            isContinue={isContinue}
+            setMusicEvent={setMusicEvent}
+            setSettingsDialogOpen={setSettingsDialogOpen}
+          />
+        );
     }
   };
 
@@ -61,6 +71,7 @@ export default function Index() {
         musicVolume={musicVolume}
         setMusicVolume={setMusicVolume}
       />
+      <Music volume={musicVolume} event={musicEvent} />
     </SocketProvider>
   );
 }

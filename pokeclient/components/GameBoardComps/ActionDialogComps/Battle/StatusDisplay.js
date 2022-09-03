@@ -15,7 +15,7 @@ const StatusDisplay = ({ statuses }) => {
   //boost atk
   //status slp
   const statusIcon = (status) => {
-    console.log(status);
+    // console.log(status);
     const tokens = status.split("|");
     if (tokens[0] == "boost") {
       switch (tokens[1]) {
@@ -219,7 +219,7 @@ const StatusDisplay = ({ statuses }) => {
       }
     }
   };
-  console.log(statuses);
+  // console.log(statuses);
   return (
     <div>
       {statuses.length ? (

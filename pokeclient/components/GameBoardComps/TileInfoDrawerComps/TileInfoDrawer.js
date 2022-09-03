@@ -23,6 +23,7 @@ const TileInfoDrawer = ({
   takeAction,
   actionComplete,
   badges,
+  team,
   phase,
   money,
   tileName,
@@ -127,6 +128,7 @@ const TileInfoDrawer = ({
             canInteract={canInteract}
             takeAction={takeAction}
             phase={phase}
+            team={team}
           />
         </Box>
       ) : (

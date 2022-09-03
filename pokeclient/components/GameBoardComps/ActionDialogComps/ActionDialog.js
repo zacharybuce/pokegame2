@@ -1,4 +1,4 @@
-import { Dialog, Box } from "@mui/material";
+import { Dialog } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import Battle from "./Battle/Battle";
 import StarterTown from "./StarterTown/StarterTown";
@@ -29,6 +29,7 @@ const ActionDialog = ({
   setTeam,
   setActionComplete,
   setBadges,
+  setMusicEvent,
 }) => {
   const socket = useSocket();
   const [wildMon, setWildMon] = useState();
@@ -72,9 +73,10 @@ const ActionDialog = ({
   };
 
   //called when battle is over
-  const endBattle = (win, team, caught) => {
+  const endBattle = (win, team, caught, ranFromBattle) => {
+    setMusicEvent("action");
     socket.emit("end-battle");
-    applyExhaustion(team, win);
+    applyExhaustion(team, win, ranFromBattle);
     generateRewards(win, caught);
     if (caught) catchPokemon();
     setBattleEnd(true);
@@ -157,7 +159,7 @@ const ActionDialog = ({
       case "pvpbattle":
         if (win) {
           setRewards({ win: win, candies: 15, money: 1000 });
-          setCandies((prev) => prev + 15);
+          setCandies((prev) => prev + 5);
           setMoney((prev) => prev + 1000);
         } else {
           setRewards({ win: false, candies: 0, money: 0 });
@@ -322,6 +324,7 @@ const ActionDialog = ({
 
   //randomly gens a wild mon then generates its data
   const getWildMon = async () => {
+    setMusicEvent("wild-battle");
     let badgeMod = setDifficulty();
 
     const wildRes = await fetch(
@@ -359,6 +362,7 @@ const ActionDialog = ({
 
   //generates the mon sent in by event for wildmon
   const getSafariMon = async () => {
+    setMusicEvent("wild-battle");
     let badgeMod = setDifficulty();
     const genRes = await fetch(
       `${process.env.NEXT_PUBLIC_ROOT_URL}/api/generatepokemon`,
@@ -381,6 +385,7 @@ const ActionDialog = ({
   };
 
   const genTrickHouse = async () => {
+    setMusicEvent("trainer-battle");
     let badgeMod = setDifficulty();
 
     //console.log(badgeMod);
@@ -407,6 +412,7 @@ const ActionDialog = ({
 
   //generates the team of the gym leader(from event state)
   const genGymChallenge = async () => {
+    setMusicEvent("trainer-battle");
     let badgeMod = setDifficulty();
 
     //console.log(badgeMod);
@@ -431,6 +437,7 @@ const ActionDialog = ({
   };
 
   const genChampionBattle = async () => {
+    setMusicEvent("elite-battle");
     let badgeMod = setDifficulty();
 
     //console.log(badgeMod);
@@ -455,6 +462,7 @@ const ActionDialog = ({
   };
 
   const genTrainerBattle = async () => {
+    setMusicEvent("trainer-battle");
     let badgeMod = setDifficulty();
 
     //console.log(badgeMod);
@@ -480,6 +488,7 @@ const ActionDialog = ({
   };
 
   const pvpBattle = () => {
+    setMusicEvent("elite-battle");
     socket.emit("pvpbattle-ready", battleId);
   };
 
@@ -494,35 +503,35 @@ const ActionDialog = ({
           data.level = 20;
           break;
         case 1:
-          data.candiesSpent = 2;
+          data.candiesSpent = 0;
           data.level = 20;
           break;
         case 2:
-          data.candiesSpent = 2;
+          data.candiesSpent = 0;
           data.level = 23;
           break;
         case 3:
-          data.candiesSpent = 2;
+          data.candiesSpent = 0;
           data.level = 23;
           break;
         case 4:
-          data.candiesSpent = 4;
+          data.candiesSpent = 2;
           data.level = 23;
           break;
         case 5:
-          data.candiesSpent = 5;
+          data.candiesSpent = 2;
           data.level = 26;
           break;
         case 6:
-          data.candiesSpent = 7;
+          data.candiesSpent = 2;
           data.level = 26;
           break;
         case 7:
-          data.candiesSpent = 9;
+          data.candiesSpent = 2;
           data.level = 26;
           break;
         case 8:
-          data.candiesSpent = 9;
+          data.candiesSpent = 4;
           data.level = 26;
           break;
       }
@@ -535,35 +544,35 @@ const ActionDialog = ({
           break;
         case 1:
           data.candiesSpent = 3;
-          data.level = 20;
+          data.level = 22;
           break;
         case 2:
           data.candiesSpent = 6;
-          data.level = 22;
+          data.level = 24;
           break;
         case 3:
           data.candiesSpent = 6;
-          data.level = 23;
+          data.level = 26;
           break;
         case 4:
           data.candiesSpent = 8;
-          data.level = 23;
+          data.level = 28;
           break;
         case 5:
           data.candiesSpent = 8;
-          data.level = 26;
+          data.level = 32;
           break;
         case 6:
           data.candiesSpent = 12;
-          data.level = 26;
+          data.level = 34;
           break;
         case 7:
           data.candiesSpent = 12;
-          data.level = 28;
+          data.level = 38;
           break;
         case 8:
           data.candiesSpent = 15;
-          data.level = 30;
+          data.level = 40;
           break;
       }
 
@@ -595,6 +604,9 @@ const ActionDialog = ({
         case 7:
           highestLvl = 48;
           break;
+        case 8:
+          highestLvl = 60;
+          break;
       }
 
       team.forEach((pokemon) => {
@@ -619,9 +631,9 @@ const ActionDialog = ({
   };
 
   //apply appropriate exhaustion points or faints pokemon doending on how much dmg taken
-  const applyExhaustion = (inteam, win) => {
+  const applyExhaustion = (inteam, win, ranFromBattle) => {
     var filteredTeam = team.slice();
-    if (win) {
+    if (win || ranFromBattle) {
       inteam.side.pokemon.forEach((pokemon) => {
         let name = pokemon.ident.split(" ")[1];
         let ex = 0;

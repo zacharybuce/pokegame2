@@ -37,16 +37,7 @@ const ChampionEvent = ({
   const getGymLeaderTeam = () => {
     if (badges.length < 2) return leader.Easy;
     else if (badges.length < 5) return leader.Medium;
-    if (badges.length < 8) return leader.Hard;
-  };
-
-  const hasBeatenGym = () => {
-    let hasBeaten = false;
-    badges.forEach((badge) => {
-      if (badge.gym == event.split("-")[1]) hasBeaten = true;
-    });
-
-    return hasBeaten;
+    if (badges.length <= 8) return leader.Hard;
   };
 
   const gymLeaderImage = (
@@ -94,11 +85,14 @@ const ChampionEvent = ({
                 {leader.Type} Type Specialist
               </Typography>
               <Typography variant="h5">6v6 Battle</Typography>
+              <Typography>*Must have 8 badges</Typography>
             </Grid>
           </Grid>
           <Grid item xs={12}>
             <Button
-              disabled={!canInteract || phase == "movement"}
+              disabled={
+                !canInteract || phase == "movement" || badges.length < 8
+              }
               fullWidth
               variant="contained"
               onClick={() =>

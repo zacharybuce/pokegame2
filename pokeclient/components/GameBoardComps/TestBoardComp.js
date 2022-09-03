@@ -23,6 +23,7 @@ const TestBoardComp = ({
   actionComplete,
   takeAction,
   phase,
+  team,
   selected,
   badges,
   playerLocation,
@@ -1941,6 +1942,7 @@ const TestBoardComp = ({
         tileDrawer={tileDrawer}
         takeAction={takeAction}
         badges={badges}
+        team={team}
         actionComplete={actionComplete}
         selected={selected}
         campaignId={"Hoen"}

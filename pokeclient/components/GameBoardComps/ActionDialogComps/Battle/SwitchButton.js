@@ -47,7 +47,7 @@ const SwitchButton = ({ poke, disabled, sendSwitchChoice, slot }) => {
     </React.Fragment>
   );
 
-  console.log(poke.details.split(",")[3]);
+  // console.log(poke.details.split(",")[3]);
   return (
     <Grid item xs={2}>
       <HtmlTooltip title={toolTipTitle}>

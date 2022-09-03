@@ -65,9 +65,12 @@ const TrickHouseEvent = ({
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h5">
-            Fight a trainer for the chance at a random item. Entry fee is{" "}
-            <CurrencyYen />
+            Entry fee is <CurrencyYen />
             500
+          </Typography>
+          <Divider sx={{ backgroundColor: "#ededed", mb: "5px" }} />
+          <Typography>
+            Fight a trainer for the chance at a random item.
           </Typography>
         </Grid>
       </Grid>

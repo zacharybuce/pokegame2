@@ -1,41 +1,40 @@
-import CurrencyYen from "@mui/icons-material/CurrencyYen";
 import { Box, Button, Card, Divider, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { pSBC } from "../../Utils/colorUtil";
-import FlyingTaxiDialog from "./FlyingTaxiDialog";
+import { typeColor } from "../../Utils/typeColor";
+import DayCareDialog from "./DayCareDialog";
 
-const FlyEvent = ({
+const DaycareEvent = ({
   badges,
-  money,
   campaignId,
   canInteract,
   takeAction,
   phase,
+  team,
 }) => {
-  const [taxiDialog, setTaxiDialog] = useState();
+  const [teamDialog, setTeamDialog] = useState();
 
   return (
     <Card
       sx={{
         height: "280px",
         p: 1,
-        backgroundColor: "#f1cb1dd4",
-        color: "black",
+        backgroundColor: typeColor("Normal") + "d4",
         mb: "2vh",
       }}
     >
       <Grid container spacing={1}>
         <Grid item xs={12} sx={{ textAlign: "center" }}>
-          <Typography variant="h4">Flying Taxi</Typography>
+          <Typography variant="h4">Daycare Sanctuary</Typography>
         </Grid>
         <Grid item xs={12} sx={{ mb: "1vh" }}>
           <Divider />
         </Grid>
         <Grid item xs={6}>
-          <Box sx={{ backgroundColor: pSBC(-0.5, "#f1cb1d") }}>
+          <Box sx={{ backgroundColor: typeColor("Normal") }}>
             <Box
               sx={{
-                backgroundImage: "url(/Tiles-Hoen/FlyingTaxi.png)",
+                backgroundImage: "url(/Tiles-Hoen/Farm.png)",
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 backgroundPositionX: "50%",
@@ -50,21 +49,19 @@ const FlyEvent = ({
         </Grid>
         <Grid item container xs={6}>
           <Grid item xs={12}>
-            <Typography variant="h5">Fly to any town</Typography>
-            <Typography variant="body2">*Must have 4 badges</Typography>
+            <Typography>
+              The daycare also acts as a pokemon sanctuary. Release a pokemon
+              here to gain candy.
+            </Typography>
+            <Typography variant="body2">*Must have 2 badges</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12}>
           <Button
-            disabled={
-              !canInteract ||
-              phase == "movement" ||
-              badges.length < 3 ||
-              money < 3000
-            }
+            disabled={!canInteract || phase == "movement"}
             fullWidth
             variant="contained"
-            onClick={() => setTaxiDialog(true)}
+            onClick={() => setTeamDialog(true)}
             sx={{
               backgroundColor: "#2F4562",
               "&:hover": {
@@ -72,20 +69,18 @@ const FlyEvent = ({
               },
             }}
           >
-            Pay <CurrencyYen />
-            3000{" "}
+            Select Pokemon
           </Button>
         </Grid>
+        <DayCareDialog
+          teamDialog={teamDialog}
+          team={team}
+          takeAction={takeAction}
+          setTeamDialog={setTeamDialog}
+        />
       </Grid>
-
-      <FlyingTaxiDialog
-        takeAction={takeAction}
-        taxiDialog={taxiDialog}
-        campaignId={campaignId}
-        setTaxiDialog={setTaxiDialog}
-      />
     </Card>
   );
 };
 
-export default FlyEvent;
+export default DaycareEvent;

@@ -91,7 +91,8 @@ const ActionButtons = ({
             disabled={
               !tileToShow ||
               movement <= 0 ||
-              playerLocation?.tile == tileToShow?.tile
+              playerLocation?.tile == tileToShow?.tile ||
+              tileToShow?.tile == "none"
             }
           >
             Move to {tileToShow?.tile}

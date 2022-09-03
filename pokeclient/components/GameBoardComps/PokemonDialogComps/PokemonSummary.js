@@ -14,6 +14,7 @@ import NatureDisplay from "./NatureDisplay";
 import PokemonMoves from "./PokemonMoves";
 import EVAndIVs from "./EVAndIVs";
 import { useSnackbar } from "notistack";
+import { useSocket } from "../../../contexts/SocketProvider";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,6 +57,7 @@ const PokemonSummary = ({
   setBag,
   setTeam,
 }) => {
+  const socket = useSocket();
   const [tabValue, setTabValue] = useState(0);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -68,9 +70,6 @@ const PokemonSummary = ({
     let b = Math.floor(prevCandies / newMon.levelUpCandies);
     let a = Math.floor(newMon.candiesSpent / newMon.levelUpCandies);
 
-    console.log(a);
-    console.log(b);
-
     let amountOfLvlUps = (a - b) * newMon.levelUpIncrease;
 
     if (amountOfLvlUps > 0) {
@@ -82,6 +81,7 @@ const PokemonSummary = ({
 
     setCandies((prev) => prev - amount);
     updateTeam(pokemon, newMon);
+    socket.emit("spend-candy", amount);
   };
 
   const takeItem = () => {

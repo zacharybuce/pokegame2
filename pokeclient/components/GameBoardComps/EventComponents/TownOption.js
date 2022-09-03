@@ -1,8 +1,8 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import { Hex } from "react-hexgrid";
 
-const TownOption = ({ town, takeAction, townId, setTaxiDialog }) => {
+const TownOption = ({ town, takeAction, townId, setTaxiDialog, fly }) => {
   return (
     <Grid item xs={6}>
       <Button
@@ -21,7 +21,7 @@ const TownOption = ({ town, takeAction, townId, setTaxiDialog }) => {
         onClick={() => {
           setTaxiDialog(false);
           let { q, r, s } = town.location;
-          takeAction("flyingtaxi", {
+          takeAction(fly ? "flyingtaxi" : "ferry", {
             location: { tile: townId, coord: new Hex(q, r, s) },
           });
         }}

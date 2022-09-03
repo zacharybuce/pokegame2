@@ -6,6 +6,7 @@ const IndicatorDialog = ({
   round,
   indicatorDialog,
   setIndicatorDialog,
+  semiTurn,
 }) => {
   useEffect(() => {
     setTimeout(() => setIndicatorDialog(false), 1000);
@@ -24,6 +25,17 @@ const IndicatorDialog = ({
           Round {round}
         </Typography>
         <Typography variant="h2">{capitalize(phase)} Phase</Typography>
+        {round == semiTurn ? (
+          <Typography
+            variant="h3"
+            className={"evolvebutton"}
+            sx={{ mt: "10px" }}
+          >
+            Mid-Season Tournament
+          </Typography>
+        ) : (
+          ""
+        )}
       </Box>
     </Dialog>
   );

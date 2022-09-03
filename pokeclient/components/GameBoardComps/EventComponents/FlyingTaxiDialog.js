@@ -36,6 +36,7 @@ const FlyingTaxiDialog = ({
                     takeAction={takeAction}
                     townId={tile}
                     setTaxiDialog={setTaxiDialog}
+                    fly
                   />
                 );
               })

@@ -8,6 +8,8 @@ const ActivePokemonMoves = ({
   animsDone,
   hasSelected,
   setWillMegaEvo,
+  battletype,
+  runFromBattle,
 }) => {
   const [megaEvo, setMegaEvo] = useState(false);
 
@@ -29,12 +31,13 @@ const ActivePokemonMoves = ({
               })}
             </Grid>
             <Grid item container xs={3} alignItems="center" spacing={1}>
+              {/* Mega Evo Button */}
               <Grid item xs={12} sx={{ textAlign: "center" }}>
                 <Button
                   variant={megaEvo ? "contained" : "outlined"}
                   className={megaEvo ? "megaevo" : ""}
                   disabled={!team.active[0].canMegaEvo}
-                  sx={{ height: "90px", borderRadius: "50%", width: "70%" }}
+                  sx={{ height: "60px", borderRadius: "50%", width: "50px" }}
                   onClick={() => {
                     setMegaEvo((prev) => !prev);
                     setWillMegaEvo(true);
@@ -43,14 +46,25 @@ const ActivePokemonMoves = ({
                   <Box
                     sx={{
                       backgroundImage: "url(/icons/MegaEvolution.png)",
+                      opacity: !team.active[0].canMegaEvo ? "0.5" : "1",
                       height: "100%",
                       width: "100%",
-                      backgroundSize: "75%",
+                      backgroundSize: "80%",
                       backgroundPosition: "50% 50%",
                       backgroundRepeat: "no-repeat",
                     }}
                   ></Box>
                 </Button>
+              </Grid>
+              {/* Run Button */}
+              <Grid item xs={12} sx={{ textAlign: "center" }}>
+                {battletype == "wildbattle" ? (
+                  <Button variant="outlined" onClick={() => runFromBattle()}>
+                    Run
+                  </Button>
+                ) : (
+                  ""
+                )}
               </Grid>
             </Grid>
           </Grid>

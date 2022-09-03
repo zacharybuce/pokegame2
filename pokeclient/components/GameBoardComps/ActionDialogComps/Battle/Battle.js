@@ -655,6 +655,12 @@ const Battle = ({
 
           message = `${user} changed type to ${type}!`;
           severity = "warning";
+        } else if (token.includes("Cursed Body")) {
+          user = splitToken[2].split(" ")[1];
+          move = splitToken[4];
+
+          message = `${user}'s ${move} was disabled from Curese Body!`;
+          severity = "warning";
         } else if (token.includes("ability:")) {
           user = splitToken[2].split(" ")[1];
           ability = splitToken[3].split(":")[1];
@@ -779,6 +785,11 @@ const Battle = ({
       ]);
     }
   };
+
+  const runFromBattle = () => {
+    endBattle(false, team, false, true);
+  };
+
   return (
     <Box sx={{ p: 2 }}>
       <Grid container>
@@ -833,6 +844,8 @@ const Battle = ({
                       sendMoveChoice={sendMoveChoice}
                       setWillMegaEvo={setWillMegaEvo}
                       hasSelected={hasSelected}
+                      battletype={battletype}
+                      runFromBattle={runFromBattle}
                     />
                   ) : (
                     ""

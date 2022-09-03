@@ -44,7 +44,10 @@ const PokemonCard = ({
           borderRadius: "3px",
         }}
       >
-        <PokeSprite name={pokemon.id} shiny={pokemon.isShiny} />
+        <PokeSprite
+          name={pokemon.id == "flabébé" ? "flabebe" : pokemon.id}
+          shiny={pokemon.isShiny}
+        />
       </Box>
       <Grid container sx={{ textAlign: "center", mt: "3px" }}>
         {/* Held Item Display */}

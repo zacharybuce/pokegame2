@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
 import React from "react";
 import ChampionEvent from "../EventComponents/ChampionEvent";
+import DaycareEvent from "../EventComponents/DaycareEvent";
 import DepartmentStore from "../EventComponents/DepartmentStore";
+import FerryEvent from "../EventComponents/FerryEvent";
 import FlyEvent from "../EventComponents/FlyEvent";
 import GymLeaderEvent from "../EventComponents/GymLeaderEvent";
 import Market from "../EventComponents/Market";
@@ -16,6 +18,7 @@ const TileEvents = ({
   canInteract,
   takeAction,
   phase,
+  team,
 }) => {
   const eventMapper = (event) => {
     const eventType = event.split("-")[0];
@@ -55,6 +58,18 @@ const TileEvents = ({
       case "FlyingTaxi":
         return (
           <FlyEvent
+            badges={badges}
+            event={event}
+            campaignId={"Hoen"}
+            money={money}
+            takeAction={takeAction}
+            canInteract={canInteract}
+            phase={phase}
+          />
+        );
+      case "Ferry":
+        return (
+          <FerryEvent
             badges={badges}
             event={event}
             campaignId={"Hoen"}
@@ -107,6 +122,18 @@ const TileEvents = ({
             canInteract={canInteract}
             phase={phase}
             badges={badges}
+          />
+        );
+      case "Daycare":
+        return (
+          <DaycareEvent
+            badges={badges}
+            event={event}
+            campaignId={"Hoen"}
+            takeAction={takeAction}
+            canInteract={canInteract}
+            phase={phase}
+            team={team}
           />
         );
 

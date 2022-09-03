@@ -5,7 +5,7 @@ import PushPinIcon from "@mui/icons-material/PushPin";
 import { Grid, Tooltip } from "@mui/material";
 
 const FieldEffectDisplay = ({ fieldEffects }) => {
-  console.log(fieldEffects);
+  // console.log(fieldEffects);
   const display = (effect) => {
     switch (effect) {
       case "Reflect":

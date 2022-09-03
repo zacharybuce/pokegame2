@@ -2,7 +2,6 @@ import { Box, CircularProgress, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSocket } from "../../contexts/SocketProvider";
 import { Hex, HexUtils } from "react-hexgrid";
-import HoenBoard from "./HoenBoard";
 import TestBoardComp from "./TestBoardComp";
 import Dashboard from "./DashboardComps/Dashboard";
 import Leaderboard from "./LeaderboardComps/Leaderboard";
@@ -14,6 +13,7 @@ import { useSnackbar } from "notistack";
 import IndicatorDialog from "./IndicatiorDialogComps/IndicatorDialog";
 import PvpDialog from "./PvpDialog";
 import TradeDialog from "./TradeDialogComps/TradeDialog";
+import SettingsButton from "./SettingsButton";
 
 const testMon = {
   species: "Pikachu",
@@ -611,7 +611,12 @@ const testMon5 = {
   dragId: "1661856266351",
 };
 
-const GameBoard = ({ id, isContinue }) => {
+const GameBoard = ({
+  id,
+  isContinue,
+  setMusicEvent,
+  setSettingsDialogOpen,
+}) => {
   //---server driven variables
   const socket = useSocket();
   const [players, setPlayers] = useState();
@@ -654,6 +659,7 @@ const GameBoard = ({ id, isContinue }) => {
   const [willPvpBattle, setWillPvpBattle] = useState();
   const [tradeOffer, setTradeOffer] = useState();
   const [selected, setSelected] = useState();
+  const [startTimer, setStartTimer] = useState(false);
 
   //---Open/Close variables for drawers and dialogs
   const [leaderboardDrawer, setLeaderboardDrawer] = useState(false);
@@ -698,17 +704,22 @@ const GameBoard = ({ id, isContinue }) => {
         setWillPvpBattle(false);
         saveData();
         if (game?.phase == "movement" || game?.phase == "starter") {
+          if (game?.phase == "movement") {
+            setMusicEvent("movement");
+          }
           setCanUseShop(false);
           setTileToShow(false);
         }
         if (game.phase == "action") {
           //checkForHeal();
+          setMusicEvent("action");
           getShop();
         }
       }
 
       if (game.moveOrder[game.moving] == id) {
         setTurnToMove(true);
+        if (game?.phase == "movement") setStartTimer(true);
       } else {
         setTurnToMove(false);
       }
@@ -770,6 +781,7 @@ const GameBoard = ({ id, isContinue }) => {
     setTimeout(() => socket.emit("game-request-state"), 1000);
     setwinReady(true); //--render mon correctly for drag
     getShop();
+    setMusicEvent("start-game");
 
     if (isContinue) {
       socket.emit("request-player-data");
@@ -785,9 +797,7 @@ const GameBoard = ({ id, isContinue }) => {
 
   //If badges has changed, will send new team to server for updates
   useEffect(() => {
-    console.log(badges.length);
-    if (badges.length == 1) setMaxMovement(2);
-    if (badges.length >= 3) setMaxMovement(3);
+    if (badges.length >= 1) setMaxMovement(2);
     socket.emit("game-badges-update", badges);
   }, [badges]);
 
@@ -806,6 +816,8 @@ const GameBoard = ({ id, isContinue }) => {
       } else {
         setCanUseShop(false);
       }
+
+      if (actionComplete) endTurn();
     }
   }, [actionComplete]);
 
@@ -902,6 +914,7 @@ const GameBoard = ({ id, isContinue }) => {
   //end turn for movement and action
   const endTurn = () => {
     if (game.phase == "movement") {
+      setStartTimer(false);
       setIsReady(true);
       setMovement(maxMovement);
       socket.emit("game-end-turn");
@@ -923,6 +936,13 @@ const GameBoard = ({ id, isContinue }) => {
     if (action == "safarizone") setMoney((prev) => prev - event.cost);
     if (action == "trickhouse") setMoney((prev) => prev - 500);
     if (action == "flyingtaxi") {
+      setMoney((prev) => prev - 3000);
+      setPlayerLocation(event.location);
+      socket.emit("game-move", event.location);
+      setTileDrawer(false);
+      return;
+    }
+    if (action == "ferry") {
       setMoney((prev) => prev - 1000);
       setPlayerLocation(event.location);
       socket.emit("game-move", event.location);
@@ -952,6 +972,18 @@ const GameBoard = ({ id, isContinue }) => {
       enqueueSnackbar(`Items in the shop have changed!`, {
         variant: "info",
       });
+      return;
+    }
+    if (action == "releasemon") {
+      setCandies((prev) => prev + event.candies);
+
+      let filteredTeam = team.filter((mem) => mem.dragId != event.mon);
+
+      setTeam(filteredTeam);
+      enqueueSnackbar(`Gained ${event.candies} candies!`, {
+        variant: "info",
+      });
+
       return;
     }
 
@@ -1063,9 +1095,7 @@ const GameBoard = ({ id, isContinue }) => {
 
   //sets up the pvp battle
   const genPvpBattle = (battleId, p1, p2, players) => {
-    console.log(players);
-    console.log(p1);
-    console.log(p2);
+    console.log("gen pvp battle");
     setBattleId(battleId);
     if (players[p1].name == id)
       setEvent({ sprite: players[p2].sprite, name: players[p2].name });
@@ -1102,12 +1132,13 @@ const GameBoard = ({ id, isContinue }) => {
       <ResourceBar
         phase={game.phase}
         turn={game.turn}
-        maxTurns={30}
+        maxTurns={game.maxTurns}
         money={money}
         candies={candies}
         bag={bag}
         badges={badges.length}
       />
+      <SettingsButton setSettingsDialogOpen={setSettingsDialogOpen} />
       <TestBoardComp
         tileDrawer={tileDrawer}
         actionComplete={actionComplete}
@@ -1115,6 +1146,7 @@ const GameBoard = ({ id, isContinue }) => {
         playerLocation={playerLocation.coord}
         players={players}
         tileToShow={tileToShow}
+        team={team}
         canInteract={canInteract}
         badges={badges}
         x={x}
@@ -1140,6 +1172,7 @@ const GameBoard = ({ id, isContinue }) => {
           actionComplete={actionComplete}
           moveToTile={moveToTile}
           endTurn={endTurn}
+          startTimer={startTimer}
           isReady={isReady}
           candies={candies}
           playerLocation={playerLocation}
@@ -1205,10 +1238,12 @@ const GameBoard = ({ id, isContinue }) => {
         setTeam={setTeam}
         setBadges={setBadges}
         setActionComplete={setActionComplete}
+        setMusicEvent={setMusicEvent}
       />
       <IndicatorDialog
         round={game.turn}
         phase={game.phase}
+        semi={game.semiTurn}
         indicatorDialog={indicatorDialog}
         setIndicatorDialog={setIndicatorDialog}
       />
@@ -1217,6 +1252,7 @@ const GameBoard = ({ id, isContinue }) => {
         setPvpDialog={setPvpDialog}
         battleIndex={battleId}
       />
+
       {tradeOffer ? (
         <TradeDialog
           tradeDialog={tradeDialog}

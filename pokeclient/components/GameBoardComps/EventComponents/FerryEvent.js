@@ -2,9 +2,10 @@ import CurrencyYen from "@mui/icons-material/CurrencyYen";
 import { Box, Button, Card, Divider, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { pSBC } from "../../Utils/colorUtil";
-import FlyingTaxiDialog from "./FlyingTaxiDialog";
+import { typeColor } from "../../Utils/typeColor";
+import FerryDialog from "./FerryDialog";
 
-const FlyEvent = ({
+const FerryEvent = ({
   badges,
   money,
   campaignId,
@@ -12,30 +13,29 @@ const FlyEvent = ({
   takeAction,
   phase,
 }) => {
-  const [taxiDialog, setTaxiDialog] = useState();
+  const [ferryDialog, setFerryDialog] = useState();
 
   return (
     <Card
       sx={{
         height: "280px",
         p: 1,
-        backgroundColor: "#f1cb1dd4",
-        color: "black",
+        backgroundColor: typeColor("Water"),
         mb: "2vh",
       }}
     >
       <Grid container spacing={1}>
         <Grid item xs={12} sx={{ textAlign: "center" }}>
-          <Typography variant="h4">Flying Taxi</Typography>
+          <Typography variant="h4">Ferry</Typography>
         </Grid>
         <Grid item xs={12} sx={{ mb: "1vh" }}>
           <Divider />
         </Grid>
         <Grid item xs={6}>
-          <Box sx={{ backgroundColor: pSBC(-0.5, "#f1cb1d") }}>
+          <Box sx={{ backgroundColor: pSBC(-0.5, typeColor("Water")) }}>
             <Box
               sx={{
-                backgroundImage: "url(/Tiles-Hoen/FlyingTaxi.png)",
+                backgroundImage: "url(/Tiles-Hoen/Ferry.png)",
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 backgroundPositionX: "50%",
@@ -50,21 +50,17 @@ const FlyEvent = ({
         </Grid>
         <Grid item container xs={6}>
           <Grid item xs={12}>
-            <Typography variant="h5">Fly to any town</Typography>
-            <Typography variant="body2">*Must have 4 badges</Typography>
+            <Typography variant="h5">
+              Take the ferry to a town on the water
+            </Typography>
           </Grid>
         </Grid>
         <Grid item xs={12}>
           <Button
-            disabled={
-              !canInteract ||
-              phase == "movement" ||
-              badges.length < 3 ||
-              money < 3000
-            }
+            disabled={!canInteract || phase == "movement" || money < 1000}
             fullWidth
             variant="contained"
-            onClick={() => setTaxiDialog(true)}
+            onClick={() => setFerryDialog(true)}
             sx={{
               backgroundColor: "#2F4562",
               "&:hover": {
@@ -73,19 +69,19 @@ const FlyEvent = ({
             }}
           >
             Pay <CurrencyYen />
-            3000{" "}
+            1000{" "}
           </Button>
         </Grid>
       </Grid>
 
-      <FlyingTaxiDialog
+      <FerryDialog
         takeAction={takeAction}
-        taxiDialog={taxiDialog}
+        ferryDialog={ferryDialog}
         campaignId={campaignId}
-        setTaxiDialog={setTaxiDialog}
+        setFerryDialog={setFerryDialog}
       />
     </Card>
   );
 };
 
-export default FlyEvent;
+export default FerryEvent;

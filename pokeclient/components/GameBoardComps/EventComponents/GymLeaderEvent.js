@@ -37,7 +37,7 @@ const GymLeaderEvent = ({
   const getGymLeaderTeam = () => {
     if (badges.length < 2) return leader.Easy;
     else if (badges.length < 5) return leader.Medium;
-    if (badges.length < 8) return leader.Hard;
+    if (badges.length <= 8) return leader.Hard;
   };
 
   const hasBeatenGym = () => {

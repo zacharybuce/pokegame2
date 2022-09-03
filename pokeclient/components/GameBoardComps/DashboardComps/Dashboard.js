@@ -1,7 +1,8 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import dynamic from "next/dynamic";
 import React from "react";
 import ActionArea from "./ActionArea";
+import TurnTimer from "./TurnTimer";
 
 const Team = dynamic(import("./Team"));
 
@@ -14,6 +15,7 @@ const Dashboard = ({
   turnToMove,
   moveToTile,
   tileToShow,
+  startTimer,
   isReady,
   actionComplete,
   endTurn,
@@ -29,6 +31,7 @@ const Dashboard = ({
 }) => {
   return (
     <Box sx={{ ml: "2vw", mr: "2vw" }}>
+      <TurnTimer startTimer={startTimer} endTurn={endTurn} />
       <Grid container spacing={1}>
         <Grid item xs={7}>
           <Team

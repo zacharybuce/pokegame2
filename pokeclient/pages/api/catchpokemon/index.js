@@ -18,7 +18,6 @@ const catchPokemon = (data) => {
   let status = data.status == "none" ? 1 : 1.5;
 
   if (!rate) rate = 70;
-  console.log(rate);
 
   switch (data.ball) {
     case "poke":
@@ -39,11 +38,13 @@ const catchPokemon = (data) => {
 
   for (let i = 0; i < 4; i++) {
     let rand = genRand(0, 65535);
-    if (rand < b) shakes++;
+    console.log(rand + " | " + b);
+    if (rand < Math.floor(b)) shakes++;
   }
 
+  console.log(shakes);
+
   let caught = shakes == 4;
-  console.log(caught);
   return { shakes: shakes, caught: caught };
 };
 

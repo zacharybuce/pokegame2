@@ -28,10 +28,11 @@ var game = {
   turn: 0,
   phase: "starter",
   mapId: "",
-  maxTurns: 30,
+  maxTurns: 20,
   moveOrder: [],
   moving: 0,
   newPhase: false,
+  semiTurn: 10,
 };
 var startTown = { pickOrder: [], townsChoosen: [] };
 var battles = [];
@@ -63,6 +64,7 @@ io.on("connection", (socket) => {
         isHost: false,
         inAction: false,
       });
+      playerData[id] = { candiesSpent: 0 };
       sockets.push(socket);
       if (players.length == 1) {
         players[0].isHost = true;
@@ -245,6 +247,7 @@ io.on("connection", (socket) => {
 
   //player has readied up for a pvp battle (clicked take action bttn)
   socket.on("pvpbattle-ready", (battleIndex) => {
+    console.log(id + " - " + battleIndex);
     if (battles[battleIndex].p1 == pIndex(id))
       battles[battleIndex].p1Ready = true;
     else battles[battleIndex].p2Ready = true;
@@ -289,6 +292,12 @@ io.on("connection", (socket) => {
   socket.on("out-of-action", () => {
     players[pIndex(id)].inAction = false;
     io.emit("game-update-players", players);
+  });
+
+  socket.on("spend-candy", (amount) => {
+    console.log(id + " spent " + amount);
+    if (playerData[id].candiesSpent) playerData[id].candiesSpent += amount;
+    else playerData[id].candiesSpent = amount;
   });
 });
 
@@ -359,11 +368,13 @@ const nextPhase = () => {
       break;
     case "movement":
       game.phase = "action";
-      let order = game.moveOrder.slice();
-      order.reverse();
-      order.forEach((player) => {
-        checkForPvP(pIndex(player));
-      });
+      if (game.turn != game.semiTurn) {
+        let order = game.moveOrder.slice();
+        order.reverse();
+        order.forEach((player) => {
+          checkForPvP(pIndex(player));
+        });
+      }
       break;
     case "action":
       game.phase = "movement";
@@ -381,6 +392,8 @@ const nextPhase = () => {
   io.emit("game-update-state", game);
   game.newPhase = false;
   saveGame();
+  if (game.turn == game.semiTurn && game.phase == "action")
+    startSemiTournament();
 };
 
 //sees if a player is on a tile with another player
@@ -395,7 +408,7 @@ const checkForPvP = (i) => {
       battles.push({
         p1: i,
         p2: index,
-        confirmed: false,
+        confirm: false,
         p1Ready: false,
         p2Ready: false,
       });
@@ -805,7 +818,7 @@ const pvpBattle = (player1, player2, socket1, socket2, battleIndex) => {
   let stream = new Sim.BattleStream();
   socket1.join("battle" + battleIndex);
   socket2.join("battle" + battleIndex);
-  let partySize = game.turn > 30 ? 6 : 3;
+  let partySize = game.turn > 20 ? 6 : 3;
 
   //use the first 3 non fainted pokemon for player 1
   let monToUse = [];
@@ -1218,6 +1231,48 @@ const saveGame = () => {
   saveData.playerData = playerData;
 
   writeFile("../data/savedata.json", JSON.stringify(saveData), "utf8");
+};
+
+const startSemiTournament = () => {
+  let seededPlayers = players.slice();
+
+  seededPlayers.sort((a, b) => {
+    if (playerData[a.name].candiesSpent < playerData[b.name].candiesSpent)
+      return 1;
+    if (playerData[a.name].candiesSpent > playerData[b.name].candiesSpent)
+      return -1;
+    return 0;
+  });
+
+  let battleIndex = 0;
+  for (let i = seededPlayers.length - 1; i > 0; i = i - 2) {
+    if (i - 1 >= 0)
+      battles.push({
+        p1: pIndex(seededPlayers[i].name),
+        p2: pIndex(seededPlayers[i - 1].name),
+        confirm: true,
+        p1Ready: false,
+        p2Ready: false,
+      });
+    inBattle.push(pIndex(seededPlayers[i].name));
+    inBattle.push(pIndex(seededPlayers[i - 1].name));
+    // io.to(seededPlayers[i].name).emit("pvp-request", battles.length - 1);
+    io.to(seededPlayers[i].name).emit(
+      "pvpbattle-confirmed",
+      battleIndex,
+      battles[battleIndex].p1,
+      battles[battleIndex].p2,
+      players
+    );
+    io.to(seededPlayers[i - 1].name).emit(
+      "pvpbattle-confirmed",
+      battleIndex,
+      battles[battleIndex].p1,
+      battles[battleIndex].p2,
+      players
+    );
+    battleIndex++;
+  }
 };
 
 httpServer.listen(3001);
