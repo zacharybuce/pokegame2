@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
 const TurnTimer = ({ startTimer, endTurn }) => {
-  const [time, setTime] = useState(15);
+  const [time, setTime] = useState(30);
   const timerRef = useRef(time);
   timerRef.current = time;
 
@@ -13,12 +13,12 @@ const TurnTimer = ({ startTimer, endTurn }) => {
           setTime((prev) => prev - 1);
         } else {
           clearInterval(myInterval);
-          setTime(15);
+          setTime(30);
           endTurn();
         }
       }, 1000);
     } else {
-      setTime(15);
+      setTime(30);
     }
     return () => {
       clearInterval(myInterval);

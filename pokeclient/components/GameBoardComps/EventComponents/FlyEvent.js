@@ -51,7 +51,7 @@ const FlyEvent = ({
         <Grid item container xs={6}>
           <Grid item xs={12}>
             <Typography variant="h5">Fly to any town</Typography>
-            <Typography variant="body2">*Must have 4 badges</Typography>
+            <Typography variant="body2">*Must have 3 badges</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12}>

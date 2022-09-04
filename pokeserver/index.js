@@ -296,6 +296,8 @@ io.on("connection", (socket) => {
 
   socket.on("spend-candy", (amount) => {
     console.log(id + " spent " + amount);
+    if (!playerData[id]) playerData[id] = { candiesSpent: 0 };
+
     if (playerData[id].candiesSpent) playerData[id].candiesSpent += amount;
     else playerData[id].candiesSpent = amount;
   });
